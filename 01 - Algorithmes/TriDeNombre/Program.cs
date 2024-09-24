@@ -1,35 +1,51 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+// FONCTIONS
 int EntrerUnEntier(string Phrase)
 {
     Console.WriteLine(Phrase);
 
+// DECLARATIONS DE VARIABLES DANS LA FONCTION
     int nb;
     bool vrai;
-
+    string saisie;
 
     do
     {
         Console.WriteLine("Entrez un nombre entier : ");
-        string saisie = Console.ReadLine();
+        saisie = Console.ReadLine();
 
         vrai = int.TryParse(saisie, out nb);
     }
     while (!vrai);
 
+    // Console.WriteLine("Entrez un nombre entier : ");
+    // saisie = Console.ReadLine();
+    // nb = int.Parse(saisie);
+
     return nb;
 
 }
 
-int A = EntrerUnEntier("");
-int B = EntrerUnEntier("");
-int C = EntrerUnEntier("");
+// VARIABLES
+int[] nombres;
+int A;
+int B;
+int C;
 
-int[] nombres = new int[3];
+// TRAITEMENTS
+A = EntrerUnEntier("");
+B = EntrerUnEntier("");
+C = EntrerUnEntier("");
 
-nombres[0] = A;
-nombres[1] = B;
-nombres[2] = C;
+// nombres = new int[3];
+// nombres[0] = A;
+// nombres[1] = B;
+// nombres[2] = C;
+
+// nombres = new int [] {A, B, C};
+
+nombres = [A, B, C];
 
 Array.Sort(nombres);
 
