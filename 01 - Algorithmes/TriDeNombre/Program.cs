@@ -49,6 +49,7 @@ nombres = [A, B, C];
 
 Array.Sort(nombres);
 
+// AFFICHAGE
 Console.WriteLine($"{ Environment.NewLine}Voici les nombres triés : ");
 foreach (int nb in nombres)
 {
