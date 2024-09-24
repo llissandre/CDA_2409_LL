@@ -9,7 +9,18 @@ string premierTomeGotALaBibliotheque;
 
 
 Console.WriteLine("Fait-il beau temps ? (O/N)");
+try
+{
 beauTemps = Console.ReadLine();
+}
+catch(Exception e)
+{
+    Console.WriteLine("Il faut taper O ou N !"+e.Message);
+    Environment.Exit(1);
+}
+
+beauTemps = Console.ReadLine();
+
 if (beauTemps == "O" || beauTemps == "o")
 {
     Console.WriteLine("Vous pouvez aller faire une balade en bicyclette.");
