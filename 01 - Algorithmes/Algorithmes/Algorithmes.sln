@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriDeNombrePlusPlus", "TriDeNombrePlusPlus\TriDeNombrePlusPlus.csproj", "{0E719711-A395-4CF2-A7A0-8A416DCB2DBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriDeNombrePlusPlus", "TriDeNombrePlusPlus\TriDeNombrePlusPlus.csproj", "{0E719711-A395-4CF2-A7A0-8A416DCB2DBB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EsTuMajeur", "..\EsTuMajeur\EsTuMajeur.csproj", "{4DECBECD-A8D7-48EF-88B3-E322774EAED9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaRetraite", "..\MaRetraite\MaRetraite.csproj", "{DD2753C2-7549-46D4-B68B-25281160B343}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriDeNombre", "..\TriDeNombre\TriDeNombre.csproj", "{AD9EB1FF-4459-43C8-8E08-3CB2E1CED024}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaBicyclette", "MaBicyclette\MaBicyclette.csproj", "{CE74F81D-873A-49A3-ACA0-3C00FE018688}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{AD9EB1FF-4459-43C8-8E08-3CB2E1CED024}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD9EB1FF-4459-43C8-8E08-3CB2E1CED024}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD9EB1FF-4459-43C8-8E08-3CB2E1CED024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE74F81D-873A-49A3-ACA0-3C00FE018688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE74F81D-873A-49A3-ACA0-3C00FE018688}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE74F81D-873A-49A3-ACA0-3C00FE018688}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE74F81D-873A-49A3-ACA0-3C00FE018688}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

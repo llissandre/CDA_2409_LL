@@ -37,7 +37,7 @@ else if (age == 60)
 {
     Console.WriteLine($"{Environment.NewLine}C'est le moment de prendre votre retraite.");
 }
-if (age < 60)
+else
 {
     dureeRetraite = 60-age;
     Console.WriteLine($"{Environment.NewLine}Il vous reste {dureeRetraite} années avant la retraite.");
