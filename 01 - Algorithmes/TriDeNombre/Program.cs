@@ -49,7 +49,7 @@ nombres = [A, B, C];
 
 Array.Sort(nombres);
 
-Console.WriteLine("Voici les nombres triés : ");
+Console.WriteLine($"{ Environment.NewLine}Voici les nombres triés : ");
 foreach (int nb in nombres)
 {
     Console.Write(nb + " ");

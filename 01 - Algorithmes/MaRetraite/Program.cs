@@ -13,26 +13,34 @@ int EntrerUnAge(string Phrase)
         string saisie = Console.ReadLine();
 
         vrai = int.TryParse(saisie, out age);
+        if (!vrai)
+        {
+            Console.WriteLine("La valeur fournie n'est pas un âge valide.");
+        }
     }
     while (!vrai);
 
     return age;
 }
 
-int age = EntrerUnAge("");
+int dureeRetraite;
+int age;
 
-if (age < 0)
+age = EntrerUnAge("");
+
+if (age > 60)
 {
-    Console.WriteLine("\nVous n'êtes pas encore né !");
+    dureeRetraite = age - 60;
+    Console.WriteLine($"{Environment.NewLine}Vous êtes à la retraite depuis {dureeRetraite} années.");
 }
-else if (age > 18)
+else if (age == 60)
 {
-    Console.WriteLine("\nVous êtes majeur !");
+    Console.WriteLine($"{Environment.NewLine}C'est le moment de prendre votre retraite.");
 }
-else
+if (age < 60)
 {
-    Console.WriteLine("\nVous êtes mineur !");
+    dureeRetraite = 60-age;
+    Console.WriteLine($"{Environment.NewLine}Il vous reste {dureeRetraite} années avant la retraite.");
 }
 
 Console.ReadLine();
-

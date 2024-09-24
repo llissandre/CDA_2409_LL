@@ -23,15 +23,15 @@ int age = EntrerUnAge("");
 
 if (age < 0)
 {
-    Console.WriteLine("\nVous n'êtes pas encore né !");
+    Console.WriteLine($"{Environment.NewLine}Vous n'êtes pas encore né !");
 }
 else if (age > 18)
 {
-    Console.WriteLine("\nVous êtes majeur !");
+    Console.WriteLine($"{Environment.NewLine}Vous êtes majeur !");
 }
 else
 {
-    Console.WriteLine("\nVous êtes mineur !");
+    Console.WriteLine($"{Environment.NewLine}Vous êtes mineur !");
 }
 
 Console.ReadLine();
