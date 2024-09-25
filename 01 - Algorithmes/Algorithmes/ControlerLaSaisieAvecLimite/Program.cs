@@ -2,26 +2,27 @@
 
 using System.Security.Cryptography.X509Certificates;
 
-string prenom;
-int longueurPrenom;
+string motDePasse;
+string saisie;
 int nombreDEssais;
 
+motDePasse = "formation";
 nombreDEssais = 0;
 
 do
 {
-    Console.WriteLine("Saisissez votre prénom, qui doit être composé d'au moins deux lettres :");
-    prenom = Console.ReadLine();
-    longueurPrenom = prenom.Length;
+    Console.WriteLine("Saisissez votre mot de passe :");
+    saisie = Console.ReadLine();
+
     nombreDEssais++;
 }
-while (longueurPrenom < 2 && nombreDEssais < 3);
+while (nombreDEssais < 3 && !saisie.Equals(motDePasse));
 
-if (longueurPrenom < 2 && nombreDEssais < 3)
+if (saisie.Equals(motDePasse))
 {
-    Console.WriteLine($"Bonjour {prenom}");
+    Console.WriteLine("Vous êtes connecté");
 }
 else
 {
-    Console.WriteLine($"Vous avez entré un prénom de moins de deux lettres {nombreDEssais} fois!");
+    Console.WriteLine("Votre compte est bloqué");
 }
