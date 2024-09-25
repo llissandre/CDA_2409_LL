@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-int EntrerUnAge(string Phrase)
+int entrerUnAge(string Phrase)
 {
     Console.WriteLine(Phrase);
 
@@ -19,7 +19,7 @@ int EntrerUnAge(string Phrase)
     return age;
 }
 
-int age = EntrerUnAge("");
+int age = entrerUnAge("");
 
 if (age < 0)
 {

@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 // FONCTIONS
-int EntrerUnEntier(string Phrase)
+int entrerUnEntier(string Phrase)
 {
     Console.WriteLine(Phrase);
 
@@ -34,9 +34,9 @@ int B;
 int C;
 
 // TRAITEMENTS
-A = EntrerUnEntier("");
-B = EntrerUnEntier("");
-C = EntrerUnEntier("");
+A = entrerUnEntier("");
+B = entrerUnEntier("");
+C = entrerUnEntier("");
 
 // nombres = new int[3];
 // nombres[0] = A;

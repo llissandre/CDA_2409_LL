@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-int EntrerUnAge(string Phrase)
+int entrerUnAge(string Phrase)
 {
     Console.WriteLine(Phrase);
 
@@ -26,7 +26,7 @@ int EntrerUnAge(string Phrase)
 int dureeRetraite;
 int age;
 
-age = EntrerUnAge("");
+age = entrerUnAge("");
 
 if (age > 60)
 {
