@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaRetraite", "..\MaRetraite
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriDeNombre", "..\TriDeNombre\TriDeNombre.csproj", "{AD9EB1FF-4459-43C8-8E08-3CB2E1CED024}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaBicyclette", "MaBicyclette\MaBicyclette.csproj", "{CE74F81D-873A-49A3-ACA0-3C00FE018688}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaBicyclette", "MaBicyclette\MaBicyclette.csproj", "{CE74F81D-873A-49A3-ACA0-3C00FE018688}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlerLaSaisie", "ControlerLaSaisie\ControlerLaSaisie.csproj", "{14EE6AEC-E0A3-4375-B77E-B0D4A04CE870}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{CE74F81D-873A-49A3-ACA0-3C00FE018688}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE74F81D-873A-49A3-ACA0-3C00FE018688}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE74F81D-873A-49A3-ACA0-3C00FE018688}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14EE6AEC-E0A3-4375-B77E-B0D4A04CE870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14EE6AEC-E0A3-4375-B77E-B0D4A04CE870}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14EE6AEC-E0A3-4375-B77E-B0D4A04CE870}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14EE6AEC-E0A3-4375-B77E-B0D4A04CE870}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
