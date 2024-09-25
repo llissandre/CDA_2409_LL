@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaBicyclette", "MaBicyclett
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlerLaSaisie", "ControlerLaSaisie\ControlerLaSaisie.csproj", "{14EE6AEC-E0A3-4375-B77E-B0D4A04CE870}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlerLaSaisieAvecLimite", "ControlerLaSaisieAvecLimite\ControlerLaSaisieAvecLimite.csproj", "{685D5236-AC61-44CD-8EDF-7210EC3740AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{14EE6AEC-E0A3-4375-B77E-B0D4A04CE870}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14EE6AEC-E0A3-4375-B77E-B0D4A04CE870}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14EE6AEC-E0A3-4375-B77E-B0D4A04CE870}.Release|Any CPU.Build.0 = Release|Any CPU
+		{685D5236-AC61-44CD-8EDF-7210EC3740AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{685D5236-AC61-44CD-8EDF-7210EC3740AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{685D5236-AC61-44CD-8EDF-7210EC3740AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{685D5236-AC61-44CD-8EDF-7210EC3740AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

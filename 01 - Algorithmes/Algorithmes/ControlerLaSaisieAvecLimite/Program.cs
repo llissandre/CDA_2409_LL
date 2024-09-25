@@ -15,6 +15,13 @@ do
     longueurPrenom = prenom.Length;
     nombreDEssais++;
 }
-while (longueurPrenom < 2);
+while (longueurPrenom < 2 && nombreDEssais < 3);
 
-Console.WriteLine($"Bonjour {prenom}");
+if (longueurPrenom < 2 && nombreDEssais < 3)
+{
+    Console.WriteLine($"Bonjour {prenom}");
+}
+else
+{
+    Console.WriteLine($"Vous avez entré un prénom de moins de deux lettres {nombreDEssais} fois!");
+}
