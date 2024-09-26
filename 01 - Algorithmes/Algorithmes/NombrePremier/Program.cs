@@ -18,13 +18,13 @@ int demanderUnNombre(string Phrase)
     return nb;
 }
 
-long nombre;
+int nombre;
 int nbPremier;
 
 nombre = demanderUnNombre("");
 nbPremier = 0;
 
-for (int i = 2; i <= nombre / 2; i++)
+for (int i = 1; i <= nombre / 2; i++)
 {
     if (nombre % i == 0)
     {
@@ -32,13 +32,13 @@ for (int i = 2; i <= nombre / 2; i++)
     }
 }
 
-if (nbPremier >= 1)
+if (nbPremier == 1)
 {
-    Console.WriteLine("Il ne s'agit pas d'un nombre premier");
+    Console.WriteLine("Il s'agit d'un nombre premier");
 }
 else
 {
-    Console.WriteLine("Il s'agit d'un nombre premier");
+    Console.WriteLine("Il ne s'agit pas d'un nombre premier");
 }
 
 //Console.ReadLine();
