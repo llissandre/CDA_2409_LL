@@ -5,7 +5,7 @@ int entrerUnEntier(string Phrase)
 {
     Console.WriteLine(Phrase);
 
-// DECLARATIONS DE VARIABLES DANS LA FONCTION
+    // DECLARATIONS DE VARIABLES DANS LA FONCTION
     int nb;
     bool vrai;
     string saisie;
@@ -19,12 +19,7 @@ int entrerUnEntier(string Phrase)
     }
     while (!vrai);
 
-    // Console.WriteLine("Entrez un nombre entier : ");
-    // saisie = Console.ReadLine();
-    // nb = int.Parse(saisie);
-
     return nb;
-
 }
 
 // VARIABLES
@@ -38,19 +33,13 @@ A = entrerUnEntier("");
 B = entrerUnEntier("");
 C = entrerUnEntier("");
 
-// nombres = new int[3];
-// nombres[0] = A;
-// nombres[1] = B;
-// nombres[2] = C;
-
-// nombres = new int [] {A, B, C};
-
 nombres = [A, B, C];
 
 Array.Sort(nombres);
+Array.Reverse(nombres);
 
 // AFFICHAGE
-Console.WriteLine($"{ Environment.NewLine}Voici les nombres triés : ");
+Console.WriteLine($"{Environment.NewLine}Voici les nombres triés : ");
 foreach (int nb in nombres)
 {
     Console.Write(nb + " ");
