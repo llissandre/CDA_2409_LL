@@ -61,7 +61,3 @@ do
 while (nombreEntre != nombreChoisi);
 
 Console.WriteLine(nombreChoisi);
-
-
-
-
