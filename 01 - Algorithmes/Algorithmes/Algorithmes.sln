@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarnabeFaitSesCourses", "Ba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RechercherUnNombreDansUnTableau", "RechercherUnNombreDansUnTableau\RechercherUnNombreDansUnTableau.csproj", "{F3BFA355-54B1-493C-8BF0-14C6B535E8E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RechercherLeNombreDOccurencesD1LettreDansUnePhrase", "RechercherLeNombreDOccurencesD1LettreDansUnePhrase\RechercherLeNombreDOccurencesD1LettreDansUnePhrase.csproj", "{B3ADAA61-F416-4AE4-A7ED-3748F58B9794}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{F3BFA355-54B1-493C-8BF0-14C6B535E8E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3BFA355-54B1-493C-8BF0-14C6B535E8E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3BFA355-54B1-493C-8BF0-14C6B535E8E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3ADAA61-F416-4AE4-A7ED-3748F58B9794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3ADAA61-F416-4AE4-A7ED-3748F58B9794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3ADAA61-F416-4AE4-A7ED-3748F58B9794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3ADAA61-F416-4AE4-A7ED-3748F58B9794}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

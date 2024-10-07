@@ -29,10 +29,10 @@ for (int i = 0; i < tableau.Length; i++)
 {
     if (tableau[i] == nombreEntre)
     {
-        Console.WriteLine($"Le nombre entré est présent dans le tableau à la position {i}");
+        Console.WriteLine($"Le nombre entré est présent dans le tableau à la position {i} !");
     }
     else
     {
-        Console.WriteLine($"Nombre non trouvé en position {i}");
+        Console.WriteLine($"Nombre non trouvé en position {i} !");
     }
 }
