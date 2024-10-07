@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RechercherLeNombreDOccurenc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DenombrerLesLettresDeLAlphabetDansUnTableau", "DenombrerLesLettresDeLAlphabetDansUnTableau\DenombrerLesLettresDeLAlphabetDansUnTableau.csproj", "{7D63A9E5-EAC0-43C5-AD51-F68C3165085D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLTools", "LLTools\LLTools.csproj", "{2E1869F2-1E18-401B-AF83-5EDD4A4DFF2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{7D63A9E5-EAC0-43C5-AD51-F68C3165085D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D63A9E5-EAC0-43C5-AD51-F68C3165085D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D63A9E5-EAC0-43C5-AD51-F68C3165085D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E1869F2-1E18-401B-AF83-5EDD4A4DFF2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E1869F2-1E18-401B-AF83-5EDD4A4DFF2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E1869F2-1E18-401B-AF83-5EDD4A4DFF2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E1869F2-1E18-401B-AF83-5EDD4A4DFF2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
