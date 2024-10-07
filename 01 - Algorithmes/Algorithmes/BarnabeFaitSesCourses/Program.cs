@@ -7,26 +7,43 @@ int sommeADepenser(string phrase)
     string saisie;
     bool vrai;
 
-    Console.WriteLine(Phrase);
+    Console.WriteLine(phrase);
 
     do
     {
-        Console.Write("Entrez la somme à dépenser : ");
+        Console.Write("Entrez une somme à dépenser supérieure à 1 : ");
         saisie = Console.ReadLine();
-        vrai=int.TryParse(saisie, out somme);
+        vrai = int.TryParse(saisie, out somme);
     }
-    while (!vrai);
+    while (!vrai || somme < 2);
 
     return somme;
 }
 
 int store;
-int somme;
+int sommeAD;
+int sommeD;
 
 store = 0;
-somme = sommeADepenser("");
+sommeAD = sommeADepenser("");
+sommeD = 0;
 
 do
 {
+    store++;
+    sommeD = sommeAD / 2 + 1;
+    sommeAD = sommeAD - sommeD;
+    if (sommeAD < 2)
+    {
+        sommeD=sommeD+sommeAD;
+        sommeAD = 0;
+    }
+    Console.WriteLine($"SD"+sommeD);
+    Console.WriteLine($"SAD"+sommeAD);
+}
+while (sommeAD > 1 && sommeAD > (sommeAD / 2) + 1);
 
-} while (somme>1);
+
+
+Console.WriteLine($"Somme restant à dépenser : " + sommeAD);
+Console.WriteLine($"Nombre de magasins dans lesquels Barnabé a acheté : " + store);
