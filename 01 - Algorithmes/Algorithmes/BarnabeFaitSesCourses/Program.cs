@@ -35,15 +35,15 @@ do
     sommeAD = sommeAD - sommeD;
     if (sommeAD < 2)
     {
-        sommeD=sommeD+sommeAD;
+        sommeD = sommeD + sommeAD;
         sommeAD = 0;
     }
-    Console.WriteLine($"SD"+sommeD);
-    Console.WriteLine($"SAD"+sommeAD);
+    Console.WriteLine($"SD" + sommeD);
+    Console.WriteLine($"SAD" + sommeAD);
 }
 while (sommeAD > 1 && sommeAD > (sommeAD / 2) + 1);
 
 
 
-Console.WriteLine($"Somme restant à dépenser : " + sommeAD);
-Console.WriteLine($"Nombre de magasins dans lesquels Barnabé a acheté : " + store);
+Console.WriteLine($"Somme restant à dépenser : {sommeAD}");
+Console.WriteLine($"Nombre de magasins dans lesquels Barnabé a acheté : {store}");
