@@ -3,32 +3,46 @@
 int[] tableau;
 int temp;
 int temp2;
-int i1=0;
-int i2=0;
+int index;
 
 tableau = [128, 64, 8, 512, 16, 32, 256];
 
-//for (int i = 0; i < 1; i++)
-//{
-temp = tableau[i1];
-temp2 = tableau[i1];
-Console.WriteLine(temp);
-
-for (int j = 1; j < tableau.Length; j++)
+// Afficher le tableau d'origine
+foreach (int entier in tableau)
 {
-    if (tableau[j] < temp && tableau[j] < temp2)
-    {
-        temp2 = tableau[j];
-        i2 = j;
-    }
+    Console.Write($"{entier} ");
 }
-//}
 
-tableau[i2] = temp;
-tableau[i1] = temp2;
+// Trier le tableau
+Console.WriteLine(Environment.NewLine);
 
+index = 0;
 
-foreach (int i in tableau)
+int i;
+int j;
+
+for (i = 0; i < tableau.Length; i++)
 {
-    Console.Write(i);
+    temp = tableau[i];
+    temp2 = tableau[i];
+
+    for (j = i + 1; j < tableau.Length; j++)
+    {
+        if (tableau[j] < temp && tableau[j] < temp2)
+        {
+            temp2 = tableau[j];
+            index = j;
+        }
+    }
+
+    tableau[index] = temp;
+    tableau[i] = temp2;
+}
+
+Console.WriteLine(Environment.NewLine);
+
+// Afficher le tableau après le tri
+foreach (int entier in tableau)
+{
+    Console.Write($"{entier} ");
 }
