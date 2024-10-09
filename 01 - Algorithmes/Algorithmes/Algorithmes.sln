@@ -35,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DenombrerLesLettresDeLAlpha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LLTools", "LLTools\LLTools.csproj", "{2E1869F2-1E18-401B-AF83-5EDD4A4DFF2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriD1Tableau", "TriD1Tableau\TriD1Tableau.csproj", "{0AFDC44A-E779-407B-9A38-D4A376B2504C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriD1Tableau", "TriD1Tableau\TriD1Tableau.csproj", "{0AFDC44A-E779-407B-9A38-D4A376B2504C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palindrome", "Palindrome\Palindrome.csproj", "{A7BE4071-8AE3-4462-BB8E-79B3739A4592}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{0AFDC44A-E779-407B-9A38-D4A376B2504C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AFDC44A-E779-407B-9A38-D4A376B2504C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AFDC44A-E779-407B-9A38-D4A376B2504C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7BE4071-8AE3-4462-BB8E-79B3739A4592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7BE4071-8AE3-4462-BB8E-79B3739A4592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7BE4071-8AE3-4462-BB8E-79B3739A4592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7BE4071-8AE3-4462-BB8E-79B3739A4592}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
