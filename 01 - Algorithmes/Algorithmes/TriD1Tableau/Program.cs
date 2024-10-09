@@ -2,47 +2,47 @@
 
 int[] tableau;
 int temp;
-int temp2;
 int index;
+int stock;
 
-tableau = [128, 64, 8, 512, 16, 32, 256];
+tableau = [128, -64, -8, 512, 16, -32, -256];
 
 // Afficher le tableau d'origine
-foreach (int entier in tableau)
+foreach (int nbr in tableau)
 {
-    Console.Write($"{entier} ");
+    Console.Write($"{nbr} ");
 }
 
 // Trier le tableau
 Console.WriteLine(Environment.NewLine);
 
 index = 0;
-
 int i;
 int j;
 
 for (i = 0; i < tableau.Length; i++)
 {
-    temp = tableau[i];
-    temp2 = tableau[i];
+    stock = int.MaxValue;
+    temp = 0;
 
-    for (j = i + 1; j < tableau.Length; j++)
+    for (j = i; j < tableau.Length; j++)
     {
-        if (tableau[j] < temp && tableau[j] < temp2)
+        if (tableau[j] < stock)
         {
-            temp2 = tableau[j];
+            stock = tableau[j];
             index = j;
         }
     }
 
-    tableau[index] = temp;
-    tableau[i] = temp2;
+    temp = tableau[index];
+    tableau[index] = tableau[i];
+    tableau[i] = temp;
 }
 
 Console.WriteLine(Environment.NewLine);
 
 // Afficher le tableau après le tri
-foreach (int entier in tableau)
+foreach (int nbr in tableau)
 {
-    Console.Write($"{entier} ");
+    Console.Write($"{nbr} ");
 }
