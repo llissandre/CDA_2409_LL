@@ -8,7 +8,6 @@ string entrerUneChaineDeCaractere(string Phrase)
 }
 
 string phrase = entrerUneChaineDeCaractere("");
-char caractere;
 int compteur = 0;
 int compteurP = 0;
 
@@ -35,7 +34,6 @@ if (phrase.Length == 0 || compteur == compteurP)
     Console.WriteLine("LA CHAINE EST VIDE");
 }
 
-
 else
 {
     compteur = 0;
@@ -43,18 +41,15 @@ else
 
     foreach (char c in phrase)
     {
-        if (c == caractere)
-        {
-            compteur++;
-        }
+
     }
 
     if (compteur == 0)
     {
-        Console.WriteLine($"{Environment.NewLine}La lettre {caractere} n'est pas présente");
+        Console.WriteLine($"{Environment.NewLine}La lettre n'est pas présente");
     }
     else
     {
-        Console.WriteLine($"{Environment.NewLine}La lettre {caractere} est présente {compteur} fois");
+        Console.WriteLine($"{Environment.NewLine}La lettre est présente {compteur} fois");
     }
 }
