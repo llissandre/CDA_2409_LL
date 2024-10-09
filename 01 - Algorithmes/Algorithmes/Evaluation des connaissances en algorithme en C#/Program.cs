@@ -18,3 +18,34 @@
 //-   Il n’est pas possible d’être « à découvert »
 
 
+string entrerLeNomDeLaPersonne(string Phrase)
+{
+    Console.Write("Entrez le nom de la personne : ");
+    return Console.ReadLine();
+}
+
+Dictionary<string, int> utilisateurs = new Dictionary<string, int>();
+utilisateurs.Add("Allan", 4);
+utilisateurs.Add("Rémi", 18);
+utilisateurs.Add("Karan", 0);
+utilisateurs.Add("Lores", 6);
+utilisateurs.Add("Lucas", 8);
+
+int solde;
+int repas = 4;
+
+string utilisateur = entrerLeNomDeLaPersonne("");
+
+solde = utilisateurs[utilisateur];
+
+if (solde >= 4)
+{
+    Console.WriteLine("Vous avez suffisamment de fonds pour manger.");
+    solde -= 4;
+    utilisateurs[utilisateur] = solde;
+    Console.WriteLine($"Le nouveau solde de votre carte est de : {solde} euros.");
+}
+else
+{
+    Console.WriteLine("Vous n'avez suffisamment de fonds pour manger, il n'est pas possible d'avoir un solde négatif. ");
+}
