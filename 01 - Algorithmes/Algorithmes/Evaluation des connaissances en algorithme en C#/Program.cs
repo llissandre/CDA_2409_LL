@@ -21,8 +21,27 @@
 string entrerLeNomDeLaPersonne(string Phrase)
 {
     Console.Write("Entrez le nom de la personne : ");
-    return Console.ReadLine();
+    return Console.ReadLine().ToLower();
 }
+
+string entrerUnNomValide(string Phrase)
+{
+    Console.Write("Entrez un nom valide : ");
+    return Console.ReadLine().ToLower();
+}
+
+string voulezVousSortir(string Phrase)
+{
+    Console.Write("Voulez-vous sortir ?");
+    return Console.ReadLine().ToLower();
+}
+
+string voulezVousManger(string Phrase)
+{
+    Console.Write("Voulez-vous manger ?");
+    return Console.ReadLine().ToLower();
+}
+
 
 Dictionary<string, int> utilisateurs = new Dictionary<string, int>();
 utilisateurs.Add("Allan", 4);
@@ -33,19 +52,41 @@ utilisateurs.Add("Lucas", 8);
 
 int solde;
 int repas = 4;
+bool isOk = true;
+bool goOut = false;
 
 string utilisateur = entrerLeNomDeLaPersonne("");
 
-solde = utilisateurs[utilisateur];
+do
+{
+    utilisateur = entrerUnNomValide("");
 
-if (solde >= 4)
-{
-    Console.WriteLine("Vous avez suffisamment de fonds pour manger.");
-    solde -= 4;
-    utilisateurs[utilisateur] = solde;
-    Console.WriteLine($"Le nouveau solde de votre carte est de : {solde} euros.");
+    isOk = utilisateurs.Keys.Contains(utilisateur);
+
+    if (!isOk)
+    {
+        Console.WriteLine("L'utlisateur n'a pas été trouvé.");
+        Console.WriteLine("Il faut entrer un nom valide :");
+    }
+    else
+    {
+        {
+            solde = utilisateurs[utilisateur];
+
+            if (solde >= 4)
+            {
+                Console.WriteLine("Vous avez suffisamment de fonds pour manger.");
+                solde -= 4;
+                utilisateurs[utilisateur] = solde;
+                Console.WriteLine($"Le nouveau solde de votre carte est de : {solde} euros.");
+            }
+            else
+            {
+                Console.WriteLine("Vous n'avez suffisamment de fonds pour manger, il n'est pas possible d'avoir un solde négatif. ");
+            }
+        }
+    }
+
+    bool goOut = voulezVousSortir("");
 }
-else
-{
-    Console.WriteLine("Vous n'avez suffisamment de fonds pour manger, il n'est pas possible d'avoir un solde négatif. ");
-}
+while (!goOut);
