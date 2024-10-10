@@ -18,30 +18,84 @@
 //-   Il n’est pas possible d’être « à découvert »
 
 
-string entrerLeNomDeLaPersonne(string Phrase)
+using System.Text.RegularExpressions;
+Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+string entrerLeNomDeLaPersonne(string name)
 {
     Console.Write("Entrez le nom de la personne : ");
-    return Console.ReadLine().ToLower();
+    return UpperCaseFirstChar(Console.ReadLine());
 }
 
-string entrerUnNomValide(string Phrase)
+string entrerUnNomValide(string name)
 {
     Console.Write("Entrez un nom valide : ");
-    return Console.ReadLine().ToLower();
+    return UpperCaseFirstChar(Console.ReadLine());
 }
-
-string voulezVousSortir(string Phrase)
+string UpperCaseFirstChar(string text)
 {
-    Console.Write("Voulez-vous sortir ?");
-    return Console.ReadLine().ToLower();
+    return Regex.Replace(text, "^[a-z]", m => m.Value.ToUpper());
 }
 
-string voulezVousManger(string Phrase)
+bool voulezVousManger(string touch)
 {
     Console.Write("Voulez-vous manger ?");
-    return Console.ReadLine().ToLower();
+    touch = Console.ReadLine().ToUpper();
+    if (touch == "O")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
+bool voulezVousConnaitreLeSoldeDeVotreCarte(string touch)
+{
+    Console.Write("Voulez-vous connaitre le solde de votre carte ?");
+    touch = Console.ReadLine().ToUpper();
+    if (touch == "O")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool voulezVousRechargerVotreCarte(string touch)
+{
+    Console.Write("Voulez-vous recharger votre carte ?");
+    touch = Console.ReadLine().ToUpper();
+    if (touch == "O")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+int montantRechargerVotreCarte(string phrase)
+{
+    string saisie;
+    bool vrai;
+    int nb;
+
+    do
+    {
+        Console.Write("Indiquez le montant que vous souhaitez ajouter au solde de votre carte : ");
+        saisie = Console.ReadLine();
+
+        vrai = int.TryParse(saisie, out nb);
+    }
+    while (!vrai);
+
+    return nb;
+}
 
 Dictionary<string, int> utilisateurs = new Dictionary<string, int>();
 utilisateurs.Add("Allan", 4);
@@ -50,43 +104,79 @@ utilisateurs.Add("Karan", 0);
 utilisateurs.Add("Lores", 6);
 utilisateurs.Add("Lucas", 8);
 
-int solde;
+int theSolde;
+int montant;
 int repas = 4;
 bool isOk = true;
-bool goOut = false;
+bool heEat = false;
+bool connaitreTheSolde = false;
+bool rechargerVotreCarte = false;
 
 string utilisateur = entrerLeNomDeLaPersonne("");
-
 do
 {
-    utilisateur = entrerUnNomValide("");
-
-    isOk = utilisateurs.Keys.Contains(utilisateur);
-
-    if (!isOk)
+    do
     {
-        Console.WriteLine("L'utlisateur n'a pas été trouvé.");
-        Console.WriteLine("Il faut entrer un nom valide :");
-    }
-    else
-    {
+        isOk = utilisateurs.Keys.Contains(utilisateur);
+
+        if (!isOk)
         {
-            solde = utilisateurs[utilisateur];
+            Console.WriteLine("L'utlisateur n'a pas été trouvé.");
+            utilisateur = entrerUnNomValide("");
+        }
+        else
+        {
+            {
+                theSolde = utilisateurs[utilisateur];
+                heEat = voulezVousManger("");
+                if (heEat)
+                {
 
-            if (solde >= 4)
-            {
-                Console.WriteLine("Vous avez suffisamment de fonds pour manger.");
-                solde -= 4;
-                utilisateurs[utilisateur] = solde;
-                Console.WriteLine($"Le nouveau solde de votre carte est de : {solde} euros.");
+                    if (theSolde >= repas)
+                    { 
+
+                        Console.WriteLine("Vous avez suffisamment de fonds pour manger.");
+                        theSolde -= repas;
+                        utilisateurs[utilisateur] = theSolde;
+                        Console.WriteLine($"Le nouveau solde de votre carte est de : {theSolde} euros.");
+                    }
+                    else
+                    {
+                        rechargerVotreCarte = voulezVousRechargerVotreCarte("");
+                        Console.WriteLine("Vous n'avez pas suffisamment de fonds pour manger, il n'est pas possible d'avoir un solde négatif. ");
+                        heEat = voulezVousManger("");
+                        if (theSolde >= repas)
+                        {
+                            Console.WriteLine("Vous avez suffisamment de fonds pour manger.");
+                            theSolde -= repas;
+                            utilisateurs[utilisateur] = theSolde;
+                            Console.WriteLine($"Le nouveau solde de votre carte est de : {theSolde} euros.");
+                        }
+                        else
+                        {
+
+                        Console.WriteLine("Vous n'avez toujours pas suffisamment de fonds pour manger, il n'est pas possible d'avoir un solde négatif. ");
+                        }
+                    }
+                }
             }
-            else
+
+            connaitreTheSolde = voulezVousConnaitreLeSoldeDeVotreCarte("");
+            rechargerVotreCarte = voulezVousRechargerVotreCarte("");
+
+            if (connaitreTheSolde)
             {
-                Console.WriteLine("Vous n'avez suffisamment de fonds pour manger, il n'est pas possible d'avoir un solde négatif. ");
+                Console.WriteLine($"{utilisateur}, il te reste {theSolde} € sur ta carte !");
+            }
+
+            if (rechargerVotreCarte)
+            {
+                montant = montantRechargerVotreCarte("");
+                theSolde += montant;
+                Console.WriteLine($"{utilisateur}, votre solde est maintenant de {theSolde} € !");
             }
         }
     }
-
-    bool goOut = voulezVousSortir("");
+    while (!isOk);
 }
-while (!goOut);
+while (Console.ReadKey().Key != ConsoleKey.O);

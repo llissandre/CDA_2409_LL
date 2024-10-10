@@ -1,8 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-
-using System.ComponentModel;
-
 string entrerDuTexte(string phrase)
 {
     Console.WriteLine("Taper du texte : ");
