@@ -121,17 +121,19 @@ do
 
         if (!isOk)
         {
-            Console.WriteLine("L'utlisateur n'a pas été trouvé.");
+            Console.WriteLine("");
+            Console.WriteLine("L'utilisateur n'a pas été trouvé.");
             utilisateur = entrerUnNomValide("");
         }
         else
         {
             {
                 theSolde = utilisateurs[utilisateur];
+                Console.WriteLine("");
                 heEat = voulezVousManger("");
+
                 if (heEat)
                 {
-
                     if (theSolde >= repas)
                     {
 
@@ -139,39 +141,39 @@ do
                         theSolde -= repas;
                         utilisateurs[utilisateur] = theSolde;
                         Console.WriteLine($"Le nouveau solde de votre carte est de : {theSolde} euros.");
+                        Console.WriteLine("");
                     }
                     else
                     {
-                        rechargerVotreCarte = voulezVousRechargerVotreCarte("");
-                        Console.WriteLine("Vous n'avez pas suffisamment de fonds pour manger, il n'est pas possible d'avoir un solde négatif. ");
-                        heEat = voulezVousManger("");
-                        if (theSolde >= repas)
+                        do
                         {
-                            Console.WriteLine("Vous avez suffisamment de fonds pour manger.");
-                            theSolde -= repas;
-                            utilisateurs[utilisateur] = theSolde;
-                            Console.WriteLine($"Le nouveau solde de votre carte est de : {theSolde} euros.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Vous n'avez toujours pas suffisamment de fonds pour manger, il n'est pas possible d'avoir un solde négatif. ");
-                        }
+                            Console.WriteLine("Vous n'avez pas suffisamment de fonds pour manger, il n'est pas possible d'avoir un solde négatif. ");
+                            rechargerVotreCarte = voulezVousRechargerVotreCarte("");
+                            if (rechargerVotreCarte)
+                            {
+                                montant = montantRechargerVotreCarte("");
+                                theSolde += montant;
+                                utilisateurs[utilisateur] = theSolde;
+                                Console.WriteLine($"{utilisateur}, votre solde est maintenant de {theSolde} € !");
+
+                            }
+                        } while (theSolde <= 0);
                     }
                 }
             }
 
             connaitreTheSolde = voulezVousConnaitreLeSoldeDeVotreCarte("");
-            rechargerVotreCarte = voulezVousRechargerVotreCarte("");
-
             if (connaitreTheSolde)
             {
                 Console.WriteLine($"{utilisateur}, il te reste {theSolde} € sur ta carte !");
             }
 
+            rechargerVotreCarte = voulezVousRechargerVotreCarte("");
             if (rechargerVotreCarte)
             {
                 montant = montantRechargerVotreCarte("");
                 theSolde += montant;
+                utilisateurs[utilisateur] = theSolde;
                 Console.WriteLine($"{utilisateur}, votre solde est maintenant de {theSolde} € !");
             }
         }
