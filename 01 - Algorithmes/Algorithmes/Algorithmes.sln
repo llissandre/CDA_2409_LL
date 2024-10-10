@@ -37,9 +37,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LLTools", "LLTools\LLTools.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriD1Tableau", "TriD1Tableau\TriD1Tableau.csproj", "{0AFDC44A-E779-407B-9A38-D4A376B2504C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palindrome", "Palindrome\Palindrome.csproj", "{A7BE4071-8AE3-4462-BB8E-79B3739A4592}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Palindrome", "Palindrome\Palindrome.csproj", "{A7BE4071-8AE3-4462-BB8E-79B3739A4592}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evaluation des connaissances en algorithme en C#", "Evaluation des connaissances en algorithme en C#\Evaluation des connaissances en algorithme en C#.csproj", "{CD19C45E-89A0-47CC-A884-6BD72ABB922B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evaluation des connaissances en algorithme en C#", "Evaluation des connaissances en algorithme en C#\Evaluation des connaissances en algorithme en C#.csproj", "{CD19C45E-89A0-47CC-A884-6BD72ABB922B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections.Listes", "Collections.Listes\Collections.Listes.csproj", "{6E166114-33A9-449A-8CFD-800929BAD6B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +125,10 @@ Global
 		{CD19C45E-89A0-47CC-A884-6BD72ABB922B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD19C45E-89A0-47CC-A884-6BD72ABB922B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD19C45E-89A0-47CC-A884-6BD72ABB922B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E166114-33A9-449A-8CFD-800929BAD6B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E166114-33A9-449A-8CFD-800929BAD6B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E166114-33A9-449A-8CFD-800929BAD6B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E166114-33A9-449A-8CFD-800929BAD6B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

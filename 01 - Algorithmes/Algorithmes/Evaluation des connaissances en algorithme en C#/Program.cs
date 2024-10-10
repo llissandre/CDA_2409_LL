@@ -133,7 +133,7 @@ do
                 {
 
                     if (theSolde >= repas)
-                    { 
+                    {
 
                         Console.WriteLine("Vous avez suffisamment de fonds pour manger.");
                         theSolde -= repas;
@@ -154,8 +154,7 @@ do
                         }
                         else
                         {
-
-                        Console.WriteLine("Vous n'avez toujours pas suffisamment de fonds pour manger, il n'est pas possible d'avoir un solde négatif. ");
+                            Console.WriteLine("Vous n'avez toujours pas suffisamment de fonds pour manger, il n'est pas possible d'avoir un solde négatif. ");
                         }
                     }
                 }
