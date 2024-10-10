@@ -16,6 +16,9 @@
 4. Le programme se termine
 */
 
+using System.Collections;
+using System.Runtime.InteropServices.ObjectiveC;
+
 namespace Collections.Listes
 {
     internal class Program
@@ -24,30 +27,56 @@ namespace Collections.Listes
         {
             Console.WriteLine("Enregistrement de nouveaux utilisateurs");
 
-            string[] utilisateurs;
-            string[] tableauTemporaire;
-            string saisieUtilisateur;
-            char saisieOuiNon;
+            //Liste dynamique fortement typée
+            List<string> utilisateurs = new List<string>();
+            //List<string> utilisateurs = new(); raccourci
 
-            utilisateurs = new string[] { };
+            //utilisateurs.Add("Sonne Goku");
+            //utilisateurs.Add("1".ToString());
+
+            utilisateurs.Add("Toto"); // Add = Augmente la taille de la collection de 1 et ajoute l'élément à la fin de la collection
+            utilisateurs.Add("Toto2");
+
+            utilisateurs.AddRange(["toto3", "Toto4"]);
+
+            utilisateurs.Insert(2, "Titi");
+            utilisateurs.InsertRange(1, ["Tata", "Tutu"]);
+
+            utilisateurs.Prepend("Riri"); // Ajout au début
+            utilisateurs.Append("Fifi"); // Ajout à la fin
+
+            utilisateurs.Remove("Tata");
+            utilisateurs.RemoveAll(chaine => chaine == "Tata");
+
+
+            string saisieNomPrenom;
+            char saisieOuiNon;
 
             do
             {
                 Console.Write($"{Environment.NewLine}Saisissez votre nom et votre prénom : ");
-                saisieUtilisateur = Console.ReadLine() ?? "";
+                saisieNomPrenom = Console.ReadLine() ?? "";
 
-                tableauTemporaire = utilisateurs;
-                utilisateurs = new string[utilisateurs.Length + 1];
-                tableauTemporaire.CopyTo(utilisateurs, 0);
-
-                utilisateurs[utilisateurs.Length - 1] = saisieUtilisateur;
+                utilisateurs.Add(saisieNomPrenom);
 
                 Console.WriteLine($"{Environment.NewLine}Souhaitez-vous ajouter un utilisateur ? N/O");
-                saisieOuiNon = Console.ReadKey().KeyChar;
+                saisieOuiNon = Console.ReadKey(true).KeyChar;
                 Console.WriteLine("");
             }
             while (saisieOuiNon == 'o' || saisieOuiNon == 'O');
+
+
+            for (int i = 0; i < utilisateurs.Count; i++)
+            {
+                Console.WriteLine("Liste des utilisateurs :");
+                Console.WriteLine(utilisateurs[i]);
+            }
+
+            foreach (string person in utilisateurs)
+            {
+                Console.WriteLine("Liste des utilisateurs :");
+                Console.WriteLine(person);
+            }
         }
     }
 }
-

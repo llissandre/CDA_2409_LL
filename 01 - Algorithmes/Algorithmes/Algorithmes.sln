@@ -43,6 +43,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evaluation des connaissance
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections.Listes", "Collections.Listes\Collections.Listes.csproj", "{6E166114-33A9-449A-8CFD-800929BAD6B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tableau dynamique faiblement typé", "Tableau dynamique faiblement typé\Tableau dynamique faiblement typé.csproj", "{8B047272-3F56-4A24-B6BF-96E92F1FDE4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{6E166114-33A9-449A-8CFD-800929BAD6B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E166114-33A9-449A-8CFD-800929BAD6B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E166114-33A9-449A-8CFD-800929BAD6B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B047272-3F56-4A24-B6BF-96E92F1FDE4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B047272-3F56-4A24-B6BF-96E92F1FDE4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B047272-3F56-4A24-B6BF-96E92F1FDE4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B047272-3F56-4A24-B6BF-96E92F1FDE4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
