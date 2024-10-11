@@ -104,20 +104,20 @@ namespace Exercice_Collections
             Console.WriteLine(now);
             Console.WriteLine(now.Year);
 
-            //name = saisirUnNomEtUnPrenom("");
+            name = saisirUnNomEtUnPrenom("");
 
-            //date = saisirUneDateDeNaissance("");
+            date = saisirUneDateDeNaissance("");
 
-            //majeur = calculAge(date);
+            majeur = calculAge(date);
 
-            //if (majeur)
-            //{
-            //    Console.WriteLine(saisirVotreMetier(""));
-            //}
-            //else
-            //{
-            //    Console.WriteLine(saisirUneDateDeNaissance(""));
-            //}
+            if (majeur)
+            {
+                Console.WriteLine(saisirVotreMetier(""));
+            }
+            else
+            {
+                Console.WriteLine(saisirVotreCouleurPreferee(""));
+            }
         }
     }
 }
