@@ -32,21 +32,92 @@ namespace Exercice_Collections
     {
         static void Main(string[] args)
         {
-            string saisirUnNomEtUnPrenom(string name, string prenom)
+            string saisirUnNomEtUnPrenom(string phrase)
             {
                 Console.Write("Saisir un nom et un prenom : ");
-                return (Console.ReadLine());
+                return Console.ReadLine() ?? "";
             }
 
-            DateTime saisirUneDateDeNaissance(DateTime date)
+            string saisirVotreMetier(string phrase)
             {
-                Console.Write("Saisir un nom et un prenom : ");
+                Console.Write("Saisir votre métier : ");
+                return Console.ReadLine() ?? "";
+            }
+
+            string saisirVotreCouleurPreferee(string phrase)
+            {
+                Console.Write("Saisir votre couleur préférée : ");
+                return Console.ReadLine() ?? "";
+            }
+
+            bool calculAge(DateTime date)
+            {
+                int yearBirth;
+                int monthBirth;
+                int yearNow;
+                int monthNow;
+                int age;
+                DateTime now;
+
+                yearBirth = date.Year;
+                monthBirth = date.Month;
+                now = DateTime.Now;
+                yearNow = now.Year;
+                monthNow = now.Month;
+
+                age = yearNow - yearBirth;
+                if (monthBirth < monthNow)
+                {
+                    age--;
+                }
+                if (age >= 18)
+                {
+                    return true;
+                }
+                return false;
+            }
+
+            DateTime saisirUneDateDeNaissance(string phrase)
+            {
+                DateTime date;
+                string saisie;
+                bool vrai;
+
+                do
+                {
+                    Console.Write("Saisir une date de naissance : dd-mm-aaaa");
+
+                    saisie = Console.ReadLine() ?? "";
+                    vrai = DateTime.TryParse(saisie, out date);
+                }
+                while (!vrai);
+
                 return date;
             }
 
+            DateTime now;
+            DateTime date;
+            string name;
+            bool majeur;
 
+            now = DateTime.Now;
+            Console.WriteLine(now);
+            Console.WriteLine(now.Year);
 
+            //name = saisirUnNomEtUnPrenom("");
 
+            //date = saisirUneDateDeNaissance("");
+
+            //majeur = calculAge(date);
+
+            //if (majeur)
+            //{
+            //    Console.WriteLine(saisirVotreMetier(""));
+            //}
+            //else
+            //{
+            //    Console.WriteLine(saisirUneDateDeNaissance(""));
+            //}
         }
     }
 }

@@ -24,13 +24,13 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 string entrerLeNomDeLaPersonne(string name)
 {
     Console.Write("Entrez le nom de la personne : ");
-    return UpperCaseFirstChar(Console.ReadLine());
+    return UpperCaseFirstChar(Console.ReadLine() ?? "");
 }
 
 string entrerUnNomValide(string name)
 {
     Console.Write("Entrez un nom valide : ");
-    return UpperCaseFirstChar(Console.ReadLine());
+    return UpperCaseFirstChar(Console.ReadLine() ?? "");
 }
 string UpperCaseFirstChar(string text)
 {
@@ -46,10 +46,7 @@ bool voulezVousManger(char touch)
     {
         return true;
     }
-    else
-    {
-        return false;
-    }
+    return false;
 }
 
 bool voulezVousConnaitreLeSoldeDeVotreCarte(char touch)
@@ -61,10 +58,7 @@ bool voulezVousConnaitreLeSoldeDeVotreCarte(char touch)
     {
         return true;
     }
-    else
-    {
-        return false;
-    }
+    return false;
 }
 
 bool voulezVousRechargerVotreCarte(char touch)
@@ -76,10 +70,7 @@ bool voulezVousRechargerVotreCarte(char touch)
     {
         return true;
     }
-    else
-    {
-        return false;
-    }
+    return false;
 }
 
 int montantRechargerVotreCarte(string phrase)
@@ -91,7 +82,7 @@ int montantRechargerVotreCarte(string phrase)
     do
     {
         Console.Write("Indiquez le montant que vous souhaitez ajouter au solde de votre carte : ");
-        saisie = Console.ReadLine();
+        saisie = Console.ReadLine() ?? "";
 
         vrai = int.TryParse(saisie, out nb);
     }
