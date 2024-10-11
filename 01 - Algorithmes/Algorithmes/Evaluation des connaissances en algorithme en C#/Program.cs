@@ -37,11 +37,12 @@ string UpperCaseFirstChar(string text)
     return Regex.Replace(text, "^[a-z]", m => m.Value.ToUpper());
 }
 
-bool voulezVousManger(string touch)
+bool voulezVousManger(char touch)
 {
-    Console.Write("Voulez-vous manger ?");
-    touch = Console.ReadLine().ToUpper();
-    if (touch == "O")
+    Console.Write("Voulez-vous manger ? N/O");
+    Console.WriteLine();
+    touch = Console.ReadKey(true).KeyChar;
+    if (touch == 'o' || touch == 'O')
     {
         return true;
     }
@@ -51,11 +52,12 @@ bool voulezVousManger(string touch)
     }
 }
 
-bool voulezVousConnaitreLeSoldeDeVotreCarte(string touch)
+bool voulezVousConnaitreLeSoldeDeVotreCarte(char touch)
 {
-    Console.Write("Voulez-vous connaitre le solde de votre carte ?");
-    touch = Console.ReadLine().ToUpper();
-    if (touch == "O")
+    Console.Write("Voulez-vous connaitre le solde de votre carte ? N/O");
+    Console.WriteLine();
+    touch = Console.ReadKey(true).KeyChar;
+    if (touch == 'o' || touch == 'O')
     {
         return true;
     }
@@ -65,11 +67,12 @@ bool voulezVousConnaitreLeSoldeDeVotreCarte(string touch)
     }
 }
 
-bool voulezVousRechargerVotreCarte(string touch)
+bool voulezVousRechargerVotreCarte(char touch)
 {
-    Console.Write("Voulez-vous recharger votre carte ?");
-    touch = Console.ReadLine().ToUpper();
-    if (touch == "O")
+    Console.Write("Voulez-vous recharger votre carte ? N/O");
+    Console.WriteLine();
+    touch = Console.ReadKey(true).KeyChar;
+    if (touch == 'o' || touch == 'O')
     {
         return true;
     }
@@ -121,7 +124,7 @@ do
 
         if (!isOk)
         {
-            Console.WriteLine("");
+            Console.WriteLine();
             Console.WriteLine("L'utilisateur n'a pas été trouvé.");
             utilisateur = entrerUnNomValide("");
         }
@@ -129,9 +132,18 @@ do
         {
             {
                 theSolde = utilisateurs[utilisateur];
-                Console.WriteLine("");
-                heEat = voulezVousManger("");
+                Console.WriteLine();
 
+                rechargerVotreCarte = voulezVousRechargerVotreCarte(' ');
+                if (rechargerVotreCarte)
+                {
+                    montant = montantRechargerVotreCarte("");
+                    theSolde += montant;
+                    utilisateurs[utilisateur] = theSolde;
+                    Console.WriteLine($"{utilisateur}, votre solde est maintenant de {theSolde} € !");
+                }
+
+                heEat = voulezVousManger(' ');
                 if (heEat)
                 {
                     if (theSolde >= repas)
@@ -140,15 +152,24 @@ do
                         Console.WriteLine("Vous avez suffisamment de fonds pour manger.");
                         theSolde -= repas;
                         utilisateurs[utilisateur] = theSolde;
-                        Console.WriteLine($"Le nouveau solde de votre carte est de : {theSolde} euros.");
-                        Console.WriteLine("");
+                        Console.WriteLine($"Le nouveau solde de votre carte est de : {theSolde} €.");
+                        Console.WriteLine();
+
+                        rechargerVotreCarte = voulezVousRechargerVotreCarte(' ');
+                        if (rechargerVotreCarte)
+                        {
+                            montant = montantRechargerVotreCarte("");
+                            theSolde += montant;
+                            utilisateurs[utilisateur] = theSolde;
+                            Console.WriteLine($"{utilisateur}, votre solde est maintenant de {theSolde} € !");
+                        }
                     }
                     else
                     {
                         do
                         {
                             Console.WriteLine("Vous n'avez pas suffisamment de fonds pour manger, il n'est pas possible d'avoir un solde négatif. ");
-                            rechargerVotreCarte = voulezVousRechargerVotreCarte("");
+                            rechargerVotreCarte = voulezVousRechargerVotreCarte(' ');
                             if (rechargerVotreCarte)
                             {
                                 montant = montantRechargerVotreCarte("");
@@ -162,20 +183,13 @@ do
                 }
             }
 
-            connaitreTheSolde = voulezVousConnaitreLeSoldeDeVotreCarte("");
+            connaitreTheSolde = voulezVousConnaitreLeSoldeDeVotreCarte(' ');
             if (connaitreTheSolde)
             {
                 Console.WriteLine($"{utilisateur}, il te reste {theSolde} € sur ta carte !");
             }
 
-            rechargerVotreCarte = voulezVousRechargerVotreCarte("");
-            if (rechargerVotreCarte)
-            {
-                montant = montantRechargerVotreCarte("");
-                theSolde += montant;
-                utilisateurs[utilisateur] = theSolde;
-                Console.WriteLine($"{utilisateur}, votre solde est maintenant de {theSolde} € !");
-            }
+            Console.WriteLine("Fin boucle");
         }
     }
     while (!isOk);

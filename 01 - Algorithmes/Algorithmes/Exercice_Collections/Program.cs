@@ -27,14 +27,26 @@
 //6. Le programme remercie l'utilisateur et se termine
 
 namespace Exercice_Collections
-
-
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string saisirUnNomEtUnPrenom(string name, string prenom)
+            {
+                Console.Write("Saisir un nom et un prenom : ");
+                return (Console.ReadLine());
+            }
+
+            DateTime saisirUneDateDeNaissance(DateTime date)
+            {
+                Console.Write("Saisir un nom et un prenom : ");
+                return date;
+            }
+
+
+
+
         }
     }
 }
