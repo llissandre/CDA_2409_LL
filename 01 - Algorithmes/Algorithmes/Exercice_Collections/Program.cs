@@ -26,98 +26,254 @@
 
 //6. Le programme remercie l'utilisateur et se termine
 
+using System.Globalization;
+using System.Threading.Channels;
+
 namespace Exercice_Collections
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
+            int yearBirth;
+            int monthBirth;
+            int dayBirth;
+            int yearNow;
+            int monthNow;
+            int dayNow;
+            int ageAn;
+            int ageMois;
+            int iterateur;
+            DateTime now = default;
+            DateTime date;
+            string dateAffichee;
+            string name;
+            string metierOuCouleurPreferee;
+            string[] user;
+            string saisie;
+            List<string[]> users;
+            bool majeur;
+            bool vrai;
+            bool ajout;
+
             string saisirUnNomEtUnPrenom(string phrase)
             {
-                Console.Write("Saisir un nom et un prenom : ");
-                return Console.ReadLine() ?? "";
+                vrai = false;
+
+                do
+                {
+                    Console.Write("Saisir un nom et un prenom : ");
+                    saisie = Console.ReadLine() ?? "";
+                    if (saisie != "")
+                    {
+                        vrai = true;
+                    }
+                }
+                while (!vrai);
+
+                return saisie;
             }
 
             string saisirVotreMetier(string phrase)
             {
-                Console.Write("Saisir votre métier : ");
-                return Console.ReadLine() ?? "";
+                vrai = false;
+
+                do
+                {
+                    Console.Write("Saisir votre métier : ");
+                    saisie = Console.ReadLine() ?? "";
+                    if (saisie != "")
+                    {
+                        vrai = true;
+                    }
+                }
+                while (!vrai);
+
+                return saisie;
             }
 
             string saisirVotreCouleurPreferee(string phrase)
             {
-                Console.Write("Saisir votre couleur préférée : ");
-                return Console.ReadLine() ?? "";
+                vrai = false;
+
+                do
+                {
+                    Console.Write("Saisir votre couleur préférée : ");
+                    saisie = Console.ReadLine() ?? "";
+                    if (saisie != "")
+                    {
+                        vrai = true;
+                    }
+                }
+                while (!vrai);
+
+                return saisie;
             }
 
-            bool calculAge(DateTime date)
+            bool ajoutUtilisateur(char touch)
             {
-                int yearBirth;
-                int monthBirth;
-                int yearNow;
-                int monthNow;
-                int age;
-                DateTime now;
+                Console.Write("Voulez-vous ajouter une autre personne (N/0) ?");
 
-                yearBirth = date.Year;
-                monthBirth = date.Month;
-                now = DateTime.Now;
-                yearNow = now.Year;
-                monthNow = now.Month;
-
-                age = yearNow - yearBirth;
-                if (monthBirth < monthNow)
-                {
-                    age--;
-                }
-                if (age >= 18)
+                touch = Console.ReadKey(true).KeyChar;
+                if (touch == 'o' || touch == 'O')
                 {
                     return true;
                 }
                 return false;
             }
 
+            bool estMajeur(DateTime date)
+            {
+                yearBirth = date.Year;
+                monthBirth = date.Month;
+                dayBirth = date.Day;
+                now = DateTime.Now;
+                yearNow = now.Year;
+                monthNow = now.Month;
+                dayNow = now.Day;
+
+                ageAn = yearNow - yearBirth;
+
+                if ((monthBirth > monthNow) || (monthBirth == monthNow && dayBirth > dayNow))
+                {
+                    ageAn--;
+                }
+
+                if (ageAn >= 18)
+                {
+                    return true;
+                }
+                return false;
+            }
+
+            int sonAge(DateTime date)
+            {
+                yearBirth = date.Year;
+                monthBirth = date.Month;
+                dayBirth = date.Day;
+                now = DateTime.Now;
+                yearNow = now.Year;
+                monthNow = now.Month;
+                dayNow = now.Day;
+
+                ageAn = yearNow - yearBirth;
+
+                if ((monthBirth > monthNow) || (monthBirth == monthNow && dayBirth > dayNow))
+                {
+                    ageAn--;
+                }
+                return ageAn;
+            }
+
+            int sonAgeMois(DateTime date)
+            {
+                monthBirth = date.Month;
+                dayBirth = date.Day;
+                now = DateTime.Now;
+                monthNow = now.Month;
+                dayNow = now.Day;
+
+                ageMois = monthNow - monthBirth;
+
+                if (monthNow < monthBirth)
+                {
+                    ageMois--;
+                }
+                return ageMois;
+            }
+
             DateTime saisirUneDateDeNaissance(string phrase)
             {
+                now = DateTime.Now;
                 DateTime date;
-                string saisie;
-                bool vrai;
 
                 do
                 {
-                    Console.Write("Saisir une date de naissance : dd-mm-aaaa");
+                    Console.Write("Saisir une date de naissance (dd/mm/aaaa) : ");
 
                     saisie = Console.ReadLine() ?? "";
                     vrai = DateTime.TryParse(saisie, out date);
+                    //vrai = DateTime.TryParseExact(saisie, "dd MM yyyy", 
+                    //CultureInfo.InvariantCulture, DateTimeStyles.None, out //date//);
+
+                    if (!vrai)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("La date fournie n'est pas dans un format valide!");
+                        Console.WriteLine();
+                    }
                 }
-                while (!vrai);
+                while (!vrai || date > now);
 
                 return date;
             }
 
-            DateTime now;
-            DateTime date;
-            string name;
-            bool majeur;
+            users = new List<string[]>();
 
-            now = DateTime.Now;
-            Console.WriteLine(now);
-            Console.WriteLine(now.Year);
-
-            name = saisirUnNomEtUnPrenom("");
-
-            date = saisirUneDateDeNaissance("");
-
-            majeur = calculAge(date);
-
-            if (majeur)
+            do
             {
-                Console.WriteLine(saisirVotreMetier(""));
+                user = new string[3];
+
+                now = DateTime.Now;
+
+                name = saisirUnNomEtUnPrenom("");
+                user[0] = name;
+
+                date = saisirUneDateDeNaissance("");
+
+                dateAffichee = date.ToLongDateString();
+
+                majeur = estMajeur(date);
+                ageAn = sonAge(date);
+                ageMois = sonAgeMois(date);
+
+                if (ageAn == 0)
+                {
+                    user[1] = $"{dateAffichee}  ({ageMois} mois)";
+                }
+                else
+                {
+                    user[1] = $"{dateAffichee}  ({ageAn} ans)";
+                }
+
+                if (majeur)
+                {
+                    metierOuCouleurPreferee = saisirVotreMetier("");
+                    Console.WriteLine();
+                }
+                else
+                {
+                    metierOuCouleurPreferee = saisirVotreCouleurPreferee("");
+                    Console.WriteLine();
+                }
+                user[2] = metierOuCouleurPreferee;
+
+                users.Add(user);
+
+                ajout = ajoutUtilisateur(' ');
+
+                Console.WriteLine();
+                Console.WriteLine();
             }
-            else
+            while (ajout);
+
+            foreach (string[] _user in users)
             {
-                Console.WriteLine(saisirVotreCouleurPreferee(""));
+                iterateur = 0;
+                foreach (string u in _user)
+                {
+                    Console.Write(u);
+
+                    if (iterateur < _user.Length - 1)
+                    {
+                        Console.Write(" - ");
+                        iterateur++;
+                    }
+                }
+                Console.WriteLine();
             }
+            Console.WriteLine();
         }
     }
 }
