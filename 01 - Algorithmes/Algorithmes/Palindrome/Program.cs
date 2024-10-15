@@ -1,19 +1,31 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+int compteur;
+int compteurP;
 
 string entrerUneChaineDeCaractere(string Phrase)
 {
     Console.Write("Entrez une chaine de caractères : ");
-    return Console.ReadLine();
+    return Console.ReadLine() ?? "";
 }
 
-string phrase = entrerUneChaineDeCaractere("");
-int compteur = 0;
-int compteurP = 0;
-
-
-do
+bool tantQue(char touch)
 {
+    Console.Write("Voulez-vous saisir une nouvelle chaine de caractères ? (N/O)");
+    touch = Console.ReadKey(true).KeyChar;
+
+    if (touch == 'o' || touch == 'O')
+    {
+        return true;
+    }
+    return false;
+}
+
+bool chaineVide(string phrase)
+{
+    compteur = 0;
+    compteurP = 0;
+
     foreach (char c in phrase)
     {
         compteur++;
@@ -24,32 +36,69 @@ do
         }
     }
 
-    Console.WriteLine("LA CHAINE EST VIDE");
-    phrase = entrerUneChaineDeCaractere("");
+    if (compteur == compteurP || compteurP == 0)
+    {
+        Console.WriteLine("LA CHAINE EST VIDE");
+        phrase = entrerUneChaineDeCaractere("");
+        return true;
+    }
+    return false;
 }
-while (compteur == compteurP);
 
-if (phrase.Length == 0 || compteur == compteurP)
-{
-    Console.WriteLine("LA CHAINE EST VIDE");
-}
+int controle;
+int index;
+int vrai;
 
-else
+string phrase = entrerUneChaineDeCaractere("");
+controle = 0;
+
+do
 {
     compteur = 0;
-    phrase = entrerUneChaineDeCaractere("");
+    compteurP = 0;
 
     foreach (char c in phrase)
     {
+        compteur++;
 
+        if (c == '.')
+        {
+            compteurP++;
+        }
     }
 
-    if (compteur == 0)
+    if (compteur == compteurP || compteurP == 0)
     {
-        Console.WriteLine($"{Environment.NewLine}La lettre n'est pas présente");
+        Console.WriteLine("LA CHAINE EST VIDE");
+        phrase = entrerUneChaineDeCaractere("");
     }
-    else
+}
+while (compteur == compteurP || compteurP == 0);
+
+
+//foreach (char c in phrase)
+//{
+//    Console.Write(c);
+//}
+
+index = phrase.Length - 1;
+
+for (int i = 0; i < index / 2; i++)
+{
+    if (phrase[i] != phrase[index])
     {
-        Console.WriteLine($"{Environment.NewLine}La lettre est présente {compteur} fois");
+        controle++;
+        index--;
     }
+}
+
+index = phrase.Length - 1;
+
+if (controle == 0 && index > 1)
+{
+    Console.WriteLine("La chaîne de caractères est un palindrome");
+}
+else
+{
+    Console.WriteLine("La chaîne de caractères n'est pas un palindrome");
 }
