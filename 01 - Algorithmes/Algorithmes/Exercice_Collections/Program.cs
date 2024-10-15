@@ -29,185 +29,200 @@
 using System.Globalization;
 using System.Threading.Channels;
 
+
 namespace Exercice_Collections
 {
     internal class Program
     {
+        static int yearBirth;
+        static int monthBirth;
+        static int dayBirth;
+        static int yearNow;
+        static int monthNow;
+        static int dayNow;
+        static int ageAn;
+        static int ageMois;
+        static int iterateur;
+        static DateTime now = default;
+        static DateTime date;
+        static string saisie;
+        static string name;
+        static string metierOuCouleurPreferee;
+        static bool majeur;
+        static bool vrai;
+        static string[] tabDates;
+
+        static string saisirUnNomEtUnPrenom(string phrase)
+        {
+            vrai = false;
+
+            do
+            {
+                Console.Write("Saisir un nom et un prenom : ");
+                saisie = Console.ReadLine() ?? "";
+                if (saisie != "")
+                {
+                    vrai = true;
+                }
+            }
+            while (!vrai);
+
+            return saisie;
+        }
+
+        static string saisirVotreMetier(string phrase)
+        {
+            vrai = false;
+
+            do
+            {
+                Console.Write("Saisir votre métier : ");
+                saisie = Console.ReadLine() ?? "";
+                if (saisie != "")
+                {
+                    vrai = true;
+                }
+            }
+            while (!vrai);
+
+            return saisie;
+        }
+
+        static string saisirVotreCouleurPreferee(string phrase)
+        {
+            vrai = false;
+
+            do
+            {
+                Console.Write("Saisir votre couleur préférée : ");
+                saisie = Console.ReadLine() ?? "";
+                if (saisie != "")
+                {
+                    vrai = true;
+                }
+            }
+            while (!vrai);
+
+            return saisie;
+        }
+
+        static bool ajoutUtilisateur(char touch)
+        {
+            Console.Write("Voulez-vous ajouter une autre personne (N/0) ?");
+
+            touch = Console.ReadKey(true).KeyChar;
+            if (touch == 'o' || touch == 'O')
+            {
+                return true;
+            }
+            return false;
+        }
+
+        static bool estMajeur(DateTime date)
+        {
+            yearBirth = date.Year;
+            monthBirth = date.Month;
+            dayBirth = date.Day;
+            now = DateTime.Now;
+            yearNow = now.Year;
+            monthNow = now.Month;
+            dayNow = now.Day;
+
+            ageAn = yearNow - yearBirth;
+
+            if ((monthBirth > monthNow) || (monthBirth == monthNow && dayBirth > dayNow))
+            {
+                ageAn--;
+            }
+
+            if (ageAn >= 18)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        static int sonAge(DateTime date)
+        {
+            yearBirth = date.Year;
+            monthBirth = date.Month;
+            dayBirth = date.Day;
+            now = DateTime.Now;
+            yearNow = now.Year;
+            monthNow = now.Month;
+            dayNow = now.Day;
+
+            ageAn = yearNow - yearBirth;
+
+            if ((monthBirth > monthNow) || (monthBirth == monthNow && dayBirth > dayNow))
+            {
+                ageAn--;
+            }
+            return ageAn;
+        }
+
+        static int sonAgeMois(DateTime date)
+        {
+            monthBirth = date.Month;
+            dayBirth = date.Day;
+            now = DateTime.Now;
+            monthNow = now.Month;
+            dayNow = now.Day;
+
+            ageMois = monthNow - monthBirth;
+
+            if (monthNow < monthBirth)
+            {
+                ageMois--;
+            }
+            return ageMois;
+        }
+
+        static DateTime saisirUneDateDeNaissance(string phrase)
+        {
+            now = DateTime.Now;
+
+            do
+            {
+                Console.Write("Saisir une date de naissance (dd/mm/aaaa) : ");
+
+                saisie = Console.ReadLine() ?? "";
+                vrai = DateTime.TryParse(saisie, out date);
+                // Pour imposer le format de la date
+                //vrai = DateTime.TryParseExact(saisie, "dd MM yyyy", 
+                //CultureInfo.InvariantCulture, DateTimeStyles.None, out //date//);
+
+                tabDates = saisie.Split(' ', '/', '-');
+
+                if (!vrai || tabDates.Length < 3)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("La date fournie n'est pas dans un format valide!");
+                    Console.WriteLine();
+                }
+            }
+            while (!vrai || date > now || tabDates.Length < 3);
+
+            return date;
+        }
 
         static void Main(string[] args)
         {
-            int yearBirth;
-            int monthBirth;
-            int dayBirth;
-            int yearNow;
-            int monthNow;
-            int dayNow;
-            int ageAn;
-            int ageMois;
-            int iterateur;
+
             DateTime now = default;
             DateTime date;
-            string dateAffichee;
-            string name;
-            string metierOuCouleurPreferee;
-            string[] user;
-            string saisie;
-            List<string[]> users;
+            int ageAn;
+            int ageMois;
             bool majeur;
             bool vrai;
             bool ajout;
+            string dateAffichee;
+            string metierOuCouleurPreferee;
+            string name;
+            string[] user;
+            List<string[]> users;
 
-            string saisirUnNomEtUnPrenom(string phrase)
-            {
-                vrai = false;
 
-                do
-                {
-                    Console.Write("Saisir un nom et un prenom : ");
-                    saisie = Console.ReadLine() ?? "";
-                    if (saisie != "")
-                    {
-                        vrai = true;
-                    }
-                }
-                while (!vrai);
-
-                return saisie;
-            }
-
-            string saisirVotreMetier(string phrase)
-            {
-                vrai = false;
-
-                do
-                {
-                    Console.Write("Saisir votre métier : ");
-                    saisie = Console.ReadLine() ?? "";
-                    if (saisie != "")
-                    {
-                        vrai = true;
-                    }
-                }
-                while (!vrai);
-
-                return saisie;
-            }
-
-            string saisirVotreCouleurPreferee(string phrase)
-            {
-                vrai = false;
-
-                do
-                {
-                    Console.Write("Saisir votre couleur préférée : ");
-                    saisie = Console.ReadLine() ?? "";
-                    if (saisie != "")
-                    {
-                        vrai = true;
-                    }
-                }
-                while (!vrai);
-
-                return saisie;
-            }
-
-            bool ajoutUtilisateur(char touch)
-            {
-                Console.Write("Voulez-vous ajouter une autre personne (N/0) ?");
-
-                touch = Console.ReadKey(true).KeyChar;
-                if (touch == 'o' || touch == 'O')
-                {
-                    return true;
-                }
-                return false;
-            }
-
-            bool estMajeur(DateTime date)
-            {
-                yearBirth = date.Year;
-                monthBirth = date.Month;
-                dayBirth = date.Day;
-                now = DateTime.Now;
-                yearNow = now.Year;
-                monthNow = now.Month;
-                dayNow = now.Day;
-
-                ageAn = yearNow - yearBirth;
-
-                if ((monthBirth > monthNow) || (monthBirth == monthNow && dayBirth > dayNow))
-                {
-                    ageAn--;
-                }
-
-                if (ageAn >= 18)
-                {
-                    return true;
-                }
-                return false;
-            }
-
-            int sonAge(DateTime date)
-            {
-                yearBirth = date.Year;
-                monthBirth = date.Month;
-                dayBirth = date.Day;
-                now = DateTime.Now;
-                yearNow = now.Year;
-                monthNow = now.Month;
-                dayNow = now.Day;
-
-                ageAn = yearNow - yearBirth;
-
-                if ((monthBirth > monthNow) || (monthBirth == monthNow && dayBirth > dayNow))
-                {
-                    ageAn--;
-                }
-                return ageAn;
-            }
-
-            int sonAgeMois(DateTime date)
-            {
-                monthBirth = date.Month;
-                dayBirth = date.Day;
-                now = DateTime.Now;
-                monthNow = now.Month;
-                dayNow = now.Day;
-
-                ageMois = monthNow - monthBirth;
-
-                if (monthNow < monthBirth)
-                {
-                    ageMois--;
-                }
-                return ageMois;
-            }
-
-            DateTime saisirUneDateDeNaissance(string phrase)
-            {
-                now = DateTime.Now;
-                DateTime date;
-
-                do
-                {
-                    Console.Write("Saisir une date de naissance (dd/mm/aaaa) : ");
-
-                    saisie = Console.ReadLine() ?? "";
-                    vrai = DateTime.TryParse(saisie, out date);
-                    //vrai = DateTime.TryParseExact(saisie, "dd MM yyyy", 
-                    //CultureInfo.InvariantCulture, DateTimeStyles.None, out //date//);
-
-                    if (!vrai)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("La date fournie n'est pas dans un format valide!");
-                        Console.WriteLine();
-                    }
-                }
-                while (!vrai || date > now);
-
-                return date;
-            }
 
             users = new List<string[]>();
 
