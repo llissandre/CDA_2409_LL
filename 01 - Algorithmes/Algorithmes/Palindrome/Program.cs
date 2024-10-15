@@ -3,7 +3,7 @@
 int compteur;
 int compteurP;
 
-string entrerUneChaineDeCaractere(string Phrase)
+string entrerUneChaineDeCaractere(string phrase)
 {
     Console.Write("Entrez une chaine de caractères : ");
     return Console.ReadLine() ?? "";
@@ -21,12 +21,12 @@ bool tantQue(char touch)
     return false;
 }
 
-bool chaineVide(string phrase)
+bool chaineVide(ref string chaineDeCaracteres)
 {
     compteur = 0;
     compteurP = 0;
 
-    foreach (char c in phrase)
+    foreach (char c in chaineDeCaracteres)
     {
         compteur++;
 
@@ -39,66 +39,49 @@ bool chaineVide(string phrase)
     if (compteur == compteurP || compteurP == 0)
     {
         Console.WriteLine("LA CHAINE EST VIDE");
-        phrase = entrerUneChaineDeCaractere("");
+        chaineDeCaracteres = entrerUneChaineDeCaractere("");
         return true;
     }
     return false;
 }
 
+string chaineDeCaracteres;
 int controle;
 int index;
-int vrai;
-
-string phrase = entrerUneChaineDeCaractere("");
-controle = 0;
+bool controleChaine;
 
 do
 {
-    compteur = 0;
-    compteurP = 0;
+    chaineDeCaracteres = entrerUneChaineDeCaractere("");
+    controle = 0;
 
-    foreach (char c in phrase)
+    do
     {
-        compteur++;
+        controleChaine = chaineVide(ref chaineDeCaracteres);
+    }
+    while (controleChaine);
 
-        if (c == '.')
+    index = chaineDeCaracteres.Length - 2;
+
+    for (int i = 0; i < index / 2; i++)
+    {
+        if (chaineDeCaracteres[i] != chaineDeCaracteres[index])
         {
-            compteurP++;
+            controle++;
+            index--;
         }
     }
 
-    if (compteur == compteurP || compteurP == 0)
+    index = chaineDeCaracteres.Length - 2;
+
+    if (controle == 0 && index >= 1)
     {
-        Console.WriteLine("LA CHAINE EST VIDE");
-        phrase = entrerUneChaineDeCaractere("");
+        Console.WriteLine("La chaîne de caractères est un palindrome");
     }
-}
-while (compteur == compteurP || compteurP == 0);
-
-
-//foreach (char c in phrase)
-//{
-//    Console.Write(c);
-//}
-
-index = phrase.Length - 1;
-
-for (int i = 0; i < index / 2; i++)
-{
-    if (phrase[i] != phrase[index])
+    else
     {
-        controle++;
-        index--;
+        Console.WriteLine("La chaîne de caractères n'est pas un palindrome");
     }
-}
 
-index = phrase.Length - 1;
-
-if (controle == 0 && index > 1)
-{
-    Console.WriteLine("La chaîne de caractères est un palindrome");
 }
-else
-{
-    Console.WriteLine("La chaîne de caractères n'est pas un palindrome");
-}
+while (Console.ReadKey().Key != ConsoleKey.Escape);

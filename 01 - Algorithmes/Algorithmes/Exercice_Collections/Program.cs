@@ -70,7 +70,7 @@ namespace Exercice_Collections
             return saisie;
         }
 
-        static string saisirVotreMetier(string phrase)
+        static string saisirLeMetier(string phrase)
         {
             vrai = false;
 
@@ -88,7 +88,7 @@ namespace Exercice_Collections
             return saisie;
         }
 
-        static string saisirVotreCouleurPreferee(string phrase)
+        static string saisirLaCouleurPreferee(string phrase)
         {
             vrai = false;
 
@@ -106,7 +106,7 @@ namespace Exercice_Collections
             return saisie;
         }
 
-        static bool ajoutUtilisateur(char touch)
+        static bool ajoutUnAutreUtilisateur(char touch)
         {
             Console.Write("Voulez-vous ajouter une autre personne (N/0) ?");
 
@@ -209,22 +209,19 @@ namespace Exercice_Collections
         static void Main(string[] args)
         {
 
-            DateTime now = default;
-            DateTime date;
             int ageAn;
             int ageMois;
-            bool majeur;
-            bool vrai;
-            bool ajout;
+            bool continuer;
+            DateTime formatDate;
             string dateAffichee;
+            bool majeur;
             string metierOuCouleurPreferee;
             string name;
+            DateTime now = new DateTime();
             string[] user;
-            List<string[]> users;
+            List<string[]> users = new();
 
-
-
-            users = new List<string[]>();
+            //users = new List<string[]>();
 
             do
             {
@@ -235,13 +232,13 @@ namespace Exercice_Collections
                 name = saisirUnNomEtUnPrenom("");
                 user[0] = name;
 
-                date = saisirUneDateDeNaissance("");
+                formatDate = saisirUneDateDeNaissance("");
 
-                dateAffichee = date.ToLongDateString();
+                dateAffichee = formatDate.ToLongDateString();
 
-                majeur = estMajeur(date);
-                ageAn = sonAge(date);
-                ageMois = sonAgeMois(date);
+                majeur = estMajeur(formatDate);
+                ageAn = sonAge(formatDate);
+                ageMois = sonAgeMois(formatDate);
 
                 if (ageAn == 0)
                 {
@@ -254,24 +251,24 @@ namespace Exercice_Collections
 
                 if (majeur)
                 {
-                    metierOuCouleurPreferee = saisirVotreMetier("");
+                    metierOuCouleurPreferee = saisirLeMetier("");
                     Console.WriteLine();
                 }
                 else
                 {
-                    metierOuCouleurPreferee = saisirVotreCouleurPreferee("");
+                    metierOuCouleurPreferee = saisirLaCouleurPreferee("");
                     Console.WriteLine();
                 }
                 user[2] = metierOuCouleurPreferee;
 
                 users.Add(user);
 
-                ajout = ajoutUtilisateur(' ');
+                continuer = ajoutUnAutreUtilisateur(' ');
 
                 Console.WriteLine();
                 Console.WriteLine();
             }
-            while (ajout);
+            while (continuer);
 
             foreach (string[] _user in users)
             {
