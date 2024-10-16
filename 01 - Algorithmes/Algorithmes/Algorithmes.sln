@@ -47,6 +47,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tableau dynamique faiblemen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesFruitsEtLegumes", "lesFruitsEtLegumes\lesFruitsEtLegumes.csproj", "{C75BBB5A-6169-4D1D-8E26-70E3528D319E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jeuDu02", "jeuDu02\jeuDu02.csproj", "{14D785C6-051E-4810-954E-AD6D27D680EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{C75BBB5A-6169-4D1D-8E26-70E3528D319E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C75BBB5A-6169-4D1D-8E26-70E3528D319E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C75BBB5A-6169-4D1D-8E26-70E3528D319E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14D785C6-051E-4810-954E-AD6D27D680EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14D785C6-051E-4810-954E-AD6D27D680EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14D785C6-051E-4810-954E-AD6D27D680EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14D785C6-051E-4810-954E-AD6D27D680EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
