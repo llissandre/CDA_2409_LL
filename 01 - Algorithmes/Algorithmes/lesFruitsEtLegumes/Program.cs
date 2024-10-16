@@ -62,7 +62,7 @@
                 monTableauDeFruitsEtLegumes.Add(monTableauD1FruitOuD1Legume);
                 Console.WriteLine();
             }
-            while (Console.ReadKey().Key != ConsoleKey.Escape);
+            while (Console.ReadKey(true).Key == ConsoleKey.O);
 
             foreach (string[] _monTableauD1FruitOuD1Legume in monTableauDeFruitsEtLegumes)
             {
@@ -71,10 +71,11 @@
 
             iterateur = 0;
 
-            foreach (string[] _monTableauD1FruitOuD1Legume in monTableauDeFruitsEtLegumes)
+            foreach (string[] fruitsOuLegumes in monTableauDeFruitsEtLegumes)
             {
-                if
-                    Console.WriteLine($"Légume le moins cher au kilo : {_monTableauD1FruitOuD1Legume[iterateur]}.");
+                prix = (double.Parse)fruitsOuLegumes[iterateur + 1];
+                //ConsolelesFruitsEtLegumes.WriteLine($"Légume le moins cher au kilo : {_monTableauD1FruitOuD1Legume[iterateur]}.");
             }
         }
     }
+}

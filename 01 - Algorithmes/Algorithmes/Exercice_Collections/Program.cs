@@ -220,7 +220,6 @@ namespace Exercice_Collections
             DateTime now = new DateTime();
             string[] user;
             List<string[]> users = new();
-
             //users = new List<string[]>();
 
             do
@@ -242,11 +241,11 @@ namespace Exercice_Collections
 
                 if (ageAn == 0)
                 {
-                    user[1] = $"{dateAffichee}  ({ageMois} mois)";
+                    user[1] = $"{dateAffichee}  ( {ageMois} mois )";
                 }
                 else
                 {
-                    user[1] = $"{dateAffichee}  ({ageAn} ans)";
+                    user[1] = $"{dateAffichee}  ( {ageAn} ans )";
                 }
 
                 if (majeur)
