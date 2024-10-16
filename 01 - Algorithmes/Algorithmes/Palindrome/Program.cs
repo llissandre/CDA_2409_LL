@@ -9,18 +9,6 @@ string entrerUneChaineDeCaractere(string phrase)
     return Console.ReadLine() ?? "";
 }
 
-bool tantQue(char touch)
-{
-    Console.Write("Voulez-vous saisir une nouvelle chaine de caractères ? (N/O)");
-    touch = Console.ReadKey(true).KeyChar;
-
-    if (touch == 'o' || touch == 'O')
-    {
-        return true;
-    }
-    return false;
-}
-
 bool chaineVide(ref string chaineDeCaracteres)
 {
     compteur = 0;
