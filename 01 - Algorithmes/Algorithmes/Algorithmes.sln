@@ -45,8 +45,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collections.Listes", "Colle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tableau dynamique faiblement typé", "Tableau dynamique faiblement typé\Tableau dynamique faiblement typé.csproj", "{8B047272-3F56-4A24-B6BF-96E92F1FDE4B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercice_Collections", "Exercice_Collections\Exercice_Collections.csproj", "{73F5F91F-BB6C-43B6-B380-DB6AFBD0DC56}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesFruitsEtLegumes", "lesFruitsEtLegumes\lesFruitsEtLegumes.csproj", "{C75BBB5A-6169-4D1D-8E26-70E3528D319E}"
 EndProject
 Global
@@ -139,10 +137,6 @@ Global
 		{8B047272-3F56-4A24-B6BF-96E92F1FDE4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B047272-3F56-4A24-B6BF-96E92F1FDE4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B047272-3F56-4A24-B6BF-96E92F1FDE4B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{73F5F91F-BB6C-43B6-B380-DB6AFBD0DC56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73F5F91F-BB6C-43B6-B380-DB6AFBD0DC56}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73F5F91F-BB6C-43B6-B380-DB6AFBD0DC56}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73F5F91F-BB6C-43B6-B380-DB6AFBD0DC56}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C75BBB5A-6169-4D1D-8E26-70E3528D319E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C75BBB5A-6169-4D1D-8E26-70E3528D319E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C75BBB5A-6169-4D1D-8E26-70E3528D319E}.Release|Any CPU.ActiveCfg = Release|Any CPU

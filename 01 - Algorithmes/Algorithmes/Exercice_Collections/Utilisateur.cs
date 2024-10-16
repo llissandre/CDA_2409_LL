@@ -7,41 +7,49 @@ namespace Exercice_Collections
 {
     public class Utilisateur
     {
-        private Guid id;
+        // variables
+        //private Guid id;
         private string nom;
         private string prenom;
         private DateTime dateDeNaissance;
         private string? metier;
-        private string? couleur;
+        private string? couleurPreferee;
 
         public Utilisateur()
         {
 
         }
 
-        public Utilisateur(Guid id, string nom, string prenom, DateTime dateDeNaissance, string? metier, string? couleur)
+        public Utilisateur(string _nomPrenom, string _dateDeNaissance)
         {
-            this.id = id;
-            this.nom = nom;
-            this.prenom = prenom;
-            this.dateDeNaissance = dateDeNaissance;
-            this.metier = metier;
-            this.couleur = couleur;
+            string[] nomPrenomSepare = _nomPrenom.Split(' ');
+            this.nom = nomPrenomSepare[0];
+            this.prenom = nomPrenomSepare[1];
+
+            if (!DateTime.TryParse(_dateDeNaissance, out dateDeNaissance))
+            {
+                throw new ArgumentException("Date de naissance invalide !");
+            }
+
+            if (dateDeNaissance > DateTime.Now)
+            {
+                throw new ArgumentException("Date de naissance invalide !");
+            }
         }
 
-        public int GetAge()
+        public void SetMetier(string _valeur)
         {
-            return 0;
+            this.metier = _valeur;
         }
 
-        public bool IsMajeur()
+        public void SetCouleurPreferee(string _valeur)
         {
-            return true;
+            this.couleurPreferee = _valeur;
         }
 
-        public string GetCouleurOuMetier()
+        public string GetNomComplet()
         {
-            return "";
+            return nom + " " + prenom;
         }
 
         public string GetDateDeNaissance()
@@ -49,9 +57,23 @@ namespace Exercice_Collections
             return "";
         }
 
-        public string GetNomComplet()
+        public int GetAge()
         {
-            return prenom + " " + nom;
+            TimeSpan intervalle = DateTime.Now - dateDeNaissance;
+            return (int)(intervalle.Days / 365.25);
+        }
+
+        public bool IsMajeur()
+        {
+            //int age = this.GetAge();
+            //return age > 18;
+
+            return this.GetAge() > 18;
+        }
+
+        public string? GetCouleurOuMetier()
+        {
+            return this.IsMajeur() ? this.metier : this.couleurPreferee;
         }
     }
 }

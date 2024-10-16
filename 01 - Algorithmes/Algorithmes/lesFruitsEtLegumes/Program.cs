@@ -42,11 +42,12 @@
         static void Main(string[] args)
         {
             string fruitOuLegume;
-            int iterateur;
+            int iterateur1;
+            int iterateur2;
             string[] monTableauD1FruitOuD1Legume;
             double prix;
 
-            iterateur = 0;
+            iterateur1 = 0;
             List<string[]> monTableauDeFruitsEtLegumes = new(); ;
 
 
@@ -66,14 +67,14 @@
 
             foreach (string[] _monTableauD1FruitOuD1Legume in monTableauDeFruitsEtLegumes)
             {
-                Console.WriteLine($"1 kilogramme de {_monTableauD1FruitOuD1Legume[iterateur]} coute {_monTableauD1FruitOuD1Legume[iterateur + 1]} euros.");
+                Console.WriteLine($"1 kilogramme de {_monTableauD1FruitOuD1Legume[iterateur1]} coute {_monTableauD1FruitOuD1Legume[iterateur1 + 1]} euros.");
             }
 
-            iterateur = 0;
+            iterateur1 = 0;
 
             foreach (string[] fruitsOuLegumes in monTableauDeFruitsEtLegumes)
             {
-                prix = (double.Parse)fruitsOuLegumes[iterateur + 1];
+                prix = double.Parse(fruitsOuLegumes[iterateur1 + 1]);
                 //ConsolelesFruitsEtLegumes.WriteLine($"Légume le moins cher au kilo : {_monTableauD1FruitOuD1Legume[iterateur]}.");
             }
         }

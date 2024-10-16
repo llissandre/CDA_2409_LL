@@ -28,6 +28,7 @@
 
 using System.Globalization;
 using System.Threading.Channels;
+using Users.ConsoleApp.Objects;
 
 
 namespace Exercice_Collections
@@ -217,36 +218,31 @@ namespace Exercice_Collections
             bool majeur;
             string metierOuCouleurPreferee;
             string name;
-            DateTime now = new DateTime();
-            string[] user;
-            List<string[]> users = new();
-
-            //users = new List<string[]>();
 
             do
             {
-                user = new string[3];
-
                 now = DateTime.Now;
 
                 name = saisirUnNomEtUnPrenom("");
-                user[0] = name;
 
                 formatDate = saisirUneDateDeNaissance("");
 
                 dateAffichee = formatDate.ToLongDateString();
 
                 majeur = estMajeur(formatDate);
+
                 ageAn = sonAge(formatDate);
+
                 ageMois = sonAgeMois(formatDate);
+
 
                 if (ageAn == 0)
                 {
-                    user[1] = $"{dateAffichee}  ({ageMois} mois)";
+                    user[1] = $"{dateAffichee}  ( {ageMois} mois )";
                 }
                 else
                 {
-                    user[1] = $"{dateAffichee}  ({ageAn} ans)";
+                    user[1] = $"{dateAffichee}  ( {ageAn} ans )";
                 }
 
                 if (majeur)
@@ -259,9 +255,19 @@ namespace Exercice_Collections
                     metierOuCouleurPreferee = saisirLaCouleurPreferee("");
                     Console.WriteLine();
                 }
-                user[2] = metierOuCouleurPreferee;
 
-                users.Add(user);
+                //Utilisateur user = new Utilisateur();
+                //Utilisateur user = new();
+
+                try
+                {
+                    Utilisateur user = new(name, formatDate);
+                }
+                catch (ArgumentException)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
 
                 continuer = ajoutUnAutreUtilisateur(' ');
 
