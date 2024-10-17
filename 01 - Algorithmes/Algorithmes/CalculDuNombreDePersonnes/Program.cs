@@ -32,11 +32,15 @@
 
         static void Main(string[] args)
         {
+            int moinsDe20Ans;
             string[] monTableauDAges = new string[20];
+            int plusDe20Ans;
 
+            //iterator = 0;
+            moinsDe20Ans = 0;
             monTableauDAges = calculLeNbDeJeunes("");
+            plusDe20Ans = 0;
 
-            iterator = 0;
 
             foreach (string monTableauDAge in monTableauDAges)
             {
@@ -44,13 +48,33 @@
 
                 if (age < 20)
                 {
-                    iterator++;
+                    moinsDe20Ans++;
+                }
+                else
+                {
+                    plusDe20Ans++;
                 }
             }
 
-            Console.WriteLine();
-            Console.Write($"Nombre de jeunes : {iterator}.");
-            Console.WriteLine();
+            if (moinsDe20Ans == monTableauDAges.Length)
+            {
+                Console.WriteLine();
+                Console.WriteLine("TOUTES LES PERSONNES ONT MOINS DE 20 ANS !");
+            }
+            else if (plusDe20Ans == monTableauDAges.Length)
+            {
+                Console.WriteLine();
+                Console.WriteLine("TOUTES LES PERSONNES ONT PLUS DE 20 ANS !");
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine($"Il y a {moinsDe20Ans} personnes de moins de 20 ans et {plusDe20Ans} personnes de plus de 20 ans.");
+            }
+
+            //Console.WriteLine();
+            //Console.Write($"Nombre de jeunes : {iterator}.");
+            //Console.WriteLine();
         }
     }
 }
