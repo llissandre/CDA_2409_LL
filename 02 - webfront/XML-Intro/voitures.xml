@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Cars>
+    <Car id="342">
+        <CarName>Mazda RX-7 GS</CarName>
+        <CarModel>1980</CarModel>
+        <CarCylinders>3</CarCylinders>
+        <CarHorsepower>100</CarHorsepower>
+        <CarWeight>2420</CarWeight>
+        <CarOrigin>JP</CarOrigin>
+    </Car>
+    <Car id="251">
+        <CarName>Mazda RX-4</CarName>
+        <CarModel>1977</CarModel>
+        <CarCylinders>3</CarCylinders>
+        <CarHorsepower>100</CarHorsepower>
+        <CarWeight>2720</CarWeight>
+        <CarOrigin>JP</CarOrigin>
+    </Car>
+    <Car id="119">
+        <CarName>Mazda RX3</CarName>
+        <CarModel>1973</CarModel>
+        <CarCylinders>3</CarCylinders>
+        <CarHorsepower>90</CarHorsepower>
+        <CarWeight>2124</CarWeight>
+        <CarOrigin>JP</CarOrigin>
+    </Car>
+    <Car id="79">
+        <CarName>Mazda RX2 Coupe</CarName>
+        <CarModel>1972</CarModel>
+        <CarCylinders>3</CarCylinders>
+        <CarHorsepower>97</CarHorsepower>
+        <CarWeight>2330</CarWeight>
+        <CarOrigin>JP</CarOrigin>
+    </Car>
+    <Car id="388">
+        <CarName>Mercury Lynx I</CarName>
+        <CarModel>1982</CarModel>
+        <CarCylinders>4</CarCylinders>
+        <CarHorsepower>70</CarHorsepower>
+        <CarWeight>2125</CarWeight>
+        <CarOrigin>US</CarOrigin>
+    </Car>
+    <Car id="387">
+        <CarName>Plymouth Horizon Miser</CarName>
+        <CarModel>1982</CarModel>
+        <CarCylinders>4</CarCylinders>
+        <CarHorsepower>63</CarHorsepower>
+        <CarWeight>2125</CarWeight>
+        <CarOrigin>US</CarOrigin>
+    </Car>
+    <Car id="404">
+        <CarName>Dodge Rampage</CarName>
+        <CarModel>1984</CarModel>
+        <CarCylinders>4</CarCylinders>
+        <CarHorsepower>84</CarHorsepower>
+        <CarWeight>2295420</CarWeight>
+        <CarOrigin>US</CarOrigin>
+    </Car>
+</Cars>
