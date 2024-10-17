@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BankAccounts>
+    <Account>FR76 10001 10001 10000000001 11</Account>
+    <Bank>Banque Populaire</Bank>
+    <City>Paris</City>
+    <Owner>John Doe</Owner>
+    <Balance>36812.47</Balance>
+    <Account>FR76 30003 30001 30000000012 33</Account>
+    <Bank>Crédit Mutuel</Bank>
+    <City>Paris</City>
+    <Owner>Mark Zouk</Owner>
+    <Balance>5295.59</Balance>
+    <Account>FR76 30003 30005 30000000001 13</Account>
+    <Bank>Crédit Mutuel</Bank>
+    <City>Mulhouse</City>
+    <Owner>Joseph Picard</Owner>
+    <Balance>1663.14</Balance>
+    <Account>FR76 30003 30005 30000000002 23</Account>
+    <Bank>Crédit Mutuel</Bank>
+    <City>Mulhouse</City>
+    <Owner>Bruce Milice</Owner>
+    <Balance>1559.3</Balance>
+    <Account>FR76 30003 30005 30000000003 33</Account>
+    <Bank>Crédit Mutuel</Bank>
+    <City>Mulhouse</City>
+    <Owner>Steeve Bobs</Owner>
+    <Balance>0.66</Balance>
+    <Account>FR76 30003 30005 30000000004 43</Account>
+    <Bank>Crédit Mutuel</Bank>
+    <City>Mulhouse</City>
+    <Owner>Bill Bête</Owner>
+    <Balance>1500.44</Balance>
+    <Account>FR76 30003 30005 30000000005 53</Account>
+    <Bank>Crédit Mutuel</Bank>
+    <City>Mulhouse</City>
+    <Owner>Thierry Riton</Owner>
+    <Balance>171.07</Balance>
+    <Account>FR76 30003 30005 30000000006 53</Account>
+    <Bank>Crédit Mutuel</Bank>
+    <City>Mulhouse</City>
+    <Owner>Aziz Amheb</Owner>
+    <Balance>1113.56</Balance>
+    <Account>FR76 30003 30005 30000000007 73</Account>
+    <Bank>Crédit Mutuel</Bank>
+    <City>Mulhouse</City>
+    <Owner>Christiana Love</Owner>
+    <Balance>1152.55</Balance>
+    <Account>FR76 30003 30005 30000000008 83</Account>
+    <Bank>Crédit Mutuel</Bank>
+    <City>Mulhouse</City>
+    <Owner>Michel Barbier</Owner>
+    <Balance>1036.95</Balance>
+    <Account>FR76 30003 30005 30000000009 93</Account>
+    <Bank>Crédit Mutuel</Bank>
+    <City>Mulhouse</City>
+    <Owner>Béatrice Balle</Owner>
+    <Balance>1752.41</Balance>
+    <Account>FR76 30003 30005 30000000010 13</Account>
+    <Bank>Crédit Mutuel</Bank>
+    <City>Mulhouse</City>
+    <Owner>Bob Dilag</Owner>
+    <Balance>16536.92</Balance>
+    <Account>FR76 30003 30005 30000000011 23</Account>
+    <Bank>Crédit Mutuel</Bank>
+    <City>Mulhouse</City>
+    <Owner>Mike Lowriz</Owner>
+    <Balance>4910.02</Balance>
+    <Account>FR76 30003 30005 30000000001 15</Account>
+    <Bank>Crédit Mutuel</Bank>
+    <City>Reims</City>
+    <Owner>Maria Gold</Owner>
+    <Balance>22598.98</Balance>
+    <Account>FR76 30003 30005 30000000002 25</Account>
+    <Bank>Crédit Mutuel</Bank>
+    <City>Lille</City>
+    <Owner>Léa Grim</Owner>
+    <Balance>3123.17</Balance>
+</BankAccounts>
