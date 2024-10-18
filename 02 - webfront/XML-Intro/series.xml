@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<streamingPlatform id="Netflix">
-    <series>
-        <serie id="1">
-            <name>Breaking Bad</name>
-            <director>Vince Gilligan</director>
-            <releaseDate>2008</releaseDate>
-            <numbersOfSeasons>5</numbersOfSeasons>
-        </serie>
-        <serie id="2">
-            <name>Game of Thrones</name>
-            <director>David Benioff</director>
-            <releaseDate>2011</releaseDate>
-            <numbersOfSeasons>8</numbersOfSeasons>
-        </serie>
-        <serie id="3">
-            <name>Notre planete</name>
-            <director>Alastair Fothergill</director>
-            <releaseDate>2019</releaseDate>
-            <numbersOfSeasons>2</numbersOfSeasons>
-        </serie>
-        <serie id="4">
-            <name>Chernobyl</name>
-            <director>Craig Mazin</director>
-            <releaseDate>2019</releaseDate>
-            <numbersOfSeasons>1</numbersOfSeasons>
-        </serie>
-        <serie id="5">
-            <name>Arcane</name>
-            <director>Fortiche Production</director>
-            <releaseDate>2021</releaseDate>
-            <numbersOfSeasons>1</numbersOfSeasons>
-        </serie>
-        <serie id="6">
-            <name>Peaky Blinders</name>
-            <director>Steven Knight</director>
-            <releaseDate>2013</releaseDate>
-            <numbersOfSeasons>6</numbersOfSeasons>
-        </serie>
-    </series>
+<StreamingPlatform id="Netflix">
+    <Series>
+        <Serie id="1">
+            <Name>Breaking Bad</Name>
+            <Director>Vince Gilligan</Director>
+            <ReleaseDate>2008</ReleaseDate>
+            <NumbersOfSeasons>5</NumbersOfSeasons>
+        </Serie>
+        <Serie id="2">
+            <Name>Game of Thrones</Name>
+            <Director>David Benioff</Director>
+            <ReleaseDate>2011</ReleaseDate>
+            <NumbersOfSeasons>8</NumbersOfSeasons>
+        </Serie>
+        <Serie id="3">
+            <Name>Notre planete</Name>
+            <Director>Alastair Fothergill</Director>
+            <ReleaseDate>2019</ReleaseDate>
+            <NumbersOfSeasons>2</NumbersOfSeasons>
+        </Serie>
+        <Serie id="4">
+            <Name>Chernobyl</Name>
+            <Director>Craig Mazin</Director>
+            <ReleaseDate>2019</ReleaseDate>
+            <NumbersOfSeasons>1</NumbersOfSeasons>
+        </Serie>
+        <Serie id="5">
+            <Name>Arcane</Name>
+            <Director>Fortiche Production</Director>
+            <ReleaseDate>2021</ReleaseDate>
+            <NumbersOfSeasons>1</NumbersOfSeasons>
+        </Serie>
+        <Serie id="6">
+            <Name>Peaky Blinders</Name>
+            <Director>Steven Knight</Director>
+            <ReleaseDate>2013</ReleaseDate>
+            <NumbersOfSeasons>6</NumbersOfSeasons>
+        </Serie>
+    </Series>
 </streamingPlatform>

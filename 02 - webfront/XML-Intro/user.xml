@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<users>
-    <user id="1">
-        <username>MDEV1</username>
-        <lastname>DEV</lastname>
-        <firstname>Mike</firstname>
-        <birthday format="yyyy-mm-dd">1941-09-11</birthday>
-    </user>
-    <user id="2">
-        <username>MDEV2</username>
-        <lastname>DEV2</lastname>
-        <firstname>Mike2</firstname>
-        <birthday format="yyyy-mm-dd">1980-01-01</birthday>
-    </user>
-    <user id="3">
-        <username>MDEV3</username>
-        <lastname>DEV3</lastname>
-        <firstname>Mike3</firstname>
-        <birthday format="yyyy-mm-dd">1902-04-03</birthday>
-    </user>
-    <user id="4">
-        <username>MDEV4</username>
-        <lastname>DEV4</lastname>
-        <firstname>Mike4</firstname>
-        <birthday format="yyyy-mm-dd">1841-12-21</birthday>
-    </user>
-    <user id="5">
-        <username><![CDATA[MDEV&5]]></username>
-        <lastname>DEV5</lastname>
-        <firstname>Mike5</firstname>
-        <birthday format="yyyy-mm-dd">1789-02-31</birthday>
-    </user>
-</users>
+<Users>
+    <User id="1">
+        <Username>MDEV1</Username>
+        <Lastname>DEV</Lastname>
+        <Firstname>Mike</Firstname>
+        <Birthday format="yyyy-mm-dd">1941-09-11</Birthday>
+    </User>
+    <User id="2">
+        <Username>MDEV2</Username>
+        <Lastname>DEV2</Lastname>
+        <Firstname>Mike2</Firstname>
+        <Birthday format="yyyy-mm-dd">1980-01-01</Birthday>
+    </User>
+    <User id="3">
+        <Username>MDEV3</Username>
+        <Lastname>DEV3</Lastname>
+        <Firstname>Mike3</Firstname>
+        <Birthday format="yyyy-mm-dd">1902-04-03</Birthday>
+    </User>
+    <User id="4">
+        <Username>MDEV4</Username>
+        <Lastname>DEV4</Lastname>
+        <Firstname>Mike4</Firstname>
+        <Birthday format="yyyy-mm-dd">1841-12-21</Birthday>
+    </User>
+    <User id="5">
+        <Username><![CDATA[MDEV&5]]></Username>
+        <Lastname>DEV5</Lastname>
+        <Firstname>Mike5</Firstname>
+        <Birthday format="yyyy-mm-dd">1789-02-31</Birthday>
+    </User>
+</Users>
