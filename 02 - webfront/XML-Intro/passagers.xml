@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trajet>
+    <passagers>
+        <passager id="1">
+            <username>Passager1</username>
+            <age>18</age>
+            <niveauDExperience>Débutant</niveauDExperience>
+            <note>4/5</note>
+        </passager>
+        <passager id="2">
+            <username>Passager2</username>
+            <age>19</age>
+            <niveauDExperience>Confirmé</niveauDExperience>
+            <note>4.8/5</note>
+        </passager>
+        <passager id="3">
+            <username>Passager3</username>
+            <age>20</age>
+            <niveauDExperience>Ambassadeur</niveauDExperience>
+            <note>5/5</note>
+        </passager>
+    </passagers>
+</trajet>
