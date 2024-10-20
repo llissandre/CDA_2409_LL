@@ -500,44 +500,4 @@
         <CodeAlpha2>SI</CodeAlpha2>
         <CodeAlpha3>SVN</CodeAlpha3>
     </Pays>
-    <Pays Code="724">
-        <NomDuPays>Espagne</NomDuPays>
-        <AnneeAdhesion>1986</AnneeAdhesion>
-        <NombreHabitants>47.33 millions</NombreHabitants>
-        <LangueOfficielle>Castillan</LangueOfficielle>
-        <Capitale></Capitale>
-        <RegimePolitique></RegimePolitique>
-        <ChefEtat></ChefEtat>
-        <ChefGouvernement></ChefGouvernement>
-        <Superficie></Superficie>
-        <FuseauHoraire></FuseauHoraire>
-        <Densite></Densite>
-        <PointCulminant></PointCulminant>
-        <Monnaie></Monnaie>
-        <IndiceTelephonique></IndiceTelephonique>
-        <Hymne></Hymne>
-        <DateFeteNationale></DateFeteNationale>
-        <CodeAlpha2>ES</CodeAlpha2>
-        <CodeAlpha3>ESP</CodeAlpha3>
-    </Pays>
-    <Pays Code="752">
-        <NomDuPays></NomDuPays>
-        <AnneeAdhesion></AnneeAdhesion>
-        <NombreHabitants></NombreHabitants>
-        <LangueOfficielle></LangueOfficielle>
-        <Capitale></Capitale>
-        <RegimePolitique></RegimePolitique>
-        <ChefEtat></ChefEtat>
-        <ChefGouvernement></ChefGouvernement>
-        <Superficie></Superficie>
-        <FuseauHoraire></FuseauHoraire>
-        <Densite></Densite>
-        <PointCulminant></PointCulminant>
-        <Monnaie></Monnaie>
-        <IndiceTelephonique></IndiceTelephonique>
-        <Hymne></Hymne>
-        <DateFeteNationale></DateFeteNationale>
-        <CodeAlpha2>SE</CodeAlpha2>
-        <CodeAlpha3>SWE</CodeAlpha3>
-    </Pays>
-</PaysUnionEuropeenne>
+   </PaysUnionEuropeenne>
