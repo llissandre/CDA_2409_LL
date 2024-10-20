@@ -1,6 +1,6 @@
-teDepart<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Vols>
-    <Vol_id="1">
+    <Vol id="1">
         <AeroportDepart>Orly</AeroportDepart>
         <AeroportArrivee>Boston</AeroportArrivee>
         <DateDepart>2022-10-22 15:30:00</DateDepart>
@@ -12,7 +12,7 @@ teDepart<?xml version="1.0" encoding="utf-8"?>
         <RefAvion>A300</RefAvion>
         <Capacite>290</Capacite>
     </Vol>
-    <Vol_id="2">
+    <Vol id="2">
         <AeroportDepart>Orly</AeroportDepart>
         <AeroportArrivee>New York</AeroportArrivee>
         <DateDepart>2022-10-22 19:00:00</DateDepart>
@@ -24,7 +24,7 @@ teDepart<?xml version="1.0" encoding="utf-8"?>
         <RefAvion>A350</RefAvion>
         <Capacite>440</Capacite>
     </Vol>
-    <Vol_id="3">
+    <Vol id="3">
         <AeroportDepart>Orly</AeroportDepart>
         <AeroportArrivee>Washington</AeroportArrivee>
         <DateDepart>2022-10-23 09:15:00</DateDepart>
@@ -36,7 +36,7 @@ teDepart<?xml version="1.0" encoding="utf-8"?>
         <RefAvion>A320</RefAvion>
         <Capacite>180</Capacite>
     </Vol>
-    <Vol_id="4">
+    <Vol id="4">
         <AeroportDepart>Orly</AeroportDepart>
         <AeroportArrivee>Paris</AeroportArrivee>
         <DateDepart>2022-10-23 13:30:00</DateDepart>
