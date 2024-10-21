@@ -14,25 +14,39 @@
         <h1>Formulaire d'inscription</h1>
 
         <h2>Votre compte configuré en 2 minutes</h2>
-<form action="">
-    <label for="lastname">Nom :</label>
-    <input type="text" id="lastname">
-    <br>
-    <label for="firstname">Prénom :</label>
-    <input type="text" id="firstname">
-    <br>
-    <label for="birthday">Date de naissance : </label>
-    <input type="date" name="" id="birthday">
-</form>
 
-<form action="">
-    <label for="mail">Adresse Email :</label>
-  <input type="email" name="" id="mail">
-    <br>
-    <label for="phone">Prénom :</label>
-    <input type="text" name="" id="phone">
-    <br>
-</form>
+
+        <form action="./formulaire.html" method="get">
+            <fieldset>
+                <legend>État civil</legend>
+                <label for="lastname">Nom :</label>
+                <input type="text" id="lastname" name="ln">
+                <br>
+                <label for="firstname">Prénom :</label>
+                <input type="text" id="firstname" name="fn">
+                <br>
+                <label for="birthday">Date de naissance : </label>
+                <input type="date" id="birthday" name="bd">
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Informations de contact</legend>
+                <label for="mail">Adresse Email :</label>
+                <input type="email" name="mail">
+                <br>
+                <label for="phone">Téléphone :</label>
+                <input type="text" name="tp" id="phone">
+            </fieldset>
+            <br>
+            <fieldset>
+                <input type="checkbox" name="" id="cgv">
+                <label for="cgv">J'accepte les conditions d'utilisation</label>
+                <br>
+                <input type="submit" value="S'inscrire">
+            </fieldset>
+            <br>
+        </form>
+
 
     </main>
     <footer></footer>
