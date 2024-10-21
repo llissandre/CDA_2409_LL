@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StreamingPlatform id="Netflix">
+    <Series>
+        <Serie id="1">
+            <Name>Breaking Bad</Name>
+            <Director>Vince Gilligan</Director>
+            <ReleaseDate>2008</ReleaseDate>
+            <NumbersOfSeasons>5</NumbersOfSeasons>
+        </Serie>
+        <Serie id="2">
+            <Name>Game of Thrones</Name>
+            <Director>David Benioff</Director>
+            <ReleaseDate>2011</ReleaseDate>
+            <NumbersOfSeasons>8</NumbersOfSeasons>
+        </Serie>
+        <Serie id="3">
+            <Name>Notre planete</Name>
+            <Director>Alastair Fothergill</Director>
+            <ReleaseDate>2019</ReleaseDate>
+            <NumbersOfSeasons>2</NumbersOfSeasons>
+        </Serie>
+        <Serie id="4">
+            <Name>Chernobyl</Name>
+            <Director>Craig Mazin</Director>
+            <ReleaseDate>2019</ReleaseDate>
+            <NumbersOfSeasons>1</NumbersOfSeasons>
+        </Serie>
+        <Serie id="5">
+            <Name>Arcane</Name>
+            <Director>Fortiche Production</Director>
+            <ReleaseDate>2021</ReleaseDate>
+            <NumbersOfSeasons>1</NumbersOfSeasons>
+        </Serie>
+        <Serie id="6">
+            <Name>Peaky Blinders</Name>
+            <Director>Steven Knight</Director>
+            <ReleaseDate>2013</ReleaseDate>
+            <NumbersOfSeasons>6</NumbersOfSeasons>
+        </Serie>
+    </Series>
+</StreamingPlatform>

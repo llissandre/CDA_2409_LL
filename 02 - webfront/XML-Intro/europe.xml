@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PaysUnionEuropeenne>
+    <Pays Code="040">
+        <NomDuPays>Autriche</NomDuPays>
+        <AnneeAdhesion>1995</AnneeAdhesion>
+        <NombreHabitants>8.9 millions</NombreHabitants>
+        <LangueOfficielle>Allemagne</LangueOfficielle>
+        <Capitale>Vienne</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Alexander Van Der Bellen</ChefEtat>
+        <ChefGouvernement>Karl Nehammer</ChefGouvernement>
+        <Superficie>83 858 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+43</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>26 octobre</DateFeteNationale>
+        <CodeAlpha2>AT</CodeAlpha2>
+        <CodeAlpha3>AUT</CodeAlpha3>
+    </Pays>
+    <Pays Code="056">
+        <NomDuPays>Belgique</NomDuPays>
+        <AnneeAdhesion>1957</AnneeAdhesion>
+        <NombreHabitants>11.55 millions</NombreHabitants>
+        <LangueOfficielle>Néerlandais, Français et Allemand</LangueOfficielle>
+        <Capitale>Bruxelles</Capitale>
+        <RegimePolitique>Monarchique constitutionnel</RegimePolitique>
+        <ChefEtat>Le Roi Philippe</ChefEtat>
+        <ChefGouvernement>Alexander de Croo</ChefGouvernement>
+        <Superficie>30 515 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+32</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>21 juillet</DateFeteNationale>
+        <CodeAlpha2>BE</CodeAlpha2>
+        <CodeAlpha3>BEL</CodeAlpha3>
+    </Pays>
+    <Pays Code="100">
+        <NomDuPays>Bulgarie</NomDuPays>
+        <AnneeAdhesion>2007</AnneeAdhesion>
+        <NombreHabitants>6.95 millions</NombreHabitants>
+        <LangueOfficielle>Bulgare</LangueOfficielle>
+        <Capitale>Sofia</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Roumen Radev</ChefEtat>
+        <ChefGouvernement>Dimitar Glavchev</ChefGouvernement>
+        <Superficie>110 993 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Lev</Monnaie>
+        <IndiceTelephonique>.359</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>3 mars</DateFeteNationale>
+        <CodeAlpha2>BG</CodeAlpha2>
+        <CodeAlpha3>BGR</CodeAlpha3>
+    </Pays>
+    <Pays Code="191">
+        <NomDuPays>Croatie</NomDuPays>
+        <AnneeAdhesion>1996</AnneeAdhesion>
+        <NombreHabitants>4.06 millions</NombreHabitants>
+        <LangueOfficielle>Croate</LangueOfficielle>
+        <Capitale>Zagreb</Capitale>
+        <RegimePolitique>République parlementaire</RegimePolitique>
+        <ChefEtat>Zoran Milanovic</ChefEtat>
+        <ChefGouvernement>Andrej Plenković</ChefGouvernement>
+        <Superficie>56 594 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+385</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>25 juin</DateFeteNationale>
+        <CodeAlpha2>HR</CodeAlpha2>
+        <CodeAlpha3>HRV</CodeAlpha3>
+    </Pays>
+    <Pays Code="196">
+        <NomDuPays>Chypre</NomDuPays>
+        <AnneeAdhesion>2004</AnneeAdhesion>
+        <NombreHabitants>888 000</NombreHabitants>
+        <LangueOfficielle>Grec et Turc</LangueOfficielle>
+        <Capitale>Nicosie</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Níkos Christodoulídes</ChefEtat>
+        <ChefGouvernement>Pas de premier ministre dans la Constitution</ChefGouvernement>
+        <Superficie>9 251 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+357</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>1er octobre</DateFeteNationale>
+        <CodeAlpha2>CY</CodeAlpha2>
+        <CodeAlpha3>CYP</CodeAlpha3>
+    </Pays>
+    <Pays Code="203">
+        <NomDuPays>Tchéquie</NomDuPays>
+        <AnneeAdhesion>2004</AnneeAdhesion>
+        <NombreHabitants>10.69 millions</NombreHabitants>
+        <LangueOfficielle>Tchèque</LangueOfficielle>
+        <Capitale>Prague</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Petr Pavel</ChefEtat>
+        <ChefGouvernement>Petr Fiala </ChefGouvernement>
+        <Superficie>78 866 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Couronne tchèque</Monnaie>
+        <IndiceTelephonique>+420</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>28 octobre</DateFeteNationale>
+        <CodeAlpha2>CZ</CodeAlpha2>
+        <CodeAlpha3>CZE</CodeAlpha3>
+    </Pays>
+    <Pays Code="208">
+        <NomDuPays>Danemark</NomDuPays>
+        <AnneeAdhesion>1973</AnneeAdhesion>
+        <NombreHabitants>5.82 millions</NombreHabitants>
+        <LangueOfficielle>Danois</LangueOfficielle>
+        <Capitale>Copenhague</Capitale>
+        <RegimePolitique>Monarchie constitutionnelle</RegimePolitique>
+        <ChefEtat>S.M. le Roi Frederik X</ChefEtat>
+        <ChefGouvernement>Mette Frederiksen</ChefGouvernement>
+        <Superficie>43 094 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Couronne danoise</Monnaie>
+        <IndiceTelephonique>+45</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>5 juin</DateFeteNationale>
+        <CodeAlpha2>DK</CodeAlpha2>
+        <CodeAlpha3>DNK</CodeAlpha3>
+    </Pays>
+    <Pays Code="233">
+        <NomDuPays>Estonie</NomDuPays>
+        <AnneeAdhesion>2004</AnneeAdhesion>
+        <NombreHabitants>1.33 millions</NombreHabitants>
+        <LangueOfficielle>Estonien</LangueOfficielle>
+        <Capitale>Tallinn</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Alar Karis</ChefEtat>
+        <ChefGouvernement>Kristen Michel</ChefGouvernement>
+        <Superficie>45 227 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+372</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>24 février</DateFeteNationale>
+        <CodeAlpha2>EE</CodeAlpha2>
+        <CodeAlpha3>EST</CodeAlpha3>
+    </Pays>
+    <Pays Code="246">
+        <NomDuPays>Finlande</NomDuPays>
+        <AnneeAdhesion>1995</AnneeAdhesion>
+        <NombreHabitants>5.53 millions</NombreHabitants>
+        <LangueOfficielle>Finnois, Suédois</LangueOfficielle>
+        <Capitale>Helsinki</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Alexander Stubb</ChefEtat>
+        <ChefGouvernement>Petteri Orpo</ChefGouvernement>
+        <Superficie>338 145 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+358</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>6 décembre</DateFeteNationale>
+        <CodeAlpha2>FI</CodeAlpha2>
+        <CodeAlpha3>FIN</CodeAlpha3>
+    </Pays>
+    <Pays Code="250">
+        <NomDuPays>France</NomDuPays>
+        <AnneeAdhesion>1957</AnneeAdhesion>
+        <NombreHabitants>67.09 millions</NombreHabitants>
+        <LangueOfficielle>Français</LangueOfficielle>
+        <Capitale>Paris</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Emmanuel Macron</ChefEtat>
+        <ChefGouvernement>Michel Barnier</ChefGouvernement>
+        <Superficie>550 000 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+33</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>14 juillet</DateFeteNationale>
+        <CodeAlpha2>FR</CodeAlpha2>
+        <CodeAlpha3>FRA</CodeAlpha3>
+    </Pays>
+    <Pays Code="276">
+        <NomDuPays>Allemagne</NomDuPays>
+        <AnneeAdhesion>1957</AnneeAdhesion>
+        <NombreHabitants>83.17 millions</NombreHabitants>
+        <LangueOfficielle>Allemand</LangueOfficielle>
+        <Capitale>Berlin</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Frank-Walter Sreinmeier</ChefEtat>
+        <ChefGouvernement>Olaf Scholz</ChefGouvernement>
+        <Superficie>357 020 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+49</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>3 octobre</DateFeteNationale>
+        <CodeAlpha2>DE</CodeAlpha2>
+        <CodeAlpha3>DEU</CodeAlpha3>
+    </Pays>
+    <Pays Code="300">
+        <NomDuPays>Grèce</NomDuPays>
+        <AnneeAdhesion>1981</AnneeAdhesion>
+        <NombreHabitants>10.71 millions</NombreHabitants>
+        <LangueOfficielle>Grec</LangueOfficielle>
+        <Capitale>Athènes</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Ekaterini Sakellaropoulou</ChefEtat>
+        <ChefGouvernement>Kyriakos Mitsotakis</ChefGouvernement>
+        <Superficie>131 957 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+30</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>25 mars</DateFeteNationale>
+        <CodeAlpha2>GR</CodeAlpha2>
+        <CodeAlpha3>GRC</CodeAlpha3>
+    </Pays>
+    <Pays Code="348">
+        <NomDuPays>Hongrie</NomDuPays>
+        <AnneeAdhesion>2004</AnneeAdhesion>
+        <NombreHabitants>9.77 millions</NombreHabitants>
+        <LangueOfficielle>Hongrois</LangueOfficielle>
+        <Capitale>Budapest</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Tamás Sulyok</ChefEtat>
+        <ChefGouvernement>Viktor Orbán</ChefGouvernement>
+        <Superficie>93 036 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Forint</Monnaie>
+        <IndiceTelephonique>+36</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>20 août</DateFeteNationale>
+        <CodeAlpha2>HU</CodeAlpha2>
+        <CodeAlpha3>HUN</CodeAlpha3>
+    </Pays>
+    <Pays Code="372">
+        <NomDuPays>Irlande</NomDuPays>
+        <AnneeAdhesion>1973</AnneeAdhesion>
+        <NombreHabitants>4.96 millions</NombreHabitants>
+        <LangueOfficielle>Anglais et Gaélique</LangueOfficielle>
+        <Capitale>Dublin</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Michael Higgins</ChefEtat>
+        <ChefGouvernement>Leo Varadkar</ChefGouvernement>
+        <Superficie>70 282 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique></IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>17 mars</DateFeteNationale>
+        <CodeAlpha2>IE</CodeAlpha2>
+        <CodeAlpha3>IRL</CodeAlpha3>
+    </Pays>
+    <Pays Code="380">
+        <NomDuPays>Italie</NomDuPays>
+        <AnneeAdhesion>1957</AnneeAdhesion>
+        <NombreHabitants>60.24 millions</NombreHabitants>
+        <LangueOfficielle>Italien</LangueOfficielle>
+        <Capitale>Rome</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Sergio Mattarella</ChefEtat>
+        <ChefGouvernement>Giorgia Meloni</ChefGouvernement>
+        <Superficie>301 253 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+39</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>2 juin</DateFeteNationale>
+        <CodeAlpha2>IT</CodeAlpha2>
+        <CodeAlpha3>ITA</CodeAlpha3>
+    </Pays>
+    <Pays Code="428">
+        <NomDuPays>Lettonie</NomDuPays>
+        <AnneeAdhesion>2004</AnneeAdhesion>
+        <NombreHabitants>1.91 millions</NombreHabitants>
+        <LangueOfficielle>Letton</LangueOfficielle>
+        <Capitale>Riga</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Edgars Rinkevics</ChefEtat>
+        <ChefGouvernement>Evika Siliņa</ChefGouvernement>
+        <Superficie>64 600 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+371</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>18 novembre</DateFeteNationale>
+        <CodeAlpha2>LV</CodeAlpha2>
+        <CodeAlpha3>LVA</CodeAlpha3>
+    </Pays>
+    <Pays Code="440">
+        <NomDuPays>Lituanie</NomDuPays>
+        <AnneeAdhesion>2004</AnneeAdhesion>
+        <NombreHabitants>2.79 millions</NombreHabitants>
+        <LangueOfficielle>Lituanien</LangueOfficielle>
+        <Capitale>Vilnius</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Gitanas Nauseda</ChefEtat>
+        <ChefGouvernement>Ingrida Simonyte</ChefGouvernement>
+        <Superficie>65 300 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+370</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>16 février</DateFeteNationale>
+        <CodeAlpha2>LT</CodeAlpha2>
+        <CodeAlpha3>LTU</CodeAlpha3>
+    </Pays>
+    <Pays Code="442">
+        <NomDuPays>Luxembourg</NomDuPays>
+        <AnneeAdhesion>1957</AnneeAdhesion>
+        <NombreHabitants>626 100</NombreHabitants>
+        <LangueOfficielle>Français, Allemand et Luxembourgeois</LangueOfficielle>
+        <Capitale>Luxembourg-Ville</Capitale>
+        <RegimePolitique>Monarchie constitutionnelle</RegimePolitique>
+        <ChefEtat>Le Grand Duc Henri</ChefEtat>
+        <ChefGouvernement>Luc Frieden</ChefGouvernement>
+        <Superficie>2 586 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+352</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>23 juin</DateFeteNationale>
+        <CodeAlpha2>LU</CodeAlpha2>
+        <CodeAlpha3>LUX</CodeAlpha3>
+    </Pays>
+    <Pays Code="470">
+        <NomDuPays>Malte</NomDuPays>
+        <AnneeAdhesion>2004</AnneeAdhesion>
+        <NombreHabitants>514 600</NombreHabitants>
+        <LangueOfficielle>Maltais et Anglais</LangueOfficielle>
+        <Capitale>La Valette</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Myriam Spiteri Debono</ChefEtat>
+        <ChefGouvernement>Robert Abela</ChefGouvernement>
+        <Superficie>316 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+356</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale></DateFeteNationale>
+        <CodeAlpha2>MT</CodeAlpha2>
+        <CodeAlpha3>MLT</CodeAlpha3>
+    </Pays>
+    <Pays Code="528">
+        <NomDuPays>Pays-Bas</NomDuPays>
+        <AnneeAdhesion>1957</AnneeAdhesion>
+        <NombreHabitants>17.41 millions</NombreHabitants>
+        <LangueOfficielle>Néerlandais</LangueOfficielle>
+        <Capitale>Amsterdam</Capitale>
+        <RegimePolitique>Monarchie constitutionnelle</RegimePolitique>
+        <ChefEtat>Le Roi Willem-Alexander</ChefEtat>
+        <ChefGouvernement>Dick Schoof</ChefGouvernement>
+        <Superficie>41 528 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+31</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>27 avril et 4 mai</DateFeteNationale>
+        <CodeAlpha2>NL</CodeAlpha2>
+        <CodeAlpha3>NLD</CodeAlpha3>
+    </Pays>
+    <Pays Code="616">
+        <NomDuPays>Pologne</NomDuPays>
+        <AnneeAdhesion>2004</AnneeAdhesion>
+        <NombreHabitants>37.96 millions</NombreHabitants>
+        <LangueOfficielle>Polonais</LangueOfficielle>
+        <Capitale>Varsovie</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Andrzej Duda</ChefEtat>
+        <ChefGouvernement>Donald Tusk</ChefGouvernement>
+        <Superficie>312 685 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Zloty</Monnaie>
+        <IndiceTelephonique>+48</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>3 mai</DateFeteNationale>
+        <CodeAlpha2>PL</CodeAlpha2>
+        <CodeAlpha3>POL</CodeAlpha3>
+    </Pays>
+    <Pays Code="620">
+        <NomDuPays>Portugal</NomDuPays>
+        <AnneeAdhesion>1986</AnneeAdhesion>
+        <NombreHabitants>10.30 millions</NombreHabitants>
+        <LangueOfficielle>Portugais</LangueOfficielle>
+        <Capitale>Lisbonne</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Marcelo Rebelo de Sousa</ChefEtat>
+        <ChefGouvernement>Luis Montenegro</ChefGouvernement>
+        <Superficie>92 072 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+351</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>10 juin</DateFeteNationale>
+        <CodeAlpha2>PT</CodeAlpha2>
+        <CodeAlpha3>PRT</CodeAlpha3>
+    </Pays>
+    <Pays Code="642">
+        <NomDuPays>Roumanie</NomDuPays>
+        <AnneeAdhesion>2007</AnneeAdhesion>
+        <NombreHabitants>19.32 millions</NombreHabitants>
+        <LangueOfficielle>Roumain</LangueOfficielle>
+        <Capitale>Bucarest</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Klaus Johannis</ChefEtat>
+        <ChefGouvernement>Marcel Ciolacu</ChefGouvernement>
+        <Superficie>238 391 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Leu</Monnaie>
+        <IndiceTelephonique>+40</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>1er décembre</DateFeteNationale>
+        <CodeAlpha2>RO</CodeAlpha2>
+        <CodeAlpha3>ROU</CodeAlpha3>
+    </Pays>
+    <Pays Code="703">
+        <NomDuPays>Slovaquie</NomDuPays>
+        <AnneeAdhesion>2004</AnneeAdhesion>
+        <NombreHabitants>5.46 millions</NombreHabitants>
+        <LangueOfficielle>Slovaque</LangueOfficielle>
+        <Capitale>Bratislava</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Peter Pellegrini</ChefEtat>
+        <ChefGouvernement>Robert Fico</ChefGouvernement>
+        <Superficie>49 035 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+421</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>1er janvier</DateFeteNationale>
+        <CodeAlpha2>SK</CodeAlpha2>
+        <CodeAlpha3>SVK</CodeAlpha3>
+    </Pays>
+    <Pays Code="705">
+        <NomDuPays>Slovénie</NomDuPays>
+        <AnneeAdhesion>2004</AnneeAdhesion>
+        <NombreHabitants>2.09 millions</NombreHabitants>
+        <LangueOfficielle>Slovène</LangueOfficielle>
+        <Capitale>Ljubljana</Capitale>
+        <RegimePolitique>République</RegimePolitique>
+        <ChefEtat>Natasa Pirc Musar</ChefEtat>
+        <ChefGouvernement>Robert Golob</ChefGouvernement>
+        <Superficie>20 256 km2</Superficie>
+        <FuseauHoraire></FuseauHoraire>
+        <Densite></Densite>
+        <PointCulminant></PointCulminant>
+        <Monnaie>Euro</Monnaie>
+        <IndiceTelephonique>+386</IndiceTelephonique>
+        <Hymne></Hymne>
+        <DateFeteNationale>25 juin</DateFeteNationale>
+        <CodeAlpha2>SI</CodeAlpha2>
+        <CodeAlpha3>SVN</CodeAlpha3>
+    </Pays>
+   </PaysUnionEuropeenne>

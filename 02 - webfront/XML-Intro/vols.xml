@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Vols>
+    <Vol id="1">
+        <AeroportDepart>Orly</AeroportDepart>
+        <AeroportArrivee>Boston</AeroportArrivee>
+        <DateDepart>2022-10-22 15:30:00</DateDepart>
+        <DateArrivee>2022-10-23 00:20:00</DateArrivee>
+        <DureeVol>530</DureeVol>
+        <Compagnie>Air France</Compagnie>
+        <TypeAvion>0</TypeAvion>
+        <MarqueAvion>AIRBUS</MarqueAvion>
+        <RefAvion>A300</RefAvion>
+        <Capacite>290</Capacite>
+    </Vol>
+    <Vol id="2">
+        <AeroportDepart>Orly</AeroportDepart>
+        <AeroportArrivee>New York</AeroportArrivee>
+        <DateDepart>2022-10-22 19:00:00</DateDepart>
+        <DateArrivee>2022-10-23 02:10:00</DateArrivee>
+        <DureeVol>430</DureeVol>
+        <Compagnie>Air France</Compagnie>
+        <TypeAvion>0</TypeAvion>
+        <MarqueAvion>AIRBUS</MarqueAvion>
+        <RefAvion>A350</RefAvion>
+        <Capacite>440</Capacite>
+    </Vol>
+    <Vol id="3">
+        <AeroportDepart>Orly</AeroportDepart>
+        <AeroportArrivee>Washington</AeroportArrivee>
+        <DateDepart>2022-10-23 09:15:00</DateDepart>
+        <DateArrivee>2022-10-23 18:00:00</DateArrivee>
+        <DureeVol>525</DureeVol>
+        <Compagnie>Air France</Compagnie>
+        <TypeAvion>0</TypeAvion>
+        <MarqueAvion>AIRBUS</MarqueAvion>
+        <RefAvion>A320</RefAvion>
+        <Capacite>180</Capacite>
+    </Vol>
+    <Vol id="4">
+        <AeroportDepart>Orly</AeroportDepart>
+        <AeroportArrivee>Paris</AeroportArrivee>
+        <DateDepart>2022-10-23 13:30:00</DateDepart>
+        <DateArrivee>2022-10-23 19:45:00</DateArrivee>
+        <DureeVol></DureeVol>
+        <Compagnie>Air France</Compagnie>
+        <TypeAvion>375</TypeAvion>
+        <MarqueAvion>BOEING</MarqueAvion>
+        <RefAvion>Iberia</RefAvion>
+        <Capacite>3500</Capacite>
+    </Vol>
+</Vols>

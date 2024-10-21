@@ -33,14 +33,14 @@ compteur = 0;
 nombreChoisi = rand.Next(100);
 nombreEntre = demanderUnNombreEntiers("");
 nombreInferieur = 0;
-nombreSuperieur = 0;
+nombreSuperieur = 100;
 compteur++;
 
 nombreChoisi++;
 
 if (nombreEntre == nombreChoisi)
 {
-    Console.WriteLine($"Bravo vous avez trouvé en X essais");
+    Console.WriteLine($"Bravo vous avez trouvé le nombre !");
 }
 else if (nombreEntre < nombreChoisi)
 {
@@ -56,12 +56,38 @@ else if (nombreEntre > nombreChoisi)
 
 do
 {
+    nombreEntre = demanderUnNombreEntiers("");
     compteur++;
+
+    if (nombreEntre == nombreChoisi)
+    {
+        Console.WriteLine($"Bravo vous avez trouvé en {compteur} essais");
+    }
+    else if (nombreEntre < nombreChoisi)
+    {
+        if (nombreEntre > nombreInferieur)
+        {
+            Console.WriteLine($"La nouvelle fourchette pour trouver le nombre choisi est entre {nombreEntre} et {nombreSuperieur}");
+            nombreInferieur = nombreEntre;
+        }
+        else
+        {
+            Console.WriteLine($"La nouvelle fourchette pour trouver le nombre choisi est entre {nombreInferieur} et {nombreSuperieur}");
+        }
+    }
+    else if (nombreEntre > nombreInferieur)
+    {
+        if (nombreEntre < nombreSuperieur)
+        {
+            Console.WriteLine($"La nouvelle fourchette pour trouver le nombre choisi est compris entre {nombreInferieur} et {nombreEntre}");
+            nombreSuperieur = nombreEntre;
+        }
+        else
+        {
+            Console.WriteLine($"La nouvelle fourchette pour trouver le nombre choisi est compris entre {nombreInferieur} et {nombreSuperieur}");
+        }
+    }
 }
 while (nombreEntre != nombreChoisi);
 
 Console.WriteLine(nombreChoisi);
-
-
-
-
