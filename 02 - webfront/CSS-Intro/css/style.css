@@ -3,7 +3,8 @@
 }
 
 body {
-    min-height: 99vh;
+    min-height:100vh;
+    min-width:100vh;
     color: #726DA8;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
