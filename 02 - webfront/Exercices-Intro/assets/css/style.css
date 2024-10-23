@@ -27,12 +27,13 @@ a {
 
 p {
     color: #FFFFFF;
-    margin: 10px 20px 0 20px;
+    margin: 10px 20px 0px 20px;
     text-align: justify;
 }
 
 ul {
     list-style: none;
+    padding: 0;
 }
 
 li {
@@ -58,9 +59,7 @@ li:hover {
     width: 100px;
 }
 
-.flex-item-right {
-    height: 100%;
-}
+.flex-item-right {}
 
 footer {
     justify-items: center;
@@ -81,14 +80,13 @@ table {
     background-color: azure;
 }
 
-.tableau{
+.tableau {
     padding: 20px 20px 0 20px;
 }
 
-.liste-avions{
+.liste-avions {
     padding: 20px 20px 0 20px;
     width: 100%;
-    display: inline-block;
 }
 
 td {
@@ -100,8 +98,19 @@ tr {
     height: 3vh;
 }
 
-img{
+#photos {
     width: 230px;
     height: 150px;
     border: 3px solid white;
+}
+
+.container-liste-avions {
+    display: flex;
+    justify-content: center;
+
+}
+
+.container-liste-avions p {
+
+    text-align: center;
 }
