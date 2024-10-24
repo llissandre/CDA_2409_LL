@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     color: white;
     font-size: 1.2em;
 }
 
-body{
+body {
     width: 100vw;
     height: 100vh;
 }
@@ -12,11 +12,12 @@ body{
 .principal {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5,10vh);
+    grid-template-rows: repeat(5, 10vh);
     gap: 5px;
 }
 
 .principal section {
+    display: flex;
     background-color: #CCCC33;
 }
 
@@ -59,4 +60,4 @@ grid-area: 3/2/4/4;
 #s10
 {
     grid-area: 5/2/5/-1;
-}
+} 
