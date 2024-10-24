@@ -31,6 +31,11 @@ p {
     text-align: justify;
 }
 
+span {
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -59,10 +64,9 @@ li:hover {
     width: 100px;
 }
 
-.flex-item-right {}
-
 footer {
     justify-items: center;
+    margin-bottom: 20px;
 }
 
 th {
@@ -102,15 +106,16 @@ tr {
     width: 230px;
     height: 150px;
     border: 3px solid white;
+    margin-bottom:5px ;
 }
 
-.container-liste-avions {
+#avion{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.liste-avions{
     display: flex;
-    justify-content: center;
-
-}
-
-.container-liste-avions p {
-
-    text-align: center;
+    flex-wrap: wrap;
 }
