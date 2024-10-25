@@ -11,8 +11,8 @@ body {
 
 .principal {
     display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-columns: repeat(4, 19vh);
+    grid-template-rows: repeat(5, 19vh);
+    grid-template-columns: repeat(4, 1fr);
     gap: 5px;
 }
 
