@@ -20,7 +20,6 @@ nav,
 main,
 footer {
     background-color: #BBCCFF;
-    /* margin: 5px; */
 }
 
 h1,
@@ -31,8 +30,9 @@ footer {
 }
 
 header {
-    grid-area: 1/1/2/-1;
+    grid-area: 1/1/2/4;
     display: grid;
+    gap: 5px;
     
     h1 {
         grid-area: 1/1/2/3;
@@ -47,7 +47,6 @@ header {
 nav {
     grid-area: 2/1/4/2;
     padding: 20px 0 0 20px;
-    ;
 }
 
 main {
