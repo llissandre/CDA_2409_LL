@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    background-image: url(../img/css-16-bg.webp);
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 1fr 20%;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+}
+
+#planet1 {
+    width: 10%;
+    transform: translateY(10%);
+}
+
+#planet2 {
+    width: 20%;
+    transform: translateY(8%);
+}
+
+#planet3 {
+    width: 30%;
+    transform: translateY(5%);
+}
