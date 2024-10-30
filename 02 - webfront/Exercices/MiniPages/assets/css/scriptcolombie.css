@@ -1,16 +1,16 @@
 * {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: normal;
-    background-color: #0c4aaf;
 }
 
 body {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 40vh repeat(3, 1fr);
+    grid-template-rows: 45vh repeat(3, 1fr);
     justify-items: center;
+    background-color: #0c4aaf;
+    font-weight: normal;
 }
 
 header,
@@ -34,23 +34,28 @@ main {
 
 footer {
     background-color: white;
-
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 65% 35%;
+    grid-template-rows: 70% 25%;
 
     .h2 {
         height: 100%;
-        font-size: 2em;
+        font-size: 1.5em;
+        font-weight: bolder;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    
+
     .basfooter {
         height: 100%;
         display: flex;
         justify-content: center;
-        align-items: end;
+        align-items: flex-end;
+    }
+
+    hr {
+        border: #ccc8c8 1px solid;
+        height: 0;
     }
 }
