@@ -94,7 +94,8 @@ tr {
     height: 6vh;
 }
 
-.contourdavions {
+.contourtableau {
+border: 6px white solid;
 }
 
 #photos {
