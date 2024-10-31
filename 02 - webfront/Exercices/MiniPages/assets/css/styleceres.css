@@ -18,35 +18,50 @@ a {
 }
 
 header {
-    height: 15vh;
+    height: 17vh;
     align-content: center;
-    border: 1px red solid;
+    font-size: 2em;
+    letter-spacing: 8px;
+
+    h1 {
+        border: 1px solid;
+        padding: 10px;
+    }
 }
 
-main{   
+main {
+    height: 68vh;
+    width: 100vw;
 
-    height: 70vh;
-    align-content: center;
-    
-    #ceres {
-        height: 60vh;
-        border: 1px red solid;
-
-    
-        
-        
+    .planeteceres {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
-    /* border: #ccc8c8 1px solid; */
+    #ceres {
+        height: 64vh;
+    }
+
+    hr {
+        border: #ccc8c8 1px solid;
+        justify-self: center;
+        height: 0px;
+        width: 95%;
+    }
 }
 
 footer {
     height: 15vh;
     align-content: center;
     text-align: center;
-    border: 1px red solid;
+    font-size: 1.3em;
 
-    p{
+    p {
         padding: 0 20px 0 20px;
     }
+
 }
