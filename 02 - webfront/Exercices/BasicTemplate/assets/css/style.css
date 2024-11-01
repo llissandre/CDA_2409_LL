@@ -7,7 +7,9 @@
     /* Déclarations de variables pour les couleurs */
     --background-gris-clair: #CCCCCC;
     --background-gris-moins-moins-clair: #B1B1B1;
+    --background-inversede-gris-moins-moins-clair: #303030;
     --background-gris-moins-clair: #BEBEBE;
+    --background-inversede-gris-moins-clair: #212121;
     --background-noir: #111111;
     --background-bleu: #085E8F;
     --background-bleu-vif: #09BCE0;
@@ -92,49 +94,46 @@ nav {
 
 aside {
     grid-area: 2/3/3/4;
+    background-color: var(--background-gris-moins-clair);
+    padding: 0 5px;
 
     h3 {
         color: var(--text-bleu);
         padding: 6px 0;
-        margin: 5px 5px 5px 0;
+        margin: 5px 0;
         text-align: center;
         background-color: var(--background-gris-moins-moins-clair);
     }
 
     #aside {
-        width: 240px;
-
-        margin: auto;
+        max-width: 230px;
     }
-
+    
     p {
         text-align: justify;
         margin-top: -4px;
         font-size: 0.9em;
-
+        
         padding: 20px 10px;
     }
-
-    background-color: var(--background-gris-moins-clair);
-
+    
     #jachete {
         width: 100%;
         color: var(--text-blanc);
         background-color: var(--background-button-bleu);
         border: 2px solid var(--background-button-bleu);
     }
-
 }
 
 main {
     grid-area: 2/2/3/3;
     background-color: var(--background-gris-clair);
-
+    
     h2 {
         background-color: var(--background-gris-moins-clair);
         padding: 13px 10px 13px 10px;
     }
-
+    
     .articles {
         margin: 20px;
         display: flex;
@@ -142,10 +141,59 @@ main {
         justify-content: space-around;
         gap: 20px;
     }
-
+    
     section {
         background-color: var(--background-gris-moins-moins-clair);
         height: 150px;
         width: 400px;
+    }
+}
+
+@media(prefers-colo-scheme: dark) {
+    .theme-a.adaptive {
+        background-color: var(--background-inversede-gris-moins-clair);
+        
+        nav {
+            
+            h2 {
+                color: var(--text-blanc);
+                background-color: var(--background-inversede-gris-moins-moins-clair);
+            }
+            
+            a {
+                color: var(--text-bleu-vif);
+            }
+            
+            li {
+                background-color: var(--background-inversede-gris-moins-moins-clair);
+            }
+        }
+        
+        aside{
+            background-color: var(--background-inversede-gris-moins-clair);
+            h3{
+                color: var(--text-bleu-vif);
+                background-color: var(--background-inversede-gris-moins-moins-clair);
+            }
+            
+            #jachete{
+                color: var(--text-noir);
+                background-color: var(--background-bleu-vif);
+                border: 2px solid var(--background-bleu-vif);
+            }
+        }
+
+        main {
+            background-color: var(--background-noir);
+        
+        h2{
+            color: var(--text-blanc);
+            background-color: var(--background-inversede-gris-moins-clair);
+        }
+
+        section{
+            background-color: var(--background-inversede-gris-moins-moins-clair);
+        }
+        }
     }
 }
