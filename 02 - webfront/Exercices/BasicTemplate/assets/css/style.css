@@ -1,0 +1,151 @@
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+
+    /* Déclarations de variables pour les couleurs */
+    --background-gris-clair: #CCCCCC;
+    --background-gris-moins-moins-clair: #B1B1B1;
+    --background-gris-moins-clair: #BEBEBE;
+    --background-noir: #111111;
+    --background-bleu: #085E8F;
+    --background-bleu-vif: #09BCE0;
+    --text-gris-clair: #CCCCCC;
+    --text-noir: #111111;
+    --text-bleu: #085E8F;
+    --text-bleu-vif: #09BCE0;
+    --text-blanc: white;
+
+    --background-button-bleu: #085E8F;
+}
+
+/* Sélectionne tous les éléments  + pseudo élément before et after */
+*,
+*::after,
+*::before {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 240px 1fr 240px;
+    grid-template-rows: 200px 1fr;
+
+    grid-area: 1/1/3/4;
+}
+
+header {
+    grid-area: 1/1/2/4;
+
+    position: relative;
+
+    #banniere {
+        height: 200px;
+        width: 100vw;
+        position: absolute;
+        z-index: 1;
+    }
+
+    h1 {
+        position: absolute;
+        top: 10px;
+        left: calc(50vw - 165px);
+        width: 310px;
+        color: var(--text-gris-clair);
+        z-index: 2;
+    }
+}
+
+nav {
+    grid-area: 2/1/3/2;
+    background-color: var(--background-gris-moins-clair);
+
+    a {
+        color: var(--text-bleu);
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 5px 0;
+    }
+
+    h2 {
+        background-color: var(--background-gris-moins-moins-clair);
+        padding: 13px 10px 13px 10px;
+    }
+
+    li {
+        background-color: var(--background-gris-moins-moins-clair);
+        padding: 10px;
+        margin: 5px 0;
+    }
+}
+
+aside {
+    grid-area: 2/3/3/4;
+
+    h3 {
+        color: var(--text-bleu);
+        padding: 6px 0;
+        margin: 5px 5px 5px 0;
+        text-align: center;
+        background-color: var(--background-gris-moins-moins-clair);
+    }
+
+    #aside {
+        width: 240px;
+
+        margin: auto;
+    }
+
+    p {
+        text-align: justify;
+        margin-top: -4px;
+        font-size: 0.9em;
+
+        padding: 20px 10px;
+    }
+
+    background-color: var(--background-gris-moins-clair);
+
+    #jachete {
+        width: 100%;
+        color: var(--text-blanc);
+        background-color: var(--background-button-bleu);
+        border: 2px solid var(--background-button-bleu);
+    }
+
+}
+
+main {
+    grid-area: 2/2/3/3;
+    background-color: var(--background-gris-clair);
+
+    h2 {
+        background-color: var(--background-gris-moins-clair);
+        padding: 13px 10px 13px 10px;
+    }
+
+    .articles {
+        margin: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+    section {
+        background-color: var(--background-gris-moins-moins-clair);
+        height: 150px;
+        width: 400px;
+    }
+}
