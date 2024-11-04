@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction à CSS</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/css.png">
+
+</head>
+
+<body>
+        <header>
+            <h1>Introduction aux styles CSS</h1>
+        </header>
+        <main>
+            <h2>La cascade CSS</h2>
+            <p>La cascade est un algorithme qui définit comment les navigateurs combinent les valeurs des propriétés
+                selon
+                leurs
+                différentes sources. La cascade définit les priorités et l'ordre dans lequel les règles CSS sont
+                appliquées.
+            </p>
+            <p>Comment savoir quelle règle CSS va s'appliquer à un éléments, en particulier quand deux règles entre en
+                conflit ?
+                Pour déterminer cela, les sélecteurs CSS on un poids et une priorité qui va permettre aux navigateurs de
+                calculer la préséance des règles à appliquer.</p>
+            <h2>Quel est l'ordre de priorité des règles CSS ?</h2>
+            <p>Types de sélecteurs CSS par ordre d'importance</p>
+            <ol>
+                <li>La déclaration de style "en ligne" (dans le code HTML avec l'attribut style="") est toujours
+                    prioritaire.
+                </li>
+                <li>Le sélecteur d'identifiant (ex: #titre)</li>
+                <li>Le sélecteur d'attribut (ex: [type="text"])</li>
+                <li>Le sélecteur de classe (ex: .liste)</li>
+                <li>Le sélecteur de balise (ex: body, div, section....)</li>
+                <li>Les pseudos éléments (ex: ::before, :first-child...)</li>
+                <li>Les règles par défaut définies par le navigateur</li>
+            </ol>
+        </main>
+        <footer>
+            Copyright 2024 Laurent Lissandre
+        </footer>
+</body>
+
+</html>
