@@ -19,82 +19,86 @@
 *::before {
     /* Forcer l'héritage de la propriété box-sizing */
     box-sizing: border-box;
-    margin:0;
+    margin: 0;
 }
 
-body{
+body {
     height: 100vh;
-    margin-left: 15px;
 }
 
 header {
     display: flex;
-    height: 10vh;
-    
+    align-items: center;
+    justify-content: space-around;
+
+    height: 12vh;
+
     h1 {
         color: var(--text-bleu);
-        font-size: 3em;
-        margin-top: 0;
+        font-size: 2.5rem;
     }
-    
+
     p {
-        margin: 0;
         background-color: var(--background-gris-clair);
-        margin: 28px 0 0 40px;
         font-style: italic;
+        font-size: 1rem;
     }
 }
 
-nav{
+nav {
     height: 15vh;
+    justify-self: center;
     align-content: center;
-    
-    #s1{
-        font-size: 1.5em;
+
+
+    #s1 {
+        font-size: 1.5rem;
         background-color: var(--background-button-bleu);
         border: 2px var(--background-button-bleu) solid;
         border-radius: 10px;
         color: var(--text-blanc);
-        padding: 20px 20px;
+        padding: 20px
     }
-    
-    #s2{
-        font-size: 1.5em;
+
+    #s2 {
+        font-size: 1.5rem;
         background-color: var(--background-button-vert);
         border: 2px var(--background-button-vert) solid;
         border-radius: 10px;
         color: var(--text-blanc);
-        padding: 20px 20px;
+        padding: 20px
     }
-    
-    #s3{
-        font-size: 1.5em;
+
+    #s3 {
+        font-size: 1.5rem;
         background-color: var(--background-button-gris);
         border: 2px var(--background-button-gris) solid;
         border-radius: 10px;
         color: var(--text-blanc);
-        padding: 20px 20px;
+        padding: 20px
     }
 }
 
-.divhr{
+.divhr {
     height: 0;
 }
 
 main {
-    .nomavatar{
+    margin: 20px 5px;
+
+    .nomavatar {
         color: var(--text-blanc);
         background-color: var(--background-button-bleu);
-        margin-left: 5px;
-        padding: 0 5px;
+        padding: 5px;
     }
 
-    margin: 10px 15px 0 0;
+
     th {
         background-color: var(--background-gris-clair);
         border: 1px black solid;
+        padding: 3px;
     }
-    
+
     td {
         border: 1px black solid;
     }
@@ -104,7 +108,17 @@ main {
         width: 100%;
     }
 
-    .nomstatistiques{
+    .rang {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .stat{
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .nomstatistiques {
         background-color: var(--background-button-vert);
         color: var(--text-blanc);
         padding: 0 5px;

@@ -6,7 +6,7 @@
     box-sizing: border-box;
     background-color: white;
     margin: 0;
-    --square: 6em;
+    --square: 10vh;
 }
 
 body {
@@ -15,11 +15,14 @@ body {
 
 main {
     height: 100%;
+    align-content: center;
+}
+
+#cases{
     display: grid;
     grid-template-columns: repeat(9, var(--square));
     grid-template-rows: repeat(9, var(--square));
     justify-content: center;
-    align-content: center;
 }
 
 .white {

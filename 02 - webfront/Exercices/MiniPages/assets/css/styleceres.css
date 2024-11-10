@@ -6,7 +6,7 @@
 body {
     background-color: E0E2E8;
     font-weight: normal;
-    font-size: 1em;
+    font-size: 1rem;
     height: 100vh;
 }
 
@@ -96,7 +96,7 @@ footer {
     height: 15vh;
     align-content: center;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.1rem;
 
     p {
         padding: 0 20px 0 20px;

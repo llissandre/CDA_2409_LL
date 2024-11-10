@@ -40,15 +40,16 @@ footer {
 
     .h2 {
         height: 100%;
-        font-size: 1.5em;
+        font-size: 2rem;
         font-weight: bolder;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-
+    
     .basfooter {
         height: 100%;
+        font-size: 1rem;
         display: flex;
         justify-content: center;
         align-items: flex-end;
