@@ -1,31 +1,39 @@
-* {
-    margin: 0;
+/* Sélectionne tous les éléments  + pseudo élément before et after */
+*,
+*::after,
+*::before {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: border-box;
     background-color: white;
+    margin: 0;
+    --square: 6em;
 }
 
 body {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-main {
-    /* display: flex; */
-    /* flex-wrap: nowrap; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-
+div {
+    display: flex;
 }
 
-div{
+.white {
+    background-image: url(../img/white.png);
+    width: var(--square);
+    height: var(--square);
 }
 
-img {
-    padding: 0;
-    margin: 0;
+.red {
+    background-image: url(../img/red.png);
+    width: var(--square);
+    height: var(--square);
 }
-/* .white { */
-    /* background-image: ; */
-/* } */
 
-/* #carre { */
-/* height: 10vh; */
-/* } */
+.black {
+    background-image: url(../img/black.png);
+    width: var(--square);
+    height: var(--square);
+}
