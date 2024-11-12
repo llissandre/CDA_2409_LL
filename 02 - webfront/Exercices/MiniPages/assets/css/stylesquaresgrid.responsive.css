@@ -1,0 +1,62 @@
+@media(max-width: 850px) {
+    * {
+        --square: 9vh;
+        transition: 500ms linear;
+    }
+}
+
+@media(max-width: 790px) {
+    * {
+        --square: 8.5vh;
+        transition: 500ms linear;
+    }
+}
+
+@media(max-width: 730px) {
+    * {
+        --square: 8vh;
+        transition: 500ms linear;
+    }
+}
+
+@media(max-width: 680px) {
+    * {
+        --square: 7.5vh;
+        transition: 500ms linear;
+    }
+}
+
+@media(max-width: 640px) {
+    * {
+        --square: 7vh;
+        transition: 500ms linear;
+    }
+}
+
+@media(max-width: 600px) {
+    * {
+        --square: 6.5vh;
+        transition: 500ms linear;
+    }
+}
+
+@media(max-width: 550px) {
+    * {
+        --square: 6vh;
+        transition: 500ms linear;
+    }
+}
+
+@media(max-width: 510px) {
+    * {
+        --square: 5.5vh;
+        transition: 500ms linear;
+    }
+}
+
+@media(max-width: 480px) {
+    * {
+        --square: 5vh;
+        transition: 500ms linear;
+    }
+}

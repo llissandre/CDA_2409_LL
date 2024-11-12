@@ -1,0 +1,110 @@
+
+@import "aienova-shortcode.css";
+
+
+html{
+
+
+    height:100%;
+
+
+}
+
+
+body {
+    padding: 0px;
+    margin: 0px;
+    height:100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    overflow-y: hidden;
+    background-color: #f4f4f4;
+}
+
+
+header {
+    background-color: #d8eff3;
+    height:150em;
+
+
+}
+
+
+.menu{
+
+    padding:3px;
+}
+
+.menu:hover{
+    
+    background-color: #18296a;
+    color:white;
+}
+
+
+.menu:active{
+    
+    background-color: #e76216;
+    color:white;
+}
+
+
+#complete{
+
+    width:500px;
+    margin-top:15em;
+}
+
+button{
+
+    background-color: #18296a;
+    padding:1em;
+    color:white;
+}
+
+input[type=submit]{
+
+    padding:1em;
+    background-color: #f05011;
+    color:white;
+
+}
+
+
+.templates  {
+
+
+    img{
+
+        width: auto;
+        height: 10em;
+        margin:2em;
+    }
+
+    
+
+}
+
+.menu{
+
+    cursor:pointer;
+}
+
+main {
+    overflow-y: scroll;
+
+    .padder {
+        padding: 5em;
+    }
+}
+
+
+ul li {
+    margin-top: 1.5em;
+}
+
+
+textarea {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 15em;
+}

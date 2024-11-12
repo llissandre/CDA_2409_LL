@@ -1,0 +1,82 @@
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        p {
+            margin-right: 10px;
+        }
+    }
+
+    nav {
+        height: 7vh;
+
+
+        #s1 {
+            font-size: 1rem;
+            padding: 5px;
+        }
+
+        #s2 {
+            font-size: 1rem;
+            padding: 5px;
+        }
+
+        #s3 {
+            font-size: 1rem;
+            padding: 5px;
+        }
+    }
+
+    main {
+        margin: 20px 0;
+
+        .nomavatar {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .image {
+            font-size: 0.7rem;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .lien {
+            vertical-align: middle;
+            text-align: center;
+            font-size: 0.7rem;
+            padding: 0 5px;
+        }
+
+        .stat{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        th {
+            background-color: var(--background-gris-clair);
+            border: 1px black solid;
+        }
+
+        td {
+            border: 1px black solid;
+        }
+
+        #table {
+            border: 2px black solid;
+            width: 100%;
+        }
+
+        .nomstatistiques {
+            background-color: var(--background-button-vert);
+            color: var(--text-blanc);
+            padding: 0 5px;
+        }
+    }
+}

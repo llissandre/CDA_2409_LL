@@ -1,16 +1,39 @@
-* {
-    margin: 0;
+/* Sélectionne tous les éléments  + pseudo élément before et after */
+*,
+*::after,
+*::before {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: border-box;
     background-color: white;
+    margin: 0;
+    --square: 6rem;
 }
 
 body {
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
 
-    #carre {
-        height: 10vh;
-    }
+div {
+    display: flex;
+}
+
+.white {
+    background-image: url(../img/white.png);
+    width: var(--square);
+    height: var(--square);
+}
+
+.red {
+    background-image: url(../img/red.png);
+    width: var(--square);
+    height: var(--square);
+}
+
+.black {
+    background-image: url(../img/black.png);
+    width: var(--square);
+    height: var(--square);
 }
