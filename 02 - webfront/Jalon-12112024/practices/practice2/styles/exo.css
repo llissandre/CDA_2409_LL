@@ -28,10 +28,6 @@ main {
     height: 70vh;
 }
 
-.container {
-    padding: 2em;
-}
-
 .flex-container {
     display: flex;
     justify-content: center;
@@ -39,6 +35,8 @@ main {
 }
 
 .cards {
+    height: 100%;
+    align-content: center;
 
     h2,
     h3,
@@ -50,25 +48,26 @@ main {
 
     .card {
         max-width: 25vw;
-        max-height: 65vh;
 
         .image {
-            height: 10em;
+            height: 23vh;
         }
 
         article {
-            height: auto;
-            padding: 1em;
+            padding: 0.5em;
             align-content: center;
-            font-size: 0.8em;
+            font-size: 1.2rem;
+        }
+
+        h3 {
+            height: fit-content;
         }
     }
 }
 
 .card {
-    width: 25em;
+    width: 33vw;
     text-align: left;
-    margin: 1px;
     background-color: white;
 }
 
@@ -94,7 +93,7 @@ footer {
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
     .flex-container {
         display: flex;
         flex-direction: column;
@@ -102,19 +101,17 @@ footer {
         gap: 5px;
     }
 
-    .container {
-        padding: 0;
-    }
-
     .card {
-        min-width: 100%;
+        min-width: 90%;
+        margin: 20px 0;
+
+        .image{
+            min-height: 80vw;
+            /* width: 80vw; */
+        }
     }
 
     footer {
         display: none;
-    }
-
-    main {
-        height: 0;
     }
 }
