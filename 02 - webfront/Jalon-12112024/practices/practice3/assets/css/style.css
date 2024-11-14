@@ -1,0 +1,78 @@
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+
+    /* Déclarations de variables pour les couleurs */
+
+}
+
+/* Sélectionne tous les éléments  + pseudo élément before et after */
+*,
+*::after,
+*::before {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+
+    display: grid;
+}
+
+header {
+    height: 15vh;
+
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+h1 {
+    font-size: 2.4rem;
+    text-shadow: 2px 2px 1px grey;
+    justify-self: center;
+    align-content: center;
+}
+
+header ul {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    justify-items: center;
+    align-items: center;
+
+    li {
+        font-size: 1.3rem;
+        font-weight: 400;
+
+        img {
+            height: 30px;
+            width: 30px;
+        }
+        
+        #flocon{
+            display: flex;
+        }
+        
+        #panier{
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+
+        #text1{
+
+        }
+    }
+
+}
+
+main {
+    height: 75vh;
+}
+
+footer {
+    height: 10vh;
+}
