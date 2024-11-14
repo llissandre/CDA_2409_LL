@@ -1,8 +1,21 @@
-* {
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+}
+
+/* Sélectionne tous les éléments  + pseudo élément before et after */
+*,
+*::after,
+*::before {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: border-box;
     margin: 0;
 }
 
 body {
+    height: 100vh;
     background-color: #222222;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: normal;
@@ -22,30 +35,32 @@ a {
 
 header {
     background-color: #224422;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 1fr;
 
     #logo_avion_vert {
         width: 100px;
         padding-left: 5px;
+        align-self: center;
     }
 
     h1 {
         font-size: 3em;
         padding: 30px 0 70px 0;
+        text-align: center;
     }
 
     ul {
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        display: grid;
+        gap: 5px;
 
         list-style: none;
 
         li {
             background-color: #315031;
-            /* margin: 2px 0; */
+            align-content: center;
             padding: 4.5px 9px;
         }
 
@@ -83,7 +98,7 @@ tbody {
     tr {
         text-align: left;
     }
-    
+
     td {
         border-top: 1px #ababab solid;
         padding-left: 50px;
@@ -95,7 +110,7 @@ tr {
 }
 
 .contourtableau {
-border: 6px white solid;
+    border: 6px white solid;
 }
 
 #photos {
