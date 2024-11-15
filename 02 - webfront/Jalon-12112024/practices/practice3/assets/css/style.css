@@ -19,19 +19,19 @@
 
 body {
     height: 100vh;
-
-    display: grid;
 }
 
 header {
     height: 15vh;
 
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 20vw 48vw 16vw 16vw;
+    grid-template-rows: 1fr;
 }
 
 h1 {
     font-size: 2.4rem;
+    font-weight: 600;
     text-shadow: 2px 2px 1px grey;
     justify-self: center;
     align-content: center;
@@ -39,35 +39,44 @@ h1 {
 
 header ul {
     display: grid;
-    grid-template-columns: repeat(5, 20%);
+    grid-template-columns: repeat(3, 16vw);
+    grid-template-rows: 1fr;
     justify-items: center;
     align-items: center;
 
     li {
         font-size: 1.3rem;
-        font-weight: 400;
+        font-weight: 600;
 
-        img {
-            height: 30px;
-            width: 30px;
-        }
-        
-        #flocon{
-            display: flex;
-        }
-        
-        #panier{
-            width: 100%;
-            height: 100%;
-            /* display: flex; */
-            /* justify-content: space-evenly; */
-        }
-
-        /* #text1{
-
-        } */
     }
+}
 
+#flocon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #3faeee;
+
+    img {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+#panier {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    img {
+        height: 30px;
+        width: 30px;
+    }
 }
 
 main {
@@ -76,8 +85,74 @@ main {
     display: grid;
     grid-template-columns: 50vw 50vw;
     grid-template-rows: 1fr;
+}
 
-    
+#container-main-left {
+    padding-left: 21vh;
+    padding-top: 5vh;
+
+    #chaussure {
+        max-height: 450px;
+    }
+}
+
+#container-main-right {
+    padding-top: 5vh;
+
+    h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 1.9vh;
+    }
+
+    .tag {
+        color: #478b64;
+        background-color: #cef6d3;
+        width: 33px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        padding: 5px;
+        border-radius: 10%;
+        text-align: center;
+    }
+
+    .price {
+        height: 6vh;
+        align-content: center;
+        .euro {
+            font-size: 1.3rem;
+            font-weight: 900;
+            position: absolute;
+            top: 200px;
+        }
+
+        .prix {
+            font-size: 2.6rem;
+            font-weight: 900;
+            position:relative;
+            left: 10px;
+        }
+    }
+
+    .text{
+        color: grey;
+        margin: 2.5vh 0;
+    }
+
+    .taille{
+        
+    }
+
+input{
+    color: antiquewhite;
+    background-color: black;
+    width: 100%;
+    border-radius: 10;
+}
+
+    img {
+        height: 15px;
+    }
 }
 
 footer {
