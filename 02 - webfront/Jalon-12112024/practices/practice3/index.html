@@ -9,19 +9,29 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto">
     <link rel="shortcut icon" href="./assets/img/Chaussure.jpg">
 </head>
 
 <body>
     <header>
         <h1>TRENDERS</h1>
-        <ul>
-            <li>VÊTEMENT</li>
-            <li>CHAUSSURES</li>
-            <li>ACCESSOIRES</li>
-        </ul>
-        <div id="flocon"><img src="./assets/img/flocon-de-neige 1.png" alt=""> PROMO HIVER</div>
-        <div id="panier"><img src="./assets/img/Icon.png" alt=""><img src="./assets/img/icon2.png" alt=""></div>
+        <div id="top-menu">
+            <ul>
+                <li>VÊTEMENTS</li>
+                <li>CHAUSSURES</li>
+                <li>ACCESSOIRES</li>
+            </ul>
+            <div id="flocon">
+                <div>
+                    <img src="./assets/img/flocon-de-neige 1.png" alt="">
+                </div>
+                <div id="promodhiver">PROMO HIVER</div>
+            </div>
+            <div id="panier">
+                <img src="./assets/img/Icon.png" alt=""><img src="./assets/img/icon2.png" alt="">
+            </div>
+        </div>
     </header>
     <main>
         <div id="container-main-left">
@@ -29,50 +39,58 @@
             <div><img src="./assets/img/Chaussure.jpg" alt="" id="chaussure"></div>
         </div>
         <div id="container-main-right">
-            <div id="container-main-right-haut">
-                <h2>Nike sneakers</h2>
-                <p class="tag">Tag</p>
-                <div class="price">
-                    <p class="euro">&#8364;</p>
-                    <p class="prix">127</p>
+            <div id="container-main-right-responsive">
+                <div id="container-main-right-haut">
+                    <h2>Nike sneakers</h2>
+                    <p class="tag">Tag</p>
+                    <div class="price">
+                        <p class="euro">&#8364;</p>
+                        <p class="prix">127</p>
+                    </div>
+                    <p class="text">Text</p>
                 </div>
-                <p class="text">Text</p>
-            </div>
-            <div>
-                <form action="" method="post">
-                    <section class="taille">
-                        <label for="taille">Taille</label>
-                        <select name="choix-taille" id="taille">
-                            <option>38</option>
-                            <option>39</option>
-                            <option>40</option>
-                            <option>41</option>
-                            <option selected>42</option>
-                        </select>
-                    </section>
-                    <section class="couleur">
-                        <label for="Couleur">Taille</label>
-                        <select name="choix-couleur" id="couleur">
-                            <option>vert</option>
-                            <option>jaune</option>
-                            <option>rouge</option>
-                            <option>gris</option>
-                            <option selected>bleu</option>
-                        </select>
-                    </section>
-                    <section>
-                        <p><input type="button" value="Ajouter au panier"></p>
-                    </section>
-                </form>
+                <div class="formulaire">
+                    <form action="" method="">
+                        <section class="selection">
+                            <div class="taille">
+                                <label for="taille">Taille</label>
+                                <select name="choix-taille" id="taille">
+                                    <option>38</option>
+                                    <option>39</option>
+                                    <option>40</option>
+                                    <option>41</option>
+                                    <option selected>42</option>
+                                </select>
+                            </div>
+                            <div class="couleur">
+                                <label for="Couleur">Couleur</label>
+                                <select name="choix-couleur" id="couleur">
+                                    <option>vert</option>
+                                    <option>jaune</option>
+                                    <option>rouge</option>
+                                    <option>gris</option>
+                                    <option selected>bleu</option>
+                                </select>
+                            </div>
+                        </section>
+                        <div>
+                            <p><input type="submit" value="Ajouter au panier"></p>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div id="caracteristique">
-                Caractéristique <img src="./assets/img/Chevron up.png" alt="">
+                <div class="caracteristique-entete">
+                    Caractéristique<img src="./assets/img/Chevron up.png" alt="">
+                </div>
+                <p>Découvrez cette sneaker alliant confort et style, idéale pour les amateurs de mode urbaine. Conçue
+                    avec une empeigne en cuir de haute qualité et des empiècements en maille respirante ...</p>
             </div>
-            <p>Découvrez cette sneaker alliant confort et style, idéale pour les maateurs de mode urbaine. Conçue avec
-                une empeigne en cuir de haute qualité et des empiècements en maille respirante ...</p>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <div></div>
+    </footer>
 </body>
 
 </html>
