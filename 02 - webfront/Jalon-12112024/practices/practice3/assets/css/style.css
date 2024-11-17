@@ -307,7 +307,7 @@ main {
         input {
             position: absolute;
             left: 85vw;
-            /* width: 60px; */
+            width: 30px;
             cursor: pointer;
             opacity: 0;
             z-index: 2;
