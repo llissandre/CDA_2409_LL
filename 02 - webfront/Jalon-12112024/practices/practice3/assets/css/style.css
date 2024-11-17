@@ -104,7 +104,6 @@ h1 {
         height: 4px;
         width: 30px;
         background: #3faeee;
-        border-radius: 3px;
         margin-bottom: 4px;
         z-index: 1;
 
@@ -144,7 +143,7 @@ h1 {
         margin: 50px 0 0 0;
         padding: 25px;
         background: white;
-        border: 3px solid #3faeee;;
+        border: 3px solid #3faeee;
         outline: 5px solid white;
 
         a {
@@ -229,8 +228,7 @@ main {
 
         select {
             font-size: 1.2rem;
-            padding: 5px 0 5px 15px;
-            border-radius: 10px;
+            border-radius: 5px;
             border: #cecbcb 1px solid;
 
         }
@@ -259,6 +257,7 @@ main {
         #taille,
         #couleur {
             margin: 1vh 0;
+            padding: 10px;
         }
 
         .taille,
@@ -279,6 +278,7 @@ main {
 
     img {
         height: 20px;
+        z-index: 1;
     }
 
     #caracteristique {
@@ -287,6 +287,43 @@ main {
         border: #cecbcb 1px solid;
         border-radius: 10px;
         padding: 10px 5px 15px 18px;
+
+        p {
+            position: absolute;
+            width: 1px;
+            height: -1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+            white-space: nowrap;
+        }
+
+        #chevroncaracteristique {
+            height: 20px;
+        }
+
+        input {
+            position: absolute;
+            left: 85vw;
+            /* width: 60px; */
+            cursor: pointer;
+            opacity: 0;
+            z-index: 2;
+            -webkit-touch-callout: none;
+        }
+
+        input:checked~p {
+            position: relative;
+            padding: 1vh;
+            white-space: initial;
+            position: relative;
+            height: auto;
+            padding: 0.5vh;
+            width: 100%;
+            white-space: initial;
+        }
     }
 
     .caracteristique-entete {
@@ -294,6 +331,7 @@ main {
         display: flex;
         justify-content: space-between;
         padding: 0 10px 10px 0;
+        width: 100%;
     }
 }
 
