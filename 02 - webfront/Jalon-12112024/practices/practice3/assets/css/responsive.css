@@ -301,63 +301,38 @@
             }
         }
     }
+}
 
-    @media(max-width: 500px) {
-        header {
-            grid-template-columns: 80vw 20vw;
-            grid-template-rows: 10vh;
+@media(max-width: 500px) {
+    header {
+        height: 10vh;
+        grid-template-columns: 80vw 20vw;
+        grid-template-rows: 10vh;
+        position: relative;
+
+        h1 {
+            width: 100%;
+            font-size: 2rem;
+            text-align: left;
+            padding-left: 7vw;
+        }
+
+        #top-menu {
+            display: none;
+        }
+
+        #menuburger {
+            display: block;
             position: relative;
-            z-index: 3;
-
-            h1 {
-                width: 100%;
-                font-size: 2rem;
-                text-align: left;
-                padding-left: 7vw;
-            }
-
-            #top-menu {
-                display: none;
-            }
-
-            #menuburger {
-                display: block;
-                position: relative;
-                margin: auto;
-                width: 30px;
-                height: 20px;
-            }
-
-            #textmenuburger {
-                display: block;
-                position: absolute;
-                transform: translate(100px, 0);
-                transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-                width: 250px;
-                list-style: none;
-                text-decoration: none;
-
-                margin: -150px 0 0 -50px;
-                /* The negative margin values are used to move the menu up and to the left to center it vertically and horizontally within the #menuToggle div. */
-                padding: 50px;
-                padding-top: 125px;
-                background: white;
-                
-                transition: left 0.5s;
-                
-                li {
-                    padding: 3px 0;
-                    text-decoration: none;
-                    font-size: 1.4rem;
-                    list-style: none;
-                }
-            }
+            margin: auto;
+            width: 30px;
+            height: 20px;
+            z-index: 1;
         }
     }
 
     main {
-        z-index: 2;
-        height: 90vh;
+        height: 100%;
         padding: 0;
 
         display: flex;
@@ -365,7 +340,7 @@
 
         #container-main-left {
             padding: 0;
-            height: 23vh;
+            height: 27%;
 
             #coeur {
                 position: absolute;
@@ -380,18 +355,16 @@
             #chaussure {
                 position: absolute;
                 top: 8vh;
-                width: 50%;
-                left: 30vw;
-                z-index: 1;
+                width: 65%;
+                left: 18vw;
+                z-index: 0;
             }
         }
 
         #container-main-right {
             padding-top: 5vh;
             padding-right: 0;
-            height: 67%vh;
-
-            z-index: 2;
+            height: 73%;
 
             #container-main-right-haut {
                 text-align: left;
@@ -440,18 +413,17 @@
                     width: 100%;
                     padding-top: 2vh;
                 }
-            }
 
-            input {
-                margin: 2vh 0;
+                input {
+                    margin: 2vh 0;
+                }
             }
 
             #caracteristique {
-                position: relative;
                 font-size: 1rem;
                 left: 0;
                 top: 0;
-                margin: 7vh auto 3vh auto;
+                margin: 7vh auto 2vh auto;
 
                 p {
                     font-size: 1rem;
@@ -459,9 +431,4 @@
             }
         }
     }
-}
-
-footer {
-    height: 0vh;
-}
 }
