@@ -1,0 +1,447 @@
+@media (max-width:1720px) {
+    #top-menu {
+        grid-template-columns: 48vw 18vw 14vw;
+        grid-template-rows: 15vh;
+    }
+
+    main {
+        #container-main-right {
+            padding-right: 22vh;
+        }
+
+        #container-main-left {
+            padding-left: 22vh;
+
+            #chaussure {
+                width: 37vw;
+            }
+        }
+    }
+}
+
+@media (max-width: 1630px) {
+    main {
+        #container-main-right {
+            padding-right: 20vh;
+        }
+
+        #container-main-left {
+            padding-left: 20vh;
+
+            #chaussure {
+                width: 37vw;
+            }
+        }
+    }
+}
+
+@media (max-width: 1500px) {
+    #top-menu {
+        ul {
+            li {
+                font-size: 1.8rem;
+            }
+        }
+
+        #flocon {
+            font-size: 1.8rem;
+        }
+    }
+
+    main {
+        #container-main-right {
+            padding-right: 18vh;
+        }
+
+        #container-main-left {
+            padding-left: 18vh;
+        }
+    }
+}
+
+@media (max-width: 1380px) {
+    #top-menu {
+        ul {
+            li {
+                font-size: 1.7rem;
+            }
+        }
+
+        #flocon {
+            font-size: 1.7rem;
+        }
+    }
+
+    main {
+        #container-main-right {
+            padding-right: 17vh;
+        }
+
+        #container-main-left {
+            padding-left: 17vh;
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    #top-menu {
+        ul {
+            li {
+                font-size: 1.4rem;
+            }
+        }
+
+        #flocon {
+            font-size: 1.4rem;
+
+            img {
+                height: 40px;
+                width: 40px;
+            }
+        }
+
+        #panier {
+            img {
+                height: 25px;
+                width: 25px;
+            }
+        }
+    }
+
+    main {
+        #container-main-right {
+            padding-right: 15vh;
+        }
+
+        #container-main-left {
+            padding-left: 15vh;
+        }
+    }
+}
+
+@media (max-width:1200px) {
+    header {
+        grid-template-columns: 23vw 77vw;
+    }
+
+    h1 {
+        font-size: 2.9rem;
+    }
+
+    #top-menu {
+        grid-template-columns: 45vw 19vw 13vw;
+
+        ul {
+            li {
+                font-size: 1.3rem;
+            }
+        }
+
+        #flocon {
+            font-size: 1.3rem;
+
+            img {
+                height: 35px;
+                width: 35px;
+            }
+        }
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 50vw 50vw;
+        grid-template-rows: 65vh 20vh;
+
+        #container-main-left {
+            padding-left: 13vh;
+        }
+
+        #container-main-right {
+            padding-right: 12vh;
+
+            #caracteristique {
+                position: relative;
+                top: 10vh;
+                left: -115%;
+                width: 92vw;
+
+                margin-left: 0.5vh;
+            }
+        }
+    }
+
+    footer {
+        height: 0vh;
+    }
+}
+
+@media (max-width: 1050px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #top-menu {
+        grid-template-columns: 45vw 19vw 13vw;
+
+        ul {
+            li {
+                font-size: 1.2rem;
+            }
+        }
+
+        #flocon {
+            font-size: 1.2rem;
+        }
+
+        #panier {
+            img {
+                height: 22px;
+                width: 22px;
+            }
+        }
+    }
+
+    main {
+        #container-main-left {
+            padding-left: 10vh;
+        }
+
+        #container-main-right {
+            padding-right: 10vh;
+
+            #caracteristique {
+                margin-left: 1vh;
+            }
+        }
+    }
+
+}
+
+@media(max-width: 950px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    #top-menu {
+        ul {
+            li {
+                font-size: 1.1rem;
+            }
+        }
+
+        #flocon {
+            font-size: 1.1rem;
+        }
+
+        #panier {
+            img {
+                height: 22px;
+                width: 22px;
+            }
+        }
+    }
+
+    main {
+        #container-main-left {
+            padding-left: 8vh;
+        }
+
+        #container-main-right {
+            padding-right: 9vh;
+        }
+    }
+}
+
+@media(max-width: 880px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    #top-menu {
+        ul {
+            li {
+                font-size: 1rem;
+            }
+        }
+
+        #flocon {
+            font-size: 1rem;
+        }
+
+        #panier {
+            img {
+                height: 19px;
+                width: 19px;
+            }
+        }
+    }
+
+    main {
+        height: 85vh;
+        grid-template-columns: 50vw 50vw;
+        grid-template-rows: 85vh;
+
+        #container-main-left {
+            padding-left: 5vh;
+
+            #chaussure {
+                width: 44vw;
+            }
+
+            #container-main-right {
+                padding-right: 5vh;
+
+                #caracteristique {
+                    margin-left: -5vh;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 500px) {
+    header {
+        height: 10vh;
+        grid-template-columns: 80vw 20vw;
+        grid-template-rows: 10vh;
+        position: relative;
+
+        h1 {
+            width: 100%;
+            font-size: 1.5rem;
+            text-align: left;
+            padding-left: 7vw;
+        }
+
+        #top-menu {
+            display: none;
+        }
+
+        #menuburger {
+            display: block;
+            position: relative;
+            margin: auto;
+            border: 2px solid 478b64;
+            width: 30px;
+            height: 20px;
+            z-index: 1;
+        }
+    }
+
+    main {
+        height: 90vh;
+        padding: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        #container-main-left {
+            padding: 0;
+            height: 33%;
+
+            #coeur {
+                position: absolute;
+                top: 12vh;
+                left: 10vw;
+                z-index: 1;
+
+                height: 35px;
+                width: 35px;
+            }
+
+            #chaussure {
+                position: absolute;
+                top: 10vh;
+                width: 60%;
+                left: 15vw;
+                z-index: 0;
+            }
+        }
+
+        #container-main-right {
+            z-index: 2;
+            padding-top: 9vh;
+            padding-right: 0;
+            height: 5vh;
+
+            #container-main-right-haut {
+                text-align: left;
+                padding-left: 3vw;
+                padding-bottom: 1vh;
+
+                h2 {
+                    font-size: 1.3rem;
+                }
+
+                .tag {
+                    font-size: 0.8rem;
+                    width: 35px;
+                }
+
+                .price {
+                    height: 7vh;
+                    display: flex;
+
+                    .euro {
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                    }
+
+                    .prix {
+                        font-size: 2.5rem;
+                        font-weight: bold;
+                    }
+                }
+
+                .text {
+                    font-size: 0.8rem;
+                }
+            }
+
+            .formulaire {
+                padding: 1vh 3vw 0 3vw;
+
+                select {
+                    font-size: 0.8rem;
+                }
+
+                .selection {
+                    display: block;
+                    padding: 0;
+                }
+
+                .taille,
+                .couleur {
+                    font-size: 0.8rem;
+                    width: 100%;
+                    padding-top: 2vh;
+                }
+
+                input {
+                    font-size: 0.8rem;
+                    margin: 2vh 0;
+                }
+            }
+
+            #caracteristique {
+                font-size: 0.8rem;
+                left: 0;
+                top: 0;
+                margin: 13vh auto;
+
+                p {
+                    font-size: 0.9rem;
+                }
+            }
+
+            .caracteristique-entete {
+
+                padding: 0 10px 5px 0;
+            }
+        }
+    }
+}
