@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* @font-face{
+    font-family: "Roboto";
+    src: url(../fonts/Roboto-Regular.ttf);
+} */
+
 /* Sélecteur de la racine du document HTML (élement html) */
 /* html { */
 html {
@@ -5,7 +12,6 @@ html {
     box-sizing: border-box;
 
     /* Déclarations de variables pour les couleurs */
-
 }
 
 /* Sélectionne tous les éléments  + pseudo élément before et after */
@@ -20,12 +26,12 @@ html {
 
 body {
     height: 100vh;
-    font-family: 'roboto', sans serif;
+    font-family: "Roboto", sans-serif;
 }
 
 header {
     display: grid;
-    grid-template-columns: 20vw 80vw;
+    grid-template-columns: 20% 80%;
     grid-template-rows: 15vh;
 }
 
@@ -43,9 +49,8 @@ h1 {
     grid-area: 1/2/2/3;
 
     display: grid;
-    grid-template-columns: 48vw 16vw 16vw;
+    grid-template-columns: 60% 20% 20%;
     grid-template-rows: 15vh;
-
 
     ul {
         display: flex;
@@ -77,7 +82,6 @@ h1 {
         justify-content: center;
         align-items: center;
         gap: 4vh;
-        font-weight: 600;
 
         img {
             height: 35px;
@@ -160,83 +164,89 @@ h1 {
 
 main {
     display: grid;
-    grid-template-columns: 50vw 50vw;
-    grid-template-rows: 75vh;
+    grid-template-columns: 15vw 35vw 35vw 15vw;
+    grid-template-rows: 10vh 45vh 10vh 15vh 10vh;
+
+    max-height: 85vh;
+    justify-content: center;
+    align-items: center;
 }
 
 #container-main-left {
-    padding-top: 7vh;
-    padding-left: 26vh;
+    grid-area: 2/2/4/3;
+    max-height: 55vh;
 
     #coeur {
         position: absolute;
-        top: 26vh;
+        top: 25vh;
+        height: 45px;
+
         z-index: 2;
     }
 
     #chaussure {
         position: absolute;
-        width: 36vw;
+        top: 25vh;
+        width: 31vw;
+
+        z-index: 0;
     }
 }
 
 #container-main-right {
-    padding-top: 8vh;
-    padding-right: 26vh;
+    grid-area: 2/3/3/4;
 
-    h2 {
-        font-size: 2rem;
-        font-weight: 600;
-        margin-bottom: 1.9vh;
-        padding-right: 15vw;
-    }
+    
+    align-self: start;
 
-    .tag {
-        color: #478b64;
-        background-color: #cef6d3;
-        width: 50px;
-        font-size: 1.3rem;
-        font-weight: bold;
-        padding: 7px;
-        margin-bottom: 2px;
-        border-radius: 8px;
-        text-align: center;
-    }
+    #container-main-right-haut {
 
-    .price {
-        height: 7vh;
-        display: flex;
-
-        .euro {
-            font-size: 1.8rem;
-            font-weight: bold;
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2.2vh;
+            padding-right: 15vw;
         }
 
-        .prix {
-            font-size: 3rem;
+        .tag {
+            color: #478b64;
+            background-color: #cef6d3;
+            width: 50px;
+            font-size: 1.3rem;
             font-weight: bold;
+            padding: 7px;
+            margin-bottom: 0.5vh;
+            border-radius: 8px;
+            text-align: center;
         }
-    }
 
-    .text {
-        color: #bbb6b6;
-        font-size: 1.2rem;
+        .price {
+            height: 9.5vh;
+            display: flex;
+
+            .euro {
+                font-size: 1.8rem;
+                font-weight: bold;
+            }
+
+            .prix {
+                font-size: 4rem;
+                font-weight: bold;
+            }
+        }
+
+        .text {
+            color: #bbb6b6;
+            font-size: 1.2rem;
+        }
     }
 
     .formulaire {
-        height: 20vh;
-
-        select {
-            font-size: 1.2rem;
-            border-radius: 5px;
-            border: #cecbcb 1px solid;
-
-        }
-
+        
         .selection {
             display: flex;
             justify-content: flex-start;
-            padding: 25px 0 15px 0;
+            padding: 30px 0 20px 0;
             gap: 3vh;
         }
 
@@ -254,87 +264,98 @@ main {
             font-size: 1.3rem;
         }
 
+        .taille,
+        .couleur {
+            width: 50%;
+        }
+
         #taille,
         #couleur {
             margin: 1vh 0;
             padding: 10px;
-        }
-
-        .taille,
-        .couleur {
-            width: 50%;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            border: #cecbcb 1px solid;
         }
 
         input {
             font-size: 1.2rem;
             color: antiquewhite;
             background-color: #2b2b2b;
-            padding: 7px;
+            padding: 12px;
             width: 100%;
             border: none;
             border-radius: 10px;
-        }
-    }
-
-    img {
-        height: 20px;
-        z-index: 1;
-    }
-
-    #caracteristique {
-        font-size: 1.3rem;
-        line-height: 30px;
-        border: #cecbcb 1px solid;
-        border-radius: 10px;
-        padding: 10px 5px 15px 18px;
-
-        p {
-            position: absolute;
-            width: 1px;
-            height: -1px;
-            margin: -1px;
-            padding: 0;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-            white-space: nowrap;
-        }
-
-        #chevroncaracteristique {
-            height: 20px;
-        }
-
-        input {
-            position: absolute;
-            left: 85vw;
-            width: 30px;
-            cursor: pointer;
-            opacity: 0;
-            z-index: 2;
-            -webkit-touch-callout: none;
-        }
-
-        input:checked~p {
-            position: relative;
-            padding: 1vh;
-            white-space: initial;
-            position: relative;
-            height: auto;
-            padding: 0.5vh;
-            width: 100%;
-            white-space: initial;
-        }
-    }
-
-    .caracteristique-entete {
-        font-weight: bold;
-        display: flex;
-        justify-content: space-between;
-        padding: 0 10px 10px 0;
-        width: 100%;
+            }
     }
 }
 
-footer {
-    height: 10vh;
+#caracteristique {
+    grid-area: 3/3/4/4;
+
+    align-self: start;
+
+    font-size: 1.3rem;
+    line-height: 30px;
+    border: #cecbcb 1px solid;
+    border-radius: 10px;
+    padding: 10px 0 10px 10px;
+
+    input {
+        position: absolute;
+        top: 72vh;
+        left: 82vw;
+        width: 40px;
+        cursor: pointer;
+        opacity: 1;
+        z-index: 2;
+        -webkit-touch-callout: none;
+    }
+
+    .caracteristique-entete {
+        display: inline;
+        padding: 0;
+        font-weight: bold;
+    }
+
+    .chevron {
+        display: inline-block;
+        padding: 0;
+        position: absolute;
+        left: 83vw;
+
+        img {
+            height: 16px;
+            width: 14px;
+            z-index: 1;
+        }
+    }
+
+    
+    p {
+        position: absolute;
+        width: 1px;
+        height: -1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+        margin: 10px 0 0 0;
+        white-space: nowrap;
+    }
+
+    input:checked~p {
+        position: relative;
+        white-space: initial;
+        position: relative;
+        width: 100%;
+        position: relative;
+        white-space: initial;
+        position: relative;
+        padding: 0.5vh;
+        width: 100%;
+    }
+    input:checked~.chevron {
+        transform: rotate(180deg);
+        }
 }
