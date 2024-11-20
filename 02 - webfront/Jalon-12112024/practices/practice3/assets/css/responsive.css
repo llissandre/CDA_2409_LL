@@ -1,0 +1,487 @@
+@media (max-width:1650px) {
+    #top-menu {
+        grid-template-columns: 60% 22% 18%;
+    }
+}
+
+@media (max-width: 1500px) {
+    #top-menu {
+        ul {
+            li {
+                font-size: 1.8rem;
+            }
+        }
+
+        #flocon {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+@media (max-width: 1380px) {
+    h1 {
+        font-size: 3.1rem;
+    }
+
+    #top-menu {
+        ul {
+            li {
+                font-size: 1.7rem;
+            }
+        }
+
+        #flocon {
+            font-size: 1.7rem;
+        }
+    }
+}
+
+@media (max-width: 1310px) {
+    h1 {
+        font-size: 2.9rem;
+    }
+
+    #top-menu {
+        ul {
+            li {
+                font-size: 1.5rem;
+            }
+        }
+
+        #flocon {
+            font-size: 1.5rem;
+
+            img {
+                height: 40px;
+                width: 40px;
+            }
+        }
+
+        #panier {
+            img {
+                height: 25px;
+                width: 25px;
+            }
+        }
+    }
+}
+
+@media (max-width:1200px) {
+    header {
+        grid-template-columns: 21vw 79vw;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    #top-menu {
+        grid-template-columns: 60% 24%w 16%;
+
+        ul {
+            li {
+                font-size: 1.4rem;
+            }
+        }
+
+        #flocon {
+            font-size: 1.4rem;
+
+            img {
+                height: 35px;
+                width: 35px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1110px) {
+    header {
+        grid-template-columns: 22% 78%;
+    }
+
+    h1 {
+        font-size: 2.7rem;
+    }
+
+    #top-menu {
+        grid-template-columns: 45vw 19vw 13vw;
+
+        ul {
+            li {
+                font-size: 1.3rem;
+            }
+        }
+
+        #flocon {
+            font-size: 1.3rem;
+        }
+
+        #panier {
+            img {
+                height: 22px;
+                width: 22px;
+            }
+        }
+    }
+
+    #caracteristique {
+        grid-area: 3/2/4/4;
+
+        #checkbox-caracteristique {
+            top: 71vh;
+            left: 82vw;
+        }
+
+        .chevron {
+            left: 83vw;
+        }
+    }
+}
+
+@media (max-width: 1020px) {
+    header {
+        grid-template-columns: 23vw 77vw;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    #top-menu {
+        ul {
+            li {
+                font-size: 1.2rem;
+            }
+        }
+
+        #flocon {
+            font-size: 1.2rem;
+        }
+    }
+
+    main {
+        grid-template-columns: 10vw 40vw 40vw 10vw;
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        #caracteristique {
+            font-size: 1.3rem;
+
+            #checkbox-caracteristique {
+                top: 71vh;
+                left: 86.5vw;
+            }
+
+            .chevron {
+                left: 88vw;
+            }
+
+            img {
+                height: 16px;
+            }
+        }
+    }
+}
+
+@media(max-width: 950px) {
+    header {
+        display: grid;
+        grid-template-columns: 24vw 76vw;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    #top-menu {
+        grid-template-columns: 46vw 19vw 11vw;
+
+        ul {
+            li {
+                font-size: 1rem;
+            }
+        }
+
+        #flocon {
+            font-size: 1rem;
+        }
+
+        #panier {
+            img {
+                height: 22px;
+                width: 22px;
+            }
+        }
+    }
+}
+
+@media(max-width: 880px) {
+    header {
+        grid-template-columns: 25vw 75vw;
+    }
+
+    h1 {
+        font-size: 2.3rem;
+    }
+
+    #top-menu {
+        grid-template-columns: 44vw 20vw 11vw;
+
+        ul {
+            li {
+                font-size: 0.9rem;
+            }
+        }
+
+        #flocon {
+            font-size: 0.9rem;
+
+            img {
+                height: 25px;
+                width: 25px;
+            }
+        }
+
+        #panier {
+            img {
+                height: 19px;
+                width: 19px;
+            }
+        }
+    }
+}
+
+@media(max-width: 780px) {
+    header {
+        grid-template-columns: 26vw 74vw;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    #top-menu {
+        grid-template-columns: 43vw 20vw 11vw;
+
+        ul {
+            li {
+                font-size: 0.8rem;
+            }
+        }
+
+        #flocon {
+            font-size: 0.8rem;
+
+            img {
+                height: 24px;
+                width: 24px;
+            }
+        }
+
+        #panier {
+            img {
+                height: 17px;
+                width: 17px;
+            }
+        }
+    }
+
+    main {
+        #caracteristique {
+            font-size: 1.3rem;
+
+            #checkbox-caracteristique {
+                top: 70.5vh;
+                left: 86vw;
+            }
+
+            .chevron {
+                left: 87vw;
+            }
+
+            img {
+                height: 16px;
+            }
+        }
+    }
+}
+
+@media(max-width: 700px) {
+    header {
+        grid-template-columns: 27vw 73vw;
+    }
+
+    h1 {
+        font-size: 2.1rem;
+    }
+
+    #top-menu {
+        grid-template-columns: 42vw 20vw 11vw;
+
+        ul {
+            li {
+                font-size: 0.7rem;
+            }
+        }
+
+        #flocon {
+            font-size: 0.7rem;
+
+            img {
+                height: 25px;
+                width: 25px;
+            }
+        }
+
+        #panier {
+            img {
+                height: 19px;
+                width: 19px;
+            }
+        }
+    }
+
+    main {
+        #caracteristique {
+            font-size: 1.3rem;
+
+            #checkbox-caracteristique {
+                top: 70.5vh;
+                left: 84vw;
+            }
+
+            .chevron {
+                left: 86vw;
+            }
+        }
+    }
+}
+
+@media(max-width: 500px) {
+    header {
+        grid-template-columns: 80vw 20vw;
+        grid-template-rows: 10vh;
+
+        h1 {
+            width: 100%;
+            font-size: 1.8rem;
+            text-align: left;
+            padding-left: 5vw;
+        }
+
+        #top-menu {
+            display: none;
+        }
+
+        #menuburger {
+            display: block;
+            position: relative;
+            margin: auto;
+            border: 2px solid 478b64;
+            width: 30px;
+            height: 20px;
+            z-index: 1;
+        }
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 35vh 35vh 20vh;
+
+        #container-main-left {
+            grid-area: 1/1/2/2;
+            
+            height: 25vh;
+            
+            #coeur {
+                position: absolute;
+                left: 25vw;
+                height: 25px;
+                width: 25px;
+            }
+            
+            #chaussure {
+                position: absolute;
+                top: 15vh;
+                left: 30vw;
+                justify-self: center;
+                width: 60vw;
+            }
+        }
+
+        #container-main-right {
+            grid-area: 2/1/3/2;
+            z-index: 2;
+
+            /* padding-top: 9vh; */
+            height: 5vh;
+
+            #container-main-right-haut {
+                text-align: left;
+
+                h2 {
+                    font-size: 1.3rem;
+                }
+
+                .tag {
+                    font-size: 0.8rem;
+                    width: 35px;
+                }
+
+                .text {
+                    font-size: 0.8rem;
+                }
+            }
+
+            .formulaire {
+                select {
+                    font-size: 0.8rem;
+                }
+
+                .selection {
+                    display: block;
+                    padding: 0;
+                }
+
+                .taille,
+                .couleur {
+                    font-size: 0.8rem;
+                    width: 100%;
+                    padding-top: 2vh;
+                }
+
+                input {
+                    font-size: 0.8rem;
+                    margin: 2vh 0;
+                }
+            }
+        }
+
+        #caracteristique {
+            grid-area: 3/1/4/2;
+            font-size: 0.8rem;
+            line-height: 20px;
+
+            #checkbox-caracteristique {}
+
+            /* {
+                font-size: 0.8rem;
+                left: 0;
+                top: 0;
+                margin: 13vh auto;
+            } */
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            input:checked~p {
+                padding: 0;
+            }
+        }
+    }
+}

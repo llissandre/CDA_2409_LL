@@ -32,15 +32,17 @@ body {
 header {
     display: grid;
     grid-template-columns: 20% 80%;
-    grid-template-rows: 15vh;
+    grid-template-rows: 10vh;
+
+    text-transform: uppercase;
 }
 
 h1 {
     grid-area: 1/1/2/2;
 
-    font-size: 3rem;
+    font-size: 2.9rem;
     font-weight: 600;
-    text-shadow: 0px 3px 4px #acaaaa;
+    text-shadow: 0px 2px 3px #acaaaa;
     justify-self: center;
     align-content: center;
 }
@@ -49,8 +51,7 @@ h1 {
     grid-area: 1/2/2/3;
 
     display: grid;
-    grid-template-columns: 58% 25% 17%;
-    grid-template-rows: 15vh;
+    grid-template-columns: 48vw 16vw 16vw;
 
     ul {
         display: flex;
@@ -84,8 +85,8 @@ h1 {
         gap: 4vh;
 
         img {
-            height: 35px;
-            width: 35px;
+            height: 30px;
+            width: 30px;
         }
     }
 }
@@ -93,7 +94,7 @@ h1 {
 #menuburger {
     display: none;
 
-    input {
+    #checkbox-menuburger {
         position: absolute;
         width: 40px;
         cursor: pointer;
@@ -149,6 +150,7 @@ h1 {
         background: white;
         border: 3px solid #3faeee;
         outline: 5px solid white;
+        text-transform: uppercase;
 
         a {
             text-decoration: none;
@@ -165,7 +167,7 @@ h1 {
 main {
     display: grid;
     grid-template-columns: 15vw 35vw 35vw 15vw;
-    grid-template-rows: 10vh 45vh 10vh 15vh 10vh;
+    grid-template-rows: 10vh 45vh 5vh 20vh 10vh;
 
     max-height: 85vh;
     justify-content: center;
@@ -174,20 +176,20 @@ main {
 
 #container-main-left {
     grid-area: 2/2/4/3;
-    max-height: 55vh;
+    height: 100%;
 
     #coeur {
-        position: absolute;
-        top: 25vh;
-        height: 45px;
+        height: 40px;
+        position: relative;
 
         z-index: 2;
     }
 
     #chaussure {
         position: absolute;
-        top: 25vh;
+        top: 23vh;
         width: 31vw;
+        max-height: 100%;
 
         z-index: 0;
     }
@@ -196,16 +198,18 @@ main {
 #container-main-right {
     grid-area: 2/3/3/4;
 
-    
+
     align-self: start;
 
     #container-main-right-haut {
-
         h2 {
             font-size: 1.8rem;
             font-weight: 600;
-            margin-bottom: 2.2vh;
-            padding-right: 15vw;
+            margin-bottom: 1.9vh;
+        }
+
+        #majuscule {
+            text-transform: capitalize;
         }
 
         .tag {
@@ -214,100 +218,105 @@ main {
             width: 50px;
             font-size: 1rem;
             font-weight: bold;
+            text-transform: capitalize;
             padding: 7px;
-            margin-bottom: 0.5vh;
             border-radius: 8px;
             text-align: center;
         }
-
+        
         .price {
             height: 9.5vh;
             display: flex;
-
+            
             .euro {
                 font-size: 1.8rem;
                 font-weight: bold;
             }
-
+            
             .prix {
-                font-size: 4rem;
+                font-size: 3rem;
                 font-weight: bold;
             }
         }
-
+        
         .text {
             color: #bbb6b6;
             font-size: 1.2rem;
+            text-transform: capitalize;
         }
     }
-
+    
     .formulaire {
-        
         .selection {
             display: flex;
             justify-content: flex-start;
-            padding: 30px 0 20px 0;
+            padding: 15px 0 10px 0;
             gap: 3vh;
         }
-
+        
         .taille {
             display: flex;
             flex-direction: column;
             color: #3a3a3a;
             font-size: 1.3rem;
         }
-
+        
         .couleur {
             display: flex;
             flex-direction: column;
             color: #3a3a3a;
             font-size: 1.3rem;
         }
-
+        
         .taille,
         .couleur {
+            text-transform: capitalize;
             width: 50%;
         }
-
+        
         #taille,
         #couleur {
             margin: 1vh 0;
             padding: 10px;
             font-size: 1.2rem;
+            text-transform: capitalize;
             border-radius: 5px;
             border: #cecbcb 1px solid;
         }
-
+        
         input {
             font-size: 1.2rem;
+            text-transform: capitalize;
             color: antiquewhite;
             background-color: #2b2b2b;
             padding: 12px;
             width: 100%;
             border: none;
             border-radius: 10px;
-            }
+        }
     }
 }
 
 #caracteristique {
     grid-area: 3/3/4/4;
-
+    
     align-self: start;
+    margin-top: 2vh;
+    text-transform: capitalize;
 
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 30px;
     border: #cecbcb 1px solid;
     border-radius: 10px;
-    padding: 10px 0 10px 10px;
+    padding: 10px;
 
-    input {
+    #checkbox-caracteristique {
         position: absolute;
-        top: 72vh;
-        left: 82vw;
+        top: 75vh;
+        left: 82.5vw;
         width: 40px;
         cursor: pointer;
-        opacity: 1;
+        opacity: 0;
         z-index: 2;
         -webkit-touch-callout: none;
     }
@@ -322,7 +331,7 @@ main {
         display: inline-block;
         padding: 0;
         position: absolute;
-        left: 83vw;
+        left: 83.5vw;
 
         img {
             height: 16px;
@@ -331,7 +340,6 @@ main {
         }
     }
 
-    
     p {
         position: absolute;
         width: 1px;
@@ -358,5 +366,5 @@ main {
 
     input:checked~.chevron {
         transform: rotate(180deg);
-        }
+    }
 }
