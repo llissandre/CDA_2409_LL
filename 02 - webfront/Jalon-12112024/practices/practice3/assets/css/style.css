@@ -42,7 +42,7 @@ h1 {
 
     font-size: 2.9rem;
     font-weight: 600;
-    text-shadow: 0px 2px 3px #acaaaa;
+    text-shadow: 0px 4px 3px #acaaaa;
     justify-self: center;
     align-content: center;
 }
@@ -95,42 +95,48 @@ h1 {
     display: none;
 
     #checkbox-menuburger {
-        position: absolute;
-        width: 40px;
+        position: relative;
+        top: 2.5vh;
+        left: 0.5vh;
+
+        width: 30px;
         cursor: pointer;
         opacity: 0;
-        z-index: 2;
         -webkit-touch-callout: none;
+
+        z-index: 2;
     }
 
     span {
-        display: block;
         position: relative;
-        height: 4px;
-        width: 30px;
+
+        display: block;
+        height: 5px;
+        width: 40px;
         background: #3faeee;
-        margin-bottom: 4px;
+        margin-bottom: 6px;
+
         z-index: 1;
 
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
             background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-        transform-origin: 4px 0px;
+        transform-origin: 10px 10px;
     }
 
     span:first-child {
-        transform-origin: 0% 0%;
+        transform-origin: 0 10px;
     }
 
     span:nth-last-child(2) {
-        transform-origin: 0% 100%;
+        transform-origin: 0% 0px;
     }
 
     input:checked~span {
-        transform: rotate(45deg) translate(-2px, -1px);
+        transform: rotate(45deg) translate(-2px, 2px);
     }
 
     input:checked~span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(0, -1px);
+        transform: rotate(-45deg) translate(0, 4px);
     }
 
     input:checked~span:nth-last-child(3) {
@@ -138,12 +144,12 @@ h1 {
     }
 
     input:checked~ul {
-        left: 600px;
+        left: 900px;
     }
 
     #textmenuburger {
         position: absolute;
-        transform: translate(-800px, 0);
+        transform: translate(-650px, 0);
         width: 220px;
         margin: 50px 0 0 0;
         padding: 25px;
@@ -151,6 +157,7 @@ h1 {
         border: 3px solid #3faeee;
         outline: 5px solid white;
         text-transform: uppercase;
+        z-index: 2;
 
         a {
             text-decoration: none;
@@ -166,7 +173,7 @@ h1 {
 
 main {
     display: grid;
-    grid-template-columns: 15vw 35vw 35vw 15vw;
+    grid-template-columns: 10vw 40vw 40vw 10vw;
     grid-template-rows: 10vh 45vh 5vh 20vh 10vh;
 
     max-height: 85vh;
@@ -175,21 +182,21 @@ main {
 }
 
 #container-main-left {
-    grid-area: 2/2/4/3;
+    grid-area: 2/2/3/3;
+
     height: 100%;
+    padding-left: 5vw;
 
     #coeur {
-        height: 40px;
         position: relative;
 
-        z-index: 2;
+        z-index: 99;
     }
 
     #chaussure {
-        position: absolute;
-        top: 23vh;
+        position: relative;
+        top: -40px;
         width: 31vw;
-        max-height: 100%;
 
         z-index: 0;
     }
@@ -223,29 +230,29 @@ main {
             border-radius: 8px;
             text-align: center;
         }
-        
+
         .price {
             height: 9.5vh;
             display: flex;
-            
+
             .euro {
                 font-size: 1.8rem;
                 font-weight: bold;
             }
-            
+
             .prix {
                 font-size: 3rem;
                 font-weight: bold;
             }
         }
-        
+
         .text {
             color: #bbb6b6;
             font-size: 1.2rem;
             text-transform: capitalize;
         }
     }
-    
+
     .formulaire {
         .selection {
             display: flex;
@@ -253,27 +260,18 @@ main {
             padding: 15px 0 10px 0;
             gap: 3vh;
         }
-        
-        .taille {
-            display: flex;
-            flex-direction: column;
-            color: #3a3a3a;
-            font-size: 1.3rem;
-        }
-        
-        .couleur {
-            display: flex;
-            flex-direction: column;
-            color: #3a3a3a;
-            font-size: 1.3rem;
-        }
-        
+
         .taille,
         .couleur {
+            display: flex;
+            flex-direction: column;
+            color: #3a3a3a;
+
+            font-size: 1.3rem;
             text-transform: capitalize;
             width: 50%;
         }
-        
+
         #taille,
         #couleur {
             margin: 1vh 0;
@@ -283,7 +281,7 @@ main {
             border-radius: 5px;
             border: #cecbcb 1px solid;
         }
-        
+
         input {
             font-size: 1.2rem;
             text-transform: capitalize;
@@ -299,9 +297,9 @@ main {
 
 #caracteristique {
     grid-area: 3/3/4/4;
-    
+
     align-self: start;
-    margin-top: 2vh;
+    margin-top: -5vh;
     text-transform: capitalize;
 
     font-size: 1.2rem;
@@ -312,8 +310,8 @@ main {
 
     #checkbox-caracteristique {
         position: absolute;
-        top: 75vh;
-        left: 82.5vw;
+        top: 62vh;
+        left: 87.5vw;
         width: 40px;
         cursor: pointer;
         opacity: 0;
@@ -331,7 +329,7 @@ main {
         display: inline-block;
         padding: 0;
         position: absolute;
-        left: 83.5vw;
+        left: 88vw;
 
         img {
             height: 16px;
