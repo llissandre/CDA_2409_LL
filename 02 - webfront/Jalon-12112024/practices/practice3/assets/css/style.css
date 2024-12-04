@@ -121,19 +121,19 @@ h1 {
     span:nth-last-child(2) {
         transform-origin: 0% 0%;
     }
-    
-    
+
+
     input[type="checkbox"]:checked {
         display: none;
-        
+
         ~label span {
             transform: rotate(45deg) translate(-8px, -8px);
         }
-        
+
         ~label span:nth-last-child(2) {
             transform: rotate(-45deg) translate(-7px, 12px);
         }
-        
+
         ~label span:nth-last-child(3) {
             transform: rotate(0deg) scale(0, 0);
         }
@@ -313,6 +313,8 @@ main {
 
     label {
         cursor: pointer;
+        -webkit-user-select: none;
+        user-select: none;
     }
 
     #checkbox-caracteristique {
