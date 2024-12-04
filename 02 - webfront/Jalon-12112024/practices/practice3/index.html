@@ -9,102 +9,104 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto">
     <link rel="shortcut icon" href="./assets/img/Chaussure.jpg">
 </head>
 
 <body>
     <header>
-        <h1>TRENDERS</h1>
+        <h1>trenders</h1>
         <div id="top-menu">
             <ul>
-                <li>VÊTEMENTS</li>
-                <li>CHAUSSURES</li>
-                <li>ACCESSOIRES</li>
+                <li>vêtements</li>
+                <li>chaussures</li>
+                <li>accessoires</li>
             </ul>
             <div id="flocon">
                 <img src="./assets/img/flocon-de-neige 1.png" alt="">
-                PROMO HIVER
+                <span id="text-flocon">promo hiver</span>
             </div>
             <div id="panier">
                 <img src="./assets/img/Icon.png" alt="">
                 <img src="./assets/img/icon2.png" alt="">
             </div>
         </div>
-        <div id="menuburger">
-            <input type="checkbox"/>
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="menuburger">
+            <input aria-label="Menu burger" type="checkbox" id="checkbox-menuburger">
+            <label for="checkbox-menuburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
             <ul id="textmenuburger">
-                <li><a href="">VÊTEMENTS</a></li>
-                <li><a href="">CHAUSSURES</a></li>
-                <li><a href="">ACCESSOIRES</a></li>
-                <li><a href="">PROMO HIVER</a></li>
-                <li><a href="">PANIER</a></li>
-                <li><a href="">COMPTE</a></li>
+                <li><a href="">vêtements</a></li>
+                <li><a href="">chaussures</a></li>
+                <li><a href="">accessoires</a></li>
+                <li><a href="">promo hiver</a></li>
+                <li><a href="">panier</a></li>
+                <li><a href="">compte</a></li>
             </ul>
         </div>
     </header>
     <main>
         <div id="container-main-left">
-            <div><img src="./assets/img/Icon Button.png" alt="" id="coeur"></div>
-            <div><img src="./assets/img/Chaussure.jpg" alt="" id="chaussure"></div>
+            <div class="coeur"><img src="./assets/img/Icon Button.png" alt="" id="coeur"></div>
+            <div class="chaussure"><img src="./assets/img/Chaussure.jpg" alt="" id="chaussure"></div>
         </div>
         <div id="container-main-right">
-            <div id="container-main-right-responsive">
-                <div id="container-main-right-haut">
-                    <h2>Nike sneakers</h2>
-                    <p class="tag">Tag</p>
-                    <div class="price">
-                        <p class="euro">&#8364;</p>
-                        <p class="prix">127</p>
-                    </div>
-                    <p class="text">Text</p>
+            <div id="container-main-right-haut">
+                <h2><span id="majuscule">nike</span> sneakers</h2>
+                <p class="tag">tag</p>
+                <div class="price">
+                    <p class="euro">&#8364;</p>
+                    <p class="prix">127</p>
                 </div>
-                <div class="formulaire">
-                    <form action="" method="">
-                        <section class="selection">
-                            <div class="taille">
-                                <label for="taille">Taille</label>
-                                <select name="choix-taille" id="taille">
-                                    <option>38</option>
-                                    <option>39</option>
-                                    <option>40</option>
-                                    <option>41</option>
-                                    <option selected>42</option>
-                                </select>
-                            </div>
-                            <div class="couleur">
-                                <label for="Couleur">Couleur</label>
-                                <select name="choix-couleur" id="couleur">
-                                    <option>vert</option>
-                                    <option>jaune</option>
-                                    <option>rouge</option>
-                                    <option>gris</option>
-                                    <option selected>bleu</option>
-                                </select>
-                            </div>
-                        </section>
-                        <div>
-                            <input type="submit" value="Ajouter au panier">
-                        </div>
-                    </form>
-                </div>
+                <p class="text">text</p>
             </div>
-            <div id="caracteristique">
-                <input type="checkbox">
-                <div class="caracteristique-entete">
-                    Caractéristique<img src="./assets/img/Chevron down.png" alt="" id="chevroncaracteristique">
-                </div>
-                <p>Découvrez cette sneaker alliant confort et style, idéale pour les amateurs de mode urbaine. Conçue
-                    avec une empeigne en cuir de haute qualité et des empiècements en maille respirante ...</p>
+            <div class="formulaire">
+                <form action="" method="">
+                    <section class="selection">
+                        <div class="taille">
+                            <label for="taille">taille</label>
+                            <select name="choix-taille" id="taille">
+                                <option>38</option>
+                                <option>39</option>
+                                <option>40</option>
+                                <option>41</option>
+                                <option selected>42</option>
+                            </select>
+                        </div>
+                        <div class="couleur">
+                            <label for="Couleur">couleur</label>
+                            <select aria-label="Choix couleur des chaussures" name="choix-couleur" id="couleur">
+                                <option>vert</option>
+                                <option>jaune</option>
+                                <option>rouge</option>
+                                <option>gris</option>
+                                <option selected>bleu</option>
+                            </select>
+                        </div>
+                    </section>
+                    <div>
+                        <input type="submit" value="ajouter au panier">
+                    </div>
+                </form>
             </div>
         </div>
+        <div id="caracteristique">
+            <input aria-label="Search" type="checkbox" id="checkbox-caracteristique">
+            <label for="checkbox-caracteristique">
+                <div class="chevron">
+                    <img src="./assets/img/Chevron down.png" alt="" id="chevroncaracteristique">
+                </div>
+            </label>
+            <div class="caracteristique-entete">
+                caractéristique
+            </div>
+            <p>Découvrez cette sneaker alliant confort et style, idéale pour les amateurs de mode urbaine. Conçue
+                avec une empeigne en cuir de haute qualité et des empiècements en maille respirante ...</p>
+        </div>
+        </div>
     </main>
-    <footer>
-        <div></div>
-    </footer>
 </body>
 
 </html>
