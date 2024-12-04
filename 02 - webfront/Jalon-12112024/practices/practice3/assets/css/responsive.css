@@ -2,12 +2,6 @@
     #top-menu {
         grid-template-columns: 60% 22% 18%;
     }
-
-    #caracteristique {
-        #checkbox-caracteristique {
-            left: 87vw;
-        }
-    }
 }
 
 @media (max-width: 1500px) {
@@ -102,10 +96,6 @@
 
     #caracteristique {
         grid-area: 3/2/4/4;
-
-        #checkbox-caracteristique {
-            left: 86vw;
-        }
 
         .chevron {
             left: 87vw;
@@ -207,10 +197,6 @@
 
     #caracteristique {
         font-size: 1.3rem;
-
-        #checkbox-caracteristique {
-            left: 85vw;
-        }
 
         .chevron {
             left: 86vw;
@@ -340,10 +326,6 @@
         #caracteristique {
             font-size: 1.3rem;
 
-            #checkbox-caracteristique {
-                left: 83vw;
-            }
-
             .chevron {
                 left: 84vw;
             }
@@ -367,7 +349,7 @@
             display: none;
         }
 
-        #menuburger {
+        .menuburger {
             display: block;
             align-content: center;
             margin: auto;
@@ -462,13 +444,8 @@
             font-size: 1.2rem;
             line-height: 20px;
 
-            #checkbox-caracteristique {
-                top: 108.5vh;
-                left: 87vw;
-            }
-
             .chevron {
-                left: 89vw;
+                left: 91vw;
             }
         }
 

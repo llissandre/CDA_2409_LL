@@ -91,20 +91,11 @@ h1 {
     }
 }
 
-#menuburger {
+.menuburger {
     display: none;
 
-    #checkbox-menuburger {
-        position: relative;
-        top: 2.5vh;
-        left: 0.5vh;
-
-        width: 30px;
-        cursor: pointer;
-        opacity: 0;
-        -webkit-touch-callout: none;
-
-        z-index: 2;
+    input[type="checkbox"] {
+        /* display: none; */
     }
 
     span {
@@ -135,16 +126,38 @@ h1 {
         transform: rotate(45deg) translate(-2px, 2px);
     }
 
-    input:checked~span:nth-last-child(2) {
+    input:checked span:nth-last-child(2) {
         transform: rotate(-45deg) translate(0, 4px);
     }
 
-    input:checked~span:nth-last-child(3) {
+    +span:nth-last-child(3) {
         transform: rotate(0deg) scale(0.2, 0.2);
     }
 
-    input:checked~ul {
+    ~ul {
         left: 900px;
+    }
+
+    /* input:checked {
+            +span:nth-last-child(2) {
+            transform: rotate(-45deg) translate(0, 4px);
+            }
+            
+            +span:nth-last-child(3) {
+                transform: rotate(0deg) scale(0.2, 0.2);
+                }
+                
+                ~ul {
+                    left: 900px;
+                    }
+                    } */
+
+
+    label {
+        cursor: pointer;
+        -webkit-user-select: none;
+        user-select: none;
+        transition: 0.2s;
     }
 
     #textmenuburger {
@@ -308,14 +321,17 @@ main {
     border-radius: 10px;
     padding: 10px;
 
+    label {
+        cursor: pointer;
+
+    }
+
     #checkbox-caracteristique {
         position: absolute;
         top: 62vh;
         left: 87.5vw;
         width: 40px;
-        cursor: pointer;
-        opacity: 0;
-        z-index: 2;
+        opacity: 1;
         -webkit-touch-callout: none;
     }
 
@@ -350,19 +366,25 @@ main {
         white-space: nowrap;
     }
 
-    input:checked~p {
-        position: relative;
-        white-space: initial;
-        position: relative;
-        width: 100%;
-        position: relative;
-        white-space: initial;
-        position: relative;
-        padding: 0.5vh;
-        width: 100%;
+    input[type="checkbox"] {
+        display: none;
     }
 
-    input:checked~.chevron {
-        transform: rotate(180deg);
+    input[type="checkbox"]:checked {
+        ~p {
+            position: relative;
+            white-space: initial;
+            position: relative;
+            width: 100%;
+            position: relative;
+            white-space: initial;
+            position: relative;
+            padding: 0.5vh;
+            width: 100%;
+        }
+
+        ~.chevron {
+            transform: rotate(180deg);
+        }
     }
 }
