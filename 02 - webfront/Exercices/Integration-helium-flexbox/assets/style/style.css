@@ -1,0 +1,17 @@
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+
+    /* Déclarations de variables pour les couleurs */
+}
+
+/* Sélectionne tous les éléments  + pseudo élément before et after */
+*,
+*::after,
+*::before {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: border-box;
+    margin: 0;
+}
