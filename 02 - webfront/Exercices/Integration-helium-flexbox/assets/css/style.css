@@ -1,0 +1,160 @@
+@font-face {
+    font-family: "Inter";
+    src: url(../font/Inter/static/Inter_18pt-Regular.ttf);
+}
+
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+
+    /* Déclarations de variables pour les couleurs */
+    --background-body: #1d1d1d;
+    --background-infos: #0d0d0d;
+    --background-button: #474dff;
+    --color-text-white: #fefefe;
+    --color-text-mauve: #474dff;
+
+
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+
+    /* Déclarations de variables pour les couleurs */
+}
+
+/* Sélectionne tous les éléments  + pseudo élément before et after */
+*,
+*::after,
+*::before {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: "Inter", sans-serif;
+    background-color: var(--background-body);
+    border: 1px red solid;
+}
+
+nav {
+    color: var(--color-text-white);
+    height: 10%;
+    width: 95vw;
+    place-self: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        width: 51%;
+        font-size: 1.5rem;
+    }
+
+    ul {
+        width: 49%;
+
+        display: flex;
+        justify-content: space-between;
+
+        list-style: none;
+        font-size: 1rem;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+
+    height: 70%;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 100%;
+    width: 50vw;
+    padding: 0 2.5rem;
+    padding-right: 2.5rem;
+
+    h1 {
+        color: var(--color-text-white);
+        font-size: 6.3rem;
+        margin: 0;
+    }
+
+    h3 {
+        color: var(--color-text-mauve);
+        font-size: 1.8rem;
+    }
+
+    P {
+        color: var(--color-text-white);
+        font-size: 1.016rem;
+    }
+}
+
+.header-right {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 50vw;
+    height: 100%;
+
+    img {
+        height: 95%;
+    }
+}
+
+.infos {
+    position: relative;
+    bottom: 0;
+    border: 1px red solid;
+    height: 20%;
+    margin: 0 10px 10px 10px;
+
+    background-color: var(--background-infos);
+    display: flex;
+
+    h3 {
+        color: var(--color-text-white);
+    }
+}
+
+.infos-left {
+    width: 30vw;
+}
+
+.btn-container {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.infos-right {
+    width: 70vw;
+
+    img {
+        height: 50px;
+    }
+}
+
+.investors {
+    height: 100%;
+}
+
+.img-container {
+    height: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
