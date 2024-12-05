@@ -37,12 +37,11 @@ body {
     height: 100vh;
     font-family: "Inter", sans-serif;
     background-color: var(--background-body);
-    border: 1px red solid;
 }
 
 nav {
     color: var(--color-text-white);
-    height: 10%;
+    height: 10vh;
     width: 95vw;
     place-self: center;
 
@@ -70,7 +69,7 @@ nav {
     display: flex;
     align-items: center;
 
-    height: 70%;
+    height: 70vh;
 }
 
 .header-left {
@@ -114,14 +113,12 @@ nav {
 }
 
 .infos {
-    position: relative;
+    display: flex;
+    height: calc(20vh - 10px);
     bottom: 0;
-    border: 1px red solid;
-    height: 20%;
     margin: 0 10px 10px 10px;
 
     background-color: var(--background-infos);
-    display: flex;
 
     h3 {
         color: var(--color-text-white);
@@ -130,29 +127,40 @@ nav {
 
 .infos-left {
     width: 30vw;
+    padding: 10px 0 10px 30px;
 }
 
 .btn-container {
-    height: 100%;
-
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+
+    width: 160px;
+
+    button {
+        background-color: var(--background-button);
+        color: var(--color-text-white);
+        border-radius: 9px;
+        padding: 9px 0;
+        font-size: 0.9rem;
+        width: 100%;
+    }
 }
 
 .infos-right {
     width: 70vw;
 
     img {
-        height: 50px;
+        height: 40px;
     }
 }
 
 .investors {
-    height: 100%;
+    /* height: 100%; */
 }
 
 .img-container {
-    height: 100%;
+    /* height: 100%; */
 
     display: flex;
     justify-content: space-around;
