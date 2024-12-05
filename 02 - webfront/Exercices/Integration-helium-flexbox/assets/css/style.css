@@ -15,12 +15,6 @@
     --background-button: #474dff;
     --color-text-white: #fefefe;
     --color-text-mauve: #474dff;
-
-
-    /* Changement de la méthode de calcul des boîtes */
-    box-sizing: border-box;
-
-    /* Déclarations de variables pour les couleurs */
 }
 
 /* Sélectionne tous les éléments  + pseudo élément before et after */
@@ -30,139 +24,118 @@
     /* Forcer l'héritage de la propriété box-sizing */
     box-sizing: inherit;
     margin: 0;
-    padding: 0;
+    padding: 5px;
+    font-family: "Inter", sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+P {
+    font-size: 0.8rem;
 }
 
 body {
-    height: 100vh;
-    font-family: "Inter", sans-serif;
+    min-height: 100vh;
     background-color: var(--background-body);
+    color: var(--color-text-white);
 }
 
 nav {
-    color: var(--color-text-white);
-    height: 10vh;
-    width: 95vw;
-    place-self: center;
-
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
 
     h2 {
-        width: 51%;
         font-size: 1.5rem;
     }
 
     ul {
-        width: 49%;
-
         display: flex;
         justify-content: space-between;
-
-        list-style: none;
+        width: 49%;
         font-size: 1rem;
     }
 }
 
 .header {
     display: flex;
-    align-items: center;
-
-    height: 70vh;
+    justify-content: space-around;
+    margin: 30px auto;
 }
 
 .header-left {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-
-    height: 100%;
-    width: 50vw;
-    padding: 0 2.5rem;
-    padding-right: 2.5rem;
+    align-items: center;
+    width: 50%;
 
     h1 {
-        color: var(--color-text-white);
         font-size: 6.3rem;
-        margin: 0;
     }
 
     h3 {
         color: var(--color-text-mauve);
         font-size: 1.8rem;
     }
-
-    P {
-        color: var(--color-text-white);
-        font-size: 1.016rem;
-    }
 }
 
 .header-right {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-    width: 50vw;
-    height: 100%;
+    width: 50%;
 
     img {
-        height: 95%;
+        width: 100%;
     }
 }
 
 .infos {
     display: flex;
-    height: calc(20vh - 10px);
-    bottom: 0;
-    margin: 0 10px 10px 10px;
-
     background-color: var(--background-infos);
-
-    h3 {
-        color: var(--color-text-white);
-    }
+    border-radius: 9px;
 }
 
 .infos-left {
-    width: 30vw;
-    padding: 10px 0 10px 30px;
+    width: 30%;
 }
 
 .btn-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-
-    width: 160px;
+    justify-content: space-around;
+    place-self: start;
+    padding-left: 10px;
 
     button {
         background-color: var(--background-button);
         color: var(--color-text-white);
+        border: none;
         border-radius: 9px;
-        padding: 9px 0;
+        margin: 5px;
+        padding: 10px 0;
         font-size: 0.9rem;
-        width: 100%;
+        width: 140px;
+        place-self: center;
     }
 }
 
 .infos-right {
-    width: 70vw;
-
-    img {
-        height: 40px;
-    }
+    width: 70%;
 }
 
 .investors {
-    /* height: 100%; */
+    height: 80%;
 }
 
 .img-container {
-    /* height: 100%; */
-
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: 100%;
+    width: 100%;
+
+    img {
+        height: 60px;
+    }
 }
