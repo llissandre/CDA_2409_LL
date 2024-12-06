@@ -1,0 +1,29 @@
+@media screen and (max-width:900px) {
+
+    .header {
+        min-height: 100%;
+    }
+
+    .header-left {
+        h1 {
+            font-size: 3rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+        }
+    }
+
+}
+
+@media screen and (max-width:900px) {
+    body {}
+
+    .header {
+        display: grid;
+        grid-template-rows: repeat (2, 30vh);
+        grid-template-columns: 100%;
+
+        margin: 0;
+    }
+}
