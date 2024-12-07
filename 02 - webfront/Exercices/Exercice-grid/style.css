@@ -1,0 +1,19 @@
+body {
+  min-height: 100vh;
+}
+
+div:nth-child(1) {
+  background: yellow;
+}
+div:nth-child(2) {
+  background: purple;
+}
+div:nth-child(3) {
+  background: green;
+}
+div:nth-child(4) {
+  background: red;
+}
+div:nth-child(5) {
+  background: orchid;
+}
