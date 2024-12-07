@@ -50,7 +50,6 @@ body {
 nav {
     display: grid;
     grid-template-columns: 20% 80%;
-    grid-template-rows: 100%;
     align-items: center;
 
     padding: 15px;
@@ -71,7 +70,6 @@ nav {
 .header {
     display: grid;
     grid-template-columns: 45% 55%;
-    grid-template-rows: 100%;
 
     margin: 30px auto;
     padding: 0 15px;
@@ -160,7 +158,6 @@ nav {
 .img-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 100%;
 
     img {
         justify-self: center;

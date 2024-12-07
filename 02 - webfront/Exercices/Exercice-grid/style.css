@@ -1,19 +1,36 @@
 body {
-  min-height: 100vh;
+  height: 100vh;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  grid-template-areas: 
+  "ye ye pu"
+  "re gr pu"
+  "re or or";
+
+  gap: 20px;
 }
 
 div:nth-child(1) {
   background: yellow;
+  grid-area: ye;
 }
 div:nth-child(2) {
   background: purple;
+  grid-area: pu;
 }
 div:nth-child(3) {
   background: green;
+  grid-area: gr;
 }
 div:nth-child(4) {
   background: red;
+  grid-area: re;
 }
 div:nth-child(5) {
   background: orchid;
+  grid-area: or;
 }
