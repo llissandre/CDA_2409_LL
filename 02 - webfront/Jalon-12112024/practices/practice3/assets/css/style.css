@@ -6,7 +6,6 @@
 } */
 
 /* Sélecteur de la racine du document HTML (élement html) */
-/* html { */
 html {
     /* Changement de la méthode de calcul des boîtes */
     box-sizing: border-box;

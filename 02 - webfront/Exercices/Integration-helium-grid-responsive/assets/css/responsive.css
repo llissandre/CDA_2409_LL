@@ -1,0 +1,166 @@
+@media screen and (max-width:1440px) {
+    body {
+        height: 100vh;
+        max-height: 100vh;
+
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 70% 20%;
+    }
+}
+
+@media screen and (max-width:900px) {
+    h3 {
+        font-size: 1rem;
+    }
+
+    body {
+        grid-template-rows: 9% 72% 19%;
+    }
+
+    .header-left {
+        h1 {
+            font-size: 4.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 0.7rem;
+        }
+    }
+
+    .btn-container {
+        button {
+            font-size: 0.8rem;
+            width: 140px;
+        }
+    }
+
+    .img-container {
+        img {
+            height: 45px;
+        }
+    }
+}
+
+@media screen and (max-width:800px) {
+    .header-left {
+        h1 {
+            font-size: 4rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+        }
+
+        p {
+            font-size: 0.7rem;
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    .header-left {
+        h1 {
+            font-size: 3.3rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+        }
+
+        p {
+            font-size: 0.7rem;
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    .header-left {
+        h1 {
+            font-size: 3rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        p {
+            font-size: 0.8rem;
+        }
+    }
+
+    .infos {
+        display: grid;
+        grid-template-columns: 37% 63%;
+    }
+
+    .img-container {
+        img {
+            height: 35px;
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    body {
+        grid-template-rows: 9% 60% 31%;
+    }
+
+    .header {
+        display: block;
+    }
+
+    .header-left {
+        height: 40%;
+        padding: 0 0 20px 0;
+    }
+
+    .header-right {
+        padding: 30px 0 0 0;
+
+        img {
+            width: 60%;
+        }
+    }
+
+    .infos {
+        display: block;
+    }
+
+    .infos-left {
+        height: 55%;
+        place-self: center;
+        padding-bottom: 10px;
+    }
+
+    .btn-container {
+        button {
+            margin: 3px 0;
+            padding: 8px 0;
+            font-size: 0.8rem;
+            width: 140px;
+        }
+    }
+
+
+    .infos-right h3 {
+        place-self: center;
+        padding: 10px 0 5px 0;
+    }
+
+    .infos-right {
+        height: 45%;
+    }
+
+    .investors {
+        height: calc(100% - 1rem - 20px);
+    }
+}
