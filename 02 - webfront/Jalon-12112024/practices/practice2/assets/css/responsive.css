@@ -1,21 +1,34 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1180px) {
+    header {
+        height: 10vh;
+    }
+
     .flex-container {
-        /* display: block; */
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 1vh;
     }
 
     .card {
-        min-width: 90%;
+        width: 55vh;
 
         .image {
-            min-height: 80vw;
+            height: 45vh;
         }
     }
+}
 
-    footer {
-        display: none;
+@media screen and (max-width: 600px) {
+    .cards {
+        padding: 4vw 0;
+    }
+
+    .card {
+        width: 90vw;
+
+        .image {
+            height: 45vh;
+        }
     }
 }
