@@ -6,7 +6,7 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     font-family: arial;
     background-color: #d1cfcf;
 }
@@ -24,7 +24,6 @@ header {
 }
 
 main {
-    height: calc(70vh - 3vh);
     margin-top: 3vh;
 }
 
@@ -72,28 +71,23 @@ main {
 }
 
 #cat1 {
-    background-image: url(../images/dog1.jpg);
+    background-image: url(../img/dog1.jpg);
     background-size: cover;
 }
 
 
 #cat2 {
-    background-image: url(../images/dog2.jpg);
+    background-image: url(../img/dog2.jpg);
     background-size: cover;
 }
 
 
 #cat3 {
-    background-image: url(../images/dog3.jpg);
+    background-image: url(../img/dog3.jpg);
     background-size: cover;
 }
 
-footer {
-    height: 15vh;
-}
-
-
-@media (max-width: 500px) {
+/* @media (max-width: 600px) {
     .flex-container {
         display: flex;
         flex-direction: column;
@@ -104,7 +98,7 @@ footer {
     .card {
         min-width: 90%;
 
-        .image{
+        .image {
             min-height: 80vw;
         }
     }
@@ -112,4 +106,4 @@ footer {
     footer {
         display: none;
     }
-}
+} */
