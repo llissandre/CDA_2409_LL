@@ -187,7 +187,6 @@ main {
         top: -40px;
         width: 31vw;
     }
-}
 
 #container-main-right {
     grid-area: 2/3/3/4;
@@ -282,8 +281,7 @@ main {
 #caracteristique {
     grid-area: 3/3/4/4;
     align-self: start;
-    margin: -5vh 0 2vh 0;
-    /* margin-top: -5vh;: */
+    margin-top: -5vh;
     text-transform: capitalize;
     font-size: 1.2rem;
     line-height: 30px;
@@ -316,7 +314,7 @@ main {
         display: inline-block;
         padding: 0;
         position: absolute;
-        left: 89.2vw;
+        left: 89vw;
 
         img {
             height: 11px;
