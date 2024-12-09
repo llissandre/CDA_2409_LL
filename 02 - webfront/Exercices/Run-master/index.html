@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Run Master</title>
-  <!-- <link rel="stylesheet" href="./assets/css/normalize.css"> -->
+  <link rel="stylesheet" href="./assets/css/normalize.css">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/responsive.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -14,36 +14,36 @@
 
 <body>
   <section class="run">
-    <div id="banner"><img src="./assets/img/banner.jpg" alt="La piste d'un stade"></div>
     <div class="run-part-left">
       <h1>Run</h1>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed praesentium rerum nisi dolorum harum doloribus
         quas aspernatur tempore esse, illo exercitationem non adipisci placeat similique inventore eligendi ducimus
         voluptas labore?</p>
-        <input type="submit" value="get started" id="get-started">
+      <a href="" class="button">get started</a>
     </div>
-     </section>
+    <div class="run-part-right"></div>
+  </section>
 
   <section class="mef">
-    <div class="mef-part-left">
-      <img src="./assets/img/img-left.jpg" alt="Un coureur sur une route entouré par la forêt">
-    </div>
+    <div class="mef-part-left"></div>
     <div class="mef-part-right">
       <h2>Magna etiam feugiat</h2>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, iste quos voluptatibus, eos laboriosam
         eum consequatur a, incidunt suscipit minus voluptatum recusandae deserunt. Deserunt eveniet, id ratione atque
         aperiam saepe.</p>
-      <input type="submit" value="learn more" id="learn-more-mef">
+      <a href="" class="button">learn more</a>
     </div>
   </section>
 
   <section class="ta">
     <div class="ta-part-left">
       <h2>Tempus adipiscing</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptatibus sunt aliquid ducimus fugit alias
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptatibus sunt aliquid ducimus fugit
+        alias
         deserunt, ab nemo unde dolores eum consequatur necessitatibus quae dignissimos numquam voluptatum nobis magni
         quis?</p>
-      <input type="submit" value="learn more" id="learn-more-ta">
+      <a href="" class="button">learn more</a>
+
     </div>
     <div class="ta-part-right"></div>
   </section>
@@ -51,29 +51,32 @@
   <section class="git">
     <h2>Get in touch</h2>
     <form action="">
-      <div id="nom-user">
-        <input type="text" id="name" name="user_name" />
-        <label for="name">Name</label>
+      <div id="namemailmessage">
+        <div class="user">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="user_name" class="contact" />
+        </div>
+        <div class="mail">
+          <label for="mail">Email</label>
+          <input type="email" id="mail" name="user_email" class="contact" />
+        </div>
+        <div id="message">
+          <label for="msg">Message</label>
+          <textarea id="msg" name="user_message"></textarea>
+        </div>
       </div>
-      <div id="reply">
-        <input type="email" id="mail" name="user_email" />
-        <label for="mail">Email</label>
-      </div>
-      <div id="message">
-        <textarea id="msg" name="user_message"></textarea>
-        <label for="msg">Message</label>
-      </div>
-        <input type="submit" value="send message" id="send-message">
+      <input type="submit" value="send message" id="send-message" class="button">
     </form>
   </section>
 
   <footer>
-    <div class="footer-logos">
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-facebook"></i>
-      <i class="fab fa-linkedin"></i>
-      <i class="fab fa-instagram"></i>
-    </div>
+    <ul>
+      <li><a href=""><i class="fab fa-twitter"></i></a></li>
+      <li><a href=""><i class="fab fa-facebook"></i></a></li>
+      <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+      <li><a href=""><i class="fab fa-instagram"></i></a></li>
+      <li><a href=""><i class="far fa-envelope"></i></a></li>
+    </ul>
   </footer>
 </body>
 
