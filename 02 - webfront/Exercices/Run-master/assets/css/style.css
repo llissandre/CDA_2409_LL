@@ -1,0 +1,76 @@
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+
+    /* Déclarations de variables pour les couleurs */
+    --color-letter: #000000;
+    --color-gris: #e0e0e0;
+    --background-blanc: #ffffff;
+}
+
+/* Sélectionne tous les éléments  + pseudo élément before et after */
+* {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    color: var(--color-letter);
+    font-weight: lighter;
+}
+
+body {
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 40% 10% 10% 40%;
+    grid-template-rows: repeat(5, 1fr);
+
+    background-color: var(--background-blanc);
+}
+
+input[type="submit"] {
+    background-color: transparent;
+    padding: 10px 20px;
+
+}
+
+.run {
+    grid-area: 1/1/2/5;
+    max-height: 80vh;
+
+    #banner {
+        grid-area: 1/1/2/5;
+    }
+
+    .run-part-left {
+        grid-area: 1/1/2/3;
+        background-color: var(--background-blanc);
+    }
+
+    img {
+        /* max-width: 100vw; */
+    }
+}
+
+.mef {
+    .mef-part-left {
+        grid-area: 2/1/3/2;
+    }
+
+    mef-part-right {
+        grid-area: 2/2/3/5;
+    }
+}
+
+.ta {
+    .ta-part-left {
+        grid-area: 3/4/4/5;
+    }
+
+    .ta-part-right {
+        grid-area: 4/5/5/6;
+    }
+}
+
