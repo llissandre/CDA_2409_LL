@@ -18,7 +18,7 @@
     --background-blanc: #ffffff;
 }
 
-/* Sélectionne tous les éléments  + pseudo élément before et after */
+/* Sélectionne tous les éléments */
 * {
     /* Forcer l'héritage de la propriété box-sizing */
     box-sizing: inherit;
@@ -175,7 +175,7 @@ p {
     }
 }
 
-.git:after {
+.git::after {
     content: "";
     border: 1px solid var(--border);
     transform: translateX(-50%);
