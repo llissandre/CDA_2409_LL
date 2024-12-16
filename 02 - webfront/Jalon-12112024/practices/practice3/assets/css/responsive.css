@@ -1,95 +1,91 @@
-@media (max-width:1650px) {
-    #top-menu {
-        grid-template-columns: 60% 22% 18%;
-    }
-}
+@media (max-width: 1520px) {
+    header {
+        #top-menu {
+            grid-template-columns: 46vw 18vw 16vw;
 
-@media (max-width: 1500px) {
-    #top-menu {
-        ul {
-            li {
-                font-size: 1.8rem;
+            ul {
+                li {
+                    font-size: 1.7rem;
+                }
+            }
+
+            #flocon {
+                font-size: 1.7rem;
+
+                img {
+                    height: 45px;
+                    width: 45px;
+                }
+            }
+
+            #panier {
+                img {
+                    height: 27px;
+                    width: 27px;
+                }
             }
         }
+    }
 
-        #flocon {
-            font-size: 1.8rem;
+    #caracteristique {
+        .chevron {
+            left: 88.9vw;
         }
     }
 }
 
 @media (max-width: 1380px) {
-    h1 {
-        font-size: 3.1rem;
-    }
-
-    #top-menu {
-        ul {
-            li {
-                font-size: 1.7rem;
-            }
+    header {
+        h1 {
+            font-size: 2.9rem;
         }
 
-        #flocon {
-            font-size: 1.7rem;
+        #top-menu {
+            ul {
+                li {
+                    font-size: 1.6rem;
+                }
+            }
+
+            #flocon {
+                font-size: 1.6rem;
+
+                img {
+                    height: 42px;
+                    width: 42px;
+                }
+            }
         }
     }
 }
 
 @media (max-width: 1310px) {
-    h1 {
-        font-size: 2.9rem;
-    }
-
-    #top-menu {
-        ul {
-            li {
-                font-size: 1.5rem;
-            }
-        }
-
-        #flocon {
-            font-size: 1.5rem;
-
-            img {
-                height: 40px;
-                width: 40px;
-            }
-        }
-
-        #panier {
-            img {
-                height: 25px;
-                width: 25px;
-            }
-        }
-    }
-}
-
-@media (max-width:1200px) {
     header {
-        grid-template-columns: 21vw 79vw;
-    }
-
-    h1 {
-        font-size: 2.8rem;
-    }
-
-    #top-menu {
-        grid-template-columns: 60% 24%w 16%;
-
-        ul {
-            li {
-                font-size: 1.4rem;
-            }
+        h1 {
+            font-size: 2.9rem;
         }
 
-        #flocon {
-            font-size: 1.4rem;
+        #top-menu {
+            ul {
+                li {
+                    font-size: 1.5rem;
+                }
+            }
 
-            img {
-                height: 35px;
-                width: 35px;
+            #flocon {
+                font-size: 1.5rem;
+
+                img {
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+
+            #panier {
+                img {
+                    height: 25px;
+                    width: 25px;
+                }
             }
         }
     }
@@ -98,7 +94,51 @@
         grid-area: 3/2/4/4;
 
         .chevron {
-            left: 87vw;
+            left: 88.6vw;
+        }
+    }
+}
+
+@media (max-width:1200px) {
+    header {
+        grid-template-columns: 21vw 79vw;
+
+        h1 {
+            font-size: 2.8rem;
+        }
+
+        #top-menu {
+            grid-template-columns: 46vw 17vw 16vw;
+
+            ul {
+                li {
+                    font-size: 1.4rem;
+                }
+            }
+
+            #flocon {
+                font-size: 1.4rem;
+
+                img {
+                    height: 37px;
+                    width: 37px;
+                }
+            }
+
+            #panier {
+                img {
+                    height: 23px;
+                    width: 23px;
+                }
+            }
+        }
+    }
+
+    #caracteristique {
+        grid-area: 3/2/4/4;
+
+        .chevron {
+            left: 88.5vw;
         }
     }
 }
@@ -106,91 +146,114 @@
 @media (max-width: 1110px) {
     header {
         grid-template-columns: 22% 78%;
-    }
 
-    h1 {
-        font-size: 2.7rem;
-    }
+        h1 {
+            font-size: 2.7rem;
+        }
 
-    #top-menu {
-        grid-template-columns: 45vw 19vw 13vw;
+        #top-menu {
+            grid-template-columns: 45vw 17vw 16vw;
 
-        ul {
-            li {
-                font-size: 1.3rem;
+            ul {
+                li {
+                    font-size: 1.3rem;
+                }
             }
-        }
 
-        #flocon {
-            font-size: 1.3rem;
-        }
+            #flocon {
+                font-size: 1.3rem;
 
-        #panier {
-            img {
-                height: 22px;
-                width: 22px;
+                img {
+                    height: 36px;
+                    width: 36px;
+                }
+            }
+
+            #panier {
+                img {
+                    height: 21px;
+                    width: 21px;
+                }
             }
         }
     }
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 1030px) {
     header {
         grid-template-columns: 23vw 77vw;
-    }
 
-    h1 {
-        font-size: 2.6rem;
-    }
+        h1 {
+            font-size: 2.6rem;
+        }
 
-    #top-menu {
-        ul {
-            li {
+        #top-menu {
+            grid-template-columns: 44vw 17vw 16vw;
+
+            ul {
+                li {
+                    font-size: 1.2rem;
+                }
+            }
+
+            #flocon {
                 font-size: 1.2rem;
+
+                img {
+                    height: 34px;
+                    width: 34px;
+                }
+            }
+
+            #panier {
+                img {
+                    height: 20px;
+                    width: 20px;
+                }
             }
         }
 
-        #flocon {
-            font-size: 1.2rem;
-        }
-    }
+        main {
+            grid-template-columns: 10vw 40vw 40vw 10vw;
 
-    main {
-        grid-template-columns: 10vw 40vw 40vw 10vw;
-
-        h2 {
-            font-size: 2rem;
+            h2 {
+                font-size: 2rem;
+            }
         }
     }
 }
 
 @media(max-width: 950px) {
     header {
-        display: grid;
         grid-template-columns: 24vw 76vw;
-    }
 
-    h1 {
-        font-size: 2.4rem;
-    }
+        h1 {
+            font-size: 2.4rem;
+        }
 
-    #top-menu {
-        grid-template-columns: 46vw 19vw 11vw;
+        #top-menu {
+            grid-template-columns: 44vw 17vw 15vw;
 
-        ul {
-            li {
-                font-size: 1rem;
+            ul {
+                li {
+                    font-size: 1rem;
+                }
             }
-        }
 
-        #flocon {
-            font-size: 1rem;
-        }
+            #flocon {
+                font-size: 1rem;
 
-        #panier {
-            img {
-                height: 22px;
-                width: 22px;
+                img {
+                    height: 32px;
+                    width: 32px;
+                }
+            }
+
+            #panier {
+                img {
+                    height: 19px;
+                    width: 19px;
+                }
             }
         }
     }
@@ -199,7 +262,7 @@
         font-size: 1.3rem;
 
         .chevron {
-            left: 86vw;
+            left: 88vw;
         }
     }
 }
@@ -207,34 +270,34 @@
 @media(max-width: 880px) {
     header {
         grid-template-columns: 25vw 75vw;
-    }
 
-    h1 {
-        font-size: 2.3rem;
-    }
+        h1 {
+            font-size: 2.3rem;
+        }
 
-    #top-menu {
-        grid-template-columns: 44vw 20vw 11vw;
+        #top-menu {
+            grid-template-columns: 43vw 17vw 15vw;
 
-        ul {
-            li {
+            ul {
+                li {
+                    font-size: 0.9rem;
+                }
+            }
+
+            #flocon {
                 font-size: 0.9rem;
+
+                img {
+                    height: 30px;
+                    width: 30px;
+                }
             }
-        }
 
-        #flocon {
-            font-size: 0.9rem;
-
-            img {
-                height: 25px;
-                width: 25px;
-            }
-        }
-
-        #panier {
-            img {
-                height: 19px;
-                width: 19px;
+            #panier {
+                img {
+                    height: 18px;
+                    width: 18px;
+                }
             }
         }
     }
@@ -245,79 +308,44 @@
         img {
             height: 16px;
         }
+
+        .chevron {
+            left: 87.9vw;
+        }
     }
 }
 
 @media(max-width: 780px) {
     header {
         grid-template-columns: 26vw 74vw;
-    }
 
-    h1 {
-        font-size: 2rem;
-    }
+        h1 {
+            font-size: 2.1rem;
+        }
 
-    #top-menu {
-        grid-template-columns: 43vw 20vw 11vw;
+        #top-menu {
+            grid-template-columns: 42vw 17vw 15vw;
 
-        ul {
-            li {
+            ul {
+                li {
+                    font-size: 0.8rem;
+                }
+            }
+
+            #flocon {
                 font-size: 0.8rem;
+
+                img {
+                    height: 25px;
+                    width: 25px;
+                }
             }
-        }
 
-        #flocon {
-            font-size: 0.8rem;
-
-            img {
-                height: 20px;
-                width: 20px;
-            }
-        }
-
-        #panier {
-            gap: 2vh;
-
-            img {
-                height: 15px;
-                width: 15px;
-            }
-        }
-    }
-}
-
-@media(max-width: 700px) {
-    header {
-        grid-template-columns: 27vw 73vw;
-    }
-
-    h1 {
-        font-size: 2.1rem;
-    }
-
-    #top-menu {
-        grid-template-columns: 42vw 20vw 11vw;
-
-        ul {
-            li {
-                font-size: 0.7rem;
-            }
-        }
-
-        #flocon {
-            font-size: 0.7rem;
-
-            img {
-                height: 25px;
-                width: 25px;
-            }
-        }
-
-        #panier {
-
-            img {
-                height: 13px;
-                width: 13px;
+            #panier {
+                img {
+                    height: 15px;
+                    width: 15px;
+                }
             }
         }
     }
@@ -327,22 +355,160 @@
             font-size: 1.3rem;
 
             .chevron {
-                left: 84vw;
+                left: 87.5vw;
+            }
+        }
+    }
+}
+
+@media(max-width: 700px) {
+    header {
+        grid-template-columns: 27vw 73vw;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        #top-menu {
+            grid-template-columns: 41vw 17vw 15vw;
+
+            ul {
+                li {
+                    font-size: 0.7rem;
+                }
+            }
+
+            #flocon {
+                font-size: 0.7rem;
+
+                img {
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+
+            #panier {
+                img {
+                    height: 13px;
+                    width: 13px;
+                }
+            }
+        }
+    }
+
+    main {
+        #caracteristique {
+            font-size: 1.3rem;
+
+            .chevron {
+                left: 87vw;
+            }
+        }
+    }
+}
+
+@media(max-width: 600px) {
+    header {
+        grid-template-columns: 28vw 72vw;
+
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        #top-menu {
+            grid-template-columns: 41vw 17vw 14vw;
+
+            ul {
+                li {
+                    font-size: 0.6rem;
+                }
+            }
+
+            #flocon {
+                font-size: 0.6rem;
+
+                img {
+                    height: 19px;
+                    width: 19px;
+                }
+            }
+
+            #panier {
+                img {
+                    height: 11px;
+                    width: 11px;
+                }
+            }
+        }
+    }
+
+    main {
+        #caracteristique {
+            .chevron {
+                left: 86.8vw;
+            }
+        }
+    }
+}
+
+@media(max-width: 550px) {
+    header {
+        grid-template-columns: 29vw 71vw;
+
+        h1 {
+            font-size: 1.7rem;
+        }
+
+        #top-menu {
+            grid-template-columns: 41vw 16.5vw 13.5vw;
+
+            ul {
+                li {
+                    font-size: 0.6rem;
+                }
+            }
+
+            #flocon {
+                font-size: 0.6rem;
+
+                img {
+                    height: 17px;
+                    width: 17px;
+                }
+            }
+
+            #panier {
+                img {
+                    height: 10px;
+                    width: 10px;
+                }
+            }
+        }
+    }
+
+    main {
+        #caracteristique {
+            .chevron {
+                left: 86.8vw;
             }
         }
     }
 }
 
 @media(max-width: 500px) {
-    header {
-        grid-template-columns: 85vw 15vw;
-        grid-template-rows: 12vh;
+    body {
+        min-height: 100vh;
+        grid-template-rows: 10vh 1fr;
+    }
 
+    header {
+        display: flex;
+        justify-content: space-around;
 
         h1 {
             width: 100%;
             font-size: 2rem;
-            padding-left: 35px;
+            padding-left: 7vw;
         }
 
         #top-menu {
@@ -352,8 +518,7 @@
         .menuburger {
             display: block;
             align-content: center;
-            margin: auto;
-            margin-right: 35px;
+            padding-right: 7vw;
         }
     }
 
@@ -363,12 +528,14 @@
         justify-content: space-around;
 
         gap: 5vh;
+        padding-top: 2vh;
 
         #container-main-left {
-            padding-left: 35px;
+            padding-left: 7vw;
             max-height: 30vh;
 
             #chaussure {
+                position: relative;
                 top: -55px;
                 margin-left: 35px;
                 width: 70%;
@@ -380,7 +547,7 @@
             padding: 0 2vw;
 
             #container-main-right-haut {
-                margin-bottom: 2vh;
+                margin-bottom: 2vw;
 
                 h2 {
                     font-size: 1.9rem;
@@ -415,12 +582,7 @@
 
                 .selection {
                     display: initial;
-                    width: 100%;
                     gap: 3vh;
-                }
-
-                select {
-                    font-size: 1.2rem;
                 }
 
                 .taille,
@@ -445,16 +607,12 @@
             line-height: 20px;
 
             .chevron {
-                left: 91vw;
+                left: 91.5vw;
             }
         }
 
         p {
             font-size: 0.8rem;
-        }
-
-        input:checked~p {
-            padding: 0 2vw;
         }
     }
 }

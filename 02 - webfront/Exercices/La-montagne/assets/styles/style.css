@@ -1,0 +1,200 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Inter";
+  src: url(../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+  font-family: "Merriweather";
+  src: url(../fonts/Merriweather/Merriweather-Light.ttf);
+}
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+  /* Changement de la méthode de calcul des boîtes */
+  box-sizing: border-box;
+}
+
+/* Sélectionne tous les éléments */
+* {
+  /* Forcer l'héritage de la propriété box-sizing */
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+li {
+  list-style: none;
+  font-size: 0.7rem;
+}
+
+body {
+  background: url(../img/bg.jpg) center/cover fixed;
+}
+
+header {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f3f3f3;
+  position: relative;
+}
+header .header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 97vh;
+  margin: 0 auto;
+  opacity: 0;
+  animation: headerAnim 1.5s forwards;
+}
+@keyframes headerAnim {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+header .header-content h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: 5rem;
+  letter-spacing: 6px;
+}
+header .header-content h1 p {
+  line-height: 90px;
+}
+header .header-content .textheader {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 40px 0 60px;
+}
+header .header-content div i {
+  border: 1px solid;
+  padding: 25px;
+  border-radius: 45px;
+}
+header .header-content nav {
+  position: absolute;
+  bottom: 0;
+  width: 1100px;
+  height: 65px;
+  background-color: rgba(255, 255, 255, 0.2549019608);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+header .header-content nav ul {
+  display: flex;
+  text-transform: uppercase;
+  cursor: pointer;
+  height: 100%;
+  font-weight: bold;
+}
+header .header-content nav li {
+  align-content: center;
+  padding: 0 30px;
+  letter-spacing: 2px;
+}
+header .header-content nav .nav-left {
+  text-align: center;
+}
+header .header-content nav .nav-left li:first-child, header .header-content nav .nav-left li:hover {
+  background-color: #f3f3f3;
+  color: #000000;
+}
+header .header-content nav .nav-right li fa-brands {
+  height: 30px;
+  width: 130px;
+}
+
+main {
+  background-color: #f3f3f3;
+  width: 1100px;
+  margin: 0 auto 30px;
+}
+main .part-main {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+main .part-main > p {
+  text-transform: capitalize;
+  width: 55%;
+  padding: 60px;
+}
+main .part-main h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 5rem;
+  letter-spacing: 6px;
+}
+main .part-main h2 p {
+  line-height: 100%;
+}
+main .part-main p {
+  line-height: 35px;
+}
+main .part-main img {
+  width: 75%;
+}
+main .part-main .btn {
+  margin: 70px auto;
+}
+main .footer-part {
+  display: flex;
+  line-height: 30px;
+  position: relative;
+  border-top: 1px solid rgba(90, 89, 89, 0.3647058824);
+}
+main .footer-part h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+main .footer-part img {
+  width: 80%;
+  margin: 30px auto;
+}
+main .footer-part img ~ p {
+  width: 80%;
+  padding-bottom: 40px;
+}
+main .footer-part .footer-part-left,
+main .footer-part .footer-part-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px 0 100px;
+}
+main .footer-part .footer-part-left > p,
+main .footer-part .footer-part-right > p {
+  text-transform: capitalize;
+  padding-bottom: 40px;
+}
+main .footer-part .footer-part-left .btn,
+main .footer-part .footer-part-right .btn {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 60px;
+}
+main .footer-part .footer-part-left {
+  border-right: 1px solid rgba(90, 89, 89, 0.3647058824);
+}
+
+.btn {
+  background-color: transparent;
+  padding: 10px 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

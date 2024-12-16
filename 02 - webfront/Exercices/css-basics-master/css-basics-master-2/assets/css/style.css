@@ -71,7 +71,7 @@ h1::after {
   height: 100px;
   width: 100px;
 }
-.polygon:after {
+.polygon::after {
   content: "Un texte";
   position: absolute;
   color: var(--color2);
