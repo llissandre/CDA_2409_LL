@@ -1,7 +1,7 @@
-// @import "./settings";
+@import "./settings";
 @import "./layout/body";
-// @import "./layout/navbar";
-// @import "./layout/section";
-// @import "./layout/footer";
+@import "./layout/header";
+@import "./layout/main";
+@import "./layout/footer";
 @import "./components/btn";
-// @import "./components/form.scss";
+@import "./components/form";

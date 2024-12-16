@@ -1,13 +1,56 @@
+@font-face {
+    font-family: "Inter";
+    src: url(../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+
+    font-family: "Merriweather";
+    src: url(../fonts/Merriweather/Merriweather-Light.ttf);
+}
+
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+}
+
+/* Sélectionne tous les éléments */
+* {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+}
+
 // variables
-$color1: rgb(224, 48, 77);
-$color2: rgb(244, 192, 96);
-$color3: cyan;
-$white: rgb(241, 241, 241);
-$black: rgb(23, 23, 23);
+$font1: Inter, sans serif;
+$font2: Merriweather, sans serif;
+$font3: Arial, Helvetica, sans-serif;
+
+$grey: #5a59595d;
+$white-mat: #f3f3f3;
+$white: #ffffff;
+$black: #000000;
+$background-nav: #ffffff41;
+
 
 // mixins
 @mixin centerChild {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin title {
+    font-family: $font3;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+li {
+    list-style: none;
+    font-size: 0.7rem;
 }
