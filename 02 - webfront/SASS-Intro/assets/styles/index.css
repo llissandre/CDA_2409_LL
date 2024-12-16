@@ -41,5 +41,8 @@ section p {
 }
 
 .button {
-  color: rgb(244, 192, 96);
+  color: rgb(23, 23, 23);
+  background-color: rgb(224, 48, 77);
+  padding: 10px 30px;
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */
