@@ -1,7 +1,12 @@
 main {
     background-color: $white-mat;
-    width: 1100px;
+    width: 1300px;
     margin: 0 auto 30px;
+
+    @media screen and (max-width: 1520px) {
+        width: 90%;
+        justify-items: center;
+    }
 
     .part-main {
         margin: 0 auto;
@@ -11,8 +16,13 @@ main {
 
         >p {
             text-transform: capitalize;
-            width: 55%;
-            padding: 60px;
+            width: 70%;
+            padding: 60px 0;
+        }
+
+        @media screen and (max-width: 1520px) {
+            width: 90%;
+            justify-items: center;
         }
 
         h2 {
@@ -23,6 +33,12 @@ main {
 
             p {
                 line-height: 100%;
+            }
+        }
+
+        @media screen and (max-width: 1320px) {
+            h2 {
+                font-size: 4rem;
             }
         }
 
@@ -41,31 +57,37 @@ main {
     }
 
     .footer-part {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+
         line-height: 30px;
         position: relative;
-        border-top: 1px solid $grey;
-        
+        border-top: 1px solid $grey-border;
+
+        @media screen and (max-width: 500px) {
+            display: block;
+        }
+
         h3 {
             @include title;
         }
-        
+
         img {
             width: 80%;
             margin: 30px auto;
-            
+
             ~p {
                 width: 80%;
                 padding-bottom: 40px;
             }
         }
-        
+
         .footer-part-left,
         .footer-part-right {
             @include centerChild;
             flex-direction: column;
-            padding: 60px 0 100px;
-            
+            padding: 60px 0 8cqb;
+
             >p {
                 text-transform: capitalize;
                 padding-bottom: 40px;
@@ -76,10 +98,24 @@ main {
                 bottom: 0;
                 margin-bottom: 60px;
             }
+
+            @media screen and (max-width: 500px) {
+                // display: block;
+
+                .btn {
+                    position: relative;
+                    bottom: 0;
+                    margin-bottom: 0;
+                }
+            }
         }
 
-        .footer-part-left{
-            border-right: 1px solid $grey;
+        @media screen and (max-width: 500px) {
+
+        }
+
+        .footer-part-left {
+            border-right: 1px solid $grey-border;
         }
     }
 }
