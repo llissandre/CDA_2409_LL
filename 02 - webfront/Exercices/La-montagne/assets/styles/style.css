@@ -9,13 +9,15 @@
 /* html { */
 :root {
   /* Changement de la méthode de calcul des boîtes */
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* Sélectionne tous les éléments */
 * {
   /* Forcer l'héritage de la propriété box-sizing */
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
@@ -39,19 +41,37 @@ header {
   position: relative;
 }
 header .header-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 97vh;
   width: 1300px;
   margin: 0 auto;
   opacity: 0;
-  animation: headerAnim 1.5s forwards;
+  -webkit-animation: headerAnim 1.5s forwards;
+          animation: headerAnim 1.5s forwards;
+}
+@-webkit-keyframes headerAnim {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
 }
 @keyframes headerAnim {
   to {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
     opacity: 1;
   }
 }
@@ -64,9 +84,6 @@ header .header-content h1 {
   font-size: 5rem;
   letter-spacing: 6px;
 }
-header .header-content h1 p {
-  line-height: 90px;
-}
 @media screen and (max-width: 1520px) {
   header .header-content {
     width: 90%;
@@ -77,9 +94,21 @@ header .header-content h1 p {
     font-size: 4rem;
   }
 }
+@media screen and (max-width: 1000px) {
+  header .header-content h1 {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  header .header-content h1 {
+    font-size: 2.5rem;
+  }
+}
 header .header-content .textheader {
+  text-align: center;
   font-style: italic;
   font-size: 1.2rem;
+  line-height: 50px;
   margin: 40px 0 60px;
 }
 header .header-content div i {
@@ -93,12 +122,22 @@ header .header-content nav {
   width: 100%;
   height: 65px;
   background-color: rgba(255, 255, 255, 0.2549019608);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 header .header-content nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   text-transform: uppercase;
   cursor: pointer;
@@ -106,7 +145,8 @@ header .header-content nav ul {
   font-weight: bold;
 }
 header .header-content nav li {
-  align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   padding: 0 30px;
   letter-spacing: 2px;
 }
@@ -145,10 +185,19 @@ main {
 }
 main .part-main {
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
 }
 main .part-main > p {
@@ -169,6 +218,7 @@ main .part-main h2 {
   font-weight: bold;
   font-size: 5rem;
   letter-spacing: 6px;
+  width: 85%;
 }
 main .part-main h2 p {
   line-height: 100%;
@@ -176,6 +226,13 @@ main .part-main h2 p {
 @media screen and (max-width: 1320px) {
   main .part-main h2 {
     font-size: 4rem;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  main .part-main h2 {
+    font-size: 3rem;
+    width: 80%;
   }
 }
 main .part-main p {
@@ -215,10 +272,19 @@ main .footer-part img ~ p {
 }
 main .footer-part .footer-part-left,
 main .footer-part .footer-part-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 60px 0;
 }
 main .footer-part .footer-part-left > p,
@@ -286,7 +352,8 @@ footer .footer-content .contact h4 {
 }
 footer .footer-content .contact .address {
   grid-area: 1/1/2/3;
-  align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 footer .footer-content .contact .address .address-content {
   display: grid;
@@ -294,17 +361,20 @@ footer .footer-content .contact .address .address-content {
 }
 footer .footer-content .contact .address .address-content h4 {
   justify-self: center;
-  align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 footer .footer-content .contact .address .address-content .p-address {
   font-family: Merriweather, sans serif;
   font-size: 0.7rem;
   color: rgba(168, 156, 156, 0.8352941176);
-  transform: translateY(25%);
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
 }
 footer .footer-content .contact .phone {
   grid-area: 2/1/3/3;
-  align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   border-top: 1px solid rgba(199, 195, 195, 0.3647058824);
 }
 footer .footer-content .contact .phone .phone-content {
@@ -313,7 +383,8 @@ footer .footer-content .contact .phone .phone-content {
 }
 footer .footer-content .contact .phone .phone-content h4 {
   justify-self: center;
-  align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 footer .footer-content .contact .phone .phone-content p {
   font-family: Merriweather, sans serif;
@@ -322,7 +393,8 @@ footer .footer-content .contact .phone .phone-content p {
 }
 footer .footer-content .contact .email {
   grid-area: 3/1/4/3;
-  align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   border-top: 1px solid rgba(199, 195, 195, 0.3647058824);
 }
 footer .footer-content .contact .email .email-content {
@@ -331,7 +403,8 @@ footer .footer-content .contact .email .email-content {
 }
 footer .footer-content .contact .email .email-content h4 {
   justify-self: center;
-  align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 footer .footer-content .contact .email .email-content p {
   font-family: Merriweather, sans serif;
@@ -340,7 +413,8 @@ footer .footer-content .contact .email .email-content p {
 }
 footer .footer-content .contact .social {
   grid-area: 4/1/5/3;
-  align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   border-top: 1px solid rgba(199, 195, 195, 0.3647058824);
 }
 footer .footer-content .contact .social .social-content {
@@ -349,9 +423,12 @@ footer .footer-content .contact .social .social-content {
 }
 footer .footer-content .contact .social .social-content h4 {
   justify-self: center;
-  align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 footer .footer-content .contact .social .social-content ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding-left: 30px;
   gap: 15px;
@@ -372,8 +449,13 @@ footer .footer-content .contact .social .social-content i {
 }
 
 form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   justify-self: center;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
@@ -400,6 +482,7 @@ form input[type=submit] {
   color: rgba(97, 90, 90, 0.8352941176);
   border: 2px solid rgba(97, 90, 90, 0.8352941176);
   padding: 15px 45px 30px;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }/*# sourceMappingURL=style.css.map */

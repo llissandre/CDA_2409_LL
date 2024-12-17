@@ -30,6 +30,7 @@ main {
             font-weight: bold;
             font-size: 5rem;
             letter-spacing: 6px;
+            width: 85%;
 
             p {
                 line-height: 100%;
@@ -39,6 +40,14 @@ main {
         @media screen and (max-width: 1320px) {
             h2 {
                 font-size: 4rem;
+                width: 80%;
+            }
+        }
+        
+        @media screen and (max-width: 1000px) {
+            h2 {
+                font-size: 3rem;
+                width: 80%;
             }
         }
 

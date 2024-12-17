@@ -27,10 +27,6 @@ header {
             font-weight: bold;
             font-size: 5rem;
             letter-spacing: 6px;
-
-            p {
-                line-height: 90px;
-            }
         }
 
         @media screen and (max-width: 1520px) {
@@ -43,9 +39,23 @@ header {
             }
         }
 
+        @media screen and (max-width: 1000px) {
+            h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
         .textheader {
+            text-align: center;
             font-style: italic;
             font-size: 1.2rem;
+            line-height: 50px;
 
             margin: 40px 0 60px;
         }
