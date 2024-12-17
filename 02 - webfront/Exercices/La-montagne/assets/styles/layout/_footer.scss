@@ -8,8 +8,16 @@ footer {
         display: grid;
         grid-template-columns: repeat(2, 50%);
 
+        @media screen and (max-width: 700px) {
+            display: block;
+        }
+
         width: 1300px;
         background-color: $background-footer;
+
+        @media screen and (max-width: 1520px) {
+            width: 90%;
+        }
 
         .formulaire {
             border-right: 1px solid $grey-border;
@@ -17,9 +25,12 @@ footer {
 
         .contact {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: auto;
             grid-template-rows: repeat(4, 25%);
 
+            @media screen and (max-width: 700px) {
+                grid-template-rows: repeat(4, 15vh);
+            }
 
             h4 {
                 text-transform: uppercase;

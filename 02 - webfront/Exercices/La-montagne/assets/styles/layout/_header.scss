@@ -36,7 +36,7 @@ header {
         @media screen and (max-width: 1520px) {
             width: 90%;
         }
-        
+
         @media screen and (max-width: 1320px) {
             h1 {
                 font-size: 4rem;
@@ -68,7 +68,6 @@ header {
 
             @include centerChild;
             justify-content: space-between;
-            flex-direction: row;
 
             ul {
                 display: flex;
@@ -95,6 +94,10 @@ header {
                         color: $black;
                     }
                 }
+
+                @media screen and (max-width: 800px) {
+                    width: 100%;
+                }
             }
 
             .nav-right {
@@ -104,7 +107,12 @@ header {
                         width: 130px;
                     }
                 }
+
+                @media screen and (max-width: 800px) {
+                    display: none;
+                }
             }
+
         }
     }
 }

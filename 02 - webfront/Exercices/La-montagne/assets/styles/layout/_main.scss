@@ -77,8 +77,9 @@ main {
             margin: 30px auto;
 
             ~p {
-                width: 80%;
+                width: 75%;
                 padding-bottom: 40px;
+                margin-bottom: 40px
             }
         }
 
@@ -86,7 +87,7 @@ main {
         .footer-part-right {
             @include centerChild;
             flex-direction: column;
-            padding: 60px 0 8cqb;
+            padding: 60px 0;
 
             >p {
                 text-transform: capitalize;
@@ -96,7 +97,7 @@ main {
             .btn {
                 position: absolute;
                 bottom: 0;
-                margin-bottom: 60px;
+                margin-bottom: 60px
             }
 
             @media screen and (max-width: 500px) {
