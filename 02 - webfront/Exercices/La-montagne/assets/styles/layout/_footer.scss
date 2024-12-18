@@ -29,12 +29,7 @@ footer {
             grid-template-rows: repeat(4, 25%);
 
             @media screen and (max-width: 700px) {
-                grid-template-rows: repeat(4, 15vh);
-            }
-
-            h4 {
-                text-transform: uppercase;
-                font-weight: 700;
+                grid-template-rows: repeat(4, 14vh);
             }
 
             .address {
@@ -46,8 +41,17 @@ footer {
 
                     .p-address {
                         @include p-footer;
-                        transform: translateY(25%);
+                        transform: translateY(20%);
+                        text-align: left;
+
+                        @media screen and (max-width: 700px) {
+                            font-size: 1rem;
+                        }
                     }
+                }
+
+                @media screen and (max-width: 700px) {
+                    border-top: 1px solid $grey-border;
                 }
             }
 
@@ -61,6 +65,11 @@ footer {
 
                     p {
                         @include p-footer;
+                        text-align: left;
+
+                        @media screen and (max-width: 700px) {
+                            font-size: 1rem;
+                        }
                     }
                 }
             }
@@ -75,6 +84,11 @@ footer {
 
                     p {
                         @include p-footer;
+                        text-align: left;
+
+                        @media screen and (max-width: 700px) {
+                            font-size: 1rem;
+                        }
                     }
                 }
             }
@@ -86,18 +100,23 @@ footer {
 
                 .social-content {
                     @include grid-contact-footer;
+                    text-align: left;
 
                     ul {
                         display: flex;
-                        padding-left: 30px;
                         gap: 15px;
                     }
 
                     i {
-                        color: $black;
+                        color: $grey;
                         border: 1px solid $grey-border;
                         padding: 10px;
                         border-radius: 50px;
+
+                        &:hover {
+                            border: 1px solid $black;
+                            color: $black;
+                        }
                     }
                 }
             }

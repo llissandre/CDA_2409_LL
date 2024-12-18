@@ -2,22 +2,45 @@ main {
     background-color: $white-mat;
     width: 1300px;
     margin: 0 auto 30px;
-
+    
     @media screen and (max-width: 1520px) {
         width: 90%;
         justify-items: center;
     }
-
+    
     .part-main {
         margin: 0 auto;
         @include centerChild;
         flex-direction: column;
-        text-align: center;
+        position: relative;
 
         >p {
             text-transform: capitalize;
             width: 70%;
             padding: 60px 0;
+
+            &:first-child {
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background: $grey-border;
+                    width: 20vw;
+                    height: 1px;
+                    top: 78px;
+                    left: 12%;
+                }
+                
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background: $grey-border;
+                    width: 20vw;
+                    height: 1px;
+                    top: 78px;
+                    left: 62%;
+                }
+            }
         }
 
         @media screen and (max-width: 1520px) {
@@ -43,7 +66,7 @@ main {
                 width: 80%;
             }
         }
-        
+
         @media screen and (max-width: 1000px) {
             h2 {
                 font-size: 3rem;
@@ -120,9 +143,7 @@ main {
             }
         }
 
-        @media screen and (max-width: 500px) {
-
-        }
+        @media screen and (max-width: 500px) {}
 
         .footer-part-left {
             border-right: 1px solid $grey-border;

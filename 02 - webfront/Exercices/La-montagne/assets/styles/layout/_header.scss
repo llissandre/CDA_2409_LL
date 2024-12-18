@@ -7,7 +7,7 @@ header {
         @include centerChild;
         flex-direction: column;
 
-        min-height: 97vh;
+        min-height: 100vh;
         width: 1300px;
         margin: 0 auto;
         opacity: 0;
@@ -23,7 +23,6 @@ header {
 
         h1 {
             @include title;
-            text-align: center;
             font-weight: bold;
             font-size: 5rem;
             letter-spacing: 6px;
@@ -52,7 +51,6 @@ header {
         }
 
         .textheader {
-            text-align: center;
             font-style: italic;
             font-size: 1.2rem;
             line-height: 50px;
@@ -63,8 +61,8 @@ header {
         div {
             i {
                 border: 1px solid;
-                padding: 25px;
-                border-radius: 45px;
+                padding: 25px 28px;
+                border-radius: 50px;
             }
         }
 
@@ -94,14 +92,12 @@ header {
             }
 
             .nav-left {
-                text-align: center;
-
                 li {
 
                     &:first-child,
                     &:hover {
-                        background-color: $white-mat;
-                        color: $black;
+                        background-color: $background-footer ;
+                        color: $grey;
                     }
                 }
 
@@ -111,10 +107,9 @@ header {
             }
 
             .nav-right {
-                li {
-                    fa-brands {
-                        height: 30px;
-                        width: 130px;
+                i {
+                    &:hover {
+                        color: $grey;
                     }
                 }
 
