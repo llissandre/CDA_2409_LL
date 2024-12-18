@@ -104,20 +104,28 @@ footer {
 
                     ul {
                         display: flex;
-                        gap: 15px;
-                    }
-
-                    i {
+                        gap: 20px;
                         color: $grey;
-                        border: 1px solid $grey-border;
-                        padding: 10px;
-                        border-radius: 50px;
 
-                        &:hover {
-                            border: 1px solid $black;
-                            color: $black;
+                        li {
+                            padding: 20px;
+                            border-radius: 50px;
+                            border: 1px solid $grey-border;
+                            &:hover {
+                                border: 1px solid $black;
+                            }
+                            
+                            i {
+                                font-size: 0.9rem;
+                                
+                                &:hover {
+                                    color: $black;
+                                    font-size: 1rem;
+                                }
+                            }
                         }
                     }
+
                 }
             }
         }

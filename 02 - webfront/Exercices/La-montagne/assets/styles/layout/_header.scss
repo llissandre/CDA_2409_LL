@@ -12,6 +12,10 @@ header {
         margin: 0 auto;
         opacity: 0;
 
+        @media screen and (max-width: 1520px) {
+            width: 90%;
+        }
+
         animation: headerAnim 1.5s forwards;
 
         @keyframes headerAnim {
@@ -21,32 +25,23 @@ header {
             }
         }
 
+
         h1 {
             @include title;
             font-weight: bold;
             font-size: 5rem;
             letter-spacing: 6px;
-        }
 
-        @media screen and (max-width: 1520px) {
-            width: 90%;
-        }
-
-        @media screen and (max-width: 1320px) {
-            h1 {
-                font-size: 4rem;
+            @media screen and (max-width: 1320px) {
+                font-size: 5rem;
             }
-        }
 
-        @media screen and (max-width: 1000px) {
-            h1 {
+            @media screen and (max-width: 1000px) {
                 font-size: 3rem;
             }
-        }
 
-        @media screen and (max-width: 500px) {
-            h1 {
-                font-size: 2.5rem;
+            @media screen and (max-width: 800px) {
+                font-size: 3rem;
             }
         }
 
@@ -87,27 +82,45 @@ header {
 
             li {
                 align-content: center;
-                padding: 0 30px;
+                padding: 0 15px;
                 letter-spacing: 2px;
             }
-
+            
             .nav-left {
-                li {
+                height: 100%;
+                width: 100%;
 
-                    &:first-child,
-                    &:hover {
-                        background-color: $background-footer ;
-                        color: $grey;
+                .nav-left-content {
+                    &:hover li:not(:hover) {
+                        background: transparent;
+                        color: $white-mat;
                     }
-                }
 
-                @media screen and (max-width: 800px) {
-                    width: 100%;
+                    li {
+
+                        &:first-child,
+                        &:hover {
+                            background-color: $background-footer ;
+                            color: $grey;
+                        }
+                    }
+
+                    @media screen and (max-width: 800px) {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        justify-content: space-around;
+                    }
                 }
             }
 
             .nav-right {
+                min-width: 100px;
+                width: 25%;
+                max-width: 300px;
+
                 i {
+                    font-size: 0.9rem;
+
                     &:hover {
                         color: $grey;
                     }
@@ -115,9 +128,9 @@ header {
 
                 @media screen and (max-width: 800px) {
                     display: none;
+                    width: 0;
                 }
             }
-
         }
     }
 }
