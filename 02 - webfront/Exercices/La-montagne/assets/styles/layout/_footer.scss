@@ -12,7 +12,8 @@ footer {
             display: block;
         }
 
-        width: 1300px;
+        width: 85%;
+        
         background-color: $background-footer;
 
         @media screen and (max-width: 1520px) {
@@ -104,24 +105,30 @@ footer {
 
                     ul {
                         display: flex;
-                        gap: 20px;
+                        gap: 15px;
                         color: $grey;
 
                         li {
-                            padding: 20px;
+                            padding: 12px;
+
+                            &:nth-child(2) {
+                                padding: 12px 16px 0 16px;
+                            }
+
                             border-radius: 50px;
                             border: 1px solid $grey-border;
+
                             &:hover {
                                 border: 1px solid $black;
+
+                                i {
+                                    font-size: 1.01rem;
+                                    color: $black;
+                                }
                             }
-                            
+
                             i {
                                 font-size: 0.9rem;
-                                
-                                &:hover {
-                                    color: $black;
-                                    font-size: 1rem;
-                                }
                             }
                         }
                     }
