@@ -123,11 +123,10 @@ header {
                 justify-content: space-evenly;
 
                 li {
+                    font-size: 1rem;
+                    
                     &:hover {
-                        i {
-                            color: $grey;
-                            font-size: 1rem;
-                        }
+                        font-size: 1.05rem;
                     }
                 }
 
