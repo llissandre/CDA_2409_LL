@@ -60,7 +60,7 @@ header {
             height: 60px;
             width: 60px;
             border: 2px solid;
-            // border-radius: 50px;
+            border-radius: 50px;
             font-size: 1.2rem;
             display: flex;
             align-items: center;
@@ -83,26 +83,26 @@ header {
                 display: flex;
                 text-transform: uppercase;
                 height: 100%;
+                padding-right: 10px;
 
                 li {
                     @include title;
-                    cursor: pointer;
                     align-content: center;
-                    padding: 0 15px;
                 }
             }
-
+            
             .nav-left {
                 height: 100%;
                 width: 100%;
-
+                
                 .nav-left-content {
                     &:hover li:not(:hover) {
                         background: transparent;
                         color: $white-mat;
                     }
-
+                    
                     li {
+                        padding: 0 15px;
 
                         &:first-child,
                         &:hover {
@@ -120,17 +120,20 @@ header {
             }
 
             .nav-right {
-                justify-content: space-evenly;
+                font-size: 1.1rem;
+                min-width: 100px;
+                width: 25%;
+                max-width: 300px;
+                justify-content: space-around;
 
                 li {
-                    font-size: 1rem;
-                    
+
                     &:hover {
-                        font-size: 1.05rem;
+                        transform: scale(1.3);
                     }
                 }
 
-                @media screen and (max-width: 800px) {
+                @media screen and (max-width: 500px) {
                     display: none;
                     width: 0;
                 }

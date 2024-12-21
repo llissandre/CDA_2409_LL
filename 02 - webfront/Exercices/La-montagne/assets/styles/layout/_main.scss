@@ -3,7 +3,7 @@ main {
     width: 85%;
     margin: 0 auto 30px;
 
-    @media screen and (max-width: 1520px) {
+    @media screen and (max-width: 800px) {
         width: 90%;
         justify-items: center;
     }
@@ -25,16 +25,16 @@ main {
                 letter-spacing: 0;
                 width: 80%;
 
-                &::before {
+                &::before,
+                &::after {
                     content: "";
                     position: absolute;
                     background: $grey;
                     width: 35%;
                     height: 1px;
                     top: 90px;
-                    left: 0;
 
-                    @media screen and (max-width: 1000px) {
+                    @media screen and (max-width: 900px) {
                         width: 30%;
                     }
 
@@ -43,22 +43,12 @@ main {
                     }
                 }
 
+                &::before {
+                    left: 0;
+                }
+
                 &::after {
-                    content: "";
-                    position: absolute;
-                    background: $grey;
-                    width: 35%;
-                    height: 1px;
-                    top: 90px;
                     right: 0;
-
-                    @media screen and (max-width: 1000px) {
-                        width: 30%;
-                    }
-
-                    @media screen and (max-width: 600px) {
-                        width: 25%;
-                    }
                 }
             }
         }
@@ -84,10 +74,13 @@ main {
                 font-size: 3rem;
                 width: 60%;
             }
+            
+            @media screen and (max-width: 700px) {
+                font-size: 2rem;
+            }
 
             @media screen and (max-width: 500px) {
-                font-size: 2rem;
-                width: 60%;
+                font-size: 1.5rem;
             }
         }
 
@@ -118,8 +111,8 @@ main {
         position: relative;
         border-top: 1px solid $grey-border;
 
-        @media screen and (max-width: 500px) {
-            display: block;
+        @media screen and (max-width: 700px) {
+            grid-template-columns: 1fr;
         }
 
         h3 {
