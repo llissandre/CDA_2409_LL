@@ -1,9 +1,7 @@
 @font-face {
     font-family: "Inter";
     src: url(../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
-}
 
-@font-face {
     font-family: "Merriweather";
     src: url(../fonts/Merriweather/Merriweather-Light.ttf);
 }
@@ -55,6 +53,7 @@ a:visited {
 body {
     min-height: 100vh;
     text-align: center;
+    text-decoration: none;
     background: url(../img/bg.jpg) center/cover fixed;
     margin: 0 auto;
 
