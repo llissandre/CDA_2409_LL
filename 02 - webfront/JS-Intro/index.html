@@ -1,22 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Les bases de JS</title>
-  <!-- <script defer src="./index.js"></script> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro à JS</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
 
 <body>
-  <!-- <script> 
-        alert('yo');
-        console.log("Coucou la console");
-    </script> -->
+    <div class="click-event box">
+        <h4>Quelle est la capitale de la Suisse ?</h4>
+        <button id="btn1">Berne</button>
+        <button id="btn2">Zurich</button>
+        <p>La bonne réponse est Berne.</p>
+    </div>
 
-  <!-- Le fichier JS doit etre lu en dernier -->
-  <script src="./index.js"></script>
+    <div class="mousemove"></div>
+
+    <div class="keypress box">
+        <h2>Vous appuyez sur la touche : <span id="key"></span></h2>
+    </div>
+
+    <nav>
+        <ul>
+            <li>Accueil</li>
+            <li>Service</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <form action="" class="box">
+        <input type="text" name="" id="" placeholder="Entrez votre nom">
+
+        <select name="" id="">
+            <option value="">Sélectionnez votre langage favori</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="PHP">PHP</option>
+            <option value="Python">Python</option>
+        </select>
+
+        <input type="checkbox" name="" id="cgv">
+        <label for="cgv">Acceptez les CGV</label>
+
+        <input type="submit" value="Valider">
+        <div></div>
+    </form>
+
+    <script src="./assets/JS/index.js"></script>
 </body>
 
 </html>

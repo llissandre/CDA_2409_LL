@@ -1,0 +1,166 @@
+@font-face {
+    font-family: "Inter";
+    src: url(../font/Inter/static/Inter_18pt-Regular.ttf);
+}
+
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+
+    /* Déclarations de variables pour les couleurs */
+    --background-body: #1d1d1d;
+    --background-infos: #0d0d0d;
+    --background-button: #474dff;
+    --color-text-white: #fefefe;
+    --color-text-mauve: #474dff;
+}
+
+/* Sélectionne tous les éléments  + pseudo élément before et after */
+*,
+*::after,
+*::before {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+P {
+    font-size: 0.8rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+    padding: 5px 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--background-body);
+    color: var(--color-text-white);
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+
+    padding: 15px;
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: end;
+
+        font-size: 1rem;
+    }
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 45% 55%;
+
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.header-left {
+    display: grid;
+    align-items: center;
+
+    height: 100%;
+    padding-right:5vh;
+
+    h1 {
+        font-size: 5rem;
+        margin: 0;
+    }
+
+    h3 {
+        color: var(--color-text-mauve);
+        font-size: 1.8rem;
+        padding: 10px 0;
+    }
+}
+
+.header-right {
+    display: grid;
+    align-items: center;
+
+    img {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.infos {
+    display: grid;
+    grid-template-columns: 33% 67%;
+
+    background-color: var(--background-infos);
+    border-radius: 9px;
+    margin: 0 5px 5px 5px;
+
+    h3 {
+        padding: 5px 0 5px 0;
+    }
+}
+
+.infos-left {
+    align-content: center;
+    width: 170px;
+
+    h3 {
+        text-align: center;
+    }
+}
+
+.btn-container {
+    width: 170px;
+    height: calc(100% - 1.1rem - 15px);
+    padding: 5px 0;
+
+    button {
+        display: block;
+        background-color: var(--background-button);
+        color: var(--color-text-white);
+        border-radius: 9px;
+        border: none;
+        margin: 5px auto;
+        padding: 9px 0;
+        font-size: 0.9rem;
+        width: 140px;
+    }
+}
+
+.infos-right {
+    width: 100%;
+}
+
+.investors {
+    height: calc(100% - 1.1rem - 10px);
+    align-content: center;
+    padding: 5px 0;
+
+}
+
+.img-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    img {
+        justify-self: center;
+        height: 60px;
+    }
+}
