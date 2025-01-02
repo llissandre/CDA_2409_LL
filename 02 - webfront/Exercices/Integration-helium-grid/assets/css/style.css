@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Inter";
-    src: url(../font/Inter/static/Inter_18pt-Regular.ttf);
+    src: url(../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
 }
 
 /* Sélecteur de la racine du document HTML (élement html) */
@@ -30,6 +30,7 @@
 
 li {
     list-style: none;
+    cursor: pointer;
 }
 
 P {
@@ -37,24 +38,24 @@ P {
 }
 
 body {
-min-height: 100vh;
-background-color: var(--background-body);
-color: var(--color-text-white);
+    min-height: 100vh;
+    background-color: var(--background-body);
+    color: var(--color-text-white);
 }
 
 nav {
     display: grid;
-    grid-template-columns:20% 80%;
-    
+    grid-template-columns: 20% 80%;
+
     h2 {
         font-size: 1.5rem;
     }
-    
+
     ul {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         justify-items: end;
-        
+
         font-size: 1rem;
     }
 }
@@ -64,22 +65,22 @@ nav {
 
     display: grid;
     grid-template-columns: repeat(2, 50%);
-    
+
     margin: 30px auto;
 }
 
 .header-left {
     display: grid;
     align-items: center;
-    
+
     height: 100%;
     max-width: 100%;
-    
+
     h1 {
         font-size: 6.3rem;
         margin: 0;
     }
-    
+
     h3 {
         color: var(--color-text-mauve);
         font-size: 1.8rem;
