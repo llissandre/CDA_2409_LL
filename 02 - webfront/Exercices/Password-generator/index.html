@@ -11,15 +11,31 @@
 
 <body>
     <div class="app">
-        <label for="password-output"></label>
-        <input type="text" name="" id="password-output" value="Générateur de mot de passe" readonly>
 
         <div class="range-container">
-            <label for="password-lenght"></label>
-            <input type="range" name="" id="password-lenght" min="4" max="24" value="8">
+            <h1>Générateur de mot de passe</h1>
+            <input type="range" id="password-length" min="4" max="24" value="8"
+                oninput="document.getElementById('display-password-length').value=this.value">
+
+            <input type="text" id="display-password-length" value="8" readonly>
         </div>
-        <label for="display-password-lenght"></label>
-        <input type="text" name="" id="display-password-lenght">
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="lowercase" checked>
+            <label for="lowercase">a-z</label>
+
+            <input type="checkbox" id="uppercase">
+            <label for="uppercase">A-Z</label>
+
+            <input type="checkbox" id="numbers">
+            <label for="numbers">0-9</label>
+
+            <input type="checkbox" id="symbols">
+            <label for="symbols">!-?</label>
+        </div>
+
+        <button id="generateButton">Générer le mot de passe</button>
+        <input type="text" id="password-output" value="Mot de passe" readonly>
     </div>
     <script src="./assets/JS/index.js"></script>
 </body>
