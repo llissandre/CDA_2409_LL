@@ -5,10 +5,8 @@ let boolean = true; /* typeof boolean, true ou false */
 let maVariable; /* typeof undefined */
 let maVariable2 = null; /* typeof object */
 
-// Les tableaux
 let array = ['Bordeaux', 'Toulouse', 'Nantes'];
 // console.log(array[0][3]);
-
 let array2 = ['Bordeaux', 24, true, [1, 2], { nom: 'Denis' }];
 // console.log(array2[4].nom);
 
@@ -44,16 +42,16 @@ let data = [
 // console.log(data[2].pseudo[0]);
 
 
-//---------------------------
-// Les structures de contrôle
-//---------------------------
+///----------------------------
+/// Les structures de contrôle
+///----------------------------
 
 /* if, else */
 if (data[0].age > data[1].age) {
     // console.log(data[0].pseudo + ' est plus âgé.e que ' + data[1].pseudo);
 }
 else {
-    // valeur si faux
+    /* valeur si faux */
 }
 
 /* while */
@@ -84,7 +82,7 @@ for (i = 0; i < data.length; i++) {
 
 /* switch */
 document.body.addEventListener('click', (e) => {
-    console.log(e.target.id);
+    // console.log(e.target.id);
 
     switch (e.target.id) {
         case 'javascript': document.body.style.background = 'yellow';
@@ -96,4 +94,147 @@ document.body.addEventListener('click', (e) => {
         default: null;
     }
 });
+///------------------------------------------------
 
+///----------------
+/// Méthodes string
+///----------------
+let string2 = 'JavaScript est un langage orienté objet';
+
+/* typeof */
+// console.log(typeof '42');
+/* eval */
+/* parseInt */
+// console.log(eval(parseInt('1')) + 2);
+/* isNaN */
+// console.log(isNaN(48));
+/* .length*/
+// console.log(string2.length);
+/* indexOf */
+// console.log(string2.indexOf('langage'));
+/* .slice */
+// let newString = string2.slice(2, 17)
+// console.log(newString);
+/* split */
+// console.log(string2.split(' '));
+/* toLowerCase*/
+/* toUpperCase*/
+/* replace */
+///------------------------------------------------
+
+///----------------
+/// Méthodes number
+///----------------
+let number2 = 42.1234;
+let numberString = '42.12 est un string';
+
+/* toFixed */
+// console.log(number.toFixed(2));
+/* parseInt */
+// console.log(parseInt('43'));
+// console.log(parseInt(numberString));
+/* parseFloat */
+// console.log(parseFloat(numberString));
+/* Math */
+// console.log(Math.round(4.5));
+// console.log(Math.floor(4.9));
+// console.log(Math.ceil(4.1));
+// console.log(Math.pow(4, 2)); /* équivalent à */console.log(4 ** 2);
+// console.log(Math.sqrt(16));
+// console.log(Math.floor(Math.random() * 51)); /* aléatoire de 0 à 50 */
+///------------------------------------------------
+
+///---------------
+/// Méthodes array
+///---------------
+let mArray1 = ['JavaScript', 'PHP', 'Python'];
+let mArray2 = ['Ruby', 'Solidity'];
+
+/* concat */
+// let newArray = mArray2.concat(mArray1);
+// console.log(newArray);
+/* ... */
+// let newArray = [...mArray1, ...mArray2];
+// console.log(newArray);
+/* join */
+// console.log(mArray1.join(' & '));
+/* join */
+// console.log(mArray1.slice(1));
+// console.log(newArray.slice(2, 4));
+/* indexOf */
+// console.log(mArray1.indexOf('Python'));
+/* forEach*/
+// mArray1.forEach((language) => console.log(language));
+/* every */
+// console.log(mArray1.every((language) => language === 'PHP'));
+/* some */
+// console.log(mArray1.some((language) => language === 'PHP'));
+/* shift */ /* permet de retirer le premier élément */
+// let shift = mArray1.shift();
+// console.log(shift);
+// console.log(mArray1);
+/* pop */ /* permet de retirer le dernier élément */
+// let pop = mArray1.pop();
+// console.log(pop);
+// console.log(mArray1);
+/* splice */
+// console.log(mArray1);
+// const restArray = mArray1.splice(1, 1, 'C++');
+// console.log(mArray1);
+
+//-------------------------------/*\---------------
+//---------IMPORTANT-----------/*!!*\--------------
+//---------------------------/*******\-------------
+let arrayNumbers = [4, 74, 28, 12, 1, 6];
+/* reduce */
+// console.log(arrayNumbers.reduce((x, y) => x + y));
+/* push */
+arrayNumbers
+    .push('Coucou');
+// console.log(arrayNumbers);
+arrayNumbers
+    .push(17);
+arrayNumbers
+    .push('171');
+// console.log(arrayNumbers);
+/* filter, sort et map */
+// console.log(arrayNumbers
+// .filter((number) => number > 10));
+// console.log(
+// .sort());
+// console.log(
+// .sort((a, b) => b - a));
+// console.log(
+// .sort((a, b) => a - b));
+// console.log(arrayNumbers
+// .filter((number) => number > 10).sort((a, b) => a - b));
+// mArray1.map((number) => console.log(number));
+// arrayNumbers
+// .map((number) => console.log(number));
+// arrayNumbers
+// .map((number) => document.body.innerHTML += `<li>${number}</li>`);
+// document.body.innerHTML = arrayNumbers
+//     .map((number) => '<li>' + number + '</li>')
+//     .join('');
+///------------------------------------------------
+
+///-----------------
+/// Méthodes object
+///-----------------
+document.body.innerHTML = data
+    .filter((user) => user.admin === false)
+    .filter((user) => user.pseudo.includes('i'))
+    .filter((user) => user.age > 30)
+    .sort((a, b) => b.age - a.age)
+    .map((user) =>
+        `
+    <div class='user-card'>
+<h2>${user.pseudo}</h2>
+<p>${user.age} ans</p>
+<p>Technologies maitrisées : ${user.technos}</p>
+<p>Statut : ${user.admin ? 'Modérateur' : 'Utilisateur'}</p>
+</div>
+`
+    )
+    .join('');
+// `).join(' -------- ');
