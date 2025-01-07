@@ -30,33 +30,35 @@ USE mini_faq;
 -- Les requêtes qui suivent utiliseront
 -- la base de données sélectionnée ci-dessus
 
-CREATE TABLE user(
-   user_id INT,
-   email VARCHAR(128) NOT NULL UNIQUE,
-   PRIMARY KEY(id)
+CREATE TABLE users(
+   user_id INT AUTO_INCREMENT PRIMARY KEY,
+   user_email VARCHAR(128) NOT NULL UNIQUE,
+   user_lastname VARCHAR(50) NOT NULL,
+   user_firstname VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE publication(
-   pub_id INT AUTO_INCREMENT,
-   pub_date DATE NOT NULL,
-   pub_titre VARCHAR(255),
-   pub_contenu TEXT,
-   id INT,
-   PRIMARY KEY(pub_id)
-   -- FOREIGN KEY(id) REFERENCES utilisateur(id)
+CREATE TABLE questions(
+   question_id INT AUTO_INCREMENT PRIMARY KEY,
+   question_date DATE NOT NULL,
+   question_label VARCHAR(255) NOT NULL,
+   question_response TEXT NOT NULL,
+   user_id INT
 );
 
-CREATE TABLE aimer(
-   id INT,
-   pub_id INT,
-   PRIMARY KEY(id, pub_id)
-   -- FOREIGN KEY(id) REFERENCES utilisateur(id),
-   -- FOREIGN KEY(pub_id) REFERENCES publication(pub_id)
+CREATE TABLE categories(
+   category_name VARCHAR(30) PRIMARY KEY,
+   category_description VARCHAR(255),
+   category_order INT NOT NULL UNIQUE 
+);
+
+CREATE TABLE categories_questions(
+   question_id INT,
+   category_name VARCHAR(30)
 );
 
 /* Modifier la table publication et y ajouter la clé étrangère */
-ALTER TABLE publication ADD FOREIGN KEY (id) REFERENCES utilisateur(id);
+ALTER TABLE questions ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
 
 /* CONTRAINTES */
-ALTER TABLE aimer ADD CONSTRAINT fk_aimer_utilisateur FOREIGN KEY(id) REFERENCES utilisateur(id);
-ALTER TABLE aimer ADD CONSTRAINT fk_aimer_publication FOREIGN KEY(pub_id) REFERENCES publication(pub_id);
+ALTER TABLE categories_questions ADD CONSTRAINT fk_categories_questions_questions FOREIGN KEY(question_id) REFERENCES questions(question_id);
+ALTER TABLE categories_questions ADD CONSTRAINT fk_categories_questions_categories FOREIGN KEY(category_name) REFERENCES categories(category_name);

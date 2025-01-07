@@ -1,5 +1,3 @@
-/* INSÉRER LE JEU D'ESSAI DANS LA TABLE "utilisateur" */
-
 /*
 Sous-langage : DML / MLD
 Data Manipulation Language
