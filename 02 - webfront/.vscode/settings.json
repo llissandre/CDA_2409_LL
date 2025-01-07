@@ -1,6 +1,0 @@
-{
-    "workbench.editor.preventPinnedEditorClose": "keyboardAndMouse",
-    "workbench.editor.autoLockGroups": {
-        "mainThreadWebview-markdown.preview": true
-    }
-}
