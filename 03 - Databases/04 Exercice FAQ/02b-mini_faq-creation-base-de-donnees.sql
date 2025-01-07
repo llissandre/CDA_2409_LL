@@ -11,27 +11,27 @@ DROP = Supprimer une structure existante
 */
 
 /*
-utilisateur = (id INT, nom_utilisateur VARCHAR(32), email VARCHAR(128));
-publication = (pub_id INT AUTO_INCREMENT, pub_date DATE, pub_titre VARCHAR(255), pub_contenu TEXT, #id);
-aimer = (#id, #pub_id);
+users = (user_id, user_email, user_lastname, user_firstname);
+questions = (question_id, question_date, question_label, question_response, #user_id);
+categories = (category_name, category_description, category_order);
+categories_questions = (#question_id, #category_name);
 */
 
 /* SUPPRIMER LA BASE DE DONNÉES SI ELLE EXISTE */
-DROP DATABASE IF EXISTS rezo_social;
+DROP DATABASE IF EXISTS mini_faq;
 
 /* CRÉER UNE BASE DE DONNÉES NOMMÉE "videos" */
 -- CREATE DATABASE videos;
-CREATE DATABASE IF NOT EXISTS rezo_social;
+CREATE DATABASE IF NOT EXISTS mini_faq;
 
 /* SÉLECTIONNER/UTILISER LA BASE DE DONNÉES CRÉÉE */
-USE rezo_social;
+USE mini_faq;
 
 -- Les requêtes qui suivent utiliseront
 -- la base de données sélectionnée ci-dessus
 
-CREATE TABLE utilisateur(
-   id INT,
-   nom_utilisateur VARCHAR(32) NOT NULL UNIQUE,
+CREATE TABLE user(
+   user_id INT,
    email VARCHAR(128) NOT NULL UNIQUE,
    PRIMARY KEY(id)
 );
