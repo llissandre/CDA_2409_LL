@@ -14,7 +14,7 @@ SELECT user_id, user_lastname, user_firstname, user_email
 FROM users;
 
 /* 2.Sélectionner toutes les questions (date, intitulé, réponse, identifiant utilisateur) triées par date de la plus ancienne à la plus récente. */
-SELECT question_date, question_response, user_id
+SELECT question_date, question_label, question_response, user_id
 FROM questions
 ORDER BY question_date;
 
@@ -24,11 +24,17 @@ FROM questions
 WHERE user_id=2;
 
 /* 4. Sélectionner les questions (date, intitulé, réponse, identifiant utilisateur) de l’utilisateur Eva Satiti. */
+/* Sans jointure */
+SELECT question_date, question_label, question_response, questions.user_id
+FROM questions q, users u
+WHERE u.user_id = q.user_id AND u.user_lastname = 'Satiti' AND u.user_firstname = 'Eva';
+
+/* Avec jointure */
 SELECT question_date, question_label, question_response, q.user_id
 FROM questions q
-JOIN users u 
+JOIN users u
 ON q.user_id = u.user_id
-WHERE user_lastname='Satiti' && user_firstname='Eva';
+WHERE user_lastname='Satiti' AND user_firstname='Eva';
 
 /* 5. Sélectionner les questions (identifiant, date, intitulé, réponse, identifiant utilisateur) dont l’intitulé contient “SQL”. Le résultat est trié par le titre et par ordre décroissant. */
 SELECT question_id, question_date, question_label, question_response, user_id

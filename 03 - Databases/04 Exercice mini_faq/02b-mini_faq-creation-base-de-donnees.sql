@@ -48,7 +48,7 @@ CREATE TABLE questions(
 CREATE TABLE categories(
    category_name VARCHAR(30) PRIMARY KEY,
    category_description VARCHAR(255),
-   category_order INT NOT NULL UNIQUE 
+   category_order TINYINT NOT NULL UNIQUE 
 );
 
 CREATE TABLE categories_questions(
