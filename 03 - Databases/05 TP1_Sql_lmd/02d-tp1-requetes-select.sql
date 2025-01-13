@@ -135,16 +135,14 @@ SET num_proj = 102
 WHERE deptno != 30;
 
 /* 20. Créer une vue comportant tous les employés avec nom, job, nom de département et nom de projet */
-/* CREATE VIEW employes
-AS SELECT ename, job, dname, e.num_proj, nom_proj FROM EMP e JOIN DEPT d ON e.deptno = d.deptno JOIN PROJET p ON e.num_proj = p.num_proj; */
-
 DROP VIEW V_employes;
+
+/* CREATE VIEW employes AS SELECT ename, job, dname, e.num_proj, nom_proj FROM EMP e JOIN DEPT d ON e.deptno = d.deptno JOIN PROJET p ON e.num_proj = p.num_proj; */
 
 CREATE VIEW V_employes
 AS SELECT ename, job, dname, e.num_proj
 FROM EMP e 
-JOIN DEPT d ON e.deptno = d.deptno
-JOIN PROJET p ON p.num_proj = e.num_proj;
+JOIN DEPT d ON e.deptno = d.deptno;
 
 /* 21. A l'aide de la vue créée précédemment, lister tous les employés avec nom, job, nom de département et nom de projet triés sur nom de département et nom de projet */
 SELECT *
