@@ -1,0 +1,24 @@
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+  /* Changement de la méthode de calcul des boîtes */
+  box-sizing: border-box;
+}
+
+/* Sélectionne tous les éléments */
+* {
+  /* Forcer l'héritage de la propriété box-sizing */
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  text-align: center;
+  min-height: 100vh;
+}
+
+#countdownDisplay {
+  font-size: 5rem;
+}
