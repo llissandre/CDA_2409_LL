@@ -116,12 +116,16 @@ nom_proj CHAR(5) NOT NULL,
 bud_proj DECIMAL(8,2) NOT NULL
 );    
 
+ALTER TABLE PROJET AUTO_INCREMENT=100;
+
 INSERT INTO PROJET
 (nom_proj, bud_proj)
 VALUES
 ('ALPHA', 96000),
 ('BETA', 82000),
 ('GAMMA', 15000);
+    
+select * from PROJET;
     
 /* 19. Ajouter l'attribut numéro de projet à la table EMP et affecter tous les vendeurs du département 30 au projet 101, et les autres au projet 102 */
 ALTER TABLE EMP ADD num_proj SMALLINT;
@@ -137,22 +141,24 @@ WHERE deptno != 30;
 /* 20. Créer une vue comportant tous les employés avec nom, job, nom de département et nom de projet */
 DROP VIEW V_employes;
 
-/* CREATE VIEW employes AS SELECT ename, job, dname, e.num_proj, nom_proj FROM EMP e JOIN DEPT d ON e.deptno = d.deptno JOIN PROJET p ON e.num_proj = p.num_proj; */
-
-CREATE VIEW V_employes
-AS SELECT ename, job, dname, e.num_proj
-FROM EMP e 
-JOIN DEPT d ON e.deptno = d.deptno;
+CREATE VIEW V_employes 
+AS SELECT ename, job, dname, nom_proj FROM EMP e 
+JOIN DEPT d ON e.deptno = d.deptno
+JOIN PROJET p ON e.num_proj = p.num_proj;
 
 /* 21. A l'aide de la vue créée précédemment, lister tous les employés avec nom, job, nom de département et nom de projet triés sur nom de département et nom de projet */
 SELECT *
 FROM V_employes;
 
 /* 22.Donner le nom du projet associé à chaque manager */
-
+SELECT ename, nom_proj
+FROM V_employes
+WHERE job = 'MANAGER';
 
 /* Deuxième partie */
 /* 1. Afficher la liste des managers des départements 20 et 30 */
+
+
 /* 2. Afficher la liste des employés qui ne sont pas manager et qui ont été embauchés en 81 */
 /* 3. Afficher la liste des employés ayant une commission */
 /* 4. Afficher la liste des noms, numéros de département, jobs et date d'embauche triés par Numero de Département et JOB les derniers embauches d'abord. */

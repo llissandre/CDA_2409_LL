@@ -10,13 +10,6 @@ ALTER =  Modifier une structure existante
 DROP = Supprimer une structure existante
 */
 
-/*
-users = (user_id, user_email, user_lastname, user_firstname);
-questions = (question_id, question_date, question_label, question_response, #user_id);
-categories = (category_name, category_description, category_order);
-categories_questions = (#question_id, #category_name);
-*/
-
 /* SUPPRIMER LA BASE DE DONNÉES SI ELLE EXISTE */
 DROP DATABASE IF EXISTS tp1;
 
