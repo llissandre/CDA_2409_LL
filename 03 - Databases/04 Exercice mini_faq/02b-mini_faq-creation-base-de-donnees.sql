@@ -56,7 +56,7 @@ CREATE TABLE categories_questions(
    category_name VARCHAR(30)
 );
 
-/* Modifier la table publication et y ajouter la clé étrangère */
+/* Modifier la table questions et y ajouter la clé étrangère */
 ALTER TABLE questions ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
 
 /* CONTRAINTES */
