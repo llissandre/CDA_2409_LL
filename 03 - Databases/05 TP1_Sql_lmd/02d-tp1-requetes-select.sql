@@ -269,8 +269,31 @@ FROM EMP
 WHERE ename LIKE '%M%' AND ename LIKE '%A%';
 
 /* 17. Afficher les employés embauchés avant tous les employés du département 10. */
+SELECT hiredate
+FROM EMP
+WHERE deptno = 10;
+
 /* 18. Sélectionner le métier où le salaire moyen est le plus faible. */
+SELECT job, min(sal)
+FROM EMP
+GROUP BY job
+HAVING min(sal);
+
 /* 19. Sélectionner le département ayant le plus d'employés. */
+SELECT dname, count(dname) AS 'Nombre d\'employés'
+FROM EMP e
+JOIN DEPT d
+ON e.deptno = d.deptno
+GROUP BY dname;
+
+SELECT dname AS 'Département', count(dname) AS 'Nombre maximal d\'employés dans un département'
+FROM EMP e
+JOIN DEPT d
+ON e.deptno = d.deptno
+GROUP BY dname
+HAVING count(dname) >= ALL (SELECT count(dname) FROM EMP e JOIN DEPT d ON e.deptno = d.deptno GROUP BY dname);
+SELECT count(*) FROM EMP e JOIN DEPT d ON e.deptno = d.deptno GROUP BY dname;
+
 /* 20.Donner la répartition en pourcentage du nombre d'employés par département selon le modèle ci-dessous
 	Département 	Répartition en %
 	----------- 	----------------
