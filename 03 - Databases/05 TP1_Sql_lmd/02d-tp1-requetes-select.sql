@@ -251,12 +251,16 @@ JOIN DEPT d
 ON e.deptno = d.deptno
 WHERE dname = 'RESEARCH' AND hiredate IN(SELECT hiredate FROM EMP e JOIN DEPT d ON e.deptno = d.deptno WHERE dname = 'SALES');
 
+/* Commande pour convertir la date au format français */ 
+SET lc_time_names = 'fr_FR';
+
 /* 13. Lister le nom des employés et également le nom du jour de la semaine correspondant à leur date d'embauche. */
 SELECT ename, DATE_FORMAT(hiredate, '%a') AS 'Jour de la semaine'
 FROM EMP;
 
 /* 14. Donner, pour chaque employé, le nombre de mois qui s'est écoulé entre leur date d'embauche et la date actuelle. */
-
+SELECT ename, ((year(now())-year(hiredate)) * 12 + month(now())-month(hiredate)) AS 'Nombre de mois écoulés'
+FROM EMP;
 
 /* 15. Afficher la liste des employés ayant un M et un A dans leur nom. */
 SELECT ename
@@ -266,25 +270,25 @@ WHERE ename LIKE '%M%' AND ename LIKE '%A%';
 /* 16. Afficher la liste des employés ayant deux 'A' dans leur nom. */
 SELECT ename
 FROM EMP
-WHERE ename LIKE '%M%' AND ename LIKE '%A%';
+WHERE ename LIKE '%A%A%';
 
 /* 17. Afficher les employés embauchés avant tous les employés du département 10. */
-SELECT hiredate
+SELECT ename
 FROM EMP
-WHERE deptno = 10;
+WHERE hiredate < ALL(SELECT hiredate FROM EMP WHERE deptno = 10);
 
-/* 18. Sélectionner le métier où le salaire moyen est le plus faible. */
-SELECT job, min(sal)
+/* 18. Sélectionner le métier où le salaire moyen est le plus faible. */ -- !!!!
+SELECT job AS 'Métiers', round(avg(sal)) AS 'Salaires moyens'
 FROM EMP
 GROUP BY job
-HAVING min(sal);
+HAVING round(avg(sal)) <= ALL (SELECT round(avg(sal)) FROM EMP GROUP BY job);
 
 /* 19. Sélectionner le département ayant le plus d'employés. */
-SELECT dname, count(dname) AS 'Nombre d\'employés'
+/* SELECT dname, count(dname) AS 'Nombre d\'employés'
 FROM EMP e
 JOIN DEPT d
 ON e.deptno = d.deptno
-GROUP BY dname;
+GROUP BY dname; */
 
 SELECT dname AS 'Département', count(dname) AS 'Nombre maximal d\'employés dans un département'
 FROM EMP e
@@ -292,7 +296,7 @@ JOIN DEPT d
 ON e.deptno = d.deptno
 GROUP BY dname
 HAVING count(dname) >= ALL (SELECT count(dname) FROM EMP e JOIN DEPT d ON e.deptno = d.deptno GROUP BY dname);
-SELECT count(*) FROM EMP e JOIN DEPT d ON e.deptno = d.deptno GROUP BY dname;
+-- SELECT count(*) FROM EMP e JOIN DEPT d ON e.deptno = d.deptno GROUP BY dname;
 
 /* 20.Donner la répartition en pourcentage du nombre d'employés par département selon le modèle ci-dessous
 	Département 	Répartition en %
@@ -300,6 +304,10 @@ SELECT count(*) FROM EMP e JOIN DEPT d ON e.deptno = d.deptno GROUP BY dname;
 	10 				21.43
 	20 				35.71
 	30 				42.86 */
+SELECT deptno, count(empno)
+FROM EMP
+GROUP BY deptno;
+
 
 /* Quelques Fonctions SQL Server */
 -- CONVERT: Effectue des conversion de types de données. Permet notamment le formatage de dates
