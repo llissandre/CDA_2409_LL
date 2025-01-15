@@ -9,7 +9,11 @@ SELECT : Sélectionner des données existantes dans 1 ou plusieurs tables
 */
 use tp1;
 
-/* Première partie */
+
+/* --------------- */
+/* PREMIERE PARTIE */
+/* --------------- */
+
 /* 1. Donner nom, job, numéro et salaire de tous les employés, puis seulement des employés du département 10 */
 SELECT ename, job, empno, sal
 FROM EMP;
@@ -120,9 +124,6 @@ nom_proj CHAR(5) NOT NULL,
 bud_proj DECIMAL(8,2) NOT NULL
 );    
 
-DROP TABLE PROJET;
-TRUNCATE TABLE PROJET;
-
 ALTER TABLE PROJET AUTO_INCREMENT=101;
 
 INSERT INTO PROJET
@@ -132,8 +133,10 @@ VALUES
 ('BETA', 82000),
 ('GAMMA', 15000);
     
-select * from PROJET;
-    
+SELECT * FROM PROJET;
+DROP TABLE PROJET;
+TRUNCATE TABLE PROJET;
+
 /* 19. Ajouter l'attribut numéro de projet à la table EMP et affecter tous les vendeurs du département 30 au projet 101, et les autres au projet 102 */
 ALTER TABLE EMP ADD num_proj SMALLINT;
 
@@ -143,6 +146,11 @@ WHERE deptno = 30 AND job = 'SALESMAN';
 
 UPDATE EMP
 SET num_proj = 102
+WHERE num_proj IS NULL;
+
+
+/* UPDATE EMP
+SET num_proj = 102
 WHERE NOT deptno = 30 AND job = 'SALESMAN';
 
 UPDATE EMP
@@ -151,18 +159,18 @@ WHERE deptno = 30 AND NOT job = 'SALESMAN';
 
 UPDATE EMP
 SET num_proj = 102
-WHERE NOT deptno = 30 AND NOT job = 'SALESMAN';
+WHERE NOT deptno = 30 AND NOT job = 'SALESMAN'; */
 
 SELECT *
 FROM EMP;
 
 /* 20. Créer une vue comportant tous les employés avec nom, job, nom de département et nom de projet */
-DROP VIEW V_employes;
-
 CREATE VIEW V_employes
 AS SELECT ename, job, dname, nom_proj FROM EMP e 
 JOIN DEPT d ON e.deptno = d.deptno
 JOIN PROJET p ON e.num_proj = p.num_proj;
+
+DROP VIEW V_employes;
 
 /* 21. A l'aide de la vue créée précédemment, lister tous les employés avec nom, job, nom de département et nom de projet triés sur nom de département et nom de projet */
 SELECT *
@@ -177,7 +185,11 @@ SELECT ename, nom_proj
 FROM V_employes
 WHERE job = 'MANAGER';
 
-/* Deuxième partie */
+
+/* --------------- */
+/* DEUXIEME PARTIE */
+/* --------------- */
+
 /* 1. Afficher la liste des managers des départements 20 et 30 */
 SELECT ename, job
 FROM EMP
@@ -213,16 +225,17 @@ ON e.mgr = m.empno
 WHERE e.hiredate < m.hiredate;
 
 /* 7. Lister les numéros des employés n'ayant pas de subordonné. */
-SELECT m.*, e.*
-FROM EMP e
-RIGHT JOIN EMP m
-ON e.mgr = m.empno;
-
-SELECT m.empno
-FROM EMP e
-RIGHT JOIN EMP m
+SELECT m.empno, m.ename, m.job
+FROM EMP m
+LEFT JOIN EMP e
 ON e.mgr = m.empno
-WHERE e.empno IS NULL;
+WHERE e.empno IS NULL
+ORDER BY job;
+
+/* SELECT m.*, e.*
+FROM EMP e
+RIGHT JOIN EMP m
+ON e.mgr = m.empno; */
 
 /* 8. Afficher les noms et dates d'embauche des employés embauchés avant BLAKE. */
 SELECT ename, hiredate
@@ -296,7 +309,7 @@ JOIN DEPT d
 ON e.deptno = d.deptno
 GROUP BY dname
 HAVING count(dname) >= ALL (SELECT count(dname) FROM EMP e JOIN DEPT d ON e.deptno = d.deptno GROUP BY dname);
--- SELECT count(*) FROM EMP e JOIN DEPT d ON e.deptno = d.deptno GROUP BY dname;
+/* SELECT count(*) FROM EMP e JOIN DEPT d ON e.deptno = d.deptno GROUP BY dname; */
 
 /* 20.Donner la répartition en pourcentage du nombre d'employés par département selon le modèle ci-dessous
 	Département 	Répartition en %
@@ -308,14 +321,14 @@ SELECT deptno AS 'Département', round((count(empno) / (SELECT count(*) FROM EMP
 FROM EMP
 GROUP BY deptno;
 
-SELECT count(*)
+/* SELECT count(*)
 FROM EMP;
 
 SELECT dname, count(dname) AS 'Nombre d\'employés'
 FROM EMP e
 JOIN DEPT d
 ON e.deptno = d.deptno
-GROUP BY dname;
+GROUP BY dname; */
 
 /* Quelques Fonctions SQL Server */
 -- CONVERT: Effectue des conversion de types de données. Permet notamment le formatage de dates
