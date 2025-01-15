@@ -11,30 +11,49 @@ TRUNCATE : Vider une table
 */
 
 -- Sélectionner la base de données 
-USE tp1;
+USE tp2;
 
-INSERT INTO DEPT
-(deptno, dname, loc)
+INSERT INTO AVION
+(AV, AVMARQ, AVTYPE, CAP, LOC)
 VALUES
-(10, 'ACCOUNTING', 'NEW YORK'),
-(20, 'RESEARCH', 'DALLAS'),
-(30, 'SALES', 'CHICAGO'),
-(40, 'OPERATIONS', 'BOSTON');
+(100, 'AIRBUS', 'A320', 300, 'Nice'),
+(101, 'BOEING', 'B707', 250, 'Paris'),
+(102, 'AIRBUS', 'A320', 300, 'Toulouse'),
+(103, 'CARAVELLE', 'Caravelle', 200, 'Toulouse'),
+(104, 'BOEING', 'B747', 400, 'Paris'),
+(105, 'AIRBUS', 'A320', 300, 'Grenoble'),
+(106, 'ATR', 'ATR42', 50, 'Paris'),
+(107, 'BOEING', 'B727', 300, 'Lyon'),
+(108, 'BOEING', 'B727', 300, 'Nantes'),
+(109, 'AIRBUS', 'A340', 350, 'Bastia');
 
-INSERT INTO EMP
-(empno, ename, job, mgr, hiredate, sal, comm, deptno)
+INSERT INTO PILOTE
+(PILNOM, ADR)
 VALUES 
-(7839, 'KING', 'PRESIDENT', NULL, '1981-11-17', 5000, NULL, 10),
-(7698, 'BLAKE', 'MANAGER', 7839, '1981-05-01', 2850, NULL, 30),
-(7782, 'CLARK', 'MANAGER', 7839, '1981-07-09', 2450, NULL, 10),
-(7566, 'JONES', 'MANAGER', 7839, '1981-04-04', 2975, NULL, 20),
-(7499, 'ALLEN', 'SALESMAN', 7698, '1981-02-20', 1600, 300, 30),
-(7521, 'WARD', 'SALESMAN', 7698, '1981-02-22', 1250, 500, 30),
-(7654, 'MARTIN', 'SALESMAN', 7698, '1981-09-28', 1250, 1400, 30),
-(7900, 'JAMES', 'CLERK', 7698, '1981-12-03', 950, NULL, 30),
-(7844, 'TURNER', 'SALESMAN', 7698, '1981-09-08', 1500, 0, 30),
-(7934, 'MILLER', 'CLERK', 7782, '1982-01-23', 1300, NULL, 10),
-(7902, 'FORD', 'ANALYST', 7566, '1981-12-03', 3000, NULL, 20),
-(7788, 'SCOTT', 'ANALYST', 7566, '1982-12-09', 3000, NULL, 20),
-(7369, 'SMITH', 'CLERK', 7902, '1980-12-17', 800, NULL, 20),
-(7876, 'ADAMS', 'CLERK', 7788, '1983-01-12', 1100, NULL, 20);
+('SERGE', 'Nice'),
+('JEAN', 'Paris'),
+('CLAUDE', 'Grenoble'),
+('ROBERT', 'Nantes'),
+('SIMON', 'Paris'),
+('LUCIEN', 'Toulouse'),
+('BERTRAND', 'Lyon'),
+('HERVE', 'Bastia'),
+('LUC', 'Paris');
+
+INSERT INTO VOL
+(VOL, AV, PIL, VD, VA, HD, HA)
+VALUES 
+('IT100', 100, 1, 'Nice', 'Paris', 7, 9),
+('IT101', 100, 2, 'Paris', 'Toulouse', 11, 12),
+('IT102', 101, 1, 'Paris', 'Nice', 12, 14),
+('IT103', 105, 3, 'Grenoble', 'Toulouse', 9, 11),
+('IT104', 105, 3, 'Toulouse', 'Grenoble', 17, 19),
+('IT105', 107, 7, 'Lyon', 'Paris', 6, 7),
+('IT106', 109, 8, 'Bastia', 'Paris', 10, 13),
+('IT107', 106, 9, 'Paris', 'Brive', 7, 8),
+('IT108', 106, 9, 'Brive', 'Paris', 19, 20),
+('IT109', 107, 7, 'Paris', 'Lyon', 18, 19),
+('IT110', 102, 2, 'Toulouse', 'Paris', 15, 16),
+('IT111', 101, 4, 'Nice', 'Nantes', 17, 19),
+('IT112', 103, 5, 'Paris', 'Nice', 11, 13),
+('IT113', 104, 6, 'Nice', 'Paris', 13, 15);
