@@ -304,10 +304,18 @@ HAVING count(dname) >= ALL (SELECT count(dname) FROM EMP e JOIN DEPT d ON e.dept
 	10 				21.43
 	20 				35.71
 	30 				42.86 */
-SELECT deptno, count(empno)
+SELECT deptno AS 'Département', round((count(empno) / (SELECT count(*) FROM EMP))*100, 2) AS 'Répartition en %'
 FROM EMP
 GROUP BY deptno;
 
+SELECT count(*)
+FROM EMP;
+
+SELECT dname, count(dname) AS 'Nombre d\'employés'
+FROM EMP e
+JOIN DEPT d
+ON e.deptno = d.deptno
+GROUP BY dname;
 
 /* Quelques Fonctions SQL Server */
 -- CONVERT: Effectue des conversion de types de données. Permet notamment le formatage de dates
