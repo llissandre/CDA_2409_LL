@@ -42,4 +42,3 @@ CREATE TABLE EMP(
 
 /* Modifier la table EMP et y ajouter la clé étrangère de la table DEPT*/
 ALTER TABLE EMP ADD FOREIGN KEY (deptno) REFERENCES DEPT(deptno);
--- ALTER TABLE EMP ADD FOREIGN KEY (mgr) REFERENCES EMP(empno);
