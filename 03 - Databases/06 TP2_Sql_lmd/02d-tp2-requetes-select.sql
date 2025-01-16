@@ -33,7 +33,7 @@ SELECT LOC AS 'Localisation', AVTYPE AS 'Type d\'avion', round(avg(CAP)) AS 'Cap
 FROM AVION
 GROUP BY LOC, AVTYPE;
 
-/* 5 - Quelle est la capacité moyenne des avions pour chaque ville ayant plus de 1 avion ? */
+/* 5 - Quelle est la capacité moyenne des avions pour chaque ville ayant plus de UN avion ? */
 SELECT LOC AS 'Localisation', count(AV) AS 'Nombre d\'avion', round(avg(CAP)) AS 'Capacité moyenne des avions'
 FROM AVION
 GROUP BY LOC
@@ -41,19 +41,25 @@ HAVING count(AV) > 1;
 
 /* 6 - Quels sont les noms des pilotes qui habitent dans la ville de localisation d'un Airbus */
 SELECT PILNOM
-FROM PILOTE, AVION
-WHERE PILOTE.ADR = AVION.LOC AND AVION.AVMARQ = 'AIRBUS';
+FROM PILOTE
+JOIN AVION
+ON PILOTE.ADR = AVION.LOC
+WHERE AVION.AVMARQ = 'AIRBUS';
 
 /* 7 - Quels sont les noms des pilotes qui conduisent un Airbus et qui habitent dans la ville de localisation d'un Airbus ? */
 SELECT PILNOM
-FROM PILOTE, AVION
-WHERE PILOTE.ADR = AVION.LOC AND AVION.AVMARQ = 'AIRBUS'
+FROM PILOTE
+JOIN AVION
+ON PILOTE.ADR = AVION.LOC 
+WHERE AVION.AVMARQ = 'AIRBUS'
 AND PILNOM IN (SELECT PILNOM FROM VOL v JOIN AVION a ON v.AV = a.AV JOIN PILOTE p ON p.PIL = v.PIL WHERE AVMARQ = 'AIRBUS');
 
 /* 8 - Quels sont les noms des pilotes qui conduisent un Airbus ou qui habitent dans la ville de localisation d'un Airbus ? */
 SELECT DISTINCT PILNOM
-FROM PILOTE, AVION
-WHERE PILOTE.ADR = AVION.LOC AND AVION.AVMARQ = 'AIRBUS'
+FROM PILOTE 
+JOIN AVION
+ON PILOTE.ADR = AVION.LOC
+WHERE AVION.AVMARQ = 'AIRBUS'
 OR PILNOM IN (SELECT PILNOM FROM VOL v JOIN AVION a ON v.AV = a.AV JOIN PILOTE p ON p.PIL = v.PIL WHERE AVMARQ = 'AIRBUS');
 
 /* 9 - Quels sont les noms des pilotes qui conduisent un Airbus sauf ceux qui habitent dans la ville de localisation d'un Airbus ? */
