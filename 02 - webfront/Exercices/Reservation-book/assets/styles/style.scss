@@ -6,7 +6,7 @@
 }
 
 body {
-  background: url(https://i.ibb.co/tmvQ62T/railay-beach-thailand-4k-wallpaper.jpg) center/cover;
+  background: url(../img/bg.jpg) center/cover;
   min-height: 100vh;
   text-align: center;
   color: #3e51bd;
@@ -33,9 +33,11 @@ body {
     h2 {
       text-transform: uppercase;
     }
+
     label {
       display: block;
     }
+
     input {
       background: none;
       outline: none;
@@ -47,9 +49,11 @@ body {
       width: 210px;
       text-align: center;
     }
+
     h3 {
       margin: 20px;
     }
+
     button {
       background: #3e51bd;
       border-radius: 20px;
