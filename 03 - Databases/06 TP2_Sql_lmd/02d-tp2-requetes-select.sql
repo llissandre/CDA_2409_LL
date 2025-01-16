@@ -71,9 +71,10 @@ WHERE VD IN (SELECT VD FROM VOL v JOIN PILOTE p ON v.PIL = p.PIL WHERE PILNOM = 
 AND VA IN (SELECT VA FROM VOL v JOIN PILOTE p ON v.PIL = p.PIL WHERE PILNOM = 'SERGE');
 
 /* 11 - Donner toutes les paires de pilotes habitant la même ville ( sans doublon ). */
-SELECT p.PILNOM, d.PILNOM
+SELECT *
 FROM PILOTE p
 JOIN PILOTE d ON p.ADR = d.ADR
+
 WHERE p.ADR = d.ADR AND p.PIL != d.PIL;
 
 /* 12 - Quels sont les noms des pilotes qui conduisent un avion que conduit aussi le pilote n°1 ? */

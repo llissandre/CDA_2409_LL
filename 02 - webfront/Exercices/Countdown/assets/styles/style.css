@@ -19,6 +19,17 @@ body {
   text-align: center;
 }
 
+h3 {
+  margin: 20px;
+  font-size: 2rem;
+}
+
+#choice {
+  width: 25vw;
+  font-size: 1rem;
+}
+
 #countdownDisplay {
   font-size: 5rem;
+  margin-top: 20px;
 }
