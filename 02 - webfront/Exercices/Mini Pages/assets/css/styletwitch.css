@@ -1,0 +1,126 @@
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+
+    /* Déclarations de variables pour les couleurs */
+    --background-gris-clair: #e6e3e3;
+    --text-blanc: white;
+    --text-bleu: #008CBA;
+    --background-button-bleu: #008CBA;
+    --background-button-gris: #555555;
+    --background-button-vert: #4CAF50;
+}
+
+/* Sélectionne tous les éléments  + pseudo élément before et after */
+*,
+*::after,
+*::before {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    height: 12vh;
+
+    h1 {
+        color: var(--text-bleu);
+        font-size: 2.5rem;
+    }
+
+    p {
+        background-color: var(--background-gris-clair);
+        font-style: italic;
+        font-size: 1rem;
+    }
+}
+
+nav {
+    height: 15vh;
+    justify-self: center;
+    align-content: center;
+
+
+    #s1 {
+        font-size: 1.5rem;
+        background-color: var(--background-button-bleu);
+        border: 2px var(--background-button-bleu) solid;
+        border-radius: 10px;
+        color: var(--text-blanc);
+        padding: 20px
+    }
+
+    #s2 {
+        font-size: 1.5rem;
+        background-color: var(--background-button-vert);
+        border: 2px var(--background-button-vert) solid;
+        border-radius: 10px;
+        color: var(--text-blanc);
+        padding: 20px
+    }
+
+    #s3 {
+        font-size: 1.5rem;
+        background-color: var(--background-button-gris);
+        border: 2px var(--background-button-gris) solid;
+        border-radius: 10px;
+        color: var(--text-blanc);
+        padding: 20px
+    }
+}
+
+.divhr {
+    height: 0;
+}
+
+main {
+    margin: 20px 5px;
+
+    .nomavatar {
+        color: var(--text-blanc);
+        background-color: var(--background-button-bleu);
+        padding: 5px;
+    }
+
+
+    th {
+        background-color: var(--background-gris-clair);
+        border: 1px black solid;
+        padding: 3px;
+    }
+
+    td {
+        border: 1px black solid;
+    }
+
+    #table {
+        border: 2px black solid;
+        width: 100%;
+    }
+
+    .rang {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .stat{
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .nomstatistiques {
+        background-color: var(--background-button-vert);
+        color: var(--text-blanc);
+        padding: 0 5px;
+    }
+}
