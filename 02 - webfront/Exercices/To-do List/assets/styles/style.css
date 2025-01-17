@@ -1,0 +1,110 @@
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+}
+
+/* Sélectionne tous les éléments */
+* {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: grey;
+
+    display: flex;
+    align-items: center;
+}
+
+.todo-container {
+    width: 50vw;
+    text-align: center;
+    margin: 10vh auto;
+    background: rgb(218, 191, 191);
+    padding: 2rem 1rem;
+    border-radius: 35px;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    font-size: 2.35rem;
+}
+
+form {
+    margin: 2rem 0;
+}
+
+form input {
+    width: 250px;
+    height: 50px;
+    border-radius: 50px;
+    padding: 0 1rem;
+    font-size: 1.3rem;
+    transition: 0.7s;
+}
+
+form input::placeholder {
+    color: #130e1d9a;
+}
+
+form input:focus {
+    border: 3px solid #ffee00;
+}
+
+ul {
+    text-align: left;
+}
+
+ul li {
+    list-style: none;
+    padding: 0.7rem;
+    position: relative;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+ul li:before {
+    content: "✽";
+    padding: 0.6rem;
+    font-size: 1.3rem;
+    color: #fd4a1d;
+}
+
+ul li:after {
+    opacity: 0;
+}
+
+ul li:hover:after {
+    content: " (terminé)";
+    opacity: 0;
+    font-size: 1.1rem;
+    color: #fd4a1d;
+    font-style: italic;
+    animation: pseudoClassAnim 1s forwards;
+}
+
+li.checked:before {
+    content: "✔";
+    padding: 10px 10px;
+    font-size: 1.1rem;
+    color: #fd4a1d;
+}
+
+li.checked:hover:after {
+    content: " (supprimer)";
+    font-size: 1.1rem;
+    color: #fd4a1d;
+    opacity: 0;
+}
+
+@keyframes pseudoClassAnim {
+    to {
+        opacity: 1;
+    }
+}

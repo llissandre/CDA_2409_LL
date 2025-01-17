@@ -332,5 +332,7 @@ let mail = 'llissandre123@ici.fr';
 /* matcher tous les caractères */
 // console.log(mail.match(/\w/));
 
-console.log(mail.match(/^[\w_-]+@[\w-]+\.[a-z]{2,4}$/i));
+// console.log(mail.match(/^[\w_-]+@[\w-]+\.[a-z]{2,4}$/i));
 
+// let separator = 265264849;
+// console.log(separator.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '));
