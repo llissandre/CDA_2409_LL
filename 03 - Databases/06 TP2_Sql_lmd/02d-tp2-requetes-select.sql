@@ -40,26 +40,49 @@ GROUP BY LOC
 HAVING count(AV) > 1;
 
 /* 6 - Quels sont les noms des pilotes qui habitent dans la ville de localisation d'un Airbus */
-SELECT PILNOM
-FROM PILOTE
-JOIN AVION
-ON PILOTE.ADR = AVION.LOC
-WHERE AVION.AVMARQ = 'AIRBUS';
+SELECT *
+FROM PILOTE p
+JOIN AVION a
+ON p.ADR = a.LOC
+WHERE AVMARQ = 'AIRBUS';
 
 /* 7 - Quels sont les noms des pilotes qui conduisent un Airbus et qui habitent dans la ville de localisation d'un Airbus ? */
+SELECT DISTINCT PILNOM
+FROM PILOTE p
+JOIN VOL v
+JOIN AVION a
+WHERE AVMARQ = 'AIRBUS' AND p.ADR = a.LOC;
+
+SELECT DISTINCT PILNOM
+FROM PILOTE p
+JOIN AVION a ON p.ADR = a.LOC 
+JOIN VOL v ON p.PIL = v.PIL
+WHERE AVMARQ = 'AIRBUS' AND a.av = v.av;
+
 SELECT PILNOM
-FROM PILOTE
-JOIN AVION
-ON PILOTE.ADR = AVION.LOC 
-WHERE AVION.AVMARQ = 'AIRBUS'
+FROM PILOTE p
+JOIN AVION a ON p.ADR = a.LOC 
+WHERE AVMARQ = 'AIRBUS'
 AND PILNOM IN (SELECT PILNOM FROM VOL v JOIN AVION a ON v.AV = a.AV JOIN PILOTE p ON p.PIL = v.PIL WHERE AVMARQ = 'AIRBUS');
 
 /* 8 - Quels sont les noms des pilotes qui conduisent un Airbus ou qui habitent dans la ville de localisation d'un Airbus ? */
 SELECT DISTINCT PILNOM
-FROM PILOTE 
-JOIN AVION
-ON PILOTE.ADR = AVION.LOC
-WHERE AVION.AVMARQ = 'AIRBUS'
+FROM PILOTE p
+JOIN VOL v
+JOIN AVION a
+WHERE AVMARQ = 'AIRBUS' OR p.ADR = a.LOC;
+
+SELECT DISTINCT PILNOM
+FROM AVION a
+NATURAL JOIN VOL v
+NATURAL JOIN PILOTE p
+WHERE AVMARQ = 'AIRBUS' AND p.PIL = v.PIL OR (v.AV IN(SELECT v.AV FROM AVION a JOIN VOL v ON a.AV = v.AV WHERE AVMARQ = 'AIRBUS'));
+
+SELECT DISTINCT PILNOM
+FROM PILOTE p
+JOIN AVION a
+ON p.ADR = a.LOC
+WHERE AVMARQ = 'AIRBUS'
 OR PILNOM IN (SELECT PILNOM FROM VOL v JOIN AVION a ON v.AV = a.AV JOIN PILOTE p ON p.PIL = v.PIL WHERE AVMARQ = 'AIRBUS');
 
 /* 9 - Quels sont les noms des pilotes qui conduisent un Airbus sauf ceux qui habitent dans la ville de localisation d'un Airbus ? */
@@ -80,7 +103,6 @@ AND VA IN (SELECT VA FROM VOL v JOIN PILOTE p ON v.PIL = p.PIL WHERE PILNOM = 'S
 SELECT *
 FROM PILOTE p
 JOIN PILOTE d ON p.ADR = d.ADR
-
 WHERE p.ADR = d.ADR AND p.PIL != d.PIL;
 
 /* 12 - Quels sont les noms des pilotes qui conduisent un avion que conduit aussi le pilote n°1 ? */

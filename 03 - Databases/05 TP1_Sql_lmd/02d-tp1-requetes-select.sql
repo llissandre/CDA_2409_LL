@@ -320,6 +320,7 @@ HAVING count(dname) >= ALL (SELECT count(dname) FROM EMP e JOIN DEPT d ON e.dept
 SELECT deptno AS 'Département', round((count(empno) / (SELECT count(*) FROM EMP))*100, 2) AS 'Répartition en %'
 FROM EMP
 GROUP BY deptno;
+-- SELECT deptno AS "Département", ROUND((COUNT(deptno)/(SELECT COUNT(empno) FROM emp)*100),2) AS "répartition" FROM  emp GROUP BY deptno;
 
 /* SELECT count(*)
 FROM EMP;
