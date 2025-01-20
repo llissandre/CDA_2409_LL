@@ -22,7 +22,7 @@ db.emp.find({}, {_id:0, ename:1, job:1, sal:1}).sort({job:-1}, {sal:-1})
 
 /* 8. Liste des différents emplois */
 db.emp.distinct("job")
-db.emp.aggregate([{$group: {_id: "$job"}}])
+db.emp.aggregate([{$group: {_id: "$job"}}, {$project: {_id:0, Emploi: "$_id"}}])
 
 /* 9. Donner le nom du département où travaille ALLEN */
 db.emp.find({ename: "ALLEN"}, {_id:0, dname:1})
@@ -31,10 +31,18 @@ db.emp.find({ename: "ALLEN"}, {_id:0, dname:1})
 db.emp.find({}, {_id:0, dname:1, ename:1, job:1, sal:1}).sort({dname:-1, sal:-1})
 
 /* 11. Liste des employés vendeurs (SALESMAN) avec affichage de nom, salaire, commissions, salaire + commissions */
-db.emp.find({job: "SALESMAN"}, {_id:0, ename:1, sal:1, comm:1})
-db.emp.aggregate([{SAL: {$sum: : }
+db.emp.aggregate([{$match: {job: "SALESMAN"}}, {$project: {_id:0, ename:1, sal:1, comm:1, SAL: {$add: ["$sal", "$comm"]}}}])
 
 /* 12. Donner le salaire le plus élevé par département */
+db.emp.aggregate([{$group: {_id:"$dname", "salaire max": {$max: "$sal"}}}])
 
 
 /* 13. Donner département par département masse salariale, nombre d'employés, salaire moyen par type d'emploi */
+db.emp.aggregate([{$group: {"_id":"$dname", salaires: {"$sum": "$sal"}, commissions: {"$sum": "$comm"}}}])
+
+
+
+
+
+https://hhmida.github.io/tp-nosql-mongodb/index.html
+https://kinsta.com/fr/blog/operateurs-mongodb/#que-sont-les-oprateurs-mongodb-
