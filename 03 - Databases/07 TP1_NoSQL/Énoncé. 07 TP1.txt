@@ -22,6 +22,7 @@ db.emp.find({}, {_id:0, ename:1, job:1, sal:1}).sort({job:-1}, {sal:-1})
 
 /* 8. Liste des différents emplois */
 db.emp.distinct("job")
+db.emp.aggregate([{$group: {_id: {Emploi: "$job"}}}])
 db.emp.aggregate([{$group: {_id: "$job"}}, {$project: {_id:0, Emploi: "$_id"}}])
 
 /* 9. Donner le nom du département où travaille ALLEN */
@@ -31,18 +32,57 @@ db.emp.find({ename: "ALLEN"}, {_id:0, dname:1})
 db.emp.find({}, {_id:0, dname:1, ename:1, job:1, sal:1}).sort({dname:-1, sal:-1})
 
 /* 11. Liste des employés vendeurs (SALESMAN) avec affichage de nom, salaire, commissions, salaire + commissions */
-db.emp.aggregate([{$match: {job: "SALESMAN"}}, {$project: {_id:0, ename:1, sal:1, comm:1, SAL: {$add: ["$sal", "$comm"]}}}])
+db.emp.aggregate([{$match: {job: "SALESMAN"}}, {$project: {_id:0, ename:1, sal:1, comm:1, "Revenu total": {$add: ["$sal", "$comm"]}}}])
 
 /* 12. Donner le salaire le plus élevé par département */
-db.emp.aggregate([{$group: {_id:"$dname", "salaire max": {$max: "$sal"}}}])
-
+db.emp.aggregate([{$group: {_id: "$dname", "Salaire max": {$max: "$sal"}}}])
+db.emp.aggregate([{$group: {_id: {Département: "$dname"}, "Salaire max": {$max: "$sal"}}}])
+db.emp.aggregate([{$group: {_id: "$dname", "Salaire max": {$max: "$sal"}}}, {$project: {_id:0, "Département": "$_id", "Salaire max":1}}])
 
 /* 13. Donner département par département masse salariale, nombre d'employés, salaire moyen par type d'emploi */
-db.emp.aggregate([{$group: {"_id":"$dname", salaires: {"$sum": "$sal"}, commissions: {"$sum": "$comm"}}}])
+db.emp.aggregate([
+{$group: {
+	_id: "$dname", 
+	"Salaires": {$sum: "$sal"}, 
+	"Commissions": {$sum: "$comm"},
+	"Nombre d'employés": {$sum:1},
+	"SM": {$avg: "$sal"}
+	}
+},
+{$project:
+	{
+	_id:0,
+	"Département": "$_id",
+	"Masse salariale": {$add: ["$Salaires", "$Commissions"]},
+	"Salaires":1,
+	"Commissions":1,
+	"Nombre d'employés":1,
+	"Salaire moyen par département": {$round: ["$SM", 2]}
+	}	
+}
+])
 
-
-
-
-
-https://hhmida.github.io/tp-nosql-mongodb/index.html
-https://kinsta.com/fr/blog/operateurs-mongodb/#que-sont-les-oprateurs-mongodb-
+db.emp.aggregate([
+{$group: {
+	_id: {
+		Département: "$dname",
+		Emploi: "$job"
+	}, 
+	"Salaires": {$sum: "$sal"}, 
+	"Commissions": {$sum: "$comm"},
+	"Nombre d'employés": {$sum:1},
+	"SM": {$avg: "$sal"}
+	}
+},
+{$project:
+	{
+	_id:0,
+	"Masse salariale": {$add: ["$Salaires", "$Commissions"]},
+	"Salaires":1,
+	"Commissions":1,
+	"Nombre d'employés":1,
+	"Salaire moyen": {$round: ["$SM", 2]}
+}}
+	}	
+}
+])
