@@ -1,3 +1,15 @@
+/*
+Création de la base de données
+Sous-langage : DDL /LDD
+Data Definition Language
+Langage de définition des données
+
+Principales instructions :
+CREATE = Créer une structure (DATABASE, TABLE, VIEW, PROCEDURE, TRIGGER, FUNCTION)
+ALTER =  Modifier une structure existante
+DROP = Supprimer une structure existante
+*/
+
 DROP DATABASE IF EXISTS db_architecte;
 
 CREATE DATABASE IF NOT EXISTS db_architecte;

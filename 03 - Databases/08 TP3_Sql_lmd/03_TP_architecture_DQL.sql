@@ -48,13 +48,33 @@ HAVING 'Architecte' NOT IN (SELECT DISTINCT fonction_nom FROM fonctions f NATURA
 ORDER BY pa.projet_ref;
 
 /* 7. Sélectionner les types de projets avec, pour chacun d'entre eux, le nombre de projets associés et le prix moyen pratiqué */
-SELECT type_projet_id, type_projet_libelle, Count(p.type_projet_id), avg(projet_prix) FROM type_projets t
-NATURAL JOIN projets p;
+SELECT p.type_projet_id, type_projet_libelle, Count(p.type_projet_id), avg(projet_prix), round(avg(projet_prix), 2) 
+FROM type_projets t
+NATURAL JOIN projets p
+GROUP BY type_projet_id
+ORDER BY type_projet_id;
 
 /* 8. Sélectionner les types de travaux avec, pour chacun d'entre eux, la superficie du projet la pls grande */
-
+SELECT type_travaux_id, type_travaux_libelle, max(projet_superficie_totale), max(projet_superficie_batie)
+FROM type_travaux t
+NATURAL JOIN projets
+GROUP BY type_travaux_id, type_travaux_libelle;
 
 /* 9. Sélectionner l'ensembles des projets (dates, prix) avec les informations du client (nom, telephone, adresse), le type de travaux et le type de projet. */
-
+SELECT projet_date_depot AS 'date de dépôt', projet_date_fin_prevue AS 'Date de fin prévue', projet_prix AS 'Prix du projet', 
+client_nom AS 'Nom du client', client_telephone AS 'Téléphone du client', a.adresse_num_voie AS 'Numéro de la voie', a.adresse_voie AS 'Voie', 
+a.adresse_code_postal AS 'Code postal', a.adresse_ville AS 'Ville', type_travaux_libelle AS 'Type de travaux', type_projet_libelle AS 'Type de projet'
+FROM projets p
+JOIN clients c ON c.client_ref = p.client_ref
+JOIN adresses a ON a.adresse_id = c.adresse_id
+JOIN type_travaux tt ON tt.type_travaux_id = p.type_travaux_id
+JOIN type_projets tp ON tp.type_projet_id = p.type_projet_id
+GROUP BY projet_ref, p.type_travaux_id
+ORDER BY c.adresse_id;
 
 /* 10. Sélectionner les projets dont l'adresse est identique au client associé */
+SELECT projet_ref, client_nom AS 'Nom du client', projet_date_depot AS 'date de dépôt', projet_date_fin_prevue AS 'Date de fin prévue', projet_prix AS 'Prix du projet'
+FROM projets p
+JOIN clients c ON c.client_ref = p.client_ref
+JOIN adresses a ON a.adresse_id = c.adresse_id
+WHERE p.adresse_id=c.adresse_id;

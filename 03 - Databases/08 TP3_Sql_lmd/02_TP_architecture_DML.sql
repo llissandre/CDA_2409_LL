@@ -1,3 +1,15 @@
+/*
+Sous-langage : DML / MLD
+Data Manipulation Language
+Langage de Manipulation de Données
+
+Principales instructions :
+INSERT : Ajouter des nouvelles données dans une table
+UPDATE : Mettre à jour des données existantes dans une table
+DELETE : Supprimer des données existantes dans une table
+TRUNCATE : Vider une table
+*/
+
 USE db_architecte;
 
 INSERT INTO type_travaux 
