@@ -1,0 +1,29 @@
+{
+    "workbench.editor.defaultBinaryEditor": "default",
+    "workbench.editor.wrapTabs": true,
+    "git-graph.customEmojiShortcodeMappings": [],
+    "files.autoSave": "onFocusChange",
+    "editor.wrappingIndent": "none",
+    "editor.wordWrap": "on",
+    "notebook.output.wordWrap": true,
+    "keyboard.mapAltGrToCtrlAlt": true,
+    "diffEditor.wordWrap": "on",
+    "workbench.settings.openDefaultKeybindings": true,
+    "workbench.colorTheme": "One Dark Pro",
+    "vscode-edge-devtools.webhintInstallNotification": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.formatOnSave": true,
+    "oracledevtools.connectionConfiguration.configFilesFolder": "C:\\Users\\lliss\\Oracle\\network\\admin",
+    "[oraclesql]": {
+        "editor.suggest.showSnippets": true,
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        }
+    },
+    "oracledevtools.connectionConfiguration.walletFileFolder": "C:\\Users\\lliss\\Oracle\\network\\admin",
+    "oracledevtools.bookmarkFileFolder": "C:\\Users\\lliss\\Oracle\\oracle.oracledevtools",
+    "oracledevtools.download.otherFolder": "C:\\Users\\lliss\\downloads",
+    "diffEditor.hideUnchangedRegions.enabled": true
+}
