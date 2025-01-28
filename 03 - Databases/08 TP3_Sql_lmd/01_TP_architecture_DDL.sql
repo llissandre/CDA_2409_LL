@@ -10,95 +10,58 @@ ALTER =  Modifier une structure existante
 DROP = Supprimer une structure existante
 */
 
-DROP DATABASE IF EXISTS db_architecte;
+DROP DATABASE IF EXISTS kiloutout;
+CREATE DATABASE kiloutout;
+USE kiloutout ;
 
-CREATE DATABASE IF NOT EXISTS db_architecte;
-
-USE db_architecte;
-
-CREATE TABLE type_travaux(
-   type_travaux_id INT AUTO_INCREMENT,
-   type_travaux_libelle VARCHAR(50) NOT NULL,
-   PRIMARY KEY(type_travaux_id),
-   UNIQUE(type_travaux_libelle)
+CREATE TABLE proprietaire (
+   proprietaire_id INT PRIMARY KEY,
+   proprietaire_nom VARCHAR (100) NOT NULL,
+   proprietaire_prenom VARCHAR (100) NOT NULL,
+   proprietaire_adresse VARCHAR (255) NOT NULL,
+   Proprietaire_telephone INT NOT NULL
 );
 
-CREATE TABLE type_projets(
-   type_projet_id INT AUTO_INCREMENT,
-   type_projet_libelle VARCHAR(50) NOT NULL,
-   PRIMARY KEY(type_projet_id),
-   UNIQUE(type_projet_libelle)
+CREATE TABLE locataire (
+   locataire_id INT PRIMARY KEY,
+   locataire_nom VARCHAR (100) NOT NULL,
+   locataire_prenom VARCHAR (100) NOT NULL,
+   locataire_telephone INT NOT NULL
+ );
+
+CREATE TABLE agence (
+   Kiloutout CHAR (9) PRIMARY KEY
 );
 
-CREATE TABLE adresses(
-   adresse_id INT AUTO_INCREMENT,
-   adresse_code_postal CHAR(5) NOT NULL,
-   adresse_ville VARCHAR(50) NOT NULL,
-   adresse_num_voie INT,
-   adresse_voie VARCHAR(255) NOT NULL,
-   PRIMARY KEY(adresse_id)
+CREATE TABLE bien (
+   bien_id INT PRIMARY KEY,
+   bien_situation VARCHAR (255) NOT NULL,
+   bien_surface TINYINT NOT NULL,
+   bien_loyer_mensuel INT NOT NULL,
+   proprietaire_id INT NOT NULL
 );
 
-CREATE TABLE type_clients(
-   type_client_id INT AUTO_INCREMENT,
-   type_client_libelle VARCHAR(50) NOT NULL,
-   PRIMARY KEY(type_client_id),
-   UNIQUE(type_client_libelle)
+CREATE TABLE contrat (
+   bien_id INT,
+   Kiloutout CHAR (9),
+   PRIMARY KEY (Kiloutout, bien_id),
+   contrat_id SMALLINT NOT NULL UNIQUE,
+   contrat_pourcentage TINYINT NOT NULL,
+   contrat_duree TINYINT NOT NULL   
 );
 
-CREATE TABLE fonctions(
-   fonction_id INT AUTO_INCREMENT,
-   fonction_nom VARCHAR(50) NOT NULL,
-   PRIMARY KEY(fonction_id),
-   UNIQUE(fonction_nom)
+CREATE TABLE bail (
+   bien_id INT PRIMARY KEY,
+   bail_id INT NOT NULL AUTO_INCREMENT,
+   bail_duree TINYINT NOT NULL,
+   locataire_id INT
 );
 
-CREATE TABLE employes(
-   emp_matricule INT AUTO_INCREMENT,
-   emp_nom VARCHAR(50) NOT NULL,
-   emp_prenom VARCHAR(50) NOT NULL,
-   emp_date_embauche DATE NOT NULL,
-   fonction_id INT NOT NULL,
-   PRIMARY KEY(emp_matricule),
-   FOREIGN KEY(fonction_id) REFERENCES fonctions(fonction_id)
-);
+ALTER TABLE bien ADD CONSTRAINT FK_PROPRIETAIRE_BIEN FOREIGN KEY (proprietaire_id) REFERENCES proprietaire(proprietaire_id);
 
-CREATE TABLE clients(
-   client_ref INT AUTO_INCREMENT,
-   client_nom VARCHAR(50) NOT NULL,
-   client_telephone CHAR(16) NOT NULL,
-   type_client_id INT NOT NULL,
-   adresse_id INT NOT NULL,
-   PRIMARY KEY(client_ref),
-   FOREIGN KEY(type_client_id) REFERENCES type_clients(type_client_id),
-   FOREIGN KEY(adresse_id) REFERENCES adresses(adresse_id)
-);
+ALTER TABLE contrat ADD CONSTRAINT FK_BIEN_AGENCE FOREIGN KEY(Kiloutout) REFERENCES agence (Kiloutout);
+ALTER TABLE contrat ADD CONSTRAINT FK_BIEN_AGENCE FOREIGN KEY (bien_id) REFERENCES bien(bien_id);
 
-CREATE TABLE projets(
-   projet_ref INT AUTO_INCREMENT,
-   projet_date_depot DATE NOT NULL,
-   projet_date_fin_prevue DATE NOT NULL,
-   projet_date_fin_effective DATE,
-   projet_superficie_totale INT NOT NULL,
-   projet_superficie_batie INT NOT NULL,
-   projet_prix DECIMAL(10,2) NOT NULL,
-   client_ref INT NOT NULL,
-   emp_matricule INT NOT NULL,
-   adresse_id INT NOT NULL,
-   type_travaux_id INT NOT NULL,
-   type_projet_id INT NOT NULL,
-   PRIMARY KEY(projet_ref),
-   FOREIGN KEY(client_ref) REFERENCES clients(client_ref),
-   FOREIGN KEY(emp_matricule) REFERENCES employes(emp_matricule),
-   FOREIGN KEY(adresse_id) REFERENCES adresses(adresse_id),
-   FOREIGN KEY(type_travaux_id) REFERENCES type_travaux(type_travaux_id),
-   FOREIGN KEY(type_projet_id) REFERENCES type_projets(type_projet_id)
-);
+ALTER TABLE contrat ADD CONSTRAINT FK_BIEN_LOCATAIRE FOREIGN KEY (bien_id) REFERENCES bien(bien_id);
+ALTER TABLE contrat ADD CONSTRAINT FK_BIEN_LOCATAIRE FOREIGN KEY (locataire_id) REFERENCES locataire(locataire_id);
 
-CREATE TABLE participer(
-   emp_matricule INT,
-   projet_ref INT,
-   PRIMARY KEY(emp_matricule, projet_ref),
-   FOREIGN KEY(emp_matricule) REFERENCES employes(emp_matricule),
-   FOREIGN KEY(projet_ref) REFERENCES projets(projet_ref)
-);
