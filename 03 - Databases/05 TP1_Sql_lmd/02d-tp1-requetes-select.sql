@@ -14,7 +14,7 @@ use tp1;
 /* PREMIERE PARTIE */
 /* --------------- */
 
-Pour commencer l'entrainement  à l'ECF BDD MERISE  voici un TP à faire. (pour les CDA et les DWWM )
+/* Pour commencer l'entrainement  à l'ECF BDD MERISE  voici un TP à faire. (pour les CDA et les DWWM )
 Avec les 2 scripts suivant vous installerez une base de données : "db_architecte"  avec un certain nombre de tables en relation.
 Et vous y ajouterez un jeu de données à l'aide du 2ème fichiers SQL ( 02_TP_architecture_DML). 
 Ensuite vous réaliserez les requêtes suivantes : 

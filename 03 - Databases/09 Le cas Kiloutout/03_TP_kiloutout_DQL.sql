@@ -54,6 +54,7 @@ GROUP BY proprietaire_id;
 /* Lors de la dernière réunion avec le client, il a été décidé qu’un propriétaire ne peut mettre sous gestion de l’agence que des logements dont le loyer est strictement inférieur à 2000€ / mois.
 Lors de l’insertion d’un logement, cette limite doit obligatoirement être vérifiée par le SGBD. Si le loyer dépasse 2000€, le logement ne doit pas être inséré.
 Implémenter une procédure stockée OU un déclencheur (à vous de décider) implémentant cette vérification.
+
 Pour tester la vérification, vous devez essayer d’ajouter ces 2 logements (pour l’un des 2, l’insertion doit être refusée) :
 Mr DEV Mike (637 rue Jean Jaurès 59690 Vieux-Condé ; 06.02.03.04.05) est propriétaire de deux
 logement et donne gestion à l’agence pour 20 ans
@@ -69,4 +70,37 @@ o Loyer mensuel : 2050 €
 o Pourcentage du loyer pour l’agence : 3%
 Les 2 logements ne sont pas loués*/
 
+-- creation du message d'erreur personnalisé qui sera affiché
+CREATE TABLE Erreur (
+id TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+erreur VARCHAR(255) UNIQUE);
 
+-- création du trigger sur la table projets
+DELIMITER |
+ CREATE TRIGGER before_insert_bien
+ BEFORE INSERT
+ ON bien FOR EACH ROW
+ BEGIN
+	IF 
+	NEW.bien_loyer_mensuel IS NOT NULL
+	AND NEW.bien_loyer_mensuel > 2000
+ THEN
+	INSERT INTO Erreur 
+	(erreur) 
+	VALUES
+	('Erreur : Le montant du loyer dépasse 2000 euros !');
+END IF;
+END |
+DELIMITER ;
+
+-- test du déclenchement du trigger à l'insertion pour un loyer supérieur à 2000 euros
+INSERT INTO proprietaire
+(proprietaire_nom, proprietaire_prenom, proprietaire_adresse, proprietaire_telephone)
+VALUES
+("Dev", "Mike", "637 rue Jean Jaurès 59690 Vieux-Condé", "06.02.03.04.05");
+
+INSERT INTO bien
+(bien_situation, bien_surface, bien_loyer_mensuel, type_de_bien_id, proprietaire_id)
+VALUES
+("23 rue des Macarons 68100 Mulhouse", 30, 320, 2, 4),
+("97 rue de la frangipane 68270 Wittenheim", 205, 2050, 1, 4);
