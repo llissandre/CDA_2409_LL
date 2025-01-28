@@ -25,10 +25,6 @@ CREATE TABLE locataire (
    locataire_telephone CHAR (14) NOT NULL
  );
 
-CREATE TABLE agence (
-   Kiloutout CHAR (9) PRIMARY KEY
-);
-
 CREATE TABLE type_de_bien (
    type_de_bien_id INT PRIMARY KEY AUTO_INCREMENT,
    type_de_bien_nom VARCHAR (20) NOT NULL
@@ -44,28 +40,29 @@ CREATE TABLE bien (
 );
 
 CREATE TABLE contrat (
-   bien_id INT,
-   Kiloutout CHAR (9),
-   contrat_id SMALLINT NOT NULL UNIQUE AUTO_INCREMENT,
-   contrat_pourcentage TINYINT NOT NULL,
-   contrat_duree TINYINT NOT NULL,
-    PRIMARY KEY (Kiloutout, bien_id)
+  contrat_id INT PRIMARY KEY AUTO_INCREMENT,
+  contrat_pourcentage TINYINT UNSIGNED NOT NULL,
+  contrat_duree TINYINT UNSIGNED NOT NULL
 );
 
 CREATE TABLE bail (
-   bien_id INT PRIMARY KEY,
-   bail_id INT NOT NULL UNIQUE AUTO_INCREMENT,
-   bail_duree TINYINT NOT NULL,
-   bail_date_debut DATE NOT NULL,
-   locataire_id INT
+   locataire_id INT,   
+   bien_id INT,
+   bail_duree TINYINT UNSIGNED NOT NULL,
+   bail_date_debut DATE NOT NULL
 );
 
-ALTER TABLE bien ADD CONSTRAINT FK_TYPE_DE_BIEN_BIEN FOREIGN KEY(type_de_bien_id) REFERENCES type_de_bien(type_de_bien_id);
+CREATE TABLE souscrire (
+   bien_id INT,
+   contrat_id INT,
+   PRIMARY KEY(bien_id, contrat_id)
+);
+
+ALTER TABLE bien ADD CONSTRAINT FK_TYPE_DE_BIEN_BIEN FOREIGN KEY (type_de_bien_id) REFERENCES type_de_bien(type_de_bien_id);
 ALTER TABLE bien ADD CONSTRAINT FK_PROPRIETAIRE_BIEN FOREIGN KEY (proprietaire_id) REFERENCES proprietaire(proprietaire_id);
 
-ALTER TABLE contrat ADD CONSTRAINT FK_CONTRAT_AGENCE FOREIGN KEY(Kiloutout) REFERENCES agence (Kiloutout);
-ALTER TABLE contrat ADD CONSTRAINT FK_CONTRAT_BIEN FOREIGN KEY (bien_id) REFERENCES bien(bien_id);
+ALTER TABLE bail ADD CONSTRAINT FK_LOCATAIRE_BIEN FOREIGN KEY (bien_id) REFERENCES bien(bien_id);
+ALTER TABLE bail ADD CONSTRAINT FK_BIEN_LOCATAIRE FOREIGN KEY (locataire_id) REFERENCES locataire(locataire_id);
 
-ALTER TABLE bail ADD CONSTRAINT FK_BIEN_LOCATAIRE FOREIGN KEY (bien_id) REFERENCES bien(bien_id);
-ALTER TABLE bail ADD CONSTRAINT FK_LOCATAIRE_BIEN FOREIGN KEY (locataire_id) REFERENCES locataire(locataire_id);
-
+ALTER TABLE souscrire ADD CONSTRAINT FK_BIEN_CONTRAT FOREIGN KEY (bien_id) REFERENCES bien(bien_id);
+ALTER TABLE souscrire ADD CONSTRAINT FK_CONTRAT_BIEN FOREIGN KEY (contrat_id) REFERENCES contrat(contrat_id);

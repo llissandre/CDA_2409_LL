@@ -4,8 +4,7 @@ Data Manipulation Language
 Langage de Manipulation de Données
 */
 
--- Sélectionner la base de données 
-USE kiloutout;
+USE kiloutout ;
 
 INSERT INTO type_de_bien
 (type_de_bien_nom)
@@ -18,7 +17,7 @@ INSERT INTO proprietaire
 VALUES
 (1, "Durant", "Pascal", "10 rue de la marine, 68000 Colmar", "03.89.89.87.87"),
 (2, "Martinez", "Joëlle", "18 avenue des peupliers, 68100 Mulhouse", "03.89.12.13.14"),
-(3, "Bowé", "Samira", "21 rue du musée, 67000 Starsbourg", "07.32.21.16.65");
+(3, "Bowé", "Samira", "21 rue du musée, 67000 Strasbourg", "07.32.21.16.65");
 
 INSERT INTO bien
 (bien_id, bien_situation, bien_surface, bien_loyer_mensuel, type_de_bien_id, proprietaire_id)
@@ -30,10 +29,13 @@ VALUES
 (5, "17B avenue des peupliers 68100 Mulhouse", 70, 625, 2, 3);
 
 INSERT INTO contrat
-(bien_id, Kiloutout, contrat_id, contrat_pourcentage, contrat_duree)
+(contrat_id, contrat_pourcentage, contrat_duree)
 VALUES
-(2, "Kiloutout", 1, 8, 120),
-(5, "Kiloutout", 2, 10, 96);
+(1, 5, 120),
+(2, 8, 120),
+(3, 5, 120),
+(4, 10, 120),
+(5, 10, 96);
 
 INSERT INTO locataire
 (locataire_id, locataire_nom, locataire_prenom, locataire_telephone)
@@ -42,8 +44,17 @@ VALUES
 (2, "Di Marco", "Philippe", "09.72.73.74.75");
 
 INSERT INTO bail
-(bien_id, bail_id, bail_duree, bail_date_debut, locataire_id)
+(locataire_id, bien_id, bail_duree, bail_date_debut)
 VALUES
-(2, 1, 72, "2025-02-01", 1),
-(5, 2, 36, "2024-11-01", 2);
+(1, 2, 72, "2025-02-01"),
+(2, 5, 36, "2024-11-01");
+
+INSERT INTO souscrire 
+(bien_id, contrat_id)
+VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
 
