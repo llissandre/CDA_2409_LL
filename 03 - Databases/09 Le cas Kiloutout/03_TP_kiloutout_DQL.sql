@@ -83,7 +83,8 @@ DELIMITER |
  BEGIN
 	IF 
 	NEW.bien_loyer_mensuel IS NOT NULL
-	AND NEW.bien_loyer_mensuel > 2000
+	AND
+    NEW.bien_loyer_mensuel > 2000
  THEN
 	INSERT INTO Erreur 
 	(erreur) 
