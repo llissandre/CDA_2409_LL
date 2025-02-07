@@ -1,5 +1,5 @@
 public class Bouteille
-    {
+{
         //attributs
         private float contenanceEnLitre;
         private float contenuEnLitre;
@@ -15,6 +15,10 @@ public class Bouteille
             this.estOuverte = false;
         }
 
+ 	public Bouteille():this(1, 1, false)
+        {
+	}
+
         //constructeur classique
         public Bouteille(float contenanceEnLitre,
                          float contenuEnLitre,
@@ -27,8 +31,8 @@ public class Bouteille
 
         //constructeur hybride classique defaut
         public Bouteille(float contenanceEnLitre,
-                 float contenuEnLitre)
-            :this(contenanceEnLitre, contenuEnLitre,false)
+                         float contenuEnLitre)
+        :this(contenanceEnLitre, contenuEnLitre, false)
         {
         }
 
@@ -39,4 +43,9 @@ public class Bouteille
             this.contenuEnLitre = bouteilleACopier.contenuEnLitre;
             this.estOuverte = bouteilleACopier.estOuverte;
         }
-    }
+
+    	public Bouteille(Bouteille bouteilleACopier)
+	:this(bouteilleACopier.contenanceEnLitre, bouteilleACopier.contenuEnLitre, bouteilleACopier.estOuverte)
+        {
+        }
+}

@@ -6,7 +6,7 @@
 //  Original author: LLissandre
 ///////////////////////////////////////////////////////////
 
-namespace Solution1
+namespace ClassLibraryExercices
 {
     public class Bouteille
     {
@@ -14,15 +14,19 @@ namespace Solution1
         private float _contenuEnLitre;
         private bool _estOuverte;
 
-        //constructeurs
+        /// <summary>
+        /// constructeurs
+        /// </summary>
 
-        //constructeur par defaut
-        public Bouteille()
-        {
-            this._contenanceEnLitre = 1;
-            this._contenuEnLitre = 1;
-            this._estOuverte = false;
-        }
+        //constructeurs par defaut
+        //public Bouteille()
+        //{
+        //    this._contenanceEnLitre = 1;
+        //    this._contenuEnLitre = 1;
+        //    this._estOuverte = false;
+        //}
+        public Bouteille() : this(1f, 1, false)
+        { }
 
         /// Constructeur classique
         /// <param name="contenanceEnLitre"></param>
@@ -31,8 +35,15 @@ namespace Solution1
         public Bouteille(float contenanceEnLitre, float contenuEnLitre, bool estOuverte)
         {
             this._contenanceEnLitre = contenanceEnLitre;
-            this._contenanceEnLitre = contenuEnLitre;
+            this._contenuEnLitre = contenuEnLitre;
             this._estOuverte = estOuverte;
+        }
+
+        //constructeur hybride classique defaut
+        public Bouteille(float contenanceEnLitre,
+                         float contenuEnLitre)
+        : this(contenanceEnLitre, contenuEnLitre, false)
+        {
         }
 
         /// Constructeur par clonage
@@ -44,48 +55,91 @@ namespace Solution1
             this._estOuverte = bouteilleACopier._estOuverte;
         }
 
+        /// <summary>
+        /// Méthodes
+        /// </summary>
+        
+        //Cette méthode est principalement implémentée pour libérer des ressources non managées
         public virtual void Dispose()
         {
 
         }
 
+        /// <summary>
+        ///  Fonction Ouvrir()
+        /// </summary>
+        /// <returns></returns>
         public bool Ouvrir()
         {
-
+            if (_estOuverte == false)
+            {
+                return true;
+            }
             return false;
         }
 
+        /// <summary>
+        /// Fonction Fermer()
+        /// </summary>
+        /// <returns></returns>
         public bool Fermer()
         {
-
+            if (_estOuverte == true)
+            {
+                return true;
+            }
             return false;
         }
 
+        /// <summary>
+        /// Fonction Vider()
+        /// </summary>
+        /// <returns></returns>
         public bool Vider()
         {
-
+            if (_estOuverte == true && _contenuEnLitre > 0)
+            {
+                _contenuEnLitre = 0;
+                return true;
+            }
             return false;
         }
 
-        /// 
+        /// Fonction Vider(quantiteEnLitre)
         /// <param name="quantiteEnLitre"></param>
         public bool Vider(float quantiteEnLitre)
         {
-
+            if (_estOuverte == true && quantiteEnLitre > 0 && _contenuEnLitre - quantiteEnLitre >= 0)
+            {
+                _contenuEnLitre = _contenuEnLitre - quantiteEnLitre;
+                return true;
+            }
             return false;
         }
 
+        /// <summary>
+        /// Fonction Remplir
+        /// </summary>
+        /// <returns></returns>
         public bool Remplir()
         {
-
+            if (_estOuverte == true && _contenuEnLitre < _contenanceEnLitre)
+            {
+                _contenuEnLitre = _contenanceEnLitre;
+                return true;
+            }
             return false;
         }
 
-        /// 
+        /// Fonction Remplir(quantiteEnLitre)
         /// <param name="quantiteEnLitre"></param>
         public bool Remplir(float quantiteEnLitre)
         {
-
+            if (_estOuverte == true && quantiteEnLitre > 0 && _contenuEnLitre + quantiteEnLitre <= _contenanceEnLitre)
+            {
+                _contenuEnLitre = _contenuEnLitre - quantiteEnLitre;
+                return true;
+            }
             return false;
         }
 
