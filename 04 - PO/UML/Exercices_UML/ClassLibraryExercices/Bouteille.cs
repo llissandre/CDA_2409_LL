@@ -21,9 +21,9 @@ namespace ClassLibraryExercices
         //constructeurs par defaut
         //public Bouteille()
         //{
-        //    this._contenanceEnLitre = 1;
-        //    this._contenuEnLitre = 1;
-        //    this._estOuverte = false;
+        //    _contenanceEnLitre = 1;
+        //    _contenuEnLitre = 1;
+        //    _estOuverte = false;
         //}
         public Bouteille() : this(1f, 1, false)
         { }
@@ -34,9 +34,9 @@ namespace ClassLibraryExercices
         /// <param name="estOuverte"></param>
         public Bouteille(float contenanceEnLitre, float contenuEnLitre, bool estOuverte)
         {
-            this._contenanceEnLitre = contenanceEnLitre;
-            this._contenuEnLitre = contenuEnLitre;
-            this._estOuverte = estOuverte;
+            _contenanceEnLitre = contenanceEnLitre;
+            _contenuEnLitre = contenuEnLitre;
+            _estOuverte = estOuverte;
         }
 
         //constructeur hybride classique defaut
@@ -50,15 +50,15 @@ namespace ClassLibraryExercices
         /// <param name="bouteilleACopier"></param>
         public Bouteille(Bouteille bouteilleACopier)
         {
-            this._contenanceEnLitre = bouteilleACopier._contenanceEnLitre;
-            this._contenuEnLitre = bouteilleACopier._contenuEnLitre;
-            this._estOuverte = bouteilleACopier._estOuverte;
+            _contenanceEnLitre = bouteilleACopier._contenanceEnLitre;
+            _contenuEnLitre = bouteilleACopier._contenuEnLitre;
+            _estOuverte = bouteilleACopier._estOuverte;
         }
 
         /// <summary>
         /// Méthodes
         /// </summary>
-        
+
         //Cette méthode est principalement implémentée pour libérer des ressources non managées
         public virtual void Dispose()
         {
@@ -73,6 +73,7 @@ namespace ClassLibraryExercices
         {
             if (_estOuverte == false)
             {
+                _estOuverte = true;
                 return true;
             }
             return false;
@@ -86,6 +87,7 @@ namespace ClassLibraryExercices
         {
             if (_estOuverte == true)
             {
+                _estOuverte = false;
                 return true;
             }
             return false;
@@ -137,10 +139,16 @@ namespace ClassLibraryExercices
         {
             if (_estOuverte == true && quantiteEnLitre > 0 && _contenuEnLitre + quantiteEnLitre <= _contenanceEnLitre)
             {
-                _contenuEnLitre = _contenuEnLitre - quantiteEnLitre;
+                _contenuEnLitre = _contenuEnLitre + quantiteEnLitre;
                 return true;
             }
             return false;
+        }
+
+        public string ToString()
+        {
+            return base.ToString + " : Contenance en litre : " + _contenanceEnLitre
+                + ", contenu en litre : " + _contenuEnLitre + ", est ouvert : " + _estOuverte;
         }
 
     }//end Bouteille
