@@ -250,7 +250,5 @@ namespace ClassLibraryExercices
             //return base.ToString() + " : Contenance en litre : " + _contenanceEnLitre
             //    + ", contenu en litre : " + _contenuEnLitre + ", est ouvert : " + _estOuverte;
         }
-
     }
-
 }
