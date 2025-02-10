@@ -6,6 +6,8 @@
 //  Original author: LLissandre
 ///////////////////////////////////////////////////////////
 
+using System.Text;
+
 namespace ClassLibraryExercices
 {
     public class Bouteille
@@ -46,20 +48,24 @@ namespace ClassLibraryExercices
         {
         }
 
-        /// Constructeur par clonage
+
+        // Constructeur par clonage
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="bouteilleACopier"></param>
         public Bouteille(Bouteille bouteilleACopier)
         {
             _contenanceEnLitre = bouteilleACopier._contenanceEnLitre;
             _contenuEnLitre = bouteilleACopier._contenuEnLitre;
             _estOuverte = bouteilleACopier._estOuverte;
+            //IComparable
         }
 
         /// <summary>
         /// Méthodes
+        /// Cette méthode est principalement implémentée pour libérer des ressources non managées
         /// </summary>
-
-        //Cette méthode est principalement implémentée pour libérer des ressources non managées
         public virtual void Dispose()
         {
 
@@ -71,6 +77,13 @@ namespace ClassLibraryExercices
         /// <returns></returns>
         public bool Ouvrir()
         {
+            if (_estOuverte == true)
+            {
+                //L’instruction throw lève une exception :
+                throw new ArgumentOutOfRangeException(nameof(_estOuverte),
+                "La bouteille est déjà ouverte !");
+            }
+
             if (_estOuverte == false)
             {
                 _estOuverte = true;
@@ -85,6 +98,13 @@ namespace ClassLibraryExercices
         /// <returns></returns>
         public bool Fermer()
         {
+            if (_estOuverte == false)
+            {
+                //L’instruction throw lève une exception :
+                throw new ArgumentOutOfRangeException(nameof(_estOuverte),
+                "La bouteille est déjà fermée !");
+            }
+
             if (_estOuverte == true)
             {
                 _estOuverte = false;
@@ -99,19 +119,29 @@ namespace ClassLibraryExercices
         /// <returns></returns>
         public bool Vider()
         {
-            if (_estOuverte == true && _contenuEnLitre > 0)
-            {
-                _contenuEnLitre = 0;
-                return true;
-            }
-            return false;
+            //if (_estOuverte == true && _contenuEnLitre > 0)
+            //{
+            //    _contenuEnLitre = 0;
+            //    return true;
+            //}
+            //return false;
+            bool resultat;
+            resultat = Vider(_contenanceEnLitre);
+            return resultat;
         }
 
         /// Fonction Vider(quantiteEnLitre)
         /// <param name="quantiteEnLitre"></param>
         public bool Vider(float quantiteEnLitre)
         {
-            if (_estOuverte == true && quantiteEnLitre > 0 && _contenuEnLitre - quantiteEnLitre >= 0)
+            if (_estOuverte == false)
+            {
+                //L’instruction throw lève une exception :
+                throw new ArgumentOutOfRangeException(nameof(_estOuverte),
+                "La bouteille est fermée et ne permet pas de vider la bouteille !");
+            }
+
+            if (_estOuverte == true && quantiteEnLitre > 0 && quantiteEnLitre > _contenanceEnLitre && _contenuEnLitre - quantiteEnLitre >= 0)
             {
                 _contenuEnLitre = _contenuEnLitre - quantiteEnLitre;
                 return true;
@@ -125,18 +155,27 @@ namespace ClassLibraryExercices
         /// <returns></returns>
         public bool Remplir()
         {
-            if (_estOuverte == true && _contenuEnLitre < _contenanceEnLitre)
-            {
-                _contenuEnLitre = _contenanceEnLitre;
-                return true;
-            }
-            return false;
+            //if (_estOuverte == true && _contenuEnLitre < _contenanceEnLitre)
+            //{
+            //    _contenuEnLitre = _contenanceEnLitre;
+            //    return true;
+            //}
+            //return false;
+
+            return Remplir(_contenanceEnLitre);
         }
 
         /// Fonction Remplir(quantiteEnLitre)
         /// <param name="quantiteEnLitre"></param>
         public bool Remplir(float quantiteEnLitre)
         {
+            if (_estOuverte == false)
+            {
+                //L’instruction throw lève une exception :
+                throw new ArgumentOutOfRangeException(nameof(_estOuverte),
+                "La bouteille est fermée et ne permet pas de remplir la bouteille !");
+            }
+
             if (_estOuverte == true && quantiteEnLitre > 0 && _contenuEnLitre + quantiteEnLitre <= _contenanceEnLitre)
             {
                 _contenuEnLitre = _contenuEnLitre + quantiteEnLitre;
@@ -145,9 +184,9 @@ namespace ClassLibraryExercices
             return false;
         }
 
-        public string ToString()
+        public override string ToString()
         {
-            return base.ToString + " : Contenance en litre : " + _contenanceEnLitre
+            return base.ToString() + " : Contenance en litre : " + _contenanceEnLitre
                 + ", contenu en litre : " + _contenuEnLitre + ", est ouvert : " + _estOuverte;
         }
 
