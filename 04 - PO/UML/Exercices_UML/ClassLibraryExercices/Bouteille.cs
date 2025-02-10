@@ -10,23 +10,37 @@ namespace ClassLibraryExercices
 {
     public class Bouteille
     {
+        /// <summary>
+        /// Déclaration des variables
+        /// </summary>
         private float _contenanceEnLitre;
         private float _contenuEnLitre;
         private bool _estOuverte;
 
         /// <summary>
         /// constructeurs
+        /// Un constructeur est, en programmation orientée objet, une fonction particulière appelée lors de l'instanciation.
+        /// Elle permet d'allouer la mémoire nécessaire à l'objet et d'initialiser ses attributs.
         /// </summary>
 
+
         //constructeurs par defaut
+        /// <summary>
+        /// Le terme « constructeur par défaut » fait référence à un constructeur qui n'accepte aucun argument d'entrée.
+        /// Chaque instance de classe doit être initialisée avec les mêmes valeurs dans un constructeur par défaut.
+        /// </summary>
+
         //public Bouteille()
         //{
         //    _contenanceEnLitre = 1;
         //    _contenuEnLitre = 1;
         //    _estOuverte = false;
         //}
-        public Bouteille() : this(1f, 1, false)
-        { }
+
+        // Un constructeur peut appeler un autre constructeur dans le même objet à l’aide du mot clé this. Comme base, this peut être utilisé avec ou sans paramètres,
+        // et tous les paramètres dans le constructeur sont disponibles comme paramètres pour this ou comme partie d’une expression.
+        public Bouteille() : this(1f, 1, false) { }
+
 
         /// Constructeur classique
         /// <param name="contenanceEnLitre"></param>
@@ -39,7 +53,10 @@ namespace ClassLibraryExercices
             _estOuverte = estOuverte;
         }
 
-        //constructeur hybride classique defaut
+
+        //constructeur hybride classique
+        /// <param name="contenanceEnLitre"></param>
+        /// <param name="contenuEnLitre"></param>
         public Bouteille(float contenanceEnLitre,
                          float contenuEnLitre)
         : this(contenanceEnLitre, contenuEnLitre, false)
@@ -47,38 +64,45 @@ namespace ClassLibraryExercices
         }
 
 
-        // Constructeur par clonage
+        // Constructeurs par clonage
         /// <summary>
-        /// 
+        /// Ils permettent de copier les propriétés d’un objet existant dans la nouvelle instance.
+        /// En copiant des variables d'un autre objet, ce constructeur génère un objet. 
+        /// Son objectif principal est de définir les valeurs d'une nouvelle instance sur celles d'une instance existante.
         /// </summary>
         /// <param name="bouteilleACopier"></param>
+        /// <return></return>
+        /// <exceptions></exceptions>>
+        //public Bouteille(Bouteille bouteilleACopier)
+        //{
+        //    _contenanceEnLitre = bouteilleACopier._contenanceEnLitre;
+        //    _contenuEnLitre = bouteilleACopier._contenuEnLitre;
+        //    _estOuverte = bouteilleACopier._estOuverte;
+        //}
+
         public Bouteille(Bouteille bouteilleACopier)
-        {
-            _contenanceEnLitre = bouteilleACopier._contenanceEnLitre;
-            _contenuEnLitre = bouteilleACopier._contenuEnLitre;
-            _estOuverte = bouteilleACopier._estOuverte;
-            //IComparable
-        }
+        : this(bouteilleACopier._contenanceEnLitre, bouteilleACopier._contenuEnLitre, bouteilleACopier._estOuverte) { }
+
 
         /// <summary>
-        /// Méthodes
-        /// Cette méthode est principalement implémentée pour libérer des ressources non managées
+        /// Cette méthode est principalement implémentée pour libérer des ressources non managées.
         /// </summary>
-        public virtual void Dispose()
-        { }
+        public virtual void Dispose() { }
 
+
+        /// Fonction Ouvrir()
         /// <summary>
-        ///  Fonction Ouvrir()
+        /// Utilisée pour fermer une bouteille
         /// </summary>
         /// <returns></returns>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public bool Ouvrir()
         {
-            //if (_estOuverte == true)
-            //{
-            //    //L’instruction throw lève une exception :
-            //    throw new ArgumentOutOfRangeException(nameof(_estOuverte),
-            //    "La bouteille est déjà ouverte !");
-            //}
+            if (_estOuverte == true)
+            {
+                //L’instruction throw lève une exception :
+                throw new ArgumentOutOfRangeException("La bouteille est déjà ouverte !");
+            }
 
             if (_estOuverte == false)
             {
@@ -88,18 +112,20 @@ namespace ClassLibraryExercices
             return false;
         }
 
-        /// <summary>
+
         /// Fonction Fermer()
+        /// <summary>
+        /// 
         /// </summary>
         /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public bool Fermer()
         {
-            //if (_estOuverte == false)
-            //{
-            //    //L’instruction throw lève une exception :
-            //    throw new ArgumentOutOfRangeException(nameof(_estOuverte),
-            //    "La bouteille est déjà fermée !");
-            //}
+            if (_estOuverte == false)
+            {
+                //L’instruction throw lève une exception :
+                throw new ArgumentException("La bouteille est déjà fermée !");
+            }
 
             if (_estOuverte == true)
             {
@@ -109,10 +135,13 @@ namespace ClassLibraryExercices
             return false;
         }
 
-        /// <summary>
+
         /// Fonction Vider()
+        /// <summary>
+        /// 
         /// </summary>
         /// <returns></returns>
+        /// <exceptions></exceptions>
         public bool Vider()
         {
             //if (_estOuverte == true && _contenuEnLitre > 0)
@@ -125,21 +154,27 @@ namespace ClassLibraryExercices
             return Vider(_contenanceEnLitre);
         }
 
+
         /// Fonction Vider(quantiteEnLitre)
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="quantiteEnLitre"></param>
+        /// <returns></returns
+        /// <exception cref="Exception"></exception>
+        /// <exception cref="ArgumentException"></exception>
         public bool Vider(float quantiteEnLitre)
         {
-            //if (_estOuverte == false)
-            //{
-            //    //L’instruction throw lève une exception :
-            //    throw new ArgumentOutOfRangeException(nameof(_estOuverte),
-            //    "La bouteille est fermée et ne permet pas de vider la bouteille !");
-            //}
+            if (_estOuverte == false)
+            {
+                //L’instruction throw lève une exception :
+                throw new Exception("La bouteille est fermée et ne permet pas de vider la bouteille !");
+            }
 
             if (quantiteEnLitre < 0)
             {
                 //L’instruction throw lève une exception :
-                throw new ArgumentOutOfRangeException(nameof(quantiteEnLitre),
+                throw new ArgumentException(nameof(quantiteEnLitre),
                 "La quantité d'eau à vider doit être supérieure à 0 !");
             }
 
@@ -151,10 +186,13 @@ namespace ClassLibraryExercices
             return false;
         }
 
+
+        /// Fonction Remplir()
         /// <summary>
-        /// Fonction Remplir
+        /// 
         /// </summary>
         /// <returns></returns>
+        /// <exceptions></exceptions>
         public bool Remplir()
         {
             //if (_estOuverte == true && _contenuEnLitre < _contenanceEnLitre)
@@ -167,22 +205,28 @@ namespace ClassLibraryExercices
             return Remplir(_contenanceEnLitre);
         }
 
+
         /// Fonction Remplir(quantiteEnLitre)
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="quantiteEnLitre"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public bool Remplir(float quantiteEnLitre)
         {
             if (_estOuverte == false)
             {
                 //L’instruction throw lève une exception :
-                throw new ArgumentOutOfRangeException(nameof(_estOuverte),
+                throw new ArgumentException(nameof(_estOuverte),
                 "La bouteille est fermée et ne permet pas de remplir la bouteille !");
             }
 
             if (quantiteEnLitre < 0)
             {
                 //L’instruction throw lève une exception :
-                throw new ArgumentOutOfRangeException(nameof(quantiteEnLitre),
-                "La quantité d'eau à remplir doit être supérieure à 0 !");
+                throw new ArgumentException("La quantité d'eau à remplir doit être supérieure à 0 !"
+                    , nameof(quantiteEnLitre));
             }
 
             if (_estOuverte == true && quantiteEnLitre > 0 && _contenuEnLitre + quantiteEnLitre <= _contenanceEnLitre)
@@ -193,12 +237,17 @@ namespace ClassLibraryExercices
             return false;
         }
 
+        /// Fonction ToString()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return base.ToString() + " : Contenance en litre : " + _contenanceEnLitre
                 + ", contenu en litre : " + _contenuEnLitre + ", est ouvert : " + _estOuverte;
         }
 
-    }//end Bouteille
+    }
 
-}//end namespace Solution1
+}

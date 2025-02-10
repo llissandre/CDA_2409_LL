@@ -24,17 +24,15 @@ namespace ConsoleAppBouteille
             bouteille4.GetHashCode();
 
             bool b1Fermee = bouteille1.Fermer();
-
-            try
+            if (b1Fermee == false)
             {
-                b1Fermee = bouteille1.Fermer();
                 Console.WriteLine("La bouteille 1 était déjà fermée !");
             }
-            catch (Exception e)
+            else
             {
                 Console.WriteLine("La bouteille 1 a été fermée !");
-                throw e;
             }
+
 
             b1Fermee = bouteille1.Fermer();
             if (b1Fermee == false)
@@ -147,6 +145,8 @@ namespace ConsoleAppBouteille
             }
 
             bool b4VideeQt = bouteille4.Vider(0.5f);
+
+            b4VideeQt = bouteille4.Vider(0.5f);
             if (b4VideeQt == false)
             {
                 Console.WriteLine("La bouteille 4 n'a pas pu être vidée de la quantité indiquée!");
@@ -166,7 +166,7 @@ namespace ConsoleAppBouteille
                 Console.WriteLine("La bouteille 4 a été remplie de la quantité indiquée!");
             }
 
-            b4VideeQt = bouteille4.Vider(1.7f);
+            b4VideeQt = bouteille4.Vider(-1.7f);
             if (b4VideeQt == false)
             {
                 Console.WriteLine("La bouteille 4 n'a pas pu être vidée de la quantité indiquée!");
@@ -186,7 +186,7 @@ namespace ConsoleAppBouteille
                 Console.WriteLine("La bouteille 4 a été remplie de la quantité indiquée!");
             }
 
-            b4RemplieQt = bouteille4.Remplir(2);
+            b4RemplieQt = bouteille4.Remplir(2f);
             if (b4RemplieQt == false)
             {
                 Console.WriteLine("La bouteille 4 n'a pas pu être remplie de la quantité indiqué !");
