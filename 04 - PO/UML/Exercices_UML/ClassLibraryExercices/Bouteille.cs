@@ -6,8 +6,6 @@
 //  Original author: LLissandre
 ///////////////////////////////////////////////////////////
 
-using System.Text;
-
 namespace ClassLibraryExercices
 {
     public class Bouteille
@@ -67,9 +65,7 @@ namespace ClassLibraryExercices
         /// Cette méthode est principalement implémentée pour libérer des ressources non managées
         /// </summary>
         public virtual void Dispose()
-        {
-
-        }
+        { }
 
         /// <summary>
         ///  Fonction Ouvrir()
@@ -77,12 +73,12 @@ namespace ClassLibraryExercices
         /// <returns></returns>
         public bool Ouvrir()
         {
-            if (_estOuverte == true)
-            {
-                //L’instruction throw lève une exception :
-                throw new ArgumentOutOfRangeException(nameof(_estOuverte),
-                "La bouteille est déjà ouverte !");
-            }
+            //if (_estOuverte == true)
+            //{
+            //    //L’instruction throw lève une exception :
+            //    throw new ArgumentOutOfRangeException(nameof(_estOuverte),
+            //    "La bouteille est déjà ouverte !");
+            //}
 
             if (_estOuverte == false)
             {
@@ -98,12 +94,12 @@ namespace ClassLibraryExercices
         /// <returns></returns>
         public bool Fermer()
         {
-            if (_estOuverte == false)
-            {
-                //L’instruction throw lève une exception :
-                throw new ArgumentOutOfRangeException(nameof(_estOuverte),
-                "La bouteille est déjà fermée !");
-            }
+            //if (_estOuverte == false)
+            //{
+            //    //L’instruction throw lève une exception :
+            //    throw new ArgumentOutOfRangeException(nameof(_estOuverte),
+            //    "La bouteille est déjà fermée !");
+            //}
 
             if (_estOuverte == true)
             {
@@ -125,23 +121,29 @@ namespace ClassLibraryExercices
             //    return true;
             //}
             //return false;
-            bool resultat;
-            resultat = Vider(_contenanceEnLitre);
-            return resultat;
+
+            return Vider(_contenanceEnLitre);
         }
 
         /// Fonction Vider(quantiteEnLitre)
         /// <param name="quantiteEnLitre"></param>
         public bool Vider(float quantiteEnLitre)
         {
-            if (_estOuverte == false)
+            //if (_estOuverte == false)
+            //{
+            //    //L’instruction throw lève une exception :
+            //    throw new ArgumentOutOfRangeException(nameof(_estOuverte),
+            //    "La bouteille est fermée et ne permet pas de vider la bouteille !");
+            //}
+
+            if (quantiteEnLitre < 0)
             {
                 //L’instruction throw lève une exception :
-                throw new ArgumentOutOfRangeException(nameof(_estOuverte),
-                "La bouteille est fermée et ne permet pas de vider la bouteille !");
+                throw new ArgumentOutOfRangeException(nameof(quantiteEnLitre),
+                "La quantité d'eau à vider doit être supérieure à 0 !");
             }
 
-            if (_estOuverte == true && quantiteEnLitre > 0 && quantiteEnLitre > _contenanceEnLitre && _contenuEnLitre - quantiteEnLitre >= 0)
+            if (_estOuverte == true && quantiteEnLitre > 0 && _contenuEnLitre - quantiteEnLitre >= 0)
             {
                 _contenuEnLitre = _contenuEnLitre - quantiteEnLitre;
                 return true;
@@ -174,6 +176,13 @@ namespace ClassLibraryExercices
                 //L’instruction throw lève une exception :
                 throw new ArgumentOutOfRangeException(nameof(_estOuverte),
                 "La bouteille est fermée et ne permet pas de remplir la bouteille !");
+            }
+
+            if (quantiteEnLitre < 0)
+            {
+                //L’instruction throw lève une exception :
+                throw new ArgumentOutOfRangeException(nameof(quantiteEnLitre),
+                "La quantité d'eau à remplir doit être supérieure à 0 !");
             }
 
             if (_estOuverte == true && quantiteEnLitre > 0 && _contenuEnLitre + quantiteEnLitre <= _contenanceEnLitre)
