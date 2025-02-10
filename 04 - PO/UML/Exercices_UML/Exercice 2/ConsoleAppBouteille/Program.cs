@@ -166,7 +166,7 @@ namespace ConsoleAppBouteille
                 Console.WriteLine("La bouteille 4 a été remplie de la quantité indiquée!");
             }
 
-            b4VideeQt = bouteille4.Vider(-1.7f);
+            b4VideeQt = bouteille4.Vider(1.7f);
             if (b4VideeQt == false)
             {
                 Console.WriteLine("La bouteille 4 n'a pas pu être vidée de la quantité indiquée!");

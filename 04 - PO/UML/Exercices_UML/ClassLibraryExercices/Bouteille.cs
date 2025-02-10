@@ -92,16 +92,16 @@ namespace ClassLibraryExercices
 
         /// Fonction Ouvrir()
         /// <summary>
-        /// Utilisée pour fermer une bouteille
+        /// Utilisée pour ouvrir la bouteille
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retourne un booléen, "true" si la méthode à permis d'ouvrir la bouteille, sinon "false"</returns>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public bool Ouvrir()
         {
             if (_estOuverte == true)
             {
                 //L’instruction throw lève une exception :
-                throw new ArgumentOutOfRangeException("La bouteille est déjà ouverte !");
+                //throw new Exception("La bouteille est déjà ouverte !");
             }
 
             if (_estOuverte == false)
@@ -115,16 +115,16 @@ namespace ClassLibraryExercices
 
         /// Fonction Fermer()
         /// <summary>
-        /// 
+        /// Utilisée pour fermer la bouteille
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retourne un booléen, "true" si la méthode à permis de fermer la bouteille, sinon "false"</returns>
         /// <exception cref="ArgumentException"></exception>
         public bool Fermer()
         {
             if (_estOuverte == false)
             {
                 //L’instruction throw lève une exception :
-                throw new ArgumentException("La bouteille est déjà fermée !");
+                //throw new Exception("La bouteille est déjà fermée !");
             }
 
             if (_estOuverte == true)
@@ -138,9 +138,9 @@ namespace ClassLibraryExercices
 
         /// Fonction Vider()
         /// <summary>
-        /// 
+        /// Utilisée pour vider complètement la bouteille
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retourne un booléen, "true" si la méthode à permis de vider complètement la bouteille, sinon "false"</returns>
         /// <exceptions></exceptions>
         public bool Vider()
         {
@@ -157,10 +157,10 @@ namespace ClassLibraryExercices
 
         /// Fonction Vider(quantiteEnLitre)
         /// <summary>
-        /// 
+        /// Utilisée pour vider la bouteille d'une quantité définie en litre
         /// </summary>
         /// <param name="quantiteEnLitre"></param>
-        /// <returns></returns
+        /// <returns>Retourne un booléen, "true" si la méthode à permis de vider la bouteille d'une quantité définie en litre, sinon "false"</returns>
         /// <exception cref="Exception"></exception>
         /// <exception cref="ArgumentException"></exception>
         public bool Vider(float quantiteEnLitre)
@@ -168,7 +168,7 @@ namespace ClassLibraryExercices
             if (_estOuverte == false)
             {
                 //L’instruction throw lève une exception :
-                throw new Exception("La bouteille est fermée et ne permet pas de vider la bouteille !");
+                //throw new Exception("La bouteille est fermée et ne permet pas de vider la bouteille !");
             }
 
             if (quantiteEnLitre < 0)
@@ -189,9 +189,9 @@ namespace ClassLibraryExercices
 
         /// Fonction Remplir()
         /// <summary>
-        /// 
+        /// Utilisée pour remplir complètement la bouteille 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retourne un booléen, "true" si la méthode à permis de remplir complètement la bouteille, sinon "false"</returns>
         /// <exceptions></exceptions>
         public bool Remplir()
         {
@@ -208,18 +208,17 @@ namespace ClassLibraryExercices
 
         /// Fonction Remplir(quantiteEnLitre)
         /// <summary>
-        /// 
+        /// Utilisée pour remplir la bouteille d'une quantité définie en litre
         /// </summary>
         /// <param name="quantiteEnLitre"></param>
-        /// <returns></returns>
+        /// <returns>Retourne un booléen, "true" si la méthode à permis de remplir la bouteille d'une quantité définie en litre, sinon "false"</returns>
         /// <exception cref="ArgumentException"></exception>
         public bool Remplir(float quantiteEnLitre)
         {
             if (_estOuverte == false)
             {
                 //L’instruction throw lève une exception :
-                throw new ArgumentException(nameof(_estOuverte),
-                "La bouteille est fermée et ne permet pas de remplir la bouteille !");
+                throw new Exception("La bouteille est fermée et ne permet pas de remplir la bouteille !");
             }
 
             if (quantiteEnLitre < 0)
@@ -239,13 +238,17 @@ namespace ClassLibraryExercices
 
         /// Fonction ToString()
         /// <summary>
-        /// 
+        /// La méthode toString est définie dans la classe Object; en conséquence toutes les classes C# en hérite.
+        /// Lorsqu'on définit une classe, il peut être très utile de redéfinir la méthode toString afin de donner une description satisfaisante des objets de cette classe.
+        /// Beaucoup de classes de l'API redéfinissent la méthode toString.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>La fonction renvoie le nom de la classe de l'objet concerné, et une chaîne de caractères servant à décrire l'objet concerné..</returns>
         public override string ToString()
         {
-            return base.ToString() + " : Contenance en litre : " + _contenanceEnLitre
+            return "Contenance en litre : " + _contenanceEnLitre
                 + ", contenu en litre : " + _contenuEnLitre + ", est ouvert : " + _estOuverte;
+            //return base.ToString() + " : Contenance en litre : " + _contenanceEnLitre
+            //    + ", contenu en litre : " + _contenuEnLitre + ", est ouvert : " + _estOuverte;
         }
 
     }
