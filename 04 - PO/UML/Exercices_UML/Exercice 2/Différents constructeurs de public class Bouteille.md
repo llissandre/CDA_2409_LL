@@ -1,3 +1,4 @@
+~~~c#
 public class Bouteille
 {
         //attributs
@@ -49,3 +50,4 @@ public class Bouteille
         {
         }
 }
+~~~

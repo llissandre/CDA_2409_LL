@@ -1,4 +1,4 @@
-Le Comité Français des Tests Logiciels identifie quatre niveaux de tests :
+##### Le Comité Français des Tests Logiciels identifie quatre niveaux de tests :
 
 - Les tests unitaires permettent de tester un composant, ou un bout de code, isolé de ses dépendances.
 
@@ -9,11 +9,8 @@ Le Comité Français des Tests Logiciels identifie quatre niveaux de tests :
 - Et enfin, les tests d'acceptation permettent de s’assurer que l’application répond bien au besoin fonctionnel.
 
 
+##### Les ingénieurs de Google conseillent un ratio de :
 
-Les ingénieurs de Google conseillent un ratio de :
-
-70 % de tests unitaires ;
-
-20 % de tests d’intégration ;
-
-10 % de tests bout en bout.
+- 70 % de tests unitaires ;
+- 20 % de tests d’intégration ;
+- 10 % de tests bout en bout.
