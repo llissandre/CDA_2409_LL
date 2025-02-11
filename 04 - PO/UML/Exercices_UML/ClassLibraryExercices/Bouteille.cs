@@ -39,7 +39,9 @@ namespace ClassLibraryExercices
 
         // Un constructeur peut appeler un autre constructeur dans le même objet à l’aide du mot clé this. Comme base, this peut être utilisé avec ou sans paramètres,
         // et tous les paramètres dans le constructeur sont disponibles comme paramètres pour this ou comme partie d’une expression.
-        public Bouteille() : this(1f, 1, false) { }
+        public Bouteille()
+            //:this : Interdépendance entre constructeurs
+            : this(1f, 1, false) { }
 
 
         /// Constructeur classique
@@ -72,6 +74,7 @@ namespace ClassLibraryExercices
         /// <param name="contenanceEnLitre"></param>
         /// <param name="contenuEnLitre"></param>
         public Bouteille(float contenanceEnLitre, float contenuEnLitre)
+            //:this : Interdépendance entre constructeurs
             : this(contenanceEnLitre, contenuEnLitre, false)
         {
         }
@@ -91,6 +94,7 @@ namespace ClassLibraryExercices
         //    _estOuverte = bouteilleACopier._estOuverte;
         //}
         public Bouteille(Bouteille bouteilleACopier)
+            //:this : Interdépendance entre constructeurs
             : this(bouteilleACopier._contenanceEnLitre, bouteilleACopier._contenuEnLitre, bouteilleACopier._estOuverte) { }
 
 
