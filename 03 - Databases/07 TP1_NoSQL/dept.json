@@ -1,0 +1,22 @@
+[
+  {
+    "_id": 10,
+    "dname": "ACCOUNTING",
+    "loc": "NEW YORK"
+  },
+  {
+    "_id": 20,
+    "dname": "RESEARCH",
+    "loc": "DALLAS"
+  },
+  {
+    "_id": 30,
+    "dname": "SALES",
+    "loc": "CHICAGO"
+  },
+  {
+    "_id": 40,
+    "dname": "OPERATIONS",
+    "loc": "BOSTON"
+  }
+]

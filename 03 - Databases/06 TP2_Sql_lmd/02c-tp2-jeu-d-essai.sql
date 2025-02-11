@@ -53,7 +53,7 @@ VALUES
 ('IT107', 106, 9, 'Paris', 'Brive', 7, 8),
 ('IT108', 106, 9, 'Brive', 'Paris', 19, 20),
 ('IT109', 107, 7, 'Paris', 'Lyon', 18, 19),
-('IT110', 109, 2, 'Toulouse', 'Paris', 15, 16),
+('IT110', 105, 8, 'Toulouse', 'Paris', 15, 16),
 ('IT111', 101, 4, 'Nice', 'Nantes', 17, 19),
 ('IT112', 103, 5, 'Paris', 'Nice', 11, 13),
 ('IT113', 104, 6, 'Nice', 'Paris', 13, 15);
