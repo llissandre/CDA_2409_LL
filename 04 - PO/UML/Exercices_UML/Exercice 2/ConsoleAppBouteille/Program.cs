@@ -7,21 +7,30 @@ namespace ConsoleAppBouteille
     {
         static void Main(string[] args)
         {
-            //constructeur par defaut
+            // -------------- //
+            // INSTANCIATIONS //
+            // -------------- //
+
+            // Instanciation de l'objet 'bouteille' en utilisant le constructeur par defaut
             Bouteille bouteille1 = new Bouteille();
 
-            // On nomme "argument" ce qui est entre les parenthèses dans un constructeur classique
+            // On nomme "argument" ce qui est entre les parenthèses dans un constructeur classique //
 
-            // Constructeur classique
+            // Instanciation de l'objet 'bouteille2' en utilisant le constructeur classique
             Bouteille bouteille2 = new Bouteille(3, 1, true);
 
-            //constructeur hybride classique defaut
+            // Instanciation de l'objet 'bouteille3' en utilisant le constructeur hybride classique defaut
             Bouteille bouteille3 = new Bouteille(2, 2);
             bouteille3.GetHashCode();
 
-            // Constructeur par clonage
+            // Instanciation de l'objet 'bouteille4' en utilisant le constructeur par clonage
             Bouteille bouteille4 = new Bouteille(bouteille3);
             bouteille4.GetHashCode();
+
+
+            // ------------- //
+            // TESTS MANUELS //
+            // ------------- //
 
             bool b1Fermee = bouteille1.Fermer();
             if (b1Fermee == false)
@@ -32,7 +41,6 @@ namespace ConsoleAppBouteille
             {
                 Console.WriteLine("La bouteille 1 a été fermée !");
             }
-
 
             b1Fermee = bouteille1.Fermer();
             if (b1Fermee == false)
@@ -205,6 +213,9 @@ namespace ConsoleAppBouteille
             {
                 Console.WriteLine("La bouteille 4 a été vidée de la quantité indiquée!");
             }
+
+
+            // Appel de la méthode ToString() pour chacun des objets Bouteille //
 
             Console.WriteLine(bouteille1.ToString());
             Console.WriteLine(bouteille2.ToString());

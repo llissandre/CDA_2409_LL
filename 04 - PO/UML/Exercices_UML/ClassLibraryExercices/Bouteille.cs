@@ -48,6 +48,20 @@ namespace ClassLibraryExercices
         /// <param name="estOuverte"></param>
         public Bouteille(float contenanceEnLitre, float contenuEnLitre, bool estOuverte)
         {
+            if (contenanceEnLitre < 0)
+            {
+                //L’instruction throw lève une exception :
+                throw new ArgumentException("La contenance en litre doit être supérieure à 0 !"
+                    , nameof(contenanceEnLitre));
+            }
+
+            if (contenuEnLitre < 0)
+            {
+                //L’instruction throw lève une exception :
+                throw new ArgumentException("Le contenu en litre doit être supérieure à 0 !"
+                    , nameof(contenuEnLitre));
+            }
+
             _contenanceEnLitre = contenanceEnLitre;
             _contenuEnLitre = contenuEnLitre;
             _estOuverte = estOuverte;
@@ -57,9 +71,8 @@ namespace ClassLibraryExercices
         //constructeur hybride classique
         /// <param name="contenanceEnLitre"></param>
         /// <param name="contenuEnLitre"></param>
-        public Bouteille(float contenanceEnLitre,
-                         float contenuEnLitre)
-        : this(contenanceEnLitre, contenuEnLitre, false)
+        public Bouteille(float contenanceEnLitre, float contenuEnLitre)
+            : this(contenanceEnLitre, contenuEnLitre, false)
         {
         }
 
@@ -71,17 +84,14 @@ namespace ClassLibraryExercices
         /// Son objectif principal est de définir les valeurs d'une nouvelle instance sur celles d'une instance existante.
         /// </summary>
         /// <param name="bouteilleACopier"></param>
-        /// <return></return>
-        /// <exceptions></exceptions>>
         //public Bouteille(Bouteille bouteilleACopier)
         //{
         //    _contenanceEnLitre = bouteilleACopier._contenanceEnLitre;
         //    _contenuEnLitre = bouteilleACopier._contenuEnLitre;
         //    _estOuverte = bouteilleACopier._estOuverte;
         //}
-
         public Bouteille(Bouteille bouteilleACopier)
-        : this(bouteilleACopier._contenanceEnLitre, bouteilleACopier._contenuEnLitre, bouteilleACopier._estOuverte) { }
+            : this(bouteilleACopier._contenanceEnLitre, bouteilleACopier._contenuEnLitre, bouteilleACopier._estOuverte) { }
 
 
         /// <summary>
@@ -95,15 +105,8 @@ namespace ClassLibraryExercices
         /// Utilisée pour ouvrir la bouteille
         /// </summary>
         /// <returns>Retourne un booléen, "true" si la méthode à permis d'ouvrir la bouteille, sinon "false"</returns>
-        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public bool Ouvrir()
         {
-            if (_estOuverte == true)
-            {
-                //L’instruction throw lève une exception :
-                //throw new Exception("La bouteille est déjà ouverte !");
-            }
-
             if (_estOuverte == false)
             {
                 _estOuverte = true;
@@ -118,15 +121,8 @@ namespace ClassLibraryExercices
         /// Utilisée pour fermer la bouteille
         /// </summary>
         /// <returns>Retourne un booléen, "true" si la méthode à permis de fermer la bouteille, sinon "false"</returns>
-        /// <exception cref="ArgumentException"></exception>
         public bool Fermer()
         {
-            if (_estOuverte == false)
-            {
-                //L’instruction throw lève une exception :
-                //throw new Exception("La bouteille est déjà fermée !");
-            }
-
             if (_estOuverte == true)
             {
                 _estOuverte = false;
@@ -140,8 +136,7 @@ namespace ClassLibraryExercices
         /// <summary>
         /// Utilisée pour vider complètement la bouteille
         /// </summary>
-        /// <returns>Retourne un booléen, "true" si la méthode à permis de vider complètement la bouteille, sinon "false"</returns>
-        /// <exceptions></exceptions>
+        /// <returns>Renvoie vers la méthode Vider(quantiteEnLitre)</returns>
         public bool Vider()
         {
             //if (_estOuverte == true && _contenuEnLitre > 0)
@@ -160,17 +155,11 @@ namespace ClassLibraryExercices
         /// Utilisée pour vider la bouteille d'une quantité définie en litre
         /// </summary>
         /// <param name="quantiteEnLitre"></param>
-        /// <returns>Retourne un booléen, "true" si la méthode à permis de vider la bouteille d'une quantité définie en litre, sinon "false"</returns>
-        /// <exception cref="Exception"></exception>
+        /// <returns>Retourne un booléen, "true" si la méthode à permis de vider la bouteille d'une quantité définie en litre,
+        /// sinon "false"</returns>
         /// <exception cref="ArgumentException"></exception>
         public bool Vider(float quantiteEnLitre)
         {
-            if (_estOuverte == false)
-            {
-                //L’instruction throw lève une exception :
-                //throw new Exception("La bouteille est fermée et ne permet pas de vider la bouteille !");
-            }
-
             if (quantiteEnLitre < 0)
             {
                 //L’instruction throw lève une exception :
@@ -180,7 +169,7 @@ namespace ClassLibraryExercices
 
             if (_estOuverte == true && quantiteEnLitre > 0 && _contenuEnLitre - quantiteEnLitre >= 0)
             {
-                _contenuEnLitre = _contenuEnLitre - quantiteEnLitre;
+                _contenuEnLitre -= quantiteEnLitre;
                 return true;
             }
             return false;
@@ -191,8 +180,7 @@ namespace ClassLibraryExercices
         /// <summary>
         /// Utilisée pour remplir complètement la bouteille 
         /// </summary>
-        /// <returns>Retourne un booléen, "true" si la méthode à permis de remplir complètement la bouteille, sinon "false"</returns>
-        /// <exceptions></exceptions>
+        /// <returns>Renvoie vers la méthode Remplir(quantiteEnLitre)</returns>
         public bool Remplir()
         {
             //if (_estOuverte == true && _contenuEnLitre < _contenanceEnLitre)
@@ -215,12 +203,6 @@ namespace ClassLibraryExercices
         /// <exception cref="ArgumentException"></exception>
         public bool Remplir(float quantiteEnLitre)
         {
-            if (_estOuverte == false)
-            {
-                //L’instruction throw lève une exception :
-                throw new Exception("La bouteille est fermée et ne permet pas de remplir la bouteille !");
-            }
-
             if (quantiteEnLitre < 0)
             {
                 //L’instruction throw lève une exception :
@@ -230,11 +212,12 @@ namespace ClassLibraryExercices
 
             if (_estOuverte == true && quantiteEnLitre > 0 && _contenuEnLitre + quantiteEnLitre <= _contenanceEnLitre)
             {
-                _contenuEnLitre = _contenuEnLitre + quantiteEnLitre;
+                _contenuEnLitre += quantiteEnLitre;
                 return true;
             }
             return false;
         }
+
 
         /// Fonction ToString()
         /// <summary>
@@ -242,11 +225,13 @@ namespace ClassLibraryExercices
         /// Lorsqu'on définit une classe, il peut être très utile de redéfinir la méthode toString afin de donner une description satisfaisante des objets de cette classe.
         /// Beaucoup de classes de l'API redéfinissent la méthode toString.
         /// </summary>
-        /// <returns>La fonction renvoie le nom de la classe de l'objet concerné, et une chaîne de caractères servant à décrire l'objet concerné..</returns>
+        /// <returns>La fonction renvoie une chaîne de caractères servant à décrire l'objet concerné.</returns>
         public override string ToString()
         {
             return "Contenance en litre : " + _contenanceEnLitre
                 + ", contenu en litre : " + _contenuEnLitre + ", est ouvert : " + _estOuverte;
+
+            //Renvoie le nom et le chemin de la classe, et une chaîne de caractères servant à décrire l'objet concerné.
             //return base.ToString() + " : Contenance en litre : " + _contenanceEnLitre
             //    + ", contenu en litre : " + _contenuEnLitre + ", est ouvert : " + _estOuverte;
         }
