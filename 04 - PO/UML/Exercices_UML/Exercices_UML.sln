@@ -5,14 +5,21 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibraryExercices", "ClassLibraryExercices\ClassLibraryExercices.csproj", "{B77D2C43-4D73-4710-98CF-2730B7D78728}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppBouteille", "Exercice 2\ConsoleAppBouteille\ConsoleAppBouteille.csproj", "{6592EBF6-4C10-4600-B66B-193189B1AD9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppBouteille", "Exercice 2\ConsoleAppBouteille\ConsoleAppBouteille.csproj", "{6592EBF6-4C10-4600-B66B-193189B1AD9B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B77D2C43-4D73-4710-98CF-2730B7D78728} = {B77D2C43-4D73-4710-98CF-2730B7D78728}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BouteilleTests", "Exercice 2\BouteilleTests\BouteilleTests.csproj", "{AF65BF8D-49D8-4E00-A28C-8F807423F8A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bouteille.UnitTests", "Exercice 2\Bouteille.UnitTests\Bouteille.UnitTests.csproj", "{DDE0E0D2-CBAD-4A78-B587-5335F6DEE2C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppJeu1", "Testing\ConsoleAppJeu1\ConsoleAppJeu1.csproj", "{C5ED228A-8D1B-42ED-995D-D88615073209}"
 	ProjectSection(ProjectDependencies) = postProject
-		{6592EBF6-4C10-4600-B66B-193189B1AD9B} = {6592EBF6-4C10-4600-B66B-193189B1AD9B}
+		{B77D2C43-4D73-4710-98CF-2730B7D78728} = {B77D2C43-4D73-4710-98CF-2730B7D78728}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jeu.UnitTests", "Jeu1.UnitTests\Jeu.UnitTests.csproj", "{B6385913-C6A4-4A7A-A577-21A2F76A4F8B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C5ED228A-8D1B-42ED-995D-D88615073209} = {C5ED228A-8D1B-42ED-995D-D88615073209}
 	EndProjectSection
 EndProject
 Global
@@ -29,10 +36,18 @@ Global
 		{6592EBF6-4C10-4600-B66B-193189B1AD9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6592EBF6-4C10-4600-B66B-193189B1AD9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6592EBF6-4C10-4600-B66B-193189B1AD9B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AF65BF8D-49D8-4E00-A28C-8F807423F8A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF65BF8D-49D8-4E00-A28C-8F807423F8A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF65BF8D-49D8-4E00-A28C-8F807423F8A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF65BF8D-49D8-4E00-A28C-8F807423F8A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDE0E0D2-CBAD-4A78-B587-5335F6DEE2C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE0E0D2-CBAD-4A78-B587-5335F6DEE2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE0E0D2-CBAD-4A78-B587-5335F6DEE2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE0E0D2-CBAD-4A78-B587-5335F6DEE2C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5ED228A-8D1B-42ED-995D-D88615073209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5ED228A-8D1B-42ED-995D-D88615073209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5ED228A-8D1B-42ED-995D-D88615073209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5ED228A-8D1B-42ED-995D-D88615073209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6385913-C6A4-4A7A-A577-21A2F76A4F8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6385913-C6A4-4A7A-A577-21A2F76A4F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6385913-C6A4-4A7A-A577-21A2F76A4F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6385913-C6A4-4A7A-A577-21A2F76A4F8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

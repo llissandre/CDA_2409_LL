@@ -1,5 +1,4 @@
-﻿
-using ClassLibraryExercices;
+﻿using ClassLibraryExercices;
 
 namespace ConsoleAppBouteille
 {
