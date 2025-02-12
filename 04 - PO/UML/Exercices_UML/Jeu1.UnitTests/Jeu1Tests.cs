@@ -1,6 +1,6 @@
 using ClassLibraryExercices;
 
-namespace Jeu.UnitTests
+namespace Jeu1.UnitTests
 {
 
     [TestClass]
