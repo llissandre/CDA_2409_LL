@@ -1,4 +1,6 @@
-﻿namespace Jeu1.UnitTests
+﻿using ClassLibraryExercices;
+
+namespace Jeu1.UnitTests
 {
     public class FauxDe : ILanceurDeDe
     {

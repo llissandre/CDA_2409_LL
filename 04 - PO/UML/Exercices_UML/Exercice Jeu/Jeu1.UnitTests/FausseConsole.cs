@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibraryExercices;
+using System;
 using System.Text;
 
 namespace Jeu1.UnitTests

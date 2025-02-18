@@ -4,16 +4,18 @@
     {
         private readonly IConsole _console;
         private readonly ILanceurDeDe _lanceurDeDe;
+        private readonly IFournisseurMeteo _fournisseurMeteo;
 
-        public Ihm(IConsole console, ILanceurDeDe lanceurDeDe)
+        public Ihm(IConsole console, ILanceurDeDe lanceurDeDe, IFournisseurMeteo fournisseurMeteo)
         {
             _console = console;
             _lanceurDeDe = lanceurDeDe;
+            _fournisseurMeteo = fournisseurMeteo;
         }
 
         public void Demarre()
         {
-            var jeu = new Jeu();
+            var jeu = new Jeu(_fournisseurMeteo);
             _console.EcrireLigne($"A l'attaque : points/vie {jeu.Heros.Points}/{jeu.Heros.PointDeVies}");
             while (jeu.Heros.PointDeVies > 0)
             {

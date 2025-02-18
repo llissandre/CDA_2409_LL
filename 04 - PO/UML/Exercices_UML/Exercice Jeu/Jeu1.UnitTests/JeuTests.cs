@@ -1,6 +1,7 @@
 using System;
 using ClassLibraryExercices;
 using FluentAssertions;
+using Moq;
 
 namespace Jeu1.UnitTests
 {
@@ -9,63 +10,90 @@ namespace Jeu1.UnitTests
     public class JeuTests
     {
         [TestMethod]
-        [Description("Etant donn� un tour de jeu, j'ai un lancer sup�rieur au second, " +
-            "alors le r�sultat est gagn� avec un point sans perdre de points de vie")]
+        [Description("Etant donné un tour de jeu, lorsque j'ai un lancer supérieur au second, alors le résultat est gagné avec un point sans perdre de points de vie")]
         public void Tour_AvecUnDeSuperieurAuSecond_RetourneGagneAvecUnPointEtSansPerdreDePointsDeVie()
         {
             // Arrange
-            Jeu jeu = new Jeu();
+            var fournisseurMeteo = Mock.Of<IFournisseurMeteo>();
+            Jeu jeu = new Jeu(fournisseurMeteo);
 
             // Act
             var resultat = jeu.Tour(6, 1);
 
             // Assert
-            if (resultat != Resultat.Gagne)
-                Assert.Fail();
-            if (jeu.Heros.Points != 1)
-                Assert.Fail();
-            if (jeu.Heros.PointDeVies != 15)
-                Assert.Fail();
+            resultat.Should().Be(Resultat.Gagne);
+            jeu.Heros.Points.Should().Be(1);
+            jeu.Heros.PointDeVies.Should().Be(15);
         }
 
         [TestMethod]
-        [Description("Etant donn� un tour de jeu, j'ai un lancer �gal au second, " +
-            "alors le r�sultat est gagn� avec un point sans perdre de points de vie")]
+        [Description("Etant donné un tour de jeu, lorsque j'ai un lancer égal au second, alors le résultat est gagné avec un point sans perdre de points de vie")]
         public void Tour_AvecUnDeEgalAuSecond_RetourneGagneAvecUnPointEtSansPerdreDePointsDeVie()
         {
             // Arrange
-            Jeu jeu = new Jeu();
+            var fournisseurMeteo = Mock.Of<IFournisseurMeteo>();
+            Jeu jeu = new Jeu(fournisseurMeteo);
 
             // Act
             var resultat = jeu.Tour(5, 5);
 
             // Assert
-            if (resultat != Resultat.Gagne)
-                Assert.Fail();
-            if (jeu.Heros.Points != 1)
-                Assert.Fail();
-            if (jeu.Heros.PointDeVies != 15)
-                Assert.Fail();
+            resultat.Should().Be(Resultat.Gagne);
+            jeu.Heros.Points.Should().Be(1);
+            jeu.Heros.PointDeVies.Should().Be(15);
         }
 
         [TestMethod]
-        [Description("Etant donn� un tour de jeu, j'ai un lancer inf�rieur au second, " +
-            "alors le r�sultat est perdu, sans points et en perdant deux points de vie")]
-        public void Tour_AvecUnDeInferieurAuSecond_RetournePerduAvecZeroPointEtEnPerdantDeuxPointsDeVie()
+        [Description("Etant donné un tour de jeu, lorsque j'ai un lancer inférieur au second et du soleil, alors le résultat est perdu, sans points et en perdant des points de vie")]
+        public void Tour_AvecUnDeInferieurAuSecond_RetournePerduSansPointEnPerdantDesPointsDeVie()
         {
             // Arrange
-            Jeu jeu = new Jeu();
+            var fournisseurMeteo = Mock.Of<IFournisseurMeteo>();
+            Jeu jeu = new Jeu(fournisseurMeteo);
 
             // Act
             var resultat = jeu.Tour(2, 4);
 
             // Assert
-            if (resultat != Resultat.Perdu)
-                Assert.Fail();
-            if (jeu.Heros.Points != 0)
-                Assert.Fail();
-            if (jeu.Heros.PointDeVies != 13)
-                Assert.Fail();
+            resultat.Should().Be(Resultat.Perdu);
+            jeu.Heros.Points.Should().Be(0);
+            jeu.Heros.PointDeVies.Should().Be(13);
+        }
+
+        [TestMethod]
+        [Description("Etant donné un tour de jeu, lorsque j'ai un lancer inférieur au second et de la pluie, alors le résultat est perdu, sans points et en classiquement des points de vie")]
+        public void Tour_AvecUnDeInferieurAuSecond_EtDuVent_RetournePerduSansPointEnPerdantClassiquementDesPointsDeVie()
+        {
+            // Arrange
+            var fournisseurMeteo = Mock.Of<IFournisseurMeteo>();
+            Mock.Get(fournisseurMeteo).Setup(m => m.QuelTempsFaitIl()).Returns(Meteo.Pluie);
+            Jeu jeu = new Jeu(fournisseurMeteo);
+
+            // Act
+            var resultat = jeu.Tour(2, 4);
+
+            // Assert
+            resultat.Should().Be(Resultat.Perdu);
+            jeu.Heros.Points.Should().Be(0);
+            jeu.Heros.PointDeVies.Should().Be(13);
+        }
+
+        [TestMethod]
+        [Description("Etant donné un tour de jeu, lorsque j'ai un lancer inférieur au second et du vent, alors le résultat est perdu, sans points et en perdant deux fois plus de points de vie")]
+        public void Tour_AvecUnDeInferieurAuSecond_EtDuVent_RetournePerduSansPointEnPerdantDeuxFoisPlusDePointsDeVie()
+        {
+            // Arrange
+            var fournisseurMeteo = Mock.Of<IFournisseurMeteo>();
+            Mock.Get(fournisseurMeteo).Setup(m => m.QuelTempsFaitIl()).Returns(Meteo.Tempete);
+            Jeu jeu = new Jeu(fournisseurMeteo);
+
+            // Act
+            var resultat = jeu.Tour(2, 4);
+
+            // Assert
+            resultat.Should().Be(Resultat.Perdu);
+            jeu.Heros.Points.Should().Be(0);
+            jeu.Heros.PointDeVies.Should().Be(11);
         }
     }
 }
