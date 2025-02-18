@@ -1,6 +1,6 @@
 ﻿namespace ClassLibraryExercices
 {
-    public class De
+    public class De : ILanceurDeDe
     {
         private Random random;
 

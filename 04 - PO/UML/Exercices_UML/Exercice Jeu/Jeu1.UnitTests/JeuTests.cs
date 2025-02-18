@@ -1,14 +1,16 @@
+using System;
 using ClassLibraryExercices;
+using FluentAssertions;
 
 namespace Jeu1.UnitTests
 {
 
     [TestClass]
-    public class Jeu1Tests
+    public class JeuTests
     {
         [TestMethod]
-        [Description("Etant donné un tour de jeu, j'ai un lancer supérieur au second, " +
-            "alors le résultat est gagné avec un point sans perdre de points de vie")]
+        [Description("Etant donnï¿½ un tour de jeu, j'ai un lancer supï¿½rieur au second, " +
+            "alors le rï¿½sultat est gagnï¿½ avec un point sans perdre de points de vie")]
         public void Tour_AvecUnDeSuperieurAuSecond_RetourneGagneAvecUnPointEtSansPerdreDePointsDeVie()
         {
             // Arrange
@@ -27,8 +29,8 @@ namespace Jeu1.UnitTests
         }
 
         [TestMethod]
-        [Description("Etant donné un tour de jeu, j'ai un lancer égal au second, " +
-            "alors le résultat est gagné avec un point sans perdre de points de vie")]
+        [Description("Etant donnï¿½ un tour de jeu, j'ai un lancer ï¿½gal au second, " +
+            "alors le rï¿½sultat est gagnï¿½ avec un point sans perdre de points de vie")]
         public void Tour_AvecUnDeEgalAuSecond_RetourneGagneAvecUnPointEtSansPerdreDePointsDeVie()
         {
             // Arrange
@@ -47,8 +49,8 @@ namespace Jeu1.UnitTests
         }
 
         [TestMethod]
-        [Description("Etant donné un tour de jeu, j'ai un lancer inférieur au second, " +
-            "alors le résultat est perdu, sans points et en perdant deux points de vie")]
+        [Description("Etant donnï¿½ un tour de jeu, j'ai un lancer infï¿½rieur au second, " +
+            "alors le rï¿½sultat est perdu, sans points et en perdant deux points de vie")]
         public void Tour_AvecUnDeInferieurAuSecond_RetournePerduAvecZeroPointEtEnPerdantDeuxPointsDeVie()
         {
             // Arrange

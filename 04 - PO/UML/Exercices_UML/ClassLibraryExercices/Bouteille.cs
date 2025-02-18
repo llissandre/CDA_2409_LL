@@ -150,7 +150,7 @@ namespace ClassLibraryExercices
             //}
             //return false;
 
-            return Vider(_contenanceEnLitre);
+            return Vider(_contenuEnLitre);
         }
 
 
