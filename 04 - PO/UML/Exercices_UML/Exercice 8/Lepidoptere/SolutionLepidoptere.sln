@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppLepidoptere", "ConsoleAppLepidoptere\ConsoleAppLepidoptere.csproj", "{841230E4-A225-473A-B389-AC80D07725A8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2C910A63-CA1E-4D1B-B5F9-09FA1ABA3548} = {2C910A63-CA1E-4D1B-B5F9-09FA1ABA3548}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryLepidoptere", "ClassLibraryLepidoptere\ClassLibraryLepidoptere.csproj", "{2C910A63-CA1E-4D1B-B5F9-09FA1ABA3548}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{841230E4-A225-473A-B389-AC80D07725A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{841230E4-A225-473A-B389-AC80D07725A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{841230E4-A225-473A-B389-AC80D07725A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{841230E4-A225-473A-B389-AC80D07725A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C910A63-CA1E-4D1B-B5F9-09FA1ABA3548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C910A63-CA1E-4D1B-B5F9-09FA1ABA3548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C910A63-CA1E-4D1B-B5F9-09FA1ABA3548}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C910A63-CA1E-4D1B-B5F9-09FA1ABA3548}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {751D07E2-F6BD-4CDD-BCDE-7BFAC2A4235A}
+	EndGlobalSection
+EndGlobal
