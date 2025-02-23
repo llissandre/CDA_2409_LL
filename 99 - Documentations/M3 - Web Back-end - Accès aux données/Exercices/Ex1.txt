@@ -1,0 +1,28 @@
+<?php ob_start(); //  ne pas modifier
+$titre = "Exo 01 - Variables"; // Mettre le titre de la page
+?>
+
+<!-- mettre votre code ici -->
+<?php
+$a = 3;
+$b = 5;
+$c = 7;
+
+echo "****************Avant permutation*******************<br>";
+
+echo "A : " . $a . "<br>";
+echo "B : " . $b . "<br>";
+echo "C : " . $c . "<br>";
+
+echo "<br>";
+
+echo "****************Après permutation*******************<br>";
+
+$t = $a;
+$a = $b;
+$b = $c;
+$c = $t;
+
+echo "A : " . $a . "<br>";
+echo "B : " . $b . "<br>";
+echo "C : " . $c . "<br>";
