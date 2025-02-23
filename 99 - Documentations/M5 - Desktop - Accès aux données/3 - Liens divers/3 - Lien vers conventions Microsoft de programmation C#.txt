@@ -1,0 +1,1 @@
+https://learn.microsoft.com/fr-fr/dotnet/csharp/fundamentals/coding-style/coding-conventions
