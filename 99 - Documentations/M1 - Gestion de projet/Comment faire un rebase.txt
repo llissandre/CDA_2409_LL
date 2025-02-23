@@ -1,6 +1,0 @@
-Si branch "perso" locale en retard :
-- se placer sur la main local
-- fetch pour récupérer l'historique distant
-- pull des changements
-- se placer sur la branch "perso" locale
-- rebase sur la branch main locale
