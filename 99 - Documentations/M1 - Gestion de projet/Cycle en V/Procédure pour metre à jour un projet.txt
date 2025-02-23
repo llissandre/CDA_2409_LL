@@ -1,0 +1,7 @@
+- se placer sur la branch main locale, pas la branch origin/main
+- fetch pour récupérer l'historique distant
+- créer sa branche
+- faire un seul type changement
+- commit pour valider les changements - mettre un message de commit explicite
+- push sur le serveur
+- ouvrir une pull request
