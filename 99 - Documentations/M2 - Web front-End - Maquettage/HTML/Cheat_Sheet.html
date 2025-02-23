@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet</title>
+    <style>
+        /* La propriété border-collapse détermine si les bordures d'un tableau sont séparées ou fusionnées => ici ont fusionne
+            vous pouvez tester : border-collapse:separate;
+            */
+        table {
+            border-collapse: collapse;
+        }
+
+        /* Ajoute une bordure grise de 2 px sur les td et th*/
+        th,
+        td {
+            border-spacing: 0;
+            border: 2px solid rgb(141, 141, 141);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mettre en tooltip</h1>
+    <p title="About W3Schools">W3Schools is a web developer's site.</p>
+    <h1>Tracer une ligne horizontale</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae libero atque nobis quam id expedita sit
+        corrupti consectetur ab nisi. Maiores adipisci impedit laudantium vel consequuntur amet soluta, animi dicta.
+        <hr>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt veniam aperiam iusto ratione quia quam
+        repudiandae quo vitae, ullam voluptatem? Itaque nam repellat eum cum at unde quidem exercitationem labore!
+    </p>
+    <h1>Conserver la mise en page</h1>
+    <pre>
+        My Bonnie lies over the ocean.
+
+        My Bonnie lies over the sea.
+      
+        My Bonnie lies over the ocean.
+      
+        Oh, bring back my Bonnie to me.</pre>
+    <h1>Surligner</h1>
+    <p>Lorem, ipsum dolor sit amet <mark>consectetur</mark> adipisicing elit. Vero sed minus dignissimos quisquam
+        accusantium, iste
+        fugit quis? Eligendi maiores voluptas vel, accusantium molestiae qui dolorum aliquid! Ex amet tenetur porro.</p>
+    <h1>indice/exposant</h1>
+    <p>H<sub>2</sub>O
+        10<sup>4</sup></p>
+    <h1>Barrer</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus rerum, asperiores nesciunt soluta fugit
+        nostrum expedita <del>repellendus vel tenetur aliquid consectetur</del>. Vel quod, quisquam fugit quidem quam
+        velit tempore
+        repudiandae?</p>
+    <h1>Mettre""</h1>
+    <p>Lorem ipsum dolor sit amet <q>consectetur adipisicing elit</q>. Sapiente animi ullam, ipsum fuga dolorem nisi et
+        accusantium fugit molestias praesentium repudiandae nostrum unde, maxime at, assumenda eum ipsa adipisci!
+        Sapiente.</p>
+    <h1>Citation avec lien + auteur</h1>
+    <p>
+    <blockquote cite="https://citation-celebre.leparisien.fr/citations/2304">Dans la vie on ne fait pas ce que l'on veut
+        mais on est responsable de ce que l'on est.</blockquote>
+    <figcaption>Jean-Paul Sartre</figcaption>
+    </p>
+    <h1>Changer direction du texte</h1>
+    <p><bdo dir="ltr">Un texte lambda</bdo></p>
+    <p><bdo dir="rtl">Un texte lambda</bdo></p>
+    <h1>Abbreviation d'un texte</h1>
+    <p>The "World Health Organization" was founded in 1948.</p>
+    <p>The <abbr title="World Health Organization"> WHO</abbr> was founded in 1948.</p>
+    <h1>Commentaire</h1>
+    <p>
+    <h3>This is a heading</h3>
+    <!--
+         This is a comment 
+        -->
+    <p>(Voir le code)</p>
+    </p>
+    <h1>Lien</h1>
+    <p>
+        <a href="default.html">Visit our HTML tutorial.</a>
+    </p>
+    <h1>Lien sans sous-lignage (fait en html)</h1>
+    <p><a href="html_images.asp" style="text-decoration:none;">HTML Images</a></p>
+    <h1>Lien qui ouvre un nouvel onglet</h1>
+    <p><a href="html_images.asp" target="_blank">HTML Images</a></p>
+    <h1>Lien representer par une image</h1>
+    <p>
+        <a href="default.html"><img src="./at_icon-icons.com_50456.png"></a>
+    </p>
+    <h1>Lien avec tooltip</h1>
+    <p><a href="default.html" title="Home">Back to Home</a></p>
+    <h1>Redimensionne image (html)</h1>
+    <p><img src="./at_icon-icons.com_50456.png" width="250" height="400"></p>
+    <h1>Redimension image (html avec "style")</h1>
+    <p><img src="./at_icon-icons.com_50456.png" style="width:250px;height:400px;"></p>
+    <h1>Flotant droite (html)</h1>
+    <p>
+    <p>
+        <img src="./at_icon-icons.com_50456.png" style="float:right;">This is a paragraph.This paragraph contains an
+        image
+    </p>
+    </p>
+    <h1>Texte alternatif d'image</h1>
+    <p><img src="smiley.gif" alt="Smiley"></p>
+    <h1>Tableau</h1>
+    <p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jill Smith</td>
+            <td>50</td>
+        </tr>
+    </table>
+    </p>
+    <h1>Tableau avec titre</h1>
+    <p>
+    <table>
+        <caption>Names</caption>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jill Smith</td>
+            <td>50</td>
+        </tr>
+    </table>
+    </p>
+    <h1>Changement style (html)</h1>
+    <p>
+    <table style="width: 300px;">
+        <caption>Names</caption>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jill Smith</td>
+            <td>50</td>
+        </tr>
+    </table>
+    </p>
+    <h1>Tableau colspan</h1>
+    <p>
+    <table>
+        <tr>
+            <th colspan="2">Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+    </table>
+    </p>
+    <h1>Tableau rowspan</h1>
+    <p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>Jill Smith</td>
+        </tr>
+        <tr>
+            <th rowspan="2">Phone</th>
+            <td>555-77854</td>
+        </tr>
+        <tr>
+            <td>555-77854</td>
+        </tr>
+    </table>
+    </p>
+    <h1>Liste non-ordonée</h1>
+    <p>
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+    </p>
+    <h1>Liste ordonée</h1>
+    <p>
+    <ol>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ol>
+    </p>
+    <h1>Liste non-ordonée (style carré html)</h1>
+    <p>
+    <ul style="list-style:square;">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+    </p>
+    <h1>Liste ordonnée avec lettre</h1>
+    <p>
+    <ol type="a">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ol>
+    </p>
+    <h1>Liste de def</h1>
+    <p>
+    <dl>
+        <dt>Coffee</dt>
+        <dd>- black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>- white cold drink</dd>
+    </dl>
+    </p>
+</body>
+
+</html>
