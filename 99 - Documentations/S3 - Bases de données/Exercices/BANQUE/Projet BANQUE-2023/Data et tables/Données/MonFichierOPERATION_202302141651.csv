@@ -1,0 +1,18 @@
+insert into OPERATION(dateOpe, description, montantOpe, numCpt, codeTypeOpe)
+values (sysdate(),, +15000.00, 'CC00000002', 'DEP'),
+values (sysdate(),, +10000.00, 'CC00000020', 'DEP'),
+values (sysdate(),, +9000.00, 'CC00000019', 'DEP'),
+values (sysdate(),, +8000.00, 'CC00000012', 'DEP'),
+values (sysdate(),, +125.25, 'CC00000001', 'DEP'),
+values (sysdate(),, +500.00, 'LI00000006', 'VIR'),
+values (sysdate(),, -500.00, 'CO00000002', 'VIR'),
+values (sysdate(),, +125.25, 'CC00000001', 'DEP'),
+values (sysdate(),, -1000.00, 'CC00000020', 'RET'),
+values (sysdate(),, -7000.00, 'CC00000019', 'RET'),
+values (sysdate(),, +5201.00, 'CC00000013', 'DEP'),
+values (sysdate(),, -5000.00, 'CC00000012', 'VIR'),
+values (sysdate(),, +5000.00, 'CC00000011', 'VIR'),
+values (sysdate(),, +5201.00, 'CC00000013', 'DEP');
+
+
+
