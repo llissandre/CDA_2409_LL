@@ -8,6 +8,5 @@ btnajout.addEventListener('click', function () {
 });
 
 btnreinitialiser.addEventListener('click', function () {
-    let nbclick = Number(document.querySelector('span').textContent);
     document.querySelector('span').textContent = 0;
 });
