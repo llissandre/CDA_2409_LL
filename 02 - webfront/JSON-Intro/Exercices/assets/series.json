@@ -1,0 +1,38 @@
+[
+    {
+        "Name": "Breaking Bad",
+        "Director": "Vince Gilligan",
+        "Release_Date": 2008,
+        "Number_of_Seasons": 5
+    },
+    {
+        "Name": "Game of Thrones",
+        "Director": "David Benioff",
+        "Release_Date": 2011,
+        "Number_of_Seasons": 8
+    },
+    {
+        "Name": "Notre planete",
+        "Director": "Alastair Fothergill",
+        "Release_Date": 2019,
+        "Number_of_seasons": 2
+    },
+    {
+        "Name": "Chernobyl",
+        "Director": "Craig Mazin",
+        "Release_Date": 2019,
+        "Number_of_seasons": 1
+    },
+    {
+        "Name": "Arcane",
+        "Director": "Fortiche Production",
+        "Release_Date": 2021,
+        "Number_of_seasons": 1
+    },
+    {
+        "Name": "Peaky Blinders",
+        "Director": "Steven Knight",
+        "Release_Date": 2013,
+        "Number_of_seasons": 6
+    }
+]

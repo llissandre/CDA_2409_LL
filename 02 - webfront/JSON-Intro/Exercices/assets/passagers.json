@@ -1,0 +1,26 @@
+[
+    {
+        "Id": 1,
+        "Nom": "DEV1",
+        "Prenom": "Mike1",
+        "Age": 18,
+        "NiveauDExperience": "Débutant",
+        "Note": 4
+    },
+    {
+        "Id": 2,
+        "Nom": "DEV2",
+        "Prenom": "Mike2",
+        "Age": 19,
+        "NiveauDExperience": "Confirmé",
+        "Note": 4.8
+    },
+    {
+        "Id": 3,
+        "Nom": "DEV3",
+        "Prenom": "Mike3",
+        "Age": 20,
+        "NiveauDExperience": "Ambassadeur",
+        "Note": 5
+    }
+]
