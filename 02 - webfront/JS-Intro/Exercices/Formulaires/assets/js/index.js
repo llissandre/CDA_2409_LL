@@ -4,10 +4,10 @@ const age = document.querySelector('#age');
 const vider = document.querySelector('#reset');
 const sentences = document.querySelector('#sentence');
 
-form.addEventListener('submit', (e) => {
+// form.addEventListener('submit', (e) => {
+const resultat = (e) => {
     if (prenom.value != '' && age.value > 0) {
         e.preventDefault();
-        
         sentences.innerHTML = '<li>Bonjour ' + prenom.value + ', votre âge est : ' + age.value + ' ans.</li>';
 
         if (age.value >= 18) {
@@ -33,11 +33,16 @@ form.addEventListener('submit', (e) => {
         e.preventDefault();
         sentences.innerHTML = '<li>Compléter/corriger le formulaire</li>';
     }
-});
+};
 
-reset.addEventListener('click', () => {
+// reset.addEventListener('click', () => {
+const reseter = () => {
     sentences.remove();
-})
+};
+
+form.addEventListener('submit', resultat);
+reset.addEventListener('click', reseter)
+
 
 
 // window.addEventListener('load', getSentences());
