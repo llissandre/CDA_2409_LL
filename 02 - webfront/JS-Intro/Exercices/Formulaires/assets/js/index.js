@@ -3,27 +3,29 @@ const prenom = document.querySelector('#prenom');
 const age = document.querySelector('#age');
 const vider = document.querySelector('#reset');
 const sentences = document.querySelector('#sentence');
+sentences.innerHTML = '<li>Compléter/corriger le formulaire</li>';
 
 // form.addEventListener('submit', (e) => {
 const resultat = (e) => {
     if (prenom.value != '' && age.value > 0) {
         e.preventDefault();
-        sentences.innerHTML = '<li>Bonjour ' + prenom.value + ', votre âge est : ' + age.value + ' ans.</li>';
+        sentences.innerHTML = `<li>Bonjour <span class="colorBlue">${prenom.value}</span>, votre âge est : <span class="colorBlue">${age.value}</span> ans.</li>`;
+        // sentences.innerHTML = '<li>Bonjour ' + prenom.value + ', votre âge est : ' + age.value + ' ans.</li>';
 
         if (age.value >= 18) {
-            sentences.innerHTML += '<li>Vous êtes majeur.</li>';
+            sentences.innerHTML += '<li>Vous êtes <span class="colorBlue">majeur.</span></li>';
         }
         else {
-            sentences.innerHTML += '<li>Vous êtes mineur.</li>';
+            sentences.innerHTML += '<li>Vous êtes <span class="colorBlue">mineur.</span></li>';
         }
 
         if (age.value < 64) {
             let nbAnnees = 64 - age.value;
-            sentences.innerHTML += '<li>Il vous reste ' + nbAnnees + ' année(s) avant la retraite.</li>';
+            sentences.innerHTML += '<li>Il vous reste <span class="colorBlue">' + nbAnnees + '</span> année(s) avant la retraite.</li>';
         }
         else if (age.value > 64) {
             let nbAnnees = age.value - 64;
-            sentences.innerHTML += '<li>Vous êtes à la retraite depuis ' + nbAnnees + ' année(s).</li>';
+            sentences.innerHTML += '<li>Vous êtes à la retraite depuis ' + '<span class="colorBlue">' + nbAnnees + '</span>' + ' année(s).</li>';
         }
         else if (age.value = 64) {
             sentences.innerHTML += '<li>Vous prenez votre retraite cette année !</li>';
@@ -37,7 +39,7 @@ const resultat = (e) => {
 
 // reset.addEventListener('click', () => {
 const reseter = () => {
-    sentences.remove();
+    sentences.innerHTML = '<li>Compléter/corriger le formulaire</li>';
 };
 
 form.addEventListener('submit', resultat);
