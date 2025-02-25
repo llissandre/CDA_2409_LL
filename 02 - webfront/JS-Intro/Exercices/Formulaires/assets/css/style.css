@@ -23,10 +23,6 @@ body {
 
 #form {
     margin: 10px 0;
-
-    input {
-        color: blue;
-    }
 }
 
 #prenom,
@@ -60,6 +56,6 @@ ul {
     }
 }
 
-.colorBlue{
+.colorBlue {
     color: blue;
 }
