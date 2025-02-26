@@ -25,9 +25,9 @@ body {
     margin: 10px 0;
 }
 
-#dateNaissance {
+#dateN {
     border: 1px solid blue;
-    width: 160px;
+    width: 180px;
     padding: 5px 0 2px 5px;
 }
 
@@ -56,4 +56,5 @@ ul {
 
 .colorBlue {
     color: blue;
+    font-weight: bold;
 }
