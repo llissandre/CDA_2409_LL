@@ -21,17 +21,20 @@ body {
     border: 1px solid blue;
 }
 
-#form {
+#formCurrentdate,
+#formIntervalledate {
     margin: 10px 0;
 }
 
-#date,
-#time {
+#currentdate,
+#intervalledate,
+#currenttime {
     border: 1px solid blue;
-    width: 110px;
+    width: 170px;
     padding: 5px 0 2px 5px;
 }
 
+#calculerIntervalle,
 #afficher {
     color: blue;
     border: 1px solid blue;
@@ -43,7 +46,8 @@ hr {
     margin-bottom: 20px;
 }
 
-#sentences {
+#sentenceIntervalledate,
+#sentenceCurrentdate {
     margin: 10px 0;
 }
 
