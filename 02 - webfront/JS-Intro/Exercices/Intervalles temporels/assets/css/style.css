@@ -25,13 +25,14 @@ body {
     margin: 10px 0;
 }
 
-#dateN {
+#date,
+#time {
     border: 1px solid blue;
-    width: 180px;
+    width: 110px;
     padding: 5px 0 2px 5px;
 }
 
-#calculer {
+#afficher {
     color: blue;
     border: 1px solid blue;
     padding: 5px 5px 2px 5px;
@@ -39,6 +40,7 @@ body {
 
 hr {
     border: 1.5px solid black;
+    margin-bottom: 20px;
 }
 
 #sentences {

@@ -6,7 +6,7 @@ const anneeToday = new Date().toISOString().split('T')[0].split('-')[0];
 
 sentences.innerHTML = '<li>Sélectionner un date dans le passé.</li>';
 
-calculer.addEventListener('click', () => {
+const astro = () => {
     const dateDeN = dateN.value;
     const dateDeNA = new Date(dateDeN);
     const dateND = new Date(dateDeN).toLocaleDateString();
@@ -68,4 +68,7 @@ calculer.addEventListener('click', () => {
         sentences.innerHTML += '<li>Votre signe astrologique : <span class="colorBlue">' + signeAstro + '</span>.</li>';
 
     }
-});
+};
+
+
+calculer.addEventListener('click', astro)
