@@ -30,11 +30,16 @@ const dateDuJour = () => {
 
 const lintervalle = () => {
     const intervalledateV = intervalledate.value;
+
     const intervalledateL = new Date(intervalledateV);
     const intervalledateD = new Date(intervalledateV).toLocaleDateString();
-    const dateToday = intervalledateD.replace(/(\d+)\/(\d+)\/(\d+)/, "$3-$2-$1");
-    console.log(dateToday);
-    
+    const day = intervalledateL.getDate();
+    const month = intervalledateL.getMonth();
+    const year = intervalledateL.getFullYear();
+    // console.log(day);
+    // console.log(month);
+    // console.log(year);
+
     const intervalledateT = new Date(intervalledateV).toLocaleTimeString();
 
     const mois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
@@ -50,21 +55,26 @@ const lintervalle = () => {
 
     const monitem = document.createElement("li");
     monitem.setAttribute('id', 'display');
-    monitem.innerHTML = 'Il y a ' + jours + ' jour(s) entre aujourd\'hui et le <span class="colorBlue">' + intervalledateD + ' à ' + intervalledateT + '</span>.';
+    monitem.innerHTML = 'Il y a ' + jours + ' jour(s) entre aujourd\'hui et le <span class="colorBlue">' + day + ' ' + mois[month] + ' ' + year + ' à ' + intervalledateT + '</span>.';
     sentencesIntervalledate.append(monitem);
 
     // sentencesIntervalledate.innerHTML = '<li>Il y a ' + jours + ' jour(s) entre aujourd\'hui et le <span class="colorBlue">' + intervalledateD + ' à ' + intervalledateT + '</span>.</li>';
 
-    if (intervalledateV == '') {
+    if (isNaN(jours)) {
         sentencesIntervalledate.innerHTML = '';
     }
     else if (intervalledateL < (new Date())) {
-        sentencesIntervalledate.innerHTML += '<li>Dans ' + jours + ' jour(s), ' + heures + ' heures et ' + minutes + ' minutes, nous seront le ' + intervalledateD + ' à ' + intervalledateT + '.</li>';
+        monitem.innerHTML += '<li>Il y a ' + jours + ' jour(s), ' + heures + ' heures et ' + minutes + ' minutes, nous étions le ' + day + ' ' + mois[month] + ' ' + year + ' à ' + intervalledateT + '.</li>';
+        sentencesIntervalledate.append(monitem);
     }
     else if (intervalledateL > (new Date())) {
-        sentencesIntervalledate.innerHTML += '<li>Il y a ' + jours + ' jour(s), ' + heures + ' heures et ' + minutes + ' minutes, nous serons le ' + intervalledateD + ' à ' + intervalledateT + '.</li>';
+        monitem.innerHTML += '<li>Dans ' + jours + ' jour(s), ' + heures + ' heures et ' + minutes + ' minutes, nous serons le ' + day + ' ' + mois[month] + ' ' + year + ' à ' + intervalledateT + '.</li>';
+        sentencesIntervalledate.append(monitem);
     }
 };
 
 afficher.addEventListener('click', dateDuJour);
 calculerIntervalle.addEventListener('click', lintervalle);
+
+
+setInterval(dateDuJour, 1000);
