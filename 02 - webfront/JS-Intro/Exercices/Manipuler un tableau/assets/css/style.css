@@ -1,0 +1,38 @@
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+}
+
+/* Sélectionne tous les éléments */
+* {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 800px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    color: #ACCBE1;
+    background-color: #536B78;
+    margin: 20px 0 0 20px;
+}
+
+#filet {
+    border: 1px solid #ACCBE1;
+}
+
+h1 {
+    margin-left: 15px;
+}
+
+ul {
+    list-style: none;
+    color: #ACCBE1;
+    margin-left: 60px;
+    padding: 30px 0;
+}
