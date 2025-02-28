@@ -30,9 +30,9 @@ const dateDuJour = () => {
 
 const lintervalle = () => {
     const intervalledateV = intervalledate.value;
-
     const intervalledateL = new Date(intervalledateV);
-    const intervalledateD = new Date(intervalledateV).toLocaleDateString();
+    // const intervalledateD = new Date(intervalledateV).toLocaleDateString();
+
     const day = intervalledateL.getDate();
     const month = intervalledateL.getMonth();
     const year = intervalledateL.getFullYear();
