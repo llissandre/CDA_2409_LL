@@ -35,6 +35,7 @@ ul {
     color: #ACCBE1;
     margin-left: 60px;
     padding: 30px 0;
+    font-weight: 600;
 }
 
 #tableId {
@@ -46,11 +47,18 @@ ul {
     border-collapse: collapse;
 }
 
-td,
 th {
     border: 1px solid #ACCBE1;
     background-color: #637081;
-    padding: 5px 20px;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+}
+
+td {
+    border: 1px solid #ACCBE1;
+    background-color: #637081;
+    padding: 5px 5px 5px 5px;
+    text-align: left;
 }
 
 input {
@@ -58,10 +66,18 @@ input {
     color: #ACCBE1;
     background-color: #637081;
     padding: 5px;
+    margin-right: 30px;
 }
 
-input[type=submit]{
+label {
+    margin-right: 15px;
+    font-weight: 500;
+}
 
+input[type=submit] {
+    width: 80px;
+    font-size: 0.78rem;
+    padding: 6.5px;
 }
 
 .delete {
@@ -78,4 +94,24 @@ input[type=submit]{
     content: "✔";
     font-size: 1.1rem;
     color: #fd4a1d;
+}
+
+form {
+    margin: 20px 0 0px 20px;
+}
+
+#divAddId {
+    margin: 10px 15px 0px 15px;
+    border: 0.5px dashed #ACCBE1;
+    height: 100%;
+}
+
+#divAddId p {
+    margin: 20px 0 20px 20px;
+    font-weight: 700;
+}
+
+#divAddId p:fir {
+    margin: 20px 0 20px 20px;
+    font-weight: 700;
 }
