@@ -4,6 +4,7 @@ const filet = document.querySelector('#filet');
 const divAddId = document.querySelector('#divAddId')
 
 const table = document.createElement('table');
+const regexNomPrenom = /^[a-zA-Z]{2,}$/;
 
 const divAdd = document.createElement('div');
 const form = document.createElement('form');
@@ -45,15 +46,16 @@ form.append(btnAjouterAdd);
 divAdd.append(pAddResultat);
 
 btnAjouterAdd.addEventListener('click', (e) => {
-    console.log(e);
     e.preventDefault();
     const prenom = `${String(inputPrenomAdd.value).charAt(0).toUpperCase()}${String(inputPrenomAdd.value).slice(1).toLowerCase()}`;
     const nom = `${String(inputNomAdd.value).charAt(0).toUpperCase()}${String(inputNomAdd.value).slice(1).toLowerCase()}`;
 
-    people.push(`${prenom} ${nom}`);
-
-    pAddResultat.textContent = `${prenom} ${nom} ajouté !`;
-
+    if (regexNomPrenom.test(prenom) && regexNomPrenom.test(nom)) {
+        if (!people.includes(`${prenom} ${nom}`)) {
+            people.push(`${prenom} ${nom}`);
+            pAddResultat.textContent = `${prenom} ${nom} ajouté !`;
+        }
+    }
     personnes();
 });
 
