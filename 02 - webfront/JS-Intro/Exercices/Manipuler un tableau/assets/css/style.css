@@ -37,12 +37,12 @@ ul {
     padding: 30px 0;
 }
 
-#table {
+#tableId {
     margin: 0 30px 30px 30px;
     color: #a0bdd2;
 }
 
-#table {
+#tableId {
     border-collapse: collapse;
 }
 
@@ -53,12 +53,23 @@ th {
     padding: 5px 20px;
 }
 
-#delete {
+input {
+    border: 1px solid #ACCBE1;
+    color: #ACCBE1;
+    background-color: #637081;
+    padding: 5px;
+}
+
+input[type=submit]{
+
+}
+
+.delete {
     text-align: center;
     font-weight: bold;
 }
 
-#delete:hover {
+.delete:hover {
     color: #536B78;
     cursor: pointer;
 }
