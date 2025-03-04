@@ -1,0 +1,65 @@
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+}
+
+/* Sélectionne tous les éléments */
+* {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 800px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    background-color: #d3bdb0;
+    color: #715b64;
+    margin: 20px 0 0 20px;
+}
+
+#filet {
+    border: 1px solid #a28c8a;
+}
+
+h1 {
+    margin: 5px 0 0 10px;
+}
+
+#form {
+    font-weight: 600;
+    margin: 10px;
+    border: #8e957f 1px dashed;
+    color: #946e7e;
+}
+
+legend {
+    margin: 0 0 30px 20px;
+}
+
+label {
+    margin: 0 0 30px 20px;
+}
+
+input {
+    margin: 0 0 10px 30px;
+    background-color: #c1ae9f;
+    border: #8e957f 1px solid;
+    color: #715b64;
+    padding: 5px;
+}
+
+#informations {
+    display: grid;
+    grid-template-columns: repeat(2, 20vw);
+    gap: 10px;
+    grid-template-areas:
+        "label" "input"
+        "label" "input"
+    ;
+
+}
