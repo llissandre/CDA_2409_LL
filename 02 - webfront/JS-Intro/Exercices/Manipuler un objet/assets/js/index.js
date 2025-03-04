@@ -1,4 +1,4 @@
-const tableau = [];
+// const tableau = [];
 const myEmployee = {
     lastname: 'Doe',
     firstname: 'John',
@@ -6,25 +6,55 @@ const myEmployee = {
     salary: 2150
 };
 
-const regexNomPrenom = /^[a-zA-Z]{2,}$/;
+const row = document.createElement('tr');
+const firstnameTd = document.createElement('td');
+const lastnameTd = document.createElement('td');
+const birthdayTd = document.createElement('td');
+const emailTd = document.createElement('td');
+const salaryTd = document.createElement('td');
+
+const regex = /^[a-zA-Z]{2,}$/;
+const tbody = document.querySelector('tbody');
+const firstnameInput = document.querySelector('#firstname');
+const lastnameInput = document.querySelector('#lastname');
+const birthdayInput = document.querySelector('#birthday');
+const salaryInput = document.querySelector('#salary');
+const btnEnregistrer = document.querySelector('#btnEnregistrer');
+
+firstnameInput.value = myEmployee.firstname;
+lastnameInput.value = myEmployee.lastname;
+birthdayInput.value = myEmployee.birthday;
+salaryInput.value = myEmployee.salary;
 
 const afficher = () => {
-    const tbody = document.querySelector('tbody');
-    const row = tbody.insertRow(-1);
-    tableau.push(myEmployee);
+    firstnameTd.textContent = myEmployee.firstname;
+    lastnameTd.textContent = myEmployee.lastname;
+    birthdayTd.textContent = myEmployee.birthday;
+    emailTd.textContent = `${myEmployee.firstname.toLowerCase()}.${myEmployee.lastname.toLowerCase()}@example.com`;
+    salaryTd.textContent = myEmployee.salary + ' €';
 
-    tableau.forEach(element => {
-        let cellLastname = row.insertCell();
-        cellLastname.textContent = element.lastname;
-        let cellFirstname = row.insertCell();
-        cellFirstname.textContent = element.firstname;
-        let cellBirthday = row.insertCell();
-        cellBirthday.textContent = element.birthday;
-        let cellEmail = row.insertCell();
-        cellEmail.textContent = `${element.firstname.toLowerCase()}.${element.lastname.toLowerCase()}@example.com`;
-        let cellSalary = row.insertCell();
-        cellSalary.textContent = element.salary + ' €';
-    });
+    tbody.append(row);
+    row.append(firstnameTd);
+    row.append(lastnameTd);
+    row.append(birthdayTd);
+    row.append(emailTd);
+    row.append(salaryTd);
+
+    // const row = tbody.insertRow();
+    // tableau.push(myEmployee);
+
+    // tableau.forEach(element => {
+    //     let cellLastname = row.insertCell();
+    //     cellLastname.textContent = element.lastname;
+    //     let cellFirstname = row.insertCell();
+    //     cellFirstname.textContent = element.firstname;
+    //     let cellBirthday = row.insertCell();
+    //     cellBirthday.textContent = element.birthday;
+    //     let cellEmail = row.insertCell();
+    //     cellEmail.textContent = `${element.firstname.toLowerCase()}.${element.lastname.toLowerCase()}@example.com`;
+    //     let cellSalary = row.insertCell();
+    //     cellSalary.textContent = element.salary + ' €';
+    // });
 
     // for (i = 0; i < tableau.length; i++) {
     //     let cellLastname = row.insertCell();
@@ -40,28 +70,19 @@ const afficher = () => {
     // }
 }
 
-
-const firstnameInput = document.querySelector('#firstname');
-const lastnameInput = document.querySelector('#lastname');
-const birthdayInput = document.querySelector('#birthday');
-const salaryInput = document.querySelector('#salary');
-const enregistrer = document.querySelector('#enregistrer');
-
-firstnameInput.value = myEmployee.firstname;
-lastnameInput.value = myEmployee.lastname;
-birthdayInput.value = myEmployee.birthday;
-salaryInput.value = myEmployee.salary;
-
-enregistrer.addEventListener('click', (e) => {
+const modifier = (e) => {
     e.preventDefault();
-    myEmployee.firstname = firstnameInput.value;
-    myEmployee.value = lastnameInput.value;
-    myEmployee.value = birthdayInput.value;
-    myEmployee.email = `${firstname.value.toLowerCase()}.${lastname.value.toLowerCase()}@example.com`;
-    myEmployee.value = salaryInput.value;
-console.log(tableau);
+
+    if (regex.test(firstnameInput.value) && regex.test(lastnameInput.value) && new Date() > new Date(birthdayInput.value) && salaryInput.value >= myEmployee.salary) {
+        myEmployee.firstname = firstnameInput.value;
+        myEmployee.lastname = lastnameInput.value;
+        myEmployee.birthday = birthdayInput.value;
+        myEmployee.email = `${firstnameInput.value.toLowerCase()}.${lastnameInput.value.toLowerCase()}@example.com`;
+        myEmployee.salary = salaryInput.value;
+    }
 
     afficher();
-});
+};
 
 afficher();
+btnEnregistrer.addEventListener('click', modifier);
