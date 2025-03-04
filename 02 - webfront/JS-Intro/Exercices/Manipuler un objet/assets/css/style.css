@@ -17,101 +17,61 @@ body {
     width: 800px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
-    color: #abcae0;
-    background-color: #536B78;
+    color: #026502;
     margin: 20px 0 0 20px;
 }
 
 #filet {
-    border: 1px solid #ACCBE1;
+    border: 1px solid #4c924c;
 }
 
 h1 {
-    margin-left: 15px;
+    margin: 5px 0 0 10px;
 }
 
-ul {
-    /* list-style: none; */
-    color: #ACCBE1;
-    margin-left: 60px;
-    padding: 30px 0;
-    font-weight: 600;
-}
-
-#tableId {
-    margin: 0 30px 30px 30px;
-    color: #a0bdd2;
-}
-
-#tableId {
-    border-collapse: collapse;
+#tableau {
+    margin: 40px 0 40px 25px;
+    /* border-collapse: collapse; */
 }
 
 th {
-    border: 1px solid #ACCBE1;
-    background-color: #637081;
-    padding: 5px 5px 5px 5px;
+    background-color: #90ee90;
+    padding: 5px;
     text-align: center;
 }
 
 td {
-    border: 1px solid #ACCBE1;
-    background-color: #637081;
-    padding: 5px 5px 5px 5px;
+    background-color: #90ee90;
+    padding: 5px;
     text-align: left;
 }
 
+#form{
+    margin: 0 0 60px 40px;
+    color: black;
+}
+
+legend{
+margin: 0 0 35px 0px;
+}
+
 input {
-    border: 1px solid #ACCBE1;
-    color: #ACCBE1;
-    background-color: #637081;
+    grid-area: input;
+    background-color: #90ee90;
+    color: #026502;
+    border: none;
     padding: 5px;
-    margin-right: 30px;
+    text-align: end;
 }
 
-label {
-    margin-right: 15px;
-    font-weight: 500;
-}
-
-input[type=submit] {
-    width: 80px;
-    font-size: 0.78rem;
-    padding: 6.5px;
-}
-
-.delete {
-    text-align: center;
-    font-weight: bold;
-}
-
-.delete:hover {
-    color: #536B78;
-    cursor: pointer;
-}
-
-.checked:before {
-    content: "✔";
-    font-size: 1.1rem;
-    color: #fd4a1d;
-}
-
-form {
-    margin: 20px 0 0px 20px;
-}
-
-#divAddId {
-    margin: 10px 15px 0px 15px;
-    border: 0.5px dashed #ACCBE1;
-    height: 100%;
-}
-
-#divAddId p {
-    margin: 20px 0 20px 20px;
-    font-weight: 700;
-}
-
-#divAddId p:fir {
-    margin: 20px 0 20px 20px;
-    font-weight: 700;
+#informations{
+    display: grid;
+    grid-template-columns: 20vw 20vw;
+    grid-template-areas:
+    "label input"
+    "label input"
+    "label input"
+    "label input"
+    ". input"
+    ;
 }

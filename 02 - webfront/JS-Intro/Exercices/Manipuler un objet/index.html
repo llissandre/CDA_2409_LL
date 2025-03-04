@@ -15,21 +15,59 @@
         <h1>Profil de John Doe</h1>
 
         <div id="tableau">
-            <table>
+            <table id="myTable">
                 <thead>
                     <tr>
-                        <td>Nom</td>
-                        <td>Prénom</td>
-                        <td>Date de naissance</td>
-                        <td>Email</td>
-                        <td>Salaire</td>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Date de naissance</th>
+                        <th>Email</th>
+                        <th>Salaire</th>
                     </tr>
                 </thead>
-                <tbody>
-
-                </tbody>
+                <tbody></tbody>
             </table>
         </div>
+
+        <form action="" id="form">
+            <div>
+                <legend>Modifier le profil</legend>
+            </div>
+
+            <div id="informations">
+                <div>
+                    <label for="firstname">Prénom :</label>
+                </div>
+                <div>
+                    <input type="text" name="" id="firstname" value="">
+                </div>
+
+                <div>
+                    <label for="lastname">Nom : </label>
+                </div>
+                <div>
+                    <input type="text" name="" id="lastname" value="">
+                </div>
+
+                <div>
+                    <label for="birthday">Date de naissance : </label>
+                </div>
+                <div>
+                    <input type="text" name="" id="lastname" value="">
+                </div>
+
+                <div>
+                    <label for="salaire">Salaire :</label>
+                </div>
+                <div>
+                    <input type="text" name="" id="lastname" value="">
+                </div>
+
+                <div>
+                    <input type="submit" value="Enregistrer">
+                </div>
+            </div>
+        </form>
     </div>
 </body>
 

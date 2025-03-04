@@ -50,14 +50,14 @@ ul {
 th {
     border: 1px solid #ACCBE1;
     background-color: #637081;
-    padding: 5px 5px 5px 5px;
+    padding: 5px;
     text-align: center;
 }
 
 td {
     border: 1px solid #ACCBE1;
     background-color: #637081;
-    padding: 5px 5px 5px 5px;
+    padding: 5px;
     text-align: left;
 }
 
@@ -107,11 +107,11 @@ form {
 }
 
 #divAddId p {
-    margin: 20px 0 20px 20px;
+    margin: 0px 0 20px 20px;
     font-weight: 700;
 }
 
-#divAddId p:fir {
-    margin: 20px 0 20px 20px;
+#divAddId p:last-child {
+    margin: 20px 0 15px 20px;
     font-weight: 700;
 }

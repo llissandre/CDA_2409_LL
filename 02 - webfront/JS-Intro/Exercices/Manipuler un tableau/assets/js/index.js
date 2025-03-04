@@ -45,7 +45,7 @@ form.append(inputNomAdd);
 form.append(btnAjouterAdd);
 divAdd.append(pAddResultat);
 
-btnAjouterAdd.addEventListener('click', (e) => {
+const ajouter = (e) => {
     e.preventDefault();
     const prenom = `${String(inputPrenomAdd.value).charAt(0).toUpperCase()}${String(inputPrenomAdd.value).slice(1).toLowerCase()}`;
     const nom = `${String(inputNomAdd.value).charAt(0).toUpperCase()}${String(inputNomAdd.value).slice(1).toLowerCase()}`;
@@ -57,7 +57,7 @@ btnAjouterAdd.addEventListener('click', (e) => {
         }
     }
     personnes();
-});
+};
 
 const personnes = () => {
     table.innerText = '';
@@ -135,3 +135,4 @@ const personnes = () => {
 }
 
 personnes();
+btnAjouterAdd.addEventListener('click', ajouter);
