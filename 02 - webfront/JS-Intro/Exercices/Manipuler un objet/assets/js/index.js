@@ -11,7 +11,6 @@ const firstnameTh = document.createElement('th');
 const birthdayTh = document.createElement('th');
 const emailTh = document.createElement('th');
 const salaryTh = document.createElement('th');
-
 const rowTbody = document.createElement('tr');
 // const lastnameTd = document.createElement('td');
 // const firstnameTd = document.createElement('td');

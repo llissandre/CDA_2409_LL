@@ -11,15 +11,38 @@ async function recupererUsers() {
     }
 }
 
-const form = document.querySelector('#form');
-const identifiant = document.querySelector('#identifiant');
-const password = document.querySelector('#password');
-const btnConnexion = document.querySelector('#btnConnexion');
+const rowTBody = document.createElement('tbody');
+const 
 
-btnConnexion.addEventListener('click', (e) => {
-    recupererUsers().then((users) => 
-        console.log(users));
-    console.log(identifiant.value);
-    console.log(password.value);
-    
+const form = document.querySelector('#form');
+const identifiant = document.querySelector('#identifiantInput');
+const password = document.querySelector('#passwordInput');
+const btnConnexion = document.querySelector('#btnConnexion');
+const myTable = document.querySelector('#MyTable');
+
+const thead = myTable.createTHead();
+const tbody = myTable.createTBody();
+
+
+btnConnexion.addEventListener('click', () => {
+    const lastname = identifiant.value.split('.')[1];
+    const firstname = identifiant.value.split('.')[0];
+    const password = passwordInput.value;
+
+    recupererUsers().then(user => {
+        if (user.some((e) =>
+            e.firstname.toLowerCase() == firstname &&
+            e.lastname.toLowerCase() == lastname &&
+            e.password.toLowerCase() == password)) {
+            
+            console.log(e.firstname.toUpperCase());
+            
+            
+            
+        }
+        else {
+            alert('Identifiant ou mot de passe incorrect');
+        }
+
+    });
 });

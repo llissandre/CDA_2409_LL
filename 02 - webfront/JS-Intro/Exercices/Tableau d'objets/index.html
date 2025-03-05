@@ -12,32 +12,38 @@
 
 <body>
     <div id="filet">
-        <h1>Espace membres</h1>
+        <div id="divForm">
+            <h1>Espace membres</h1>
+            <form action="" id="form">
+                <div>
+                    <legend>Identification</legend>
+                </div>
+                <div id="informations">
+                    <div>
+                        <label for="identifiantInput">Identifiant:</label>
+                    </div>
+                    <div>
+                        <input type="text" name="" id="identifiantInput">
+                    </div>
+                    <div>
+                        <label for="passwordInput">Mot de passe: </label>
+                    </div>
+                    <div>
+                        <input type="password" name="" id="passwordInput">
+                    </div>
+                    <input type="button" id="btnConnexion" value="Connexion">
+                </div>
+            </form>
+        </div>
 
-        <form action="" id="form">
+        <div id="divTab">
             <div>
-                <legend>Identification</legend>
+                <p>Bonjour <span></span></p>
+                <input type="button" value="Déconnexion">
             </div>
+            <table id="myTable"></table>
+        </div>
 
-            <div id="informations">
-                <div>
-                    <label for="identifiant">Identifiant:</label>
-                </div>
-
-                <div>
-                    <input type="text" name="" id="identifiant">
-                </div>
-
-                <div>
-                    <label for="password">Mot de passe: </label>
-                </div>
-                <div>
-                    <input type="password" name="" id="password">
-                </div>
-
-                <input type="button" id="btnConnexion" value="Connexion">
-            </div>
-        </form>
     </div>
 </body>
 
