@@ -2,10 +2,13 @@ const people = ['Mike Dev', 'John Makenzie', 'Léa Grande'];
 const inscrit = document.querySelector('#inscrit');
 const filet = document.querySelector('#filet');
 const divAddId = document.querySelector('#divAddId')
+const divTabId = document.querySelector('#divTab');
+const myTableId = document.querySelector('#myTable');
 
-const table = document.createElement('table');
+const myTable = document.createElement('table');
 const regexNomPrenom = /^[a-zA-Z]{2,}$/;
 
+const divTab = document.createElement('div');
 const divAdd = document.createElement('div');
 const form = document.createElement('form');
 const pAddEntete = document.createElement('p');
@@ -60,20 +63,18 @@ const ajouter = (e) => {
 };
 
 const personnes = () => {
-    table.innerText = '';
+    myTable.innerText = '';
     inscrit.innerText = '';
 
     if (people.length > 0) {
-        const divTab = document.createElement('div');
-        const divTabId = document.querySelector('#divTab');
-        const tableId = document.querySelector('#table');
-        const thead = document.createElement('thead');
+        
+        const thead = myTable.createTHead();
+        const tbody = myTable.createTBody();
         const tr = document.createElement('tr');
         const thNom = document.createElement('th');
         const thPrenom = document.createElement('th');
         const thEmail = document.createElement('th');
         const thSupprimer = document.createElement('th');
-        const tbody = document.createElement('tbody');
 
 
         thNom.textContent = 'Nom';
@@ -82,17 +83,17 @@ const personnes = () => {
         thSupprimer.textContent = 'Supprimer';
 
         divTab.setAttribute('id', 'divTabId');
-        table.setAttribute('id', 'tableId');
+        myTable.setAttribute('id', 'tableId');
 
         filet.append(divTab);
-        divTab.append(table);
-        table.append(thead);
+        divTab.append(myTable);
+        myTable.append(thead);
         thead.append(tr);
         tr.append(thNom);
         tr.append(thPrenom);
         tr.append(thEmail);
         tr.append(thSupprimer);
-        table.append(tbody);
+        myTable.append(tbody);
 
         people.forEach((element, i) => {
             // for (let i = 0; i < people.length; i++) {

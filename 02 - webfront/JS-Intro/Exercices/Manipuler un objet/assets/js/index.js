@@ -5,32 +5,42 @@ const myEmployee = {
     salary: 2150
 };
 
-// const row = document.createElement('tr');
-// const firstnameTd = document.createElement('td');
+const rowThead = document.createElement('tr');
+const lastnameTh = document.createElement('th');
+const firstnameTh = document.createElement('th');
+const birthdayTh = document.createElement('th');
+const emailTh = document.createElement('th');
+const salaryTh = document.createElement('th');
+
+const rowTbody = document.createElement('tr');
 // const lastnameTd = document.createElement('td');
+// const firstnameTd = document.createElement('td');
 // const birthdayTd = document.createElement('td');
 // const emailTd = document.createElement('td');
 // const salaryTd = document.createElement('td');
 
 const regex = /^[a-zA-Z]{2,}$/;
-const firstnameInput = document.querySelector('#firstname');
+const myTable = document.querySelector('#myTable')
 const lastnameInput = document.querySelector('#lastname');
+const firstnameInput = document.querySelector('#firstname');
 const birthdayInput = document.querySelector('#birthday');
 const salaryInput = document.querySelector('#salary');
 const btnEnregistrer = document.querySelector('#btnEnregistrer');
 
-firstnameInput.value = myEmployee.firstname;
+const thead = myTable.createTHead();
+const tbody = myTable.createTBody();
+
 lastnameInput.value = myEmployee.lastname;
+firstnameInput.value = myEmployee.firstname;
 birthdayInput.value = myEmployee.birthday;
 salaryInput.value = myEmployee.salary;
 
 const afficher = () => {
     const tableau = [];
-    const tbody = document.querySelector('tbody');
+    tbody.textContent = '';
 
     const row = tbody.insertRow();
     tableau.push(myEmployee);
-
     tableau.forEach(element => {
         let cellLastname = row.insertCell();
         cellLastname.textContent = element.lastname;
@@ -57,25 +67,37 @@ const afficher = () => {
     //     cellSalary.textContent = tableau[i].salary + ' €';
     // }
 
-    // firstnameTd.textContent = myEmployee.firstname;
+    lastnameTh.textContent = 'Nom';
+    firstnameTh.textContent = 'Prénom';
+    birthdayTh.textContent = 'Date de naissance';
+    emailTh.textContent = 'Email';
+    salaryTh.textContent = 'Salaire';
+
     // lastnameTd.textContent = myEmployee.lastname;
+    // firstnameTd.textContent = myEmployee.firstname;
     // birthdayTd.textContent = myEmployee.birthday;
     // emailTd.textContent = `${myEmployee.firstname.toLowerCase()}.${myEmployee.lastname.toLowerCase()}@example.com`;
     // salaryTd.textContent = myEmployee.salary + ' €';
 
-    // tbody.append(row);
-    // row.append(firstnameTd);
-    // row.append(lastnameTd);
-    // row.append(birthdayTd);
-    // row.append(emailTd);
-    // row.append(salaryTd);  
+    thead.append(rowThead);
+    rowThead.append(lastnameTh);
+    rowThead.append(firstnameTh);
+    rowThead.append(birthdayTh);
+    rowThead.append(emailTh);
+    rowThead.append(salaryTh);  
+
+    // tbody.append(rowTbody);
+    // rowTbody.append(lastnameTd);
+    // rowTbody.append(firstnameTd);
+    // rowTbody.append(birthdayTd);
+    // rowTbody.append(emailTd);
+    // rowTbody.append(salaryTd);  
 }
 
 const modifier = (e) => {
     e.preventDefault();
 
     if (regex.test(firstnameInput.value) && regex.test(lastnameInput.value) && new Date() > new Date(birthdayInput.value) && salaryInput.value >= myEmployee.salary) {
-        //  if (regex.test(firstnameInput.value) && regex.test(lastnameInput.value) && new Date() > new Date(birthdayInput.value) && salaryInput.value >= myEmployee.salary) {       
         myEmployee.firstname = firstnameInput.value;
         myEmployee.lastname = lastnameInput.value;
         myEmployee.birthday = birthdayInput.value;
