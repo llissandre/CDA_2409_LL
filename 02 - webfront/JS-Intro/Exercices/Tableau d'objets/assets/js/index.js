@@ -66,7 +66,7 @@ const connexion = () => {
             const tableau = [];
             tbody.textContent = '';
 
-            for (i = 0; i < user.length; i++) {
+            for (let i = 0; i < user.length; i++) {
                 tableau.push(user[i]);
             }
 
