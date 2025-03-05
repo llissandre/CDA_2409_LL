@@ -38,12 +38,9 @@ ul {
     font-weight: 600;
 }
 
-#tableId {
+#myTableId {
     margin: 0 30px 30px 30px;
     color: #a0bdd2;
-}
-
-#tableId {
     border-collapse: collapse;
 }
 

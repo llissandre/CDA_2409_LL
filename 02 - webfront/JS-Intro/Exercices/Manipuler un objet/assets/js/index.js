@@ -12,6 +12,7 @@ const birthdayTh = document.createElement('th');
 const emailTh = document.createElement('th');
 const salaryTh = document.createElement('th');
 const rowTbody = document.createElement('tr');
+
 // const lastnameTd = document.createElement('td');
 // const firstnameTd = document.createElement('td');
 // const birthdayTd = document.createElement('td');
@@ -40,6 +41,8 @@ const afficher = () => {
 
     const row = tbody.insertRow();
     tableau.push(myEmployee);
+    console.log(tableau);
+
     tableau.forEach(element => {
         let cellLastname = row.insertCell();
         cellLastname.textContent = element.lastname;
@@ -83,7 +86,7 @@ const afficher = () => {
     rowThead.append(firstnameTh);
     rowThead.append(birthdayTh);
     rowThead.append(emailTh);
-    rowThead.append(salaryTh);  
+    rowThead.append(salaryTh);
 
     // tbody.append(rowTbody);
     // rowTbody.append(lastnameTd);

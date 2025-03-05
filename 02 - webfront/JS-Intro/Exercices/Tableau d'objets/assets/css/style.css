@@ -27,7 +27,7 @@ body {
 }
 
 h1 {
-    margin: 5px 0 0 10px;
+    margin: 0px 20.5vw 0 10px;
 }
 
 #form {
@@ -48,9 +48,47 @@ label {
 input {
     margin: 0 0 10px 30px;
     background-color: #c1ae9f;
-    border: #8e957f 1px solid;
+    border: #8e957f 2px solid;
     color: #715b64;
     padding: 5px;
+}
+
+th,
+td {
+    border: #8e957f 3px solid;
+    padding: 2px 10px;
+}
+
+#divTabId {
+    display: none;
+}
+
+#myTableId {
+    margin: 20px 30px 40px 20px;
+    border-collapse: collapse;
+}
+
+#bonjour {
+    display: flex;
+    margin: 25px 0 15px 10px;
+}
+
+#mdpIncorrect {
+    display: none;
+    text-align: right;
+    font-weight: 600;
+    font-size: 1.2rem;
+    background-color: #c1ae9f;
+    border: #8e957f 2px solid;
+    color: #715b64;
+    padding: 12px 8px;
+    margin-top: 5px;
+}
+
+#mepEntete {
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 #informations {
@@ -61,5 +99,4 @@ input {
         "label" "input"
         "label" "input"
     ;
-
 }

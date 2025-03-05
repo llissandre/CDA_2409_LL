@@ -13,7 +13,10 @@
 <body>
     <div id="filet">
         <div id="divForm">
-            <h1>Espace membres</h1>
+            <div id="mepEntete">
+                <h1>Espace membres</h1>
+                <div id="mdpIncorrect">Identifiant ou mot de passe incorrect</div>
+            </div>
             <form action="" id="form">
                 <div>
                     <legend>Identification</legend>
@@ -36,10 +39,10 @@
             </form>
         </div>
 
-        <div id="divTab">
-            <div>
+        <div id="divTabId">
+            <div id="bonjour">
                 <p>Bonjour <span></span></p>
-                <input type="button" value="Déconnexion">
+                <input type="button" id="btnDeconnexion" value="Déconnexion">
             </div>
             <table id="myTable"></table>
         </div>

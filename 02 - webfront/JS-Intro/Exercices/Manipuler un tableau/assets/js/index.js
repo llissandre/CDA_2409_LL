@@ -1,13 +1,13 @@
+const myTable = document.createElement('table');
+const regexNomPrenom = /^[a-zA-Z]{2,}$/;
+
 const people = ['Mike Dev', 'John Makenzie', 'Léa Grande'];
+
 const inscrit = document.querySelector('#inscrit');
 const filet = document.querySelector('#filet');
 const divAddId = document.querySelector('#divAddId')
 const divTabId = document.querySelector('#divTab');
 const myTableId = document.querySelector('#myTable');
-
-const myTable = document.createElement('table');
-const regexNomPrenom = /^[a-zA-Z]{2,}$/;
-
 const divTab = document.createElement('div');
 const divAdd = document.createElement('div');
 const form = document.createElement('form');
@@ -67,7 +67,6 @@ const personnes = () => {
     inscrit.innerText = '';
 
     if (people.length > 0) {
-        
         const thead = myTable.createTHead();
         const tbody = myTable.createTBody();
         const tr = document.createElement('tr');
@@ -83,7 +82,7 @@ const personnes = () => {
         thSupprimer.textContent = 'Supprimer';
 
         divTab.setAttribute('id', 'divTabId');
-        myTable.setAttribute('id', 'tableId');
+        myTable.setAttribute('id', 'myTableId');
 
         filet.append(divTab);
         divTab.append(myTable);
