@@ -27,7 +27,7 @@ body {
 }
 
 h1 {
-    margin: 0px 20.5vw 0 10px;
+    margin: 0px 14vw 0 10px;
 }
 
 #form {
@@ -99,4 +99,9 @@ td {
         "label" "input"
         "label" "input"
     ;
+}
+
+.surligne{
+    color: #d3bdb0;
+    background-color: #715b64;
 }

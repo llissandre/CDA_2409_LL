@@ -1,5 +1,5 @@
 const myTable = document.createElement('table');
-const regexNomPrenom = /^[a-zA-Z]{2,}$/;
+const regexUsername = /^[a-zA-Z]{2,}$/;
 
 const people = ['Mike Dev', 'John Makenzie', 'Léa Grande'];
 
@@ -50,13 +50,14 @@ divAdd.append(pAddResultat);
 
 const ajouter = (e) => {
     e.preventDefault();
-    const prenom = `${String(inputPrenomAdd.value).charAt(0).toUpperCase()}${String(inputPrenomAdd.value).slice(1).toLowerCase()}`;
-    const nom = `${String(inputNomAdd.value).charAt(0).toUpperCase()}${String(inputNomAdd.value).slice(1).toLowerCase()}`;
+    const prenom = String(inputPrenomAdd.value).charAt(0).toUpperCase() + String(inputPrenomAdd.value).slice(1).toLowerCase();
+    const nom = String(inputNomAdd.value).charAt(0).toUpperCase() + String(inputNomAdd.value).slice(1).toLowerCase();
+    const username = prenom + ' ' + nom;
 
-    if (regexNomPrenom.test(prenom) && regexNomPrenom.test(nom)) {
-        if (!people.includes(`${prenom} ${nom}`)) {
-            people.push(`${prenom} ${nom}`);
-            pAddResultat.textContent = `${prenom} ${nom} ajouté !`;
+    if (regexUsername.test(prenom) && regexUsername.test(nom)) {
+        if (!people.includes(username)) {
+            people.push(username);
+            pAddResultat.textContent = username + ' ajouté !';
         }
     }
     personnes();
@@ -107,7 +108,7 @@ const personnes = () => {
             tdlastname.textContent = element.split(' ')[1];
             tdfirstname.textContent = element.split(' ')[0];
             tdemail.textContent = element.split(' ')[0].toLowerCase() + '.' + element.split(' ')[1].toLowerCase() + '@example.com';
-            tddelete.innerHTML = `<p id="${i}" class="delete">X</p>`;
+            tddelete.innerHTML = '<p id = "i" class="delete">X</p>';
 
             inscrit.append(peoplelist);
             tbody.append(trpeople);

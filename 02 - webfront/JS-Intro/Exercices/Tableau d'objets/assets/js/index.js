@@ -46,7 +46,8 @@ rowThead.append(birthdayTh);
 rowThead.append(emailTh);
 rowThead.append(salaryTh);
 
-const connexion = () => {
+const connexion = (e) => {
+    e.preventDefault();
     const lastname = identifiantInput.value.split('.')[1];
     const firstname = identifiantInput.value.split('.')[0];
     const password = passwordInput.value;
@@ -63,14 +64,9 @@ const connexion = () => {
 
             username.textContent = String(firstname).charAt(0).toUpperCase() + firstname.slice(1) + ' ' + String(lastname).charAt(0).toUpperCase() + lastname.slice(1);
 
-            const tableau = [];
             tbody.textContent = '';
 
-            for (let i = 0; i < user.length; i++) {
-                tableau.push(user[i]);
-            }
-
-            tableau.forEach(element => {
+            user.forEach((element) => {
                 const row = tbody.insertRow();
                 let cellLastname = row.insertCell();
                 cellLastname.textContent = element.lastname;
@@ -79,9 +75,12 @@ const connexion = () => {
                 let cellBirthday = row.insertCell();
                 cellBirthday.textContent = element.birthday;
                 let cellEmail = row.insertCell();
-                cellEmail.textContent = `${element.firstname.toLowerCase()}.${element.lastname.toLowerCase()}@example.com`;
+                cellEmail.textContent = element.firstname.toLowerCase() + '.' + element.lastname.toLowerCase() + '@example.com';
                 let cellSalary = row.insertCell();
                 cellSalary.textContent = element.salary + ' €';
+                
+                if (element.firstname.toLowerCase() === firstname && element.lastname.toLowerCase() === lastname)
+                    row.classList.add('surligne');
             });
         }
         else {
@@ -97,10 +96,9 @@ const deconnexion = () => {
     form.style.display = 'block';
     divTabId.style.display = 'none';
 
-    identifiantInput.textContent = '';
-    passwordInput.textContent = '';
+    identifiantInput.value = '';
+    passwordInput.value = '';
 };
-
 
 btnConnexion.addEventListener('click', connexion);
 btnDeconnexion.addEventListener('click', deconnexion);

@@ -41,7 +41,6 @@ const afficher = () => {
 
     const row = tbody.insertRow();
     tableau.push(myEmployee);
-    console.log(tableau);
 
     tableau.forEach(element => {
         let cellLastname = row.insertCell();
@@ -51,7 +50,7 @@ const afficher = () => {
         let cellBirthday = row.insertCell();
         cellBirthday.textContent = element.birthday;
         let cellEmail = row.insertCell();
-        cellEmail.textContent = `${element.firstname.toLowerCase()}.${element.lastname.toLowerCase()}@example.com`;
+        cellEmail.textContent = element.firstname.toLowerCase() + '.' + element.lastname.toLowerCase() + '@example.com';
         let cellSalary = row.insertCell();
         cellSalary.textContent = element.salary + ' €';
     });
@@ -64,7 +63,7 @@ const afficher = () => {
     //     let cellBirthday = row.insertCell();
     //     cellBirthday.textContent = tableau[i].birthday;
     //     let cellEmail = row.insertCell();
-    //     cellEmail.textContent = `${String(tableau[i].firstname).toLowerCase()}.${String(tableau[i].lastname).toLowerCase()}@example.com`;
+    //     cellEmail.textContent = String(tableau[i].firstname).toLowerCase() + '.' + String(tableau[i].lastname).toLowerCase() + '@example.com';
     //     let cellSalary = row.insertCell();
     //     cellSalary.textContent = tableau[i].salary + ' €';
     // }
@@ -78,7 +77,7 @@ const afficher = () => {
     // lastnameTd.textContent = myEmployee.lastname;
     // firstnameTd.textContent = myEmployee.firstname;
     // birthdayTd.textContent = myEmployee.birthday;
-    // emailTd.textContent = `${myEmployee.firstname.toLowerCase()}.${myEmployee.lastname.toLowerCase()}@example.com`;
+    // emailTd.textContent = myEmployee.firstname.toLowerCase() + '.' + myEmployee.lastname.toLowerCase()} + '@example.com';
     // salaryTd.textContent = myEmployee.salary + ' €';
 
     thead.append(rowThead);
