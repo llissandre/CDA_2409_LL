@@ -11,6 +11,7 @@ async function recupererZipcodes() {
     }
 }
 
+const b = document.querySelector('document.body')
 const form = document.querySelector('form');
 const searchInput = document.querySelector('#searchInput');
 const listeVilles = document.querySelector('#listeVilles');
@@ -19,17 +20,18 @@ const informations = document.querySelector('#informations');
 
 
 
+listeVilles.addEventListener('input', () => {
+
+
+    recupererZipcodes().then(liste => {
+        liste.forEach(element => {
+            const option = document.createElement('option');
+            option.value = element.codePostal;
+            dataList.appendChild(option);
+        })
+    });
+});
+
 btnValider.addEventListener('click', (e) => {
     e.preventDefault();
-
-    const codePostalSubstr = e.codePostal.substr(0, 2);
-
-    recupererZipcodes().then(infos => {
-        if (infos.filter(e) =>
-            codePostalSubstr == searchInput)
-    {
-        infos.forEach((e) => {
-
-        });
-    }
 });

@@ -128,7 +128,7 @@ const personnes = () => {
                 }
                 else {
                     e.target.classList.add('checked');
-                    e.target.innerHTML = ' ';
+                    e.target.innerHTML = '';
                 }
             });
         });

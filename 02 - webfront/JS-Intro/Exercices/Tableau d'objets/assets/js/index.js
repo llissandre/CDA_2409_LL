@@ -78,7 +78,6 @@ const connexion = (e) => {
                 cellEmail.textContent = element.firstname.toLowerCase() + '.' + element.lastname.toLowerCase() + '@example.com';
                 let cellSalary = row.insertCell();
                 cellSalary.textContent = element.salary + ' €';
-                
                 if (element.firstname.toLowerCase() === firstname && element.lastname.toLowerCase() === lastname)
                     row.classList.add('surligne');
             });
