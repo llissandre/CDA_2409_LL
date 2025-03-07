@@ -21,17 +21,27 @@ const informations = document.querySelector('#informations');
 
 
 listeVilles.addEventListener('input', () => {
-
-
     recupererZipcodes().then(liste => {
         liste.forEach(element => {
             const option = document.createElement('option');
             option.value = element.codePostal;
-            dataList.appendChild(option);
+            dataList.append(option);
         })
     });
 });
 
 btnValider.addEventListener('click', (e) => {
     e.preventDefault();
+    recupererZipcodes().then(liste => {
+        liste.forEach(element => {
+            if (searchInput.value == element.codePostal) {
+                const p = document.createElement('p');
+                informations.append(p);
+                p.textContent = 'Code postal : ' + element.codePostal;
+                p.textContent += 'Code de la commune : ' + element.codeCommune;
+                p.textContent += 'Nom de la commune : ' + element.nomCommune;
+                p.textContent += 'Libellé acheminement : ' + element.libelleAcheminement;
+            }
+        });
+    });
 });
