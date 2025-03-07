@@ -13,12 +13,12 @@
     padding: 0;
 }
 
-body{
+body {
     /* font-familserif */
     text-align: center;
 }
 
-th{
+th {
     border-right: 1px black solid;
     padding: 5px 8px;
     background-color: #dddddd;
@@ -29,12 +29,18 @@ td {
     border-top: 1px #d1d1d1 solid;
 }
 
-#myTable{
+#myTable {
     margin: 20px 60px;
     border: 2px black solid;
     border-collapse: collapse;
 }
 
-.backgroungEven{
+.information1,
+.information2 {
+    margin: 20px 60px;
+    text-align: left;
+}
+
+.backgroungEven {
     background-color: #eeeeee;
 }

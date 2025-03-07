@@ -11,13 +11,25 @@ async function fetchResultats() {
     }
 }
 
+const titresTHead = ['id', 'name', 'level', 'description', 'power', 'attack', 'armor', 'damage', 'mitigation', 'played', 'victory', 'defeat', 'draw'];
+const trHead = document.createElement('tr');
+
+titresTHead.forEach((th) => {
+    const thHead = document.createElement('th');
+    thHead.textContent = th;
+    trHead.append(thHead);
+});
+
 const b = document.querySelector('document.body');
 const myTable = document.querySelector('#myTable');
-
 const information1 = document.querySelector('.information1');
 const information2 = document.querySelector('.information2');
 
+const thead = myTable.createTHead();
 const tbody = myTable.createTBody();
+
+myTable.append(thead);
+thead.append(trHead);
 
 fetchResultats().then(resultats => {
     tbody.textContent = ''
@@ -56,16 +68,37 @@ fetchResultats().then(resultats => {
         cellDraw.textContent = element.draw;
     });
 
-    const valuesPlayed = [];
-    let maxPlayed;
+    let maxPlayed = resultats.reduce((x, y) => x.played > y.played ? x : y);
+    maxPlayed.id;
+    console.log(maxPlayed);
+
+    // console.log('Le nom et le nombre de victoires de la carte ayant le plus de parties jouées sont respectivement ' + maxPlayed.name + ' et ' + maxPlayed.victory + ', avec ' + maxPlayed.played + ' parties jouées.');
+
+    information1.innerHTML = 'Le nom et le nombre de victoires de la carte ayant le plus de parties jouées sont respectivement <b>' + maxPlayed.name + '</b> et <b>' + maxPlayed.victory + '</b>, avec <b>' + maxPlayed.played + '</b> parties jouées.';
+
+    //  v/v+d
+    let ratio = 0;
+    let idRatio;
+    let nameRatio;
+    let playedRatio;
+    let victoryRatio;
+
 
     resultats.map((resultat) => {
-        let valuePlayed = resultat.played;
+        const valueRatio = resultat.victory /
+            (resultat.victory + resultat.defeat);
+        console.log(resultat);
 
-        valuesPlayed.push(valuePlayed);
-        
-        maxPlayed = Math.max.apply(null, valuesPlayed);
+        if (valueRatio > ratio) {
+            idRatio = resultat.id;
+            nameRatio = resultat.name;
+            playedRatio = resultat.played;
+            victoryRatio = resultat.victory;
+            ratio = valueRatio
+        }
     });
 
-    
+    // console.log('Le nom, nombre de parties et nombre de victoires de la carte ayant le meilleur ratio victoires/défaites (en ignorant les machts nuls) sont respectivement ' + nameRatio + ', ' + playedRatio + ' et ' + victoryRatio + ', avec un ratio de ' + ratio.toFixed(4) * 100 + '%.');
+
+    information2.innerHTML = 'Le nom, le nombre de parties et le nombre de victoires de la carte ayant le meilleur ratio victoires/défaites (en ignorant les machts nuls) sont respectivement <b>' + nameRatio + '</b>, <b>' + playedRatio + '</b> et <b>' + victoryRatio + '</b>, avec un ratio de <b>' + ratio.toFixed(4) * 100 + '%</b>.';
 });

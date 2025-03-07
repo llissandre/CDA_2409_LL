@@ -40,11 +40,7 @@ emailTh.textContent = 'Email';
 salaryTh.textContent = 'Salaire';
 
 thead.append(rowThead);
-rowThead.append(lastnameTh);
-rowThead.append(firstnameTh);
-rowThead.append(birthdayTh);
-rowThead.append(emailTh);
-rowThead.append(salaryTh);
+rowThead.append(lastnameTh, firstnameTh, birthdayTh, emailTh, salaryTh);
 
 const connexion = (e) => {
     e.preventDefault();
