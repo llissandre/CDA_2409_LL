@@ -1,4 +1,4 @@
-async function recupererUsers() {
+async function fetchUsers() {
     try {
         const response = await fetch('./assets/json/users.json');
         if (!response.ok) {
@@ -52,7 +52,7 @@ const connexion = (e) => {
     const firstname = identifiantInput.value.split('.')[0];
     const password = passwordInput.value;
 
-    recupererUsers().then(user => {
+    fetchUsers().then(user => {
         if (user.some((e) =>
             e.firstname.toLowerCase() == firstname &&
             e.lastname.toLowerCase() == lastname &&

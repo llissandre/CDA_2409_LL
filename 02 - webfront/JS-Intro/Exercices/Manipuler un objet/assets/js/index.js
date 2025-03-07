@@ -20,7 +20,7 @@ const rowTbody = document.createElement('tr');
 // const salaryTd = document.createElement('td');
 
 const regex = /^[a-zA-Z]{2,}$/;
-const myTable = document.querySelector('#myTable')
+const myTable = document.querySelector('#myTable');
 const lastnameInput = document.querySelector('#lastname');
 const firstnameInput = document.querySelector('#firstname');
 const birthdayInput = document.querySelector('#birthday');

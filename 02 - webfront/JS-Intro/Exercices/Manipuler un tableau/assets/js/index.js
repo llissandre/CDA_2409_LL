@@ -60,6 +60,10 @@ const ajouter = (e) => {
             pAddResultat.textContent = username + ' ajouté !';
         }
     }
+
+    inputPrenomAdd.value = '';
+    inputNomAdd.value = '';
+    
     personnes();
 };
 
@@ -95,7 +99,7 @@ const personnes = () => {
         tr.append(thSupprimer);
         myTable.append(tbody);
 
-        people.forEach((element, i) => {
+        people.forEach((element) => {
             // for (let i = 0; i < people.length; i++) {
             const peoplelist = document.createElement('li');
             const trpeople = document.createElement('tr');
