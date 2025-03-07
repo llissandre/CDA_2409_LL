@@ -32,16 +32,23 @@ listeVilles.addEventListener('input', () => {
 
 btnValider.addEventListener('click', (e) => {
     e.preventDefault();
+    informations.textContent = '';
     recupererZipcodes().then(liste => {
         liste.forEach(element => {
             if (searchInput.value == element.codePostal) {
-                const p = document.createElement('p');
-                informations.append(p);
-                p.textContent = 'Code postal : ' + element.codePostal;
-                p.textContent += 'Code de la commune : ' + element.codeCommune;
-                p.textContent += 'Nom de la commune : ' + element.nomCommune;
-                p.textContent += 'Libellé acheminement : ' + element.libelleAcheminement;
+                const ul = document.createElement('ul');
+
+                ul.innerHTML = '<li>Code postal : ' + element.codePostal + '</li>';
+                ul.innerHTML += '<li>Code de la commune : ' + element.codeCommune + '</li>';
+                ul.innerHTML += '<li>Nom de la commune : ' + element.nomCommune + '</li>';
+                ul.innerHTML += '<li>Libellé acheminement : ' + element.libelleAcheminement + '</li>';
+
+                informations.append(ul);
             }
+            // else if (element.codePostal.contains(searchInput.value)) {
+
+            // }
+
         });
     });
 });
