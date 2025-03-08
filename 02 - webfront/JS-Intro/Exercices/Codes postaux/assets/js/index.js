@@ -18,33 +18,31 @@ const listeVilles = document.querySelector('#listeVilles');
 const btnValider = document.querySelector('#btnValider');
 const informations = document.querySelector('#informations');
 
-
-
-listeVilles.addEventListener('input', () => {
-    recupererZipcodes().then(liste => {
-        liste.forEach(element => {
-            const option = document.createElement('option');
-            option.value = element.codePostal;
-            dataList.append(option);
-        })
-    });
-});
-
 btnValider.addEventListener('click', (e) => {
     e.preventDefault();
     informations.textContent = '';
     recupererZipcodes().then(liste => {
         liste.forEach(element => {
             if (searchInput.value == element.codePostal) {
-                const ul = document.createElement('ul');
 
+                const ul = document.createElement('ul');
                 ul.innerHTML = '<li>Code postal : ' + element.codePostal + '</li>';
                 ul.innerHTML += '<li>Code de la commune : ' + element.codeCommune + '</li>';
                 ul.innerHTML += '<li>Nom de la commune : ' + element.nomCommune + '</li>';
                 ul.innerHTML += '<li>Libellé acheminement : ' + element.libelleAcheminement + '</li>';
-
                 informations.append(ul);
+
+                // let ul = `
+                // <ul>
+                //     <li>Code postal : ${element.codePostal}</li>
+                //     <li>Code de la commune : ${element.codeCommune}</li>
+                //     <li>Nom de la commune : ${element.nomCommune}</li>
+                //     <li>Libellé acheminement : ${element.libelleAcheminement}</li>
+                // </ul>
+                // `;
+                // informations.innerHTML += ul;
             }
+
             // else if (element.codePostal.contains(searchInput.value)) {
 
             // }

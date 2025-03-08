@@ -11,19 +11,67 @@
 </head>
 
 <body>
-    <form action="">
-        <div>
+    <div>
+        <form action="">
+            <h1>Recherche de Ville</h1>
             <label for="searchInput">Saisir un code postal : </label>
-            <input type="search" id="searchInput" list="listeVilles">
+            <input type="search" id="searchInput" list="listeVilles" placeholder="Entrez un code postal">
             <datalist id="listeVilles"></datalist>
-        </div>
-        <div>
-            <input type="submit" value="Valider" id="btnValider">
-        </div>
-    </form>
+            <input type="submit" value="Valider" id="btnValider"></input>
+            <button onclick="rechercherVille()">Rechercher</button>
+        </form>
 
-    <div id="informations"></div>
-
+        <div id="informations"></div>
+    </div>
 </body>
 
 </html>
+
+
+<!-- <script>
+        let zipData = [];
+
+        async function loadZipcodes() {
+            try {
+                const response = await fetch('./assets/json/zipcodes.json');
+                if (!response.ok) {
+                    throw new Error('Erreur lors du chargement des données');
+                }
+                zipData = await response.json();
+            } catch (error) {
+                console.error('Erreur:', error);
+            }
+        }
+
+        document.getElementById('zipcode').addEventListener('input', function () {
+            try {
+                const input = this.value;
+                const dataList = document.getElementById('zipList');
+                dataList.innerHTML = '';
+
+                if (input.length > 0) {
+                    const filtered = zipData.filter(city => city.codePostal.includes(input));
+                    filtered.forEach(city => {
+                        let option = document.createElement('option');
+                        option.value = city.codePostal;
+                        option.textContent = `${city.codePostal} - ${city.nomCommune}`;
+                        dataList.appendChild(option);
+                    });
+                }
+            } catch (error) {
+                console.error('Erreur lors de la recherche de suggestions:', error);
+            }
+        });
+
+        function searchCity() {
+            try {
+                const zipInput = document.getElementById('zipcode').value;
+                const cityInfo = zipData.find(city => city.zip === zipInput);
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = cityInfo ? `<strong>${cityInfo.nomCommune}</strong><br>Code Postal: ${cityInfo.codePostal}` : 'Aucune ville trouvée';
+            } catch (error) {
+                console.error('Erreur lors de la recherche de la ville:', error);
+            }
+        }
+
+        loadZipcodes(); -->

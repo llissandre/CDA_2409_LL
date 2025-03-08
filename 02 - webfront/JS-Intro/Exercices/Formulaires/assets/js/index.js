@@ -5,6 +5,7 @@ const vider = document.querySelector('#reset');
 const sentences = document.querySelector('#sentence');
 sentences.innerHTML = '<li>Compléter/corriger le formulaire</li>';
 
+age.value = '';
 // form.addEventListener('submit', (e) => {
 const resultat = (e) => {
     if (prenom.value != '' && age.value > 0) {
