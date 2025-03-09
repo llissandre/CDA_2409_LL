@@ -1,9 +1,9 @@
 async function fetchUsers() {
     try {
         const response = await fetch('./assets/json/users.json');
-        if (!response.ok) {
-            throw new Error('La réponse n\'est pas OK');
-        }
+        // if (!response.ok) {
+        //     throw new Error('La réponse n\'est pas OK');
+        // }
         return await response.json();
     }
     catch (error) {
