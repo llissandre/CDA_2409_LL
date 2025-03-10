@@ -20,7 +20,7 @@
     padding: 0;
 }
 
-body{
+body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--color3);
     background-color: var(--color1);
@@ -31,34 +31,71 @@ body{
     margin: 15px;
 }
 
-#myTable{
+#myFormId {
+    border: 1px dashed var(--color2);
+    margin: 15px;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+
+label {
+    display: flex;
+    margin: 5px 0 0 30px;
+}
+
+#InputmyFormDiv>input {
+    display: flex;
+    gap: 30px;
+}
+
+#gradeInput,
+#lastnameFirstnameInput,
+#btnValider {
+    background-color: var(--color4);
+    border: 3px solid var(--color5);
+    color: var(--color3);
+    padding: 5px 10px;
+}
+
+#btnValider {
+    margin: 20px 0 5px 40px;
+}
+
+legend {
+    margin: 5px 0 40px 30px;
+}
+
+#myTable {
     background-color: var(--color4);
     border-collapse: collapse;
     margin: 40px 20px 30px 15px;
 }
 
-#ulId{
+#ulId {
     margin: 0 0 30px 60px;
     color: var(--color2);
     font-weight: 400;
 }
 
-h1{
+h1 {
     margin: 10px;
 }
 
 th,
-td
-{
-    border: 2px solid var(--color5);
+td {
+    border: 3px solid var(--color5);
     padding: 5px 10px;
 }
 
-td{
+td {
     padding: 5px 20px 5px 5px;
 }
 
-td:last-child{
+td:last-child {
     text-align: right;
     padding: 5px;
 }

@@ -23,20 +23,33 @@ const myDivul = document.createElement('div')
 const myul = document.createElement('ul');
 const myForm = document.createElement('form');
 
-myDivul.setAttribute('class', 'myDivulClass')
-myul.setAttribute('id', 'ulId')
+myForm.setAttribute('id', 'myFormId');
+myDivul.setAttribute('class', 'myDivulClass');
+myul.setAttribute('id', 'ulId');
 
 const thead = myTable.createTHead();
 const tbody = myTable.createTBody();
 
 myTable.append(thead);
-myTable.before(myForm);
+classMyTable.before(myForm);
 thead.append(trTHead);
 filet.append(myDivul);
 myDivul.append(myul);
 
-
-
+myForm.innerHTML = `
+        <legend>Ajouter une note</legend>
+        <div id="inputs">
+            <div id="labelmyFormDiv">
+                <label for="lastnameFirstnameInput">Nom Prénom : </label><br>
+                <label for="gradeInput">Note : </label><br>
+            </div>
+            <div id="InputmyFormDiv">
+                <input type="text" id="lastnameFirstnameInput" name="lastnameFirstname"><br>
+                <input type="text" id="gradeInput" name="grade"><br>
+            </div>
+        </div>
+        <input type="button" id="btnValider" value="Ajouter">
+`;
 
 titleHead.forEach((th) => {
     const thTHead = document.createElement('th');
@@ -45,9 +58,9 @@ titleHead.forEach((th) => {
 });
 
 fetchEvaluation().then(resultats => {
-    tbody.innerText = ''; 
+    tbody.innerText = '';
     resultats.sort((a, b) => b.grade - a.grade);
-    
+
     let nbEtudiants = resultats.length;
     let sum = resultats.reduce((sum, a) => sum + a.grade, 0);
     let avgClasse = sum / nbEtudiants;
@@ -57,7 +70,7 @@ fetchEvaluation().then(resultats => {
 
     console.log(avgClasse);
     console.log(sum);
-    
+
     resultats.forEach((element) => {
         const trTBody = tbody.insertRow();
         let cellNom = trTBody.insertCell();
