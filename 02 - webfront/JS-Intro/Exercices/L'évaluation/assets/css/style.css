@@ -26,10 +26,21 @@ body{
     background-color: var(--color1);
 }
 
+#filet {
+    border: 1px solid var(--color2);
+    margin: 15px;
+}
+
 #myTable{
     background-color: var(--color4);
     border-collapse: collapse;
-    margin: 40px 20px;
+    margin: 40px 20px 30px 15px;
+}
+
+#ulId{
+    margin: 0 0 30px 60px;
+    color: var(--color2);
+    font-weight: 400;
 }
 
 h1{
