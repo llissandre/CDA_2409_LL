@@ -12,21 +12,22 @@ async function fetchResultats() {
 }
 
 const titresTHead = ['id', 'name', 'level', 'description', 'power', 'attack', 'armor', 'damage', 'mitigation', 'played', 'victory', 'defeat', 'draw'];
-const trHead = document.createElement('tr');
-
-titresTHead.forEach((th) => {
-    const thHead = document.createElement('th');
-    thHead.textContent = th;
-    trHead.append(thHead);
-});
 
 const b = document.querySelector('document.body');
 const myTable = document.querySelector('#myTable');
 const information1 = document.querySelector('.information1');
 const information2 = document.querySelector('.information2');
 
+const trHead = document.createElement('tr');
+
 const thead = myTable.createTHead();
 const tbody = myTable.createTBody();
+
+titresTHead.forEach((th) => {
+    const thHead = document.createElement('th');
+    thHead.textContent = th;
+    trHead.append(thHead);
+});
 
 myTable.append(thead);
 thead.append(trHead);
@@ -70,7 +71,7 @@ fetchResultats().then(resultats => {
 
     let maxPlayed = resultats.reduce((x, y) => x.played > y.played ? x : y);
     maxPlayed.id;
-    console.log(maxPlayed);
+    // console.log(maxPlayed);
 
     // console.log('Le nom et le nombre de victoires de la carte ayant le plus de parties jouées sont respectivement ' + maxPlayed.name + ' et ' + maxPlayed.victory + ', avec ' + maxPlayed.played + ' parties jouées.');
 
@@ -87,7 +88,7 @@ fetchResultats().then(resultats => {
     resultats.map((resultat) => {
         const valueRatio = resultat.victory /
             (resultat.victory + resultat.defeat);
-        console.log(resultat);
+        // console.log(resultat);
 
         if (valueRatio > ratio) {
             idRatio = resultat.id;

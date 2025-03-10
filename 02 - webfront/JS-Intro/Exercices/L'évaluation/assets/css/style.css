@@ -15,6 +15,39 @@
 * {
     /* Forcer l'héritage de la propriété box-sizing */
     box-sizing: inherit;
+
     margin: 0;
     padding: 0;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--color3);
+    background-color: var(--color1);
+}
+
+#myTable{
+    background-color: var(--color4);
+    border-collapse: collapse;
+    margin: 40px 20px;
+}
+
+h1{
+    margin: 10px;
+}
+
+th,
+td
+{
+    border: 2px solid var(--color5);
+    padding: 5px 10px;
+}
+
+td{
+    padding: 5px 20px 5px 5px;
+}
+
+td:last-child{
+    text-align: right;
+    padding: 5px;
 }
