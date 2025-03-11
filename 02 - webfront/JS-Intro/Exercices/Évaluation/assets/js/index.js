@@ -34,7 +34,6 @@ function afficher() {
     myDivul.setAttribute('class', 'myDivulClass');
     myul.setAttribute('id', 'ulId');
 
-
     const titleHead = ['Nom', 'Prénom', 'Note'];
     titleHead.push('Obtenu');
 
@@ -80,20 +79,19 @@ function afficher() {
         <li>Nombre d"étudiants au-dessus de la moyenne des notes de la classe: ${overAvgGrades.length}</li>
         <li>Note éliminatoire : ${failingGrade}</li>
     `;
-
-    // ulId.innerHTML = '<li>' + 'Nombre d\'étudiants : ' + nbEtudiants + '</li>';
-    // ulId.innerHTML += '<li>' + 'Nombre : ' + (avgGrades / nbEtudiants).toFixed(2) + '</li>';
 };
 
 btnValider.addEventListener('click', (e) => {
     e.preventDefault();
+
+    btnValider.style.backgroundColor
     let usernameInput = lastnameFirstnameInput.value.trim();
     let lastname = usernameInput.split(' ')[0];
     let firstname = usernameInput.split(' ')[1];
     grade = Number(gradeInput.value);
     fullname = lastname + ' ' + firstname;
 
-    if (regexUsername.test(lastname) && regexUsername.test(firstname) && grade >= 0 && grade <= 20) {
+    if (regexUsername.test(lastname) && lastname !== undefined && regexUsername.test(firstname) && firstname !== undefined && grade >= 0 && grade <= 20) {
 
         data.push({ fullname, grade });
         myTable.innerText = '';
