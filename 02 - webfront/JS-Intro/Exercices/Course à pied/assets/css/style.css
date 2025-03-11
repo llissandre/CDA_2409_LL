@@ -21,21 +21,64 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--color3);
-    background-color: var(--color1);
+    background-color: var(--base-bg);
 }
 
-#myTable{
-    color: white;
+#filet {
+    border: 1px solid var(--base-link);
+    margin: 10px;
+}
+
+h1 {
+    color: var(--base-link);
+    margin-left: 10px;
+}
+
+h3 {
+    color: var(--base-link);
+    margin: 10px 20px 10px -10px;
+}
+
+#headers {
+    display: flex;
+    margin: 10px 20px;
+    gap: 5px;
+
+    #participants,
+    #winner {
+        padding: 5px;
+        color: var(--base-btn);
+        background-color: var(--base-link);
+    }
+}
+
+#countries {
+    margin-left: 20px;
+    color: var(--base-txt);
+}
+
+#country {
+    display: inline-flex;
+    width: 150px;
+    margin: 1px;
+    padding: 5px 15px;
     background-color: var(--base-btn);
+    border-radius: 10px;
+}
+
+label {
+    margin-left: 15px;
+}
+
+#myTable {
+    margin: 40px 20px;
     padding: 5px;
-    border-radius: 20px;
+    color: var(--base-txt);
+    background-color: var(--base-btn);
+    border-radius: 10px;
 }
 
 th,
-td{
+td {
     padding: 10px;
-}
-
-#entetes{
-    display: flex;
 }

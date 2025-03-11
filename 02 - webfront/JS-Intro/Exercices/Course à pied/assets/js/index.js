@@ -1,7 +1,9 @@
 const filet = document.querySelector('#filet');
+const headers = document.querySelector('#headers')
 const myTable = document.querySelector('#myTable');
 const participants = document.querySelector('#participants');
 const winner = document.querySelector('#winner');
+const checkboxCountries = document.querySelector('#checkboxCountries');
 
 async function fetchCourse() {
     try {
@@ -18,7 +20,7 @@ async function fetchCourse() {
 }
 
 function afficher() {
-    const titleHead = ['Pays', 'Nom', 'Prénom', 'Temps final'];
+    const titleHead = ['Pays', 'Nom', 'Prénom', 'Temps final', 'Écart temps'];
 
     const trTHead = document.createElement('tr');
 
@@ -34,9 +36,52 @@ function afficher() {
         trTHead.append(thTHead);
     });
 
+    data.sort((a, b) => {
+        const na = a.pays.toLowerCase();
+        const nb = b.pays.toLowerCase();
+
+        if (na > nb) {
+            return 1;
+        }
+        if (nb > na) {
+            return -1;
+        }
+        else {
+            return 0;
+        }
+    });
+
+    data.forEach((c) => {
+        let country = document.createElement('div');
+        const checkboxInput = document.createElement('input');
+        const checkboxLabel = document.createElement('label');
+
+        country.setAttribute('id', 'country')
+
+        checkboxInput.type = 'checkbox';
+        checkboxInput.id = c.pays;
+        checkboxInput.name = c.pays;
+
+        checkboxLabel.setAttribute('for', c.pays);
+        checkboxLabel.innerText = c.pays;
+
+        country.append(checkboxInput, checkboxLabel);
+        checkboxCountries.append(country);
+
+        checkboxInput.addEventListener('change', (e) => {
+            console.log(e);
+            // checkboxInput.classList.add('checked');
+
+        });
+    });
+
     data.sort((a, b) => a.temps - b.temps);
 
+    participants.innerText = data.length + ' participants';
+    winner.innerText = ' Gagnant : ' + data[0].nom;
+
     data.forEach((element) => {
+
         const trTBody = tbody.insertRow();
         let cellCountry = trTBody.insertCell();
         cellCountry.innerText = element.pays;
@@ -45,10 +90,13 @@ function afficher() {
         let cellFirstname = trTBody.insertCell();
         cellFirstname.innerText = String(element.nom).split(' ')[1].charAt(0).toUpperCase() + String(element.nom).split(' ')[1].slice(1).toLowerCase();
         let cellFinalTime = trTBody.insertCell();
-        cellFinalTime.innerText = Math.floor(element.temps/60) + 'min' + Number(element.temps%60) + 's';
-        
+        cellFinalTime.innerText = Math.floor(element.temps / 60) + 'min' + Number(element.temps % 60) + 's';
+
     })
 }
 
+// checkbox.addEventListener = ('change', () => {
+
+// });
 
 fetchCourse();
