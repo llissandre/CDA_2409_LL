@@ -1,95 +1,105 @@
+const filet = document.querySelector('#filet');
+const lastnameFirstnameInput = document.querySelector('#lastnameFirstnameInput');
+const gradeInput = document.querySelector('#gradeInput');
+const btnValider = document.querySelector('#btnValider');
+const classMyTable = document.querySelector('.myTable');
+const myTable = document.querySelector('#myTable');
+const regexUsername = /^[a-zA-Z-]{2,}$/;
+
+let data = [];
+let failingGrade = 12;
+
 async function fetchEvaluation() {
     try {
         const response = await fetch('./assets/json/eval.json');
         if (!response.ok) {
             throw new Error('La réponse n\'est pas OK');
         }
-        return await response.json();
+        data = await response.json();
+        afficher();
     }
     catch (error) {
         console.error('Un problème est survenu lors de la récupération :', error);
     }
 }
 
-const titleHead = ['Nom', 'Prénom', 'Note'];
-
-const body = document.querySelector('body');
-const classMyTable = document.querySelector('.myTable');
-const myTable = document.querySelector('#myTable');
-const filet = document.querySelector('#filet');
-
-const trTHead = document.createElement('tr');
 const myDivul = document.createElement('div')
 const myul = document.createElement('ul');
-const myForm = document.createElement('form');
+let nbEtudiants;
 
-myForm.setAttribute('id', 'myFormId');
-myDivul.setAttribute('class', 'myDivulClass');
-myul.setAttribute('id', 'ulId');
+function afficher() {
 
-const thead = myTable.createTHead();
-const tbody = myTable.createTBody();
+    const trTHead = document.createElement('tr');
 
-myTable.append(thead);
-classMyTable.before(myForm);
-thead.append(trTHead);
-filet.append(myDivul);
-myDivul.append(myul);
+    myDivul.setAttribute('class', 'myDivulClass');
+    myul.setAttribute('id', 'ulId');
 
-myForm.innerHTML = `
-        <legend>Ajouter une note</legend>
-        <div id="inputs">
-            <div id="labelmyFormDiv">
-                <label for="lastnameFirstnameInput">Nom Prénom : </label><br>
-                <label for="gradeInput">Note : </label><br>
-            </div>
-            <div id="InputmyFormDiv">
-                <input type="text" id="lastnameFirstnameInput" name="lastnameFirstname"><br>
-                <input type="text" id="gradeInput" name="grade"><br>
-            </div>
-        </div>
-        <input type="button" id="btnValider" value="Ajouter">
-`;
 
-titleHead.forEach((th) => {
-    const thTHead = document.createElement('th');
-    thTHead.innerText = th;
-    trTHead.append(thTHead);
-});
+    const titleHead = ['Nom', 'Prénom', 'Note'];
+    titleHead.push('Obtenu');
 
-fetchEvaluation().then(resultats => {
-    tbody.innerText = '';
-    resultats.sort((a, b) => b.grade - a.grade);
+    const thead = myTable.createTHead();
+    const tbody = myTable.createTBody();
 
-    let nbEtudiants = resultats.length;
-    let sum = resultats.reduce((sum, a) => sum + a.grade, 0);
-    let avgClasse = sum / nbEtudiants;
-    let overAvg = resultats.filter(a => a.grade >= 10);
-    let overAvgGrades = resultats.filter(a => a.grade >= avgClasse);
-    let failingGrade = 12;
+    myTable.append(thead);
+    thead.append(trTHead);
+    filet.append(myDivul);
+    myDivul.append(myul);
 
-    console.log(avgClasse);
-    console.log(sum);
-
-    resultats.forEach((element) => {
-        const trTBody = tbody.insertRow();
-        let cellNom = trTBody.insertCell();
-        cellNom.innerText = element.fullname.split(' ')[0];
-        let cellPrenom = trTBody.insertCell();
-        cellPrenom.innerText = element.fullname.split(' ')[1];
-        let cellGrade = trTBody.insertCell();
-        cellGrade.innerText = element.grade;
+    titleHead.forEach((th) => {
+        const thTHead = document.createElement('th');
+        thTHead.innerText = th;
+        trTHead.append(thTHead);
     });
 
-    ulId.innerHTML = `
+
+    data.sort((a, b) => b.grade - a.grade);
+    nbEtudiants = data.length;
+    let sum = data.reduce((sum, a) => sum + a.grade, 0);
+    let avgClasse = sum / nbEtudiants;
+    let overAvg = data.filter(a => a.grade >= 10);
+    let overAvgGrades = data.filter(a => a.grade >= avgClasse);
+
+    data.forEach((element) => {
+        const trTBody = tbody.insertRow();
+        let cellLastname = trTBody.insertCell();
+        cellLastname.innerText = String(element.fullname).split(' ')[0].charAt(0).toUpperCase() + String(element.fullname).split(' ')[0].slice(1).toLowerCase();
+        let cellFirstname = trTBody.insertCell();
+        cellFirstname.innerText = String(element.fullname).split(' ')[1].charAt(0).toUpperCase() + String(element.fullname).split(' ')[1].slice(1).toLowerCase();
+        let cellGrade = trTBody.insertCell();
+        cellGrade.innerText = element.grade;
+        let cellObtenu = trTBody.insertCell();
+        element.grade >= failingGrade ? cellObtenu.innerText = 'Oui' : cellObtenu.innerText = 'non';
+    });
+
+    ulId.innerHTML =
+        `
         <li>Nombre d\'étudiants : ${nbEtudiants}</li>
         <li>Moyenne de la classe : ${(avgClasse).toFixed(2)}</li>
         <li>Nombre d"étudiants au-dessus de la moyenne : ${overAvg.length}</li>
         <li>Nombre d"étudiants au-dessus de la moyenne des notes de la classe: ${overAvgGrades.length}</li>
         <li>Note éliminatoire : ${failingGrade}</li>
-        `;
+    `;
 
     // ulId.innerHTML = '<li>' + 'Nombre d\'étudiants : ' + nbEtudiants + '</li>';
     // ulId.innerHTML += '<li>' + 'Nombre : ' + (avgGrades / nbEtudiants).toFixed(2) + '</li>';
+};
+
+btnValider.addEventListener('click', (e) => {
+    e.preventDefault();
+    let usernameInput = lastnameFirstnameInput.value.trim();
+    let lastname = usernameInput.split(' ')[0];
+    let firstname = usernameInput.split(' ')[1];
+    grade = Number(gradeInput.value);
+    fullname = lastname + ' ' + firstname;
+
+    if (regexUsername.test(lastname) && regexUsername.test(firstname) && grade >= 0 && grade <= 20) {
+
+        data.push({ fullname, grade });
+        myTable.innerText = '';
+        
+        afficher();
+    }
 });
 
+fetchEvaluation();
