@@ -11,37 +11,33 @@
 </head>
 
 <body>
-    <h1>Gestion des dates et des intervalles</h1>
-
-    <form action="" id="formCurrentdate">
+    <main>
+        <h1>Gestion des dates et des intervalles</h1>
+        <form action="" id="formCurrentdate">
+            <div>
+                <label for="currentdate">Date actuelle : </label>
+                <input type="date" name="" id="currentdate" value="">
+                <label for="currenttime">heure actuelle : </label>
+                <input type="time" name="" id="currenttime" value="">
+                <input type="button" id="afficher" value="Afficher la date du jour">
+            </div>
+        </form>
         <div>
-            <label for="currentdate">Date actuelle : </label>
-            <input type="date" name="" id="currentdate" value="">
-            <label for="currenttime">heure actuelle : </label>
-            <input type="time" name="" id="currenttime" value="">
-            <input type="button" id="afficher" value="Afficher la date du jour">
+            <ul id="sentenceCurrentdate"></ul>
         </div>
-    </form>
-
-    <div>
-        <ul id="sentenceCurrentdate"></ul>
-    </div>
-
-    <hr>
-
-    <h1>Sélectionner une date et une heure :</h1>
-
-    <form action="" id="formIntervalledate">
+        <hr>
+        <h1>Sélectionner une date et une heure :</h1>
+        <form action="" id="formIntervalledate">
+            <div>
+                <label for="intervalledate">Date : </label>
+                <input type="datetime-local" name="" id="intervalledate">
+                <input type="button" id="calculerIntervalle" value="Calculer l'intervalle">
+            </div>
+        </form>
         <div>
-            <label for="intervalledate">Date : </label>
-            <input type="datetime-local" name="" id="intervalledate">
-            <input type="button" id="calculerIntervalle" value="Calculer l'intervalle">
+            <ul id="sentenceIntervalledate"></ul>
         </div>
-    </form>
-
-    <div>
-        <ul id="sentenceIntervalledate"></ul>
-    </div>
+    </main>
 
 </body>
 

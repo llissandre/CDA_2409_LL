@@ -11,21 +11,20 @@
 </head>
 
 <body>
-    <h1>Ma date de naissance</h1>
-
-    <form action="" id="form">
+    <main>
+        <h1>Ma date de naissance</h1>
+        <form action="" id="form">
+            <div>
+                <label for="dateN">Ma date de naissance : </label>
+                <input type="datetime-local" name="" id="dateN">
+                <input type="button" id="calculer" value="Calculer">
+            </div>
+        </form>
+        <hr>
         <div>
-            <label for="dateN">Ma date de naissance : </label>
-            <input type="datetime-local" name="" id="dateN">
-            <input type="button" id="calculer" value="Calculer">
+            <ul id="sentence"></ul>
         </div>
-    </form>
-
-    <hr>
-
-    <div>
-        <ul id="sentence"></ul>
-    </div>
+    </main>
 </body>
 
 </html>

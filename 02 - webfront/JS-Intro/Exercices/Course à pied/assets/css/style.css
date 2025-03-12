@@ -45,7 +45,8 @@ h3 {
     gap: 5px;
 
     #participants,
-    #winner {
+    #winner,
+    #avgTime {
         padding: 5px;
         color: var(--base-btn);
         background-color: var(--base-link);

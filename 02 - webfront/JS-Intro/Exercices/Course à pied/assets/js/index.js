@@ -6,25 +6,29 @@ const headers = document.querySelector('#headers')
 const myTable = document.querySelector('#myTable');
 const participants = document.querySelector('#participants');
 const winner = document.querySelector('#winner');
+const avgTime = document.querySelector('#avgTime');
 const checkboxCountries = document.querySelector('#checkboxCountries');
-const country = document.querySelectorAll('#country');
+const countries = document.querySelectorAll('#countries');
 const tbody = myTable.createTBody();
 
-async function fetchCourse() {
+async function fetchRace() {
     try {
         const response = await fetch('./assets/json/resultat10000metres.json');
         if (!response.ok) {
             throw new Error('La réponse n\'est pas OK');
         }
         data = await response.json();
-        afficher();
+        display();
+        displayTable(data);
+        displayCheckbox();
     }
     catch (error) {
         console.error('Un problème est survenu lors de la récupération :', error);
+        data = [];
     }
 }
 
-const afficher = () => {
+const display = () => {
     const titleHead = ['Pays', 'Nom', 'Prénom', 'Temps final', 'Écart temps'];
 
     const trTHead = document.createElement('tr');
@@ -40,6 +44,18 @@ const afficher = () => {
         trTHead.append(thTHead);
     });
 
+    data.sort((a, b) => a.temps - b.temps);
+
+    const sum = data.reduce((sum, a) => sum + a.temps, 0);
+    const avgT = sum / data.length;
+
+    participants.innerText = data.length + ' participants';
+    const username = data[0].nom.split(' ')[1] + ' ' + data[0].nom.split(' ')[0];
+    winner.innerText = ' Gagnant : ' + username;
+    avgTime.innerText = 'Temps moyens : ' + Math.floor(avgT / 60) + ' minutes et ' + Math.round(avgT % 60) + ' secondes';
+}
+
+const displayCheckbox = () => {
     // Pour trier les checkbox Pays
     // data.sort((a, b) => {
     //     const na = a.pays.toLowerCase();
@@ -68,8 +84,6 @@ const afficher = () => {
 
         checkboxInput.type = 'checkbox';
         checkboxInput.id = c.pays;
-        checkboxInput.value = c.pays;
-
         checkboxInput.name = c.pays;
 
         checkboxLabel.setAttribute('for', c.pays);
@@ -79,31 +93,30 @@ const afficher = () => {
         checkboxCountries.append(country);
 
         checkboxInput.addEventListener('change', (e) => {
-            console.log(e);
-
             if (e.target.checked) {
-                checkboxInput.classList.add('checked');
-                checkboxCountries.push(checkboxInput.value);
-                console.log(checkboxCountries);
+                countriesChecked.push(checkboxInput.name);
             }
             else {
-                checkboxInput.classList.remove('checked');
+                let myIndex = countriesChecked.indexOf(checkboxInput.name);
+                countriesChecked.splice(myIndex, 1);
             }
-            tableau();
+
+            if (countriesChecked.length === 0) {
+                displayTable(data);
+            }
+            else {
+                filteredData = data.filter(p => countriesChecked.includes(p.pays));
+                displayTable(filteredData);
+            }
         });
     });
+};
 
+const displayTable = (data) => {
+    tbody.innerText = '';
     data.sort((a, b) => a.temps - b.temps);
 
-    participants.innerText = data.length + ' participants';
-    const username = data[0].nom.split(' ')[1] + ' ' + data[0].nom.split(' ')[0];
-    winner.innerText = ' Gagnant : ' + username;
-}
-
-
-
-const tableau = () => {
-    tbody.innerText = '';
+    const winnerSTime = data[0].temps;
 
     data.forEach((element) => {
         const trTBody = tbody.insertRow();
@@ -115,7 +128,9 @@ const tableau = () => {
         cellFirstname.innerText = String(element.nom).split(' ')[1].charAt(0).toUpperCase() + String(element.nom).split(' ')[1].slice(1).toLowerCase();
         let cellFinalTime = trTBody.insertCell();
         cellFinalTime.innerText = Math.floor(element.temps / 60) + 'min' + Number(element.temps % 60) + 's';
+        let cellTimeDifference = trTBody.insertCell();
+        cellTimeDifference.innerText = "+" + (element.temps - winnerSTime) + 's';
     });
 }
 
-fetchCourse();
+fetchRace();
