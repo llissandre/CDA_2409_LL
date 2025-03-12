@@ -1,7 +1,7 @@
 const filet = document.querySelector('#filet');
 const lastnameFirstnameInput = document.querySelector('#lastnameFirstnameInput');
 const gradeInput = document.querySelector('#gradeInput');
-const btnValider = document.querySelector('#btnValider');
+const btnValidate = document.querySelector('#btnValider');
 const classMyTable = document.querySelector('.myTable');
 const myTable = document.querySelector('#myTable');
 const regexUsername = /^[a-zA-Z-]{2,}$/;
@@ -16,7 +16,7 @@ async function fetchEvaluation() {
             throw new Error('La réponse n\'est pas OK');
         }
         data = await response.json();
-        afficher();
+        display();
     }
     catch (error) {
         console.error('Un problème est survenu lors de la récupération :', error);
@@ -27,7 +27,7 @@ const myDivul = document.createElement('div')
 const myul = document.createElement('ul');
 let nbEtudiants;
 
-function afficher() {
+const display = () => {
 
     const trTHead = document.createElement('tr');
 
@@ -79,12 +79,12 @@ function afficher() {
         <li>Nombre d"étudiants au-dessus de la moyenne des notes de la classe: ${overAvgGrades.length}</li>
         <li>Note éliminatoire : ${failingGrade}</li>
     `;
-};
+}
 
-btnValider.addEventListener('click', (e) => {
+const validate = () => {
     e.preventDefault();
 
-    btnValider.style.backgroundColor
+    btnValidate.style.backgroundColor
     let usernameInput = lastnameFirstnameInput.value.trim();
     let lastname = usernameInput.split(' ')[0];
     let firstname = usernameInput.split(' ')[1];
@@ -96,8 +96,9 @@ btnValider.addEventListener('click', (e) => {
         data.push({ fullname, grade });
         myTable.innerText = '';
         
-        afficher();
+        display();
     }
-});
+}
 
 fetchEvaluation();
+btnValidate.addEventListener('click', validate);
