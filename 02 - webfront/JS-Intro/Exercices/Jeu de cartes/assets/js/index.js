@@ -70,8 +70,6 @@ fetchResultats().then(resultats => {
     });
 
     let maxPlayed = resultats.reduce((x, y) => x.played > y.played ? x : y);
-    maxPlayed.id;
-    // console.log(maxPlayed);
 
     // console.log('Le nom et le nombre de victoires de la carte ayant le plus de parties jouées sont respectivement ' + maxPlayed.name + ' et ' + maxPlayed.victory + ', avec ' + maxPlayed.played + ' parties jouées.');
 
@@ -84,11 +82,9 @@ fetchResultats().then(resultats => {
     let playedRatio;
     let victoryRatio;
 
-
     resultats.map((resultat) => {
         const valueRatio = resultat.victory /
             (resultat.victory + resultat.defeat);
-        // console.log(resultat);
 
         if (valueRatio > ratio) {
             idRatio = resultat.id;

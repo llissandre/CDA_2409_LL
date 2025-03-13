@@ -1,10 +1,14 @@
 let data = [];
 
+const message = document.querySelector('.message');
 const myTable = document.querySelector('#myTable');
+const thead = myTable.createTHead();
+const trTHead = document.createElement('tr');
 const tbody = myTable.createTBody();
 
-async function fetchEmmployees() {
+async function employees() {
     try {
+        // const response = await fetch('./assets/json/employees vide.json');
         const response = await fetch('./assets/json/employees.json');
         if (!response.ok) {
             throw new Error('La réponse n\'est pas OK');
@@ -21,18 +25,19 @@ async function fetchEmmployees() {
 const display = () => {
     const titleHead = ['EID', 'Full Name', 'Email', 'Monthly salary', 'Year of birth', 'Actions'];
 
-    const trTHead = document.createElement('tr');
+    if (data.length > 0) {
+        myTable.append(thead);
+        thead.append(trTHead);
 
-    const thead = myTable.createTHead();
-
-    myTable.append(thead);
-    thead.append(trTHead);
-
-    titleHead.forEach((th) => {
-        const thTHead = document.createElement('th');
-        thTHead.innerText = th;
-        trTHead.append(thTHead);
-    });
+        titleHead.forEach((th) => {
+            const thTHead = document.createElement('th');
+            thTHead.innerText = th;
+            trTHead.append(thTHead);
+        });
+    }
+    else {
+        message.innerHTML = 'Aucun employé est présent dans la liste';
+    }
 
     data.forEach((element) => {
         const trTBody = tbody.insertRow();
@@ -41,13 +46,15 @@ const display = () => {
         let cellEmployee_name = trTBody.insertCell();
         cellEmployee_name.innerText = element.employee_name;
         let cellEmail = trTBody.insertCell();
-        cellEmail.innerText = element.employee_name;
+        cellEmail.innerText = element.employee_name.split(' ')[0].charAt(0).toLowerCase() + '.' + element.employee_name.split(' ')[1].toLowerCase() + '@email.com';
         let cellMonthlySalary = trTBody.insertCell();
-        cellMonthlySalary.innerText = element.employee_salary;
+        cellMonthlySalary.innerText = (element.employee_salary / 12).toFixed(2) + '€';
         let cellYearOfBirth = trTBody.insertCell();
-        cellYearOfBirth.innerText = element.employee_age;
+        cellYearOfBirth.innerText = new Date().getFullYear() - element.employee_age;
         let cellActions = trTBody.insertCell();
+        cellActions.innerHTML = '<button class="btn"><i class="fa fa-home"></i> Home</button>';
+        cellActions.innerHTML += '<input type="button" value="Delete" class="styled delete">';
     });
 };
 
-fetchEmmployees();
+employees();

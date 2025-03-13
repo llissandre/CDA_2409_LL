@@ -15,5 +15,42 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    color: #62576b;
+    margin: 2px 0 0 10px;
+}
+
+h2 {
+    margin-bottom: 5px;
+}
+
+h5 {
+    color: #9a948e;
+    margin-bottom: 30px;
+}
+
+.message{
+text-align: center;
+font-size: 1.6rem;
+color: rgb(184, 97, 97);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+thead {
+    color: black;
+}
+
+td,
+th {
+    border: 1px solid #62576b;
+    text-align: left;
+    padding: 10px 10px 20px;
+}
+
+input[type="button"]{
+    padding: 5px;
+    margin: 2px;
 }
