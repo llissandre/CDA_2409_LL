@@ -29,14 +29,16 @@ h5 {
     margin-bottom: 30px;
 }
 
-.message{
-text-align: center;
-font-size: 1.6rem;
-color: rgb(184, 97, 97);
+.message {
+    text-align: center;
+    font-size: 1.6rem;
+    color: rgb(184, 97, 97);
 }
 
 table {
     border-collapse: collapse;
+    display: block;
+    justify-items: center;
 }
 
 thead {
@@ -47,10 +49,26 @@ td,
 th {
     border: 1px solid #62576b;
     text-align: left;
-    padding: 10px 10px 20px;
+    vertical-align: top;
+    padding: 5px 10px;
 }
 
-input[type="button"]{
-    padding: 5px;
+.styled {
+    color: whitesmoke;
+    padding: 10px;
     margin: 2px;
+
+    i {
+        padding-right: 10px;
+    }
+}
+
+.duplicate {
+    background-color: #3298dc;
+    border-color: #3298dc;
+}
+
+.delete {
+    background-color: #f14668;
+    border-color: #f14668;
 }

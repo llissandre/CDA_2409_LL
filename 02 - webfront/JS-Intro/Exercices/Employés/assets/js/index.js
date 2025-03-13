@@ -5,6 +5,8 @@ const myTable = document.querySelector('#myTable');
 const thead = myTable.createTHead();
 const trTHead = document.createElement('tr');
 const tbody = myTable.createTBody();
+const tfoot = myTable.createTFoot();
+const trTFoot = document.createElement('tr');
 
 async function employees() {
     try {
@@ -26,8 +28,9 @@ const display = () => {
     const titleHead = ['EID', 'Full Name', 'Email', 'Monthly salary', 'Year of birth', 'Actions'];
 
     if (data.length > 0) {
-        myTable.append(thead);
+        myTable.append(thead, tfoot);
         thead.append(trTHead);
+        tfoot.append(trTFoot);
 
         titleHead.forEach((th) => {
             const thTHead = document.createElement('th');
@@ -48,13 +51,17 @@ const display = () => {
         let cellEmail = trTBody.insertCell();
         cellEmail.innerText = element.employee_name.split(' ')[0].charAt(0).toLowerCase() + '.' + element.employee_name.split(' ')[1].toLowerCase() + '@email.com';
         let cellMonthlySalary = trTBody.insertCell();
-        cellMonthlySalary.innerText = (element.employee_salary / 12).toFixed(2) + '€';
+        cellMonthlySalary.innerText = (element.employee_salary / 12).toFixed(2) + ' €';
         let cellYearOfBirth = trTBody.insertCell();
         cellYearOfBirth.innerText = new Date().getFullYear() - element.employee_age;
         let cellActions = trTBody.insertCell();
-        cellActions.innerHTML = '<button class="btn"><i class="fa fa-home"></i> Home</button>';
-        cellActions.innerHTML += '<input type="button" value="Delete" class="styled delete">';
+        cellActions.innerHTML = '<button class="styled duplicate" type="button"><i class="fa-regular fa-copy"></i>Duplicate</button>';
+        cellActions.innerHTML += '<button class="styled delete" type=""button><i class="fa-regular fa-trash-can"></i>Delete</button>';
     });
+
+    const tdTFoot = document.createElement('td');
+    
+
 };
 
 employees();
