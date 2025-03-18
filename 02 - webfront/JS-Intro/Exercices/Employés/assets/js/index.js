@@ -2,11 +2,10 @@ let data = [];
 
 const message = document.querySelector('.message');
 const myTable = document.querySelector('#myTable');
-const thead = myTable.createTHead();
-const trTHead = document.createElement('tr');
+// const thead = myTable.createTHead();
+// const trTHead = document.createElement('tr');
 const tbody = myTable.createTBody();
 const tfoot = myTable.createTFoot();
-const trTFoot = document.createElement('tr');
 
 async function employees() {
     try {
@@ -18,25 +17,29 @@ async function employees() {
         data = await response.json();
         display();
     }
-    catch (error) {
-        console.error('Un problème est survenu lors de la récupération :', error);
+    catch (erreur) {
+        console.error('Un problème est survenu lors de la récupération :', erreur);
         data = [];
     }
 }
 
 const display = () => {
-    const titleHead = ['EID', 'Full Name', 'Email', 'Monthly salary', 'Year of birth', 'Actions'];
+    // const titleHead = ['EID', 'Full Name', 'Email', 'Monthly salary ▲▼', 'Year of birth', 'Actions'];
 
     if (data.length > 0) {
-        myTable.append(thead, tfoot);
-        thead.append(trTHead);
-        tfoot.append(trTFoot);
+        myTable.append(tfoot);
+        // myTable.append(thead, tfoot);
+        // thead.append(trTHead);
+        // tfoot.append(trTFoot);
 
-        titleHead.forEach((th) => {
-            const thTHead = document.createElement('th');
-            thTHead.innerText = th;
-            trTHead.append(thTHead);
-        });
+        const thTHead = document.createElement('th');
+
+
+        // titleHead.forEach((th) => {
+        //     const thTHead = document.createElement('th');
+        //     thTHead.innerText = th;
+        //     trTHead.append(thTHead);
+        // });
     }
     else {
         message.innerHTML = 'Aucun employé est présent dans la liste';
@@ -59,8 +62,10 @@ const display = () => {
         cellActions.innerHTML += '<button class="styled delete" type=""button><i class="fa-regular fa-trash-can"></i>Delete</button>';
     });
 
-    const tdTFoot = document.createElement('td');
+    // const 
+    // const tdTFoot = document.createElement('td');
     
+
 
 };
 

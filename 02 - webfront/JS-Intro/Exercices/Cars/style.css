@@ -1,0 +1,65 @@
+:root {
+    --color1: darkblue;
+    --color4: lightcyan;
+    --color5: darkgrey;
+    --color6: #ffffff33;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--color1);
+    background-color: var(--color4);
+}
+
+h1 {
+    margin: 10px 0 30px;
+}
+
+#inputCars {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+button,
+input[type="search"] {
+    width: 300px;
+    font-size: 2rem;
+    font-weight: 100;
+    color: var(--color1);
+    background-color: var(--color6);
+    border: 1px solid var(--color5);
+    padding: 5px;
+    margin-top: 10px;
+}
+
+input[type="search"]::placeholder {
+    color: var(--color5);
+}
+
+button {
+    margin-top: 25px;
+}
+
+.alertInput {
+    color: red;
+    margin-top: 30px;
+    font-size: 2rem;
+}
+
+#result{
+    /* text-align:center; */
+}

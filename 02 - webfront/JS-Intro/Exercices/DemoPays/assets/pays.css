@@ -1,0 +1,31 @@
+:root {
+    --color1: darkblue;
+    --color2: yellow;
+    --color3: darkorange;
+    --color4: lightcyan;
+    --color5: darkgrey; 
+    --color6: #FFFFFF33; 
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--color1);
+    color: var(--color2);
+}
+
+
+
+.rouge {
+    color: red;
+}

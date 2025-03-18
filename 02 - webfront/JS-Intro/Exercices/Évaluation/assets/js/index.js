@@ -84,7 +84,6 @@ const display = () => {
 const validate = () => {
     e.preventDefault();
 
-    btnValidate.style.backgroundColor
     let usernameInput = lastnameFirstnameInput.value.trim();
     let lastname = usernameInput.split(' ')[0];
     let firstname = usernameInput.split(' ')[1];
