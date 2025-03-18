@@ -60,6 +60,10 @@ button {
     font-size: 2rem;
 }
 
-#result{
-    /* text-align:center; */
+#result,
+ul {
+    margin: 15px 0;
+    display: inline-flex;
+    flex-direction: column;
+    text-align: left;
 }
