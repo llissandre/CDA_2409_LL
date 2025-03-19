@@ -15,18 +15,18 @@
 }
 
 body {
-    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: Arial, Helvetica, sans-serif;
     color: #62576b;
     margin: 2px 0 0 10px;
 }
 
 h2 {
-    margin-bottom: 5px;
+    margin: 2px 10px;
 }
 
 h5 {
     color: #9a948e;
-    margin-bottom: 30px;
+    margin: 2px 0 30px 10px;
 }
 
 .message {
@@ -47,16 +47,25 @@ thead {
 
 td,
 th {
-    border: 1px solid #62576b;
+    border: 1px solid #62576b31;
     text-align: left;
     vertical-align: top;
-    padding: 5px 10px;
+    padding: 10px;
+}
+
+th {
+    padding: 10px;
+    text-align: left;
+}
+
+#myTable {
+    margin-bottom: 20px;
 }
 
 .styled {
-    color: whitesmoke;
     padding: 10px;
     margin: 2px;
+    color: whitesmoke;
 
     i {
         padding-right: 10px;
@@ -71,4 +80,23 @@ th {
 .delete {
     background-color: #f14668;
     border-color: #f14668;
+}
+
+.zoneFiltrage{
+ display: grid;
+ grid-template-columns: repeat();
+}
+
+#monthly{
+    margin-right: 20px;
+}
+
+#filtrage {
+    display: inline-flex;
+flex-direction: column;
+    border: 1px solid #62576b31;
+    border-radius: 3px;
+    padding: 8px 15px;
+    margin: 0;
+    font-size: 0.7rem;
 }

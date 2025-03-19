@@ -1,5 +1,6 @@
 import { collectionCars } from './data/cars.js';
 
+const form = document.querySelector('form');
 const inputCarName = document.getElementById('carName');
 const btnValidate = document.getElementById('validate');
 const result = document.getElementById('result');
@@ -24,10 +25,10 @@ const display = () => {
     collectionCars.map((element) => {
         if (inputCarName.value === '') {
             result.classList.add('alertInput');
-            result.textContent = 'Vous devez saisir un thème de recherche !'
+            result.textContent = 'Veuillez saisir un terme de recherche'
         }
 
-        else if (element.car_name.toLowerCase().includes(inputCarName.value.toLowerCase()) || String(element.car_model).includes(inputCarName.value) || element.car_origin.toLowerCase().includes(inputCarName.value.toLowerCase())) {
+        else if (element.car_name.trim().toLowerCase().includes(inputCarName.value.toLowerCase()) || String(element.car_model.trim()).includes(inputCarName.value) || element.car_origin.trim().toLowerCase().includes(inputCarName.value.toLowerCase())) {
             result.classList.remove('alertInput');
             result.innerHTML +=
                 `
