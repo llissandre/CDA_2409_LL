@@ -2,14 +2,16 @@ let data = [];
 
 const message = document.querySelector('.message');
 const myTable = document.querySelector('#myTable');
-const btnIncreasing = document.querySelector('#btnIncreasing')
-const btnDecreasing = document.querySelector('#btnDecreasing')
+const btnIncreasing = document.querySelector('#btnIncreasing');
+const btnDecreasing = document.querySelector('#btnDecreasing');
+const btnDuplicate = document.querySelector('.btnDuplicate');
 const tbody = myTable.createTBody();
 const tfoot = myTable.createTFoot();
 
 async function fetchEmployees() {
     try {
         // const response = await fetch('./assets/json/employees vide.json');
+        // const response = await fetch('./assets/json/employees partiel.json');
         const response = await fetch('./assets/json/employees.json');
         if (!response.ok) {
             throw new Error('La réponse n\'est pas OK');
@@ -24,15 +26,18 @@ async function fetchEmployees() {
 }
 
 const display = () => {
+    tbody.textContent = '';
+    tfoot.textContent = '';
 
     if (data.length > 0) {
-        let numberEmployees = 0;
-        let payroll = 0;
+        // let payrollb = 0;
 
         myTable.append(tfoot);
 
-        data.forEach((element) => {
+        data.forEach((element, i) => {
             const trTBody = tbody.insertRow();
+            const btnDuplicate = document.createElement('button');
+            const btnDelete = document.createElement('button');
             let cellId = trTBody.insertCell();
             cellId.textContent = element.id;
             let cellEmployee_name = trTBody.insertCell();
@@ -45,16 +50,38 @@ const display = () => {
             let cellYearOfBirth = trTBody.insertCell();
             cellYearOfBirth.textContent = new Date().getFullYear() - element.employee_age;
             let cellActions = trTBody.insertCell();
-            cellActions.innerHTML = '<button class="styled duplicate" type="button"><i class="fa-regular fa-copy"></i>Duplicate</button>';
-            cellActions.innerHTML += '<button class="styled delete" type=""button><i class="fa-regular fa-trash-can"></i>Delete</button>';
 
-            numberEmployees++;
-            payroll += Number(monthlySalary);
+            btnDuplicate.classList.add('styled', 'btnDuplicate');
+            btnDelete.classList.add('styled', 'btnDelete');
+
+            btnDuplicate.innerHTML = '<i class="fa-regular fa-copy"></i>Duplicate';
+            btnDelete.innerHTML = '<i class="fa-regular fa-trash-can"></i>Delete';
+
+            cellActions.append(btnDuplicate, btnDelete);
+
+            btnDuplicate.addEventListener('click', () => {
+                const maxId = data.reduce((a, b) => (a.id > b.id) ? a.id : b.id);
+                const duplicate = { ...element };
+                duplicate.id = maxId + 1;
+
+                data.splice(data.length, 0, duplicate);
+                display();
+            });
+
+            btnDelete.addEventListener('click', () => {
+                data.splice(i, 1);
+                display();
+            });
+
+            // payrollb += Number(monthlySalary);
         });
+        // console.log(payrollb);
+
+        let payroll = (data.reduce((a, b) => a + b.employee_salary, 0) / 12);
 
         const trTFoot = tfoot.insertRow();
         let cellNumberEmployees = trTFoot.insertCell(0);
-        cellNumberEmployees.textContent = numberEmployees;
+        cellNumberEmployees.textContent = data.length;
         cellNumberEmployees.style.fontWeight = 'bold';
         let cellVides1 = trTFoot.insertCell(1);
         cellVides1.colSpan = 2;
@@ -69,11 +96,25 @@ const display = () => {
         message.innerHTML = 'Aucun employé est présent dans la liste';
         myTable.style.display = 'none';
     }
-};
+}
+
+const sortDecreasing = () => {
+    data.sort((a, b) => b.employee_salary - a.employee_salary)
+}
+
+const sortIncreasing = () => {
+    data.sort((a, b) => a.employee_salary - b.employee_salary)
+}
+
 
 btnIncreasing.addEventListener('click', () => {
-    console.log('test');
+    sortIncreasing();
+    display();
+});
 
+btnDecreasing.addEventListener('click', () => {
+    sortDecreasing();
+    display();
 });
 
 fetchEmployees();

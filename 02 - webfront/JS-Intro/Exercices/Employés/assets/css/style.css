@@ -90,21 +90,21 @@ th {
 }
 
 .styled {
-    padding: 10px;
+    padding: 10px 15px;
     margin: 2px;
     color: whitesmoke;
+    border-style: none;
+    border-radius: 4px;
 
     i {
         padding-right: 10px;
     }
 }
 
-.duplicate {
+.btnDuplicate {
     background-color: #3298dc;
-    border-color: #3298dc;
 }
 
-.delete {
+.btnDelete {
     background-color: #f14668;
-    border-color: #f14668;
 }
