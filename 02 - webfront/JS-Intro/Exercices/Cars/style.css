@@ -57,24 +57,12 @@ button {
 
 .alertInput {
     color: red;
-    margin-top: 30px;
     font-size: 2rem;
+    margin-top: 50px;
+    justify-self: center;
 }
 
-#result,
 ul {
-    margin: 15px 0;
+    margin: 20px 0 10px 500px;
     text-align: left;
-}
-
-#result{
-    /* display: block; */
-}
-
-ul{
-    /* display: block; */
-}
-
-li{
-    /* display:block; */
 }

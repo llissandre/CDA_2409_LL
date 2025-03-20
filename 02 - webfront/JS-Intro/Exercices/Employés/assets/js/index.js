@@ -60,7 +60,12 @@ const display = () => {
             cellActions.append(btnDuplicate, btnDelete);
 
             btnDuplicate.addEventListener('click', () => {
-                const maxId = data.reduce((a, b) => (a.id > b.id) ? a.id : b.id);
+
+                const maxId = Math.max(...data.map(element => element.id));
+                // Donne parfois un maxId incorrect
+                // const maxId = data.reduce((a, b) => (a.id > b.id) ? a.id : b.id);
+                console.log(maxId);
+
                 const duplicate = { ...element };
                 duplicate.id = maxId + 1;
 
