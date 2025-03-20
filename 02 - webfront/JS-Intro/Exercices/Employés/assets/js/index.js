@@ -2,10 +2,12 @@ let data = [];
 
 const message = document.querySelector('.message');
 const myTable = document.querySelector('#myTable');
+const btnIncreasing = document.querySelector('#btnIncreasing')
+const btnDecreasing = document.querySelector('#btnDecreasing')
 const tbody = myTable.createTBody();
 const tfoot = myTable.createTFoot();
 
-async function employees() {
+async function fetchEmployees() {
     try {
         // const response = await fetch('./assets/json/employees vide.json');
         const response = await fetch('./assets/json/employees.json');
@@ -69,4 +71,9 @@ const display = () => {
     }
 };
 
-employees();
+btnIncreasing.addEventListener('click', () => {
+    console.log('test');
+
+});
+
+fetchEmployees();

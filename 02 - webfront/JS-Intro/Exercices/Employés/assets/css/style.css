@@ -41,12 +41,43 @@ table {
     justify-items: center;
 }
 
+#myTable {
+    margin-bottom: 20px;
+}
+
 thead {
     color: black;
 }
 
-td,
-th {
+.zoneFiltrage {
+    display: flex;
+    border: none;
+}
+
+#monthly {
+    margin-right: 20px;
+    width: 50%;
+}
+
+#filtrage {
+    display: inline-flex;
+    flex-direction: column;
+    /* width: 50%; */
+    border: 1px solid #62576b31;
+    border-radius: 3px;
+    padding: 5px 12px;
+    font-size: 0.7rem;
+}
+
+#btnIncreasing,
+#btnDecreasing {
+    border: none;
+    background-color: transparent;
+}
+
+th,
+tr,
+td {
     border: 1px solid #62576b31;
     text-align: left;
     vertical-align: top;
@@ -56,10 +87,6 @@ th {
 th {
     padding: 10px;
     text-align: left;
-}
-
-#myTable {
-    margin-bottom: 20px;
 }
 
 .styled {
@@ -80,23 +107,4 @@ th {
 .delete {
     background-color: #f14668;
     border-color: #f14668;
-}
-
-.zoneFiltrage{
- display: grid;
- grid-template-columns: repeat();
-}
-
-#monthly{
-    margin-right: 20px;
-}
-
-#filtrage {
-    display: inline-flex;
-flex-direction: column;
-    border: 1px solid #62576b31;
-    border-radius: 3px;
-    padding: 8px 15px;
-    margin: 0;
-    font-size: 0.7rem;
 }
