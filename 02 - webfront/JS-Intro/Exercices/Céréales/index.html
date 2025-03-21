@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Céréales</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/index.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Cereals</h1>
+            <div id="searchCereals">
+                <fieldset id="fieldsetSC">
+                    <legend>Rechercher</legend>
+                    <div>
+                        <input type="search" name="searchCereal" id="searchCereal" placeholder="Nom de la céréale">
+                    </div>
+                </fieldset>
+            </div>
+            <div id="filterNS">
+                <fieldset id="fieldsetF">
+                    <legend>Filter</legend>
+                    <div id="ns">
+                        <fieldset>
+                            <legend>Nutriscore</legend>
+                            <label for="A">A</label>
+                            <input type="checkbox" name="checkboxNS" id="A">
+                            <label for="B">B</label>
+                            <input type="checkbox" name="checkboxNS" id="B">
+                            <label for="C">C</label>
+                            <input type="checkbox" name="checkboxNS" id="C">
+                            <label for="D">D</label>
+                            <input type="checkbox" name="checkboxNS" id="D">
+                            <label for="E">E</label>
+                            <input type="checkbox" name="checkboxNS" id="E">
+                        </fieldset>
+                    </div>
+                    <div id="category">
+                        <fieldset>
+                            <legend>Catégorie</legend>
+                            <select name="c" id="c">
+                                <option value="tous">tous</option>
+                            </select>
+                        </fieldset>
+                    </div>
+                </fieldset>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nom</th>
+                    <th>calories</th>
+                    <th>protéïnes</th>
+                    <th>sel</th>
+                    <th>fibres</th>
+                    <th>glucides</th>
+                    <th>sucre</th>
+                    <th>potassium</th>
+                    <th>vitamines</th>
+                    <th>évaluation</th>
+                    <th>ns</th>
+                    <th>del</th>
+                </tr>
+            </thead>
+
+        </table>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
