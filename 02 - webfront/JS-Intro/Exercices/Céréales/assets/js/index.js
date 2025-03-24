@@ -8,8 +8,6 @@ const c = document.getElementById('c');
 const d = document.getElementById('d');
 const e = document.getElementById('e');
 
-const checkboxNS = document.querySelectorAll('checkboxNS');
-
 const tbody = myTable.createTBody();
 const tfoot = myTable.createTFoot();
 
@@ -107,35 +105,38 @@ const searchCereals = (e) => {
         alert('Aucune correspondance n\'a été trouvée');
     }
     else {
-
         display(resultCereals)
     };
 };
 
 const calculateNutriscore = (rating) => {
-    if (rating >= 80) {
-        nutriscore = 'A';
-        color = 'var(--A)'
-    }
-    else if (rating >= 70 && rating < 80) {
-        nutriscore = 'B';
-        color = 'var(--B)'
-    }
-    else if (rating >= 55 && rating < 70) {
-        nutriscore = 'C';
-        color = 'var(--C)'
-    }
-    else if (rating >= 35 && rating < 55) {
-        nutriscore = 'D';
-        color = 'var(--D)'
-    }
-    else if (rating < 35) {
+    if (rating < 35) {
         nutriscore = 'E';
         color = 'var(--E)'
     }
+    else if (rating < 55) {
+        nutriscore = 'D';
+        color = 'var(--D)'
+    }
+    else if (rating < 70) {
+        nutriscore = 'C';
+        color = 'var(--C)'
+    }
+    else if (rating < 80) {
+        nutriscore = 'B';
+        color = 'var(--B)'
+    }
+    else {
+        nutriscore = 'A';
+        color = 'var(--A)'
+    }
 }
 
-checkboxNS.addEventListener(('change'), () => console.log('test')
+inputSearchCereal.addEventListener('search', searchCereals);
+
+a.addEventListener(('change'), (e) =>
+    console.log(e.target)
+
 );
 
 fetchCereals();

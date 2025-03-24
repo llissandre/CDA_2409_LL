@@ -80,7 +80,8 @@ const displayCheckbox = () => {
         const checkboxInput = document.createElement('input');
         const checkboxLabel = document.createElement('label');
 
-        country.setAttribute('id', 'country')
+        // country.setAttribute('id', 'country')
+        country.id = 'country';
 
         checkboxInput.type = 'checkbox';
         checkboxInput.id = c.pays;
