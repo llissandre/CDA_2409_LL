@@ -17,32 +17,32 @@
                 <h1>Cereals</h1>
             </div>
             <div id="inputsHeader">
-                <fieldset id="fieldsetSC">
+                <fieldset class="fieldsetSC">
                     <legend>Rechercher</legend>
                     <input type="search" name="searchCereal" id="inputSearchCereal" placeholder="Nom de la céréale">
                 </fieldset>
-                <fieldset id="fieldsetF">
+                <fieldset class="fieldsetF">
                     <legend>Filtrer</legend>
-                    <fieldset id="ns">
+                    <fieldset class="ns">
                         <legend>Nutriscore</legend>
-                            <label for="a">A</label>
-                            <input type="checkbox" name="checkboxNS" id="a">
-                            <label for="b">B</label>
-                            <input type="checkbox" name="checkboxNS" id="b">
-                            <label for="c">C</label>
-                            <input type="checkbox" name="checkboxNS" id="c">
-                            <label for="d">D</label>
-                            <input type="checkbox" name="checkboxNS" id="d">
-                            <label for="e">E</label>
-                            <input type="checkbox" name="checkboxNS" id="e">
+                        <label for="a">A</label>
+                        <input type="checkbox" name="checkboxNS" class="checkboxNS" value="A" id="a">
+                        <label for="b">B</label>
+                        <input type="checkbox" name="checkboxNS" class="checkboxNS" value="B" id="b">
+                        <label for="c">C</label>
+                        <input type="checkbox" name="checkboxNS" class="checkboxNS" value="C" id="c">
+                        <label for="d">D</label>
+                        <input type="checkbox" name="checkboxNS" class="checkboxNS" value="D" id="d">
+                        <label for="e">E</label>
+                        <input type="checkbox" name="checkboxNS" class="checkboxNS" value="E" id="e">
                     </fieldset>
-                    <fieldset id="category">
+                    <fieldset class="category">
                         <legend>Catégorie</legend>
-                        <select name="ctgr" id="ctgr">
-                            <option value="tous" selected>Tous</option>
-                            <option value="sc">Sans sucre</option>
-                            <option value="pes">Pauvre en sel</option>
-                            <option value="boost">Boost</option>
+                        <select class="ctgr" name="ctgr" id="ctgr">
+                            <option value="all" id="all" selected>Tous</option>
+                            <option value="withoutSugar" id="withoutSugar">Sans sucre</option>
+                            <option value="lowSalt" id="lowSalt">lowSalt</option>
+                            <option value="boost" id="boost">Boost</option>
                         </select>
                     </fieldset>
                 </fieldset>
