@@ -61,13 +61,11 @@ const display = () => {
 
             btnDuplicate.addEventListener('click', () => {
 
-                const maxId = Math.max(...data.map(element => element.id));
-                // Donne parfois un maxId incorrect
-                // const maxId = data.reduce((a, b) => (a.id > b.id) ? a.id : b.id);
-                console.log(maxId);
+                // const maxId = Math.max(...data.map(element => element.id));
 
+                const maxId = data.reduce((a, b) => (a.id > b.id) ? a : b);
                 const duplicate = { ...element };
-                duplicate.id = maxId + 1;
+                duplicate.id = maxId.id + 1;
 
                 data.splice(data.length, 0, duplicate);
                 display();
