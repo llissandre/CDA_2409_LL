@@ -1,7 +1,9 @@
 let collectionCereals = [];
+let nutriscoreChecked = [];
 
 const inputSearchCereal = document.getElementById('inputSearchCereal');
 const myTable = document.getElementById('myTable');
+const inputCheckboxes = document.querySelector('input[type="checkbox"]');
 const a = document.getElementById('a');
 const b = document.getElementById('b');
 const c = document.getElementById('c');
@@ -134,9 +136,14 @@ const calculateNutriscore = (rating) => {
 
 inputSearchCereal.addEventListener('search', searchCereals);
 
-a.addEventListener(('change'), (e) =>
-    console.log(e.target)
 
-);
+
+d.addEventListener(('change'), (e) => {
+
+    if (e.target.checked) {
+        console.log('test');
+    }
+
+});
 
 fetchCereals();
