@@ -112,7 +112,7 @@ const personnes = () => {
             tdlastname.textContent = element.split(' ')[1];
             tdfirstname.textContent = element.split(' ')[0];
             tdemail.textContent = element.split(' ')[0].toLowerCase() + '.' + element.split(' ')[1].toLowerCase() + '@example.com';
-            tddelete.innerHTML = '<p id = "i" class="delete">X</p>';
+            tddelete.innerHTML = '<p class="delete">X</p>';
 
             inscrit.append(peoplelist);
             tbody.append(trpeople);

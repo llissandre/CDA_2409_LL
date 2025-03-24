@@ -40,6 +40,13 @@ const display = () => {
             const btnDelete = document.createElement('button');
             let cellId = trTBody.insertCell();
             cellId.textContent = element.id;
+            if (element.id%2 === 0) {
+                trTBody.classList.add('even');
+            }
+            else {
+                trTBody.classList.remove('even');
+            }
+            
             let cellEmployee_name = trTBody.insertCell();
             cellEmployee_name.textContent = element.employee_name;
             let cellEmail = trTBody.insertCell();

@@ -19,27 +19,30 @@
             <div id="inputsHeader">
                 <fieldset id="fieldsetSC">
                     <legend>Rechercher</legend>
-                    <input type="search" name="searchCereal" id="searchCereal" placeholder="Nom de la céréale">
+                    <input type="search" name="searchCereal" id="inputSearchCereal" placeholder="Nom de la céréale">
                 </fieldset>
                 <fieldset id="fieldsetF">
                     <legend>Filtrer</legend>
                     <fieldset id="ns">
                         <legend>Nutriscore</legend>
-                        <label for="A">A</label>
+                        <label for="a">A</label>
                         <input type="checkbox" name="checkboxNS" id="A">
-                        <label for="B">B</label>
+                        <label for="b">B</label>
                         <input type="checkbox" name="checkboxNS" id="B">
-                        <label for="C">C</label>
+                        <label for="c">C</label>
                         <input type="checkbox" name="checkboxNS" id="C">
-                        <label for="D">D</label>
+                        <label for="d">D</label>
                         <input type="checkbox" name="checkboxNS" id="D">
-                        <label for="E">E</label>
+                        <label for="e">E</label>
                         <input type="checkbox" name="checkboxNS" id="E">
                     </fieldset>
                     <fieldset id="category">
                         <legend>Catégorie</legend>
                         <select name="c" id="c">
                             <option value="tous">Tous</option>
+                            <option value="sc">Sans sucre</option>
+                            <option value="pes">Pauvre en sel</option>
+                            <option value="boost">Boost</option>
                         </select>
                     </fieldset>
                 </fieldset>

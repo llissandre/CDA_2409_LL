@@ -35,7 +35,7 @@ body {
     color: var(--color7);
     background-color: var(--color1);
     max-width: 100vw;
-    margin: 15px;
+    margin: 15px 15px 0 15px;
 }
 
 nav {
@@ -59,8 +59,9 @@ nav {
         padding: 10px;
         width: 30%;
 
-        #searchCereal {
-            padding-bottom: 10px;
+        #inputSearchCereal {
+            color: var(--color7);
+            padding: 0 10px;
             display: flex;
             font-size: 1.2rem;
             width: 100%;
@@ -76,7 +77,6 @@ nav {
         width: 70%;
 
         #ns {
-            /* align-self: center; */
             padding: 10px;
             margin-right: 5px;
         }
@@ -91,6 +91,10 @@ nav {
             }
         }
     }
+}
+
+.pointer:hover{
+    cursor: pointer;
 }
 
 legend,
@@ -127,13 +131,19 @@ tbody {
         padding: 10px 0;
     }
 
-    td:nth-child(1) {
+    td:nth-child(1),
+    td:last-child {
         background-color: var(--color3);
     }
 
     td:nth-child(2) {
         text-align: left;
         padding-left: 10px;
+        width: 30rem;
+    }
+
+    td:nth-child(3) {
+        width: 10rem;
     }
 
     tr:hover {
@@ -142,5 +152,23 @@ tbody {
         td:nth-child(1) {
             background-color: var(--color5);
         }
+    }
+}
+
+tfoot {
+    td {
+        padding: 10px 0;
+    }
+
+    td:nth-child(1) {
+        background-color: var(--color3);
+    }
+
+    td:nth-child(2) {
+        padding-left: 10px;
+    }
+
+    td:nth-child(3) {
+        text-align: center;
     }
 }

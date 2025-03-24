@@ -89,6 +89,10 @@ th {
     text-align: left;
 }
 
+.even{
+    background-color: #fafafa;
+}
+
 .styled {
     padding: 10px 15px;
     margin: 2px;
