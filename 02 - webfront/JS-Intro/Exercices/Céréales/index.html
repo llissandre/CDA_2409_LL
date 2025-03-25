@@ -17,32 +17,32 @@
                 <h1>Cereals</h1>
             </div>
             <div id="inputsHeader">
-                <fieldset class="fieldsetSC">
+                <fieldset class="fieldsetSearch">
                     <legend>Rechercher</legend>
                     <input type="search" name="searchCereal" id="inputSearchCereal" placeholder="Nom de la céréale">
                 </fieldset>
-                <fieldset class="fieldsetF">
+                <fieldset class="fieldsetFilters">
                     <legend>Filtrer</legend>
                     <fieldset class="ns">
                         <legend>Nutriscore</legend>
                         <label for="a">A</label>
-                        <input type="checkbox" name="checkboxNS" class="checkboxNS" value="A" id="a">
+                        <input type="checkbox" name="checkboxesNS" class="checkboxesNS" value="A" id="a">
                         <label for="b">B</label>
-                        <input type="checkbox" name="checkboxNS" class="checkboxNS" value="B" id="b">
+                        <input type="checkbox" name="checkboxesNS" class="checkboxesNS" value="B" id="b">
                         <label for="c">C</label>
-                        <input type="checkbox" name="checkboxNS" class="checkboxNS" value="C" id="c">
+                        <input type="checkbox" name="checkboxesNS" class="checkboxesNS" value="C" id="c">
                         <label for="d">D</label>
-                        <input type="checkbox" name="checkboxNS" class="checkboxNS" value="D" id="d">
+                        <input type="checkbox" name="checkboxesNS" class="checkboxesNS" value="D" id="d">
                         <label for="e">E</label>
-                        <input type="checkbox" name="checkboxNS" class="checkboxNS" value="E" id="e">
+                        <input type="checkbox" name="checkboxesNS" class="checkboxesNS" value="E" id="e">
                     </fieldset>
                     <fieldset class="category">
                         <legend>Catégorie</legend>
-                        <select class="ctgr" name="ctgr" id="ctgr">
-                            <option value="all" id="all" selected>Tous</option>
-                            <option value="withoutSugar" id="withoutSugar">Sans sucre</option>
-                            <option value="lowSalt" id="lowSalt">lowSalt</option>
-                            <option value="boost" id="boost">Boost</option>
+                        <select id="selectCategory">
+                            <option value="all" selected>Tous</option>
+                            <option value="withoutSugar">Sans sucre</option>
+                            <option value="lowSalt">lowSalt</option>
+                            <option value="boost">Boost</option>
                         </select>
                     </fieldset>
                 </fieldset>

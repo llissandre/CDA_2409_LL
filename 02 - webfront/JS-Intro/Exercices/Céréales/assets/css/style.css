@@ -55,7 +55,7 @@ nav {
     display: flex;
     width: 60vw;
 
-    .fieldsetSC {
+    .fieldsetSearch {
         padding: 10px;
         width: 30%;
 
@@ -71,7 +71,7 @@ nav {
         }
     }
 
-    .fieldsetF {
+    .fieldsetFilters {
         display: flex;
         padding: 5px 15px 15px 20px;
         width: 70%;
