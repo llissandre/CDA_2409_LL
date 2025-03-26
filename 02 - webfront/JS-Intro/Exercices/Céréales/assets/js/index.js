@@ -26,6 +26,7 @@ async function fetchCereals() {
         const reponse = await fetch('./assets/json/cereals.json');
         // const reponse = await fetch('./assets/json/cereals tests.json');
         // const reponse = await fetch('./assets/json/cereals vide.json');
+
         if (!reponse.ok) {
             throw new Error('La réponse n\'est pas ok')
         }
@@ -43,9 +44,9 @@ console.log(filteredStorage);
 console.log(filtered);
 
 const display = () => {
-    filteredStorage = localStorage.getItem('filteredStorage');
+    // filteredStorage = localStorage.getItem('filteredStorage');
     filtered = JSON.parse(filteredStorage);
-    console.log(filtered);
+    // console.log(filtered);
 
     tbody.textContent = '';
     tfoot.textContent = '';
@@ -133,6 +134,7 @@ const display = () => {
             display();
         })
 
+        localStorage.setItem('filteredStorage', JSON.stringify(filtered));
     });
     
     const trTFoot = tfoot.insertRow();
@@ -152,7 +154,6 @@ const display = () => {
     cellAvgCalories.textContent = 'Moyenne calories : ' + avgCalories;
     
     
-    localStorage.setItem('filteredStorage', JSON.stringify(filtered));
 }
 
 const getNS = (rating) => {

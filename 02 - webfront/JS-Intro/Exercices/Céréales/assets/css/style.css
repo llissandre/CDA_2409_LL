@@ -56,38 +56,80 @@ nav {
     width: 60vw;
 
     .fieldsetSearch {
-        padding: 10px;
+        margin-right: 5px;
+        padding-left: 20px;
         width: 30%;
+        height: 80%;
 
-        #inputSearchCereal {
-            color: var(--color7);
-            padding: 0 10px;
-            display: flex;
-            font-size: 1.2rem;
-            width: 100%;
-            height: 100%;
-            border-style: none;
-            background-color: var(--color3);
+        #fieldsetSearch {
+
+
+            #inputSearchCereal {
+                padding: 0 10px;
+                color: var(--color7);
+                display: flex;
+                font-size: 1.2rem;
+                width: 100%;
+                height: 100%;
+                border-style: none;
+                background-color: var(--color3);
+            }
         }
     }
 
     .fieldsetFilters {
         display: flex;
-        padding: 5px 15px 15px 20px;
+        padding: 0;
+        padding: 5px 0px 10px 20px;
         width: 70%;
+        margin: 0;
 
         .ns {
-            padding: 10px;
+            width: 25%;
             margin-right: 5px;
+
+            #ns {
+                cursor: pointer;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.2rem;
+                gap: 7px;
+            }
         }
 
         .category {
-            padding: 5px 10px 10px 10px;
-            text-align: center;
+            width: 20%;
+            margin-right: 5px;
 
-            select {
-                width: 150px;
-                font-size: 1rem;
+            #category {
+                height: 100%;
+                text-align: center;
+                align-content: center;
+
+
+                select {
+                    padding: 2px;
+                    width: 80%;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        .deleteLS {
+            width: 30%;
+
+            #deleteLS {
+                height: 100%;
+                text-align: center;
+                align-content: center;
+
+                .deletelocalStorage {
+                    padding: 2px;
+                    width: 80%;
+                    font-size: 0.9rem;
+                }
             }
         }
     }
@@ -103,8 +145,9 @@ label {
 }
 
 fieldset {
-    font-size: 1.2rem;
+    font-size: 1rem;
     background-color: var(--color3);
+
 }
 
 table {
