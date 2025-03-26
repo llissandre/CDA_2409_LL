@@ -1,5 +1,6 @@
 let collectionCereals = [];
 let nutriscoreChecked = [];
+let filtered = [];
 
 const myTable = document.getElementById('myTable');
 const filters = document.querySelectorAll('.fieldsetFilters input[type=checkbox], .fieldsetFilters select');
@@ -36,18 +37,34 @@ async function fetchCereals() {
     }
 }
 
+let filteredStorage = localStorage.getItem('filteredStorage');
+filtered = JSON.parse(filteredStorage);
+console.log(filteredStorage);
+console.log(filtered);
+
 const display = () => {
+    filteredStorage = localStorage.getItem('filteredStorage');
+    filtered = JSON.parse(filteredStorage);
+    console.log(filtered);
+
     tbody.textContent = '';
     tfoot.textContent = '';
-
+    
     const inputSearchCereal = document.getElementById('inputSearchCereal').value.toLowerCase();
     const inputNsChecked = [...document.querySelectorAll('.checkboxesNS:checked')].map(cereal => cereal.value);
     const selectCategory = document.getElementById('selectCategory').value;
-
-    let filtered = collectionCereals.filter(cereal => !removed.has(cereal.id));
+    
+    if (filteredStorage === null) {
+        filtered = collectionCereals.filter(cereal => !removed.has(cereal.id));
+    }
+    else {
+        filtered = filtered.filter(cereal => !removed.has(cereal.id));
+    }
 
     filtered = filtered.filter(cereal => cereal.name.toLowerCase().includes(inputSearchCereal));
 
+    console.log(filtered);
+    
     filtered = filtered.filter(cereal => {
         const nsRating = getNSCheckbox(cereal.rating);
         const nsMatch = inputNsChecked.length === 0 || inputNsChecked.includes(nsRating);
@@ -103,20 +120,21 @@ const display = () => {
         let cellNS = trTBody.insertCell();
         cellNS.textContent = nutriscore;
         cellNS.style.backgroundColor = color;
-
+        
         let cellDEL = trTBody.insertCell();
         cellDEL.innerHTML = '&#128938;';
         cellDEL.classList.add('pointer');
         cellDEL.style.color = 'red';
-
+        
         cellDEL.addEventListener('click', () => {
             // const indexOfCereal = filtered.indexOf(cereal);
             // filtered.splice(indexOfCereal, 1)
             removed.add(cereal.id);
             display();
         })
-    });
 
+    });
+    
     const trTFoot = tfoot.insertRow();
     const sum = filtered.reduce((a, b) => a + b.calories, 0);
     let avgCalories = Math.floor(sum / filtered.length);
@@ -127,11 +145,14 @@ const display = () => {
         avgCalories = 0;
         cellIdVide.style.backgroundColor = 'var(--color1)';
     }
-
+    
     let cellNbElements = trTFoot.insertCell();
     cellNbElements.textContent = filtered.length + ' éléments';
     let cellAvgCalories = trTFoot.insertCell();
     cellAvgCalories.textContent = 'Moyenne calories : ' + avgCalories;
+    
+    
+    localStorage.setItem('filteredStorage', JSON.stringify(filtered));
 }
 
 const getNS = (rating) => {
@@ -157,17 +178,17 @@ const sortTable = (key) => {
         sortKey = key;
         sortInscrease = true;
     }
-
+    
     sortArrow();
     display();
 }
 
 const sortArrow = () => {
     arrow.forEach(e => e.textContent = '');
-
+    
     if (sortKey) {
         const arrowIds = document.getElementById('arrow-' + sortKey);
-
+        
         if (arrowIds)
             arrowIds.textContent = sortInscrease ? ' ▼' : ' ▲';
     }
@@ -183,32 +204,39 @@ dataSort.forEach(th => {
     });
 });
 
+// localStorage.setItem('test', 1);
+// alert(localStorage.getItem('test')); // 1
+
+const storeFiltered = () => {
+    localStorage.setItem('filteredStorage', JSON.stringify(filtered));
+}
+
 fetchCereals();
 
 
 // const inputCheckboxes = document.querySelectorAll('ns input[type=checkbox]');
 // inputCheckboxes.forEach(ck => ck.addEventListener('change', (e) => {
-//     if (e.target.checked) {
-//         nutriscoreChecked.push(e.target.id);
-//     }
-//     else {
-//         let myIndex = nutriscoreChecked.indexOf(e.target.id);
-//         nutriscoreChecked.splice(myIndex, 1);
-//     }
-//     console.log(nutriscoreChecked);
-// }));
-
-
-// const searchCereals = (e) => {
-//     e.preventDefault();
-
-//     let result = filtered.filter(cereal =>
-//         cereal.name.trim().toLowerCase().includes(inputSearchCereal.value.trim().toLowerCase()));
-
-//     if (result.length === 0) {
-//         alert('Aucune correspondance n\'a été trouvée');
-//     }
-//     else {
-//         display(result)
-//     };
-// };
+    //     if (e.target.checked) {
+        //         nutriscoreChecked.push(e.target.id);
+        //     }
+        //     else {
+            //         let myIndex = nutriscoreChecked.indexOf(e.target.id);
+            //         nutriscoreChecked.splice(myIndex, 1);
+            //     }
+            //     console.log(nutriscoreChecked);
+            // }));
+            
+            
+            // const searchCereals = (e) => {
+                //     e.preventDefault();
+                
+                //     let result = filtered.filter(cereal =>
+                    //         cereal.name.trim().toLowerCase().includes(inputSearchCereal.value.trim().toLowerCase()));
+                    
+                    //     if (result.length === 0) {
+                        //         alert('Aucune correspondance n\'a été trouvée');
+                        //     }
+                        //     else {
+                            //         display(result)
+                            //     };
+                            // };

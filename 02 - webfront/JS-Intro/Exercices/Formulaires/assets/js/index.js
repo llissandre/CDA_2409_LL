@@ -51,11 +51,11 @@ reset.addEventListener('click', reseter)
 // window.addEventListener('load', getSentences());
 
 // function storeSentence() {
-//     window.localStorage.sentences = sentences.textContent;
+//     window.localStorage.sentences = sentences.innerHTML;
 // }
 
 // function getSentences() {
 //     if (window.localStorage.sentences) {
-//         sentences.textContent = window.localStorage.sentences;
+//         sentences.innerHTML = window.localStorage.sentences;
 //     }
 // }
