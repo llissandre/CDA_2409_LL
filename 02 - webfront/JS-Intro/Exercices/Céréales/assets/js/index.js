@@ -10,6 +10,7 @@ const lowSalt = document.getElementById('lowSalt');
 const boost = document.getElementById('boost');
 const arrow = document.querySelectorAll('.arrow');
 const dataSort = document.querySelectorAll('th[data-sort]');
+const btnDeletelocalStorage = document.querySelector('.btnDeletelocalStorage');
 
 const removed = new Set();
 
@@ -39,22 +40,18 @@ async function fetchCereals() {
 }
 
 let filteredStorage = localStorage.getItem('filteredStorage');
-filtered = JSON.parse(filteredStorage);
-console.log(filteredStorage);
-console.log(filtered);
-
-const display = () => {
-    // filteredStorage = localStorage.getItem('filteredStorage');
     filtered = JSON.parse(filteredStorage);
-    // console.log(filtered);
+
+function display() {
+    filtered = JSON.parse(filteredStorage);
 
     tbody.textContent = '';
     tfoot.textContent = '';
-    
+
     const inputSearchCereal = document.getElementById('inputSearchCereal').value.toLowerCase();
     const inputNsChecked = [...document.querySelectorAll('.checkboxesNS:checked')].map(cereal => cereal.value);
     const selectCategory = document.getElementById('selectCategory').value;
-    
+
     if (filteredStorage === null) {
         filtered = collectionCereals.filter(cereal => !removed.has(cereal.id));
     }
@@ -64,8 +61,6 @@ const display = () => {
 
     filtered = filtered.filter(cereal => cereal.name.toLowerCase().includes(inputSearchCereal));
 
-    console.log(filtered);
-    
     filtered = filtered.filter(cereal => {
         const nsRating = getNSCheckbox(cereal.rating);
         const nsMatch = inputNsChecked.length === 0 || inputNsChecked.includes(nsRating);
@@ -77,7 +72,7 @@ const display = () => {
             selectMatch = cereal.sodium < 50;
         else if (selectCategory === 'boost')
             selectMatch = cereal.vitamins >= 25 && cereal.fiber >= 10;
-        
+
         return nsMatch && selectMatch;
     });
 
@@ -121,39 +116,37 @@ const display = () => {
         let cellNS = trTBody.insertCell();
         cellNS.textContent = nutriscore;
         cellNS.style.backgroundColor = color;
-        
+
         let cellDEL = trTBody.insertCell();
         cellDEL.innerHTML = '&#128938;';
         cellDEL.classList.add('pointer');
         cellDEL.style.color = 'red';
-        
+
         cellDEL.addEventListener('click', () => {
             // const indexOfCereal = filtered.indexOf(cereal);
             // filtered.splice(indexOfCereal, 1)
             removed.add(cereal.id);
             display();
-        })
+        });
 
-        localStorage.setItem('filteredStorage', JSON.stringify(filtered));
+        storeFiltered();
     });
-    
+
     const trTFoot = tfoot.insertRow();
     const sum = filtered.reduce((a, b) => a + b.calories, 0);
     let avgCalories = Math.floor(sum / filtered.length);
-    
+
     let cellIdVide = trTFoot.insertCell();
-    
+
     if (filtered.length === 0) {
         avgCalories = 0;
         cellIdVide.style.backgroundColor = 'var(--color1)';
     }
-    
+
     let cellNbElements = trTFoot.insertCell();
     cellNbElements.textContent = filtered.length + ' éléments';
     let cellAvgCalories = trTFoot.insertCell();
     cellAvgCalories.textContent = 'Moyenne calories : ' + avgCalories;
-    
-    
 }
 
 const getNS = (rating) => {
@@ -195,18 +188,21 @@ const sortArrow = () => {
     }
 }
 
+if (filteredStorage){
+    btnDeletelocalStorage.addEventListener('click', () => {
+        localStorage.removeItem('filteredStorage');
+        location.reload();
+})}
+
 inputSearchCereal.addEventListener('input', display);
 
 filters.forEach(e => e.addEventListener('change', display));
 
 dataSort.forEach(th => {
-    th.addEventListener('click', () => {
-        sortTable(th.dataset.sort);
-    });
+    th.addEventListener('click', () => 
+        sortTable(th.dataset.sort)
+    );
 });
-
-// localStorage.setItem('test', 1);
-// alert(localStorage.getItem('test')); // 1
 
 const storeFiltered = () => {
     localStorage.setItem('filteredStorage', JSON.stringify(filtered));
