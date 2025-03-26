@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis&display=swap");
+
+body {
+  background: #eee;
+  margin: 0;
+  font-family: "Dosis", sasn-serif;
+  color: #333;
+}
+
+main {
+  margin: 3rem auto 0;
+  width: 550px;
+  background: rgb(116, 178, 189);
+  padding: 16px 32px 32px;
+  box-shadow: 1px 2px 6px #333;
+  border-radius: 4px;
+}
+
+.img {
+  background: url("../img/cyber-pic.png") center/cover;
+  height: 280px;
+  border-radius: 4px;
+}
+
+.toggle {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:checked+.label .circle {
+  transform: translateX(29px);
+}
+
+.label {
+  background: rgb(182, 182, 182);
+  height: 26px;
+  width: 50px;
+  padding: 5px 8px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  position: relative;
+  transform: scale(1.2);
+  box-shadow: 2px 1px 1px #333;
+}
+
+.moon,
+.sun {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.sun {
+  transform: translate(3px, -1px);
+}
+
+.moon {
+  transform: translate(-3px, -1px) rotate(-10deg);
+}
+
+.circle {
+  background: #eee;
+  border-radius: 50%;
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  top: 5px;
+  left: 6px;
+  transition: transform 0.4s cubic-bezier(0.45, -1.12, 0.35, 1.78);
+}
+
+/* DARK MODE */
+.dark {
+  background: #333;
+}
+
+.dark main {
+  background: #09fbba;
+}
+
+.dark .label {
+  box-shadow: 2px 1px 1px #09fbba;
+  background: #888;
+}
+
+.dark .circle {
+  background: #09fbba;
+}

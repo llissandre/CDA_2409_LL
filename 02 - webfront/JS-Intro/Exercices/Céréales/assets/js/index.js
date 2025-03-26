@@ -205,7 +205,7 @@ dataSort.forEach(th => {
 });
 
 const storeFiltered = () => {
-    localStorage.setItem('filteredStorage', JSON.stringify(filtered));
+    window.localStorage.setItem('filteredStorage', JSON.stringify(filtered));
 }
 
 fetchCereals();
