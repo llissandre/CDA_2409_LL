@@ -30,18 +30,7 @@ h1 {
     margin: 0px 14vw 0 10px;
 }
 
-#form {
-    font-weight: 600;
-    margin: 10px;
-    border: #8e957f 1px dashed;
-    color: #946e7e;
-}
-
 legend {
-    margin: 0 0 30px 20px;
-}
-
-label {
     margin: 0 0 30px 20px;
 }
 
@@ -91,17 +80,31 @@ td {
     width: 100%;
 }
 
-#informations {
-    display: grid;
-    grid-template-columns: repeat(2, 20vw);
-    gap: 10px;
-    grid-template-areas:
-        "label" "input"
-        "label" "input"
-    ;
+#divForm{
+    border: #8e957f 1px dashed;
+    color: #946e7e;
+    margin: 10px;
+    
 }
 
-.surligne{
+#form {
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+    width: 50%;
+    font-weight: 600;
+
+    div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        label {
+            /* text-align: center; */
+    margin: 0 0 30px 20px;
+        }
+}
+
+.surligne {
     color: #d3bdb0;
     background-color: #715b64;
 }

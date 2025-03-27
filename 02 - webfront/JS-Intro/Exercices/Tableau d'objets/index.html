@@ -13,30 +13,22 @@
 <body>
     <main>
         <div id="filet">
+            <div id="mepEntete">
+                <h1>Espace membres</h1>
+                <div id="mdpIncorrect">Identifiant ou mot de passe incorrect</div>
+            </div>
             <div id="divForm">
-                <div id="mepEntete">
-                    <h1>Espace membres</h1>
-                    <div id="mdpIncorrect">Identifiant ou mot de passe incorrect</div>
-                </div>
                 <form action="" id="form">
+                    <legend>Identification</legend>
                     <div>
-                        <legend>Identification</legend>
+                        <label for="identifiantInput">Identifiant:</label>
+                        <input type="text" name="" id="identifiantInput">
                     </div>
-                    <div id="informations">
-                        <div>
-                            <label for="identifiantInput">Identifiant:</label>
-                        </div>
-                        <div>
-                            <input type="text" name="" id="identifiantInput">
-                        </div>
-                        <div>
-                            <label for="passwordInput">Mot de passe: </label>
-                        </div>
-                        <div>
-                            <input type="password" name="" id="passwordInput">
-                        </div>
+                    <div>
+                        <label for="passwordInput">Mot de passe: </label>
+                        <input type="password" name="" id="passwordInput">
                     </div>
-                    <input type="submit" id="btnConnexion" value="Connexion">
+                    <div><input type="submit" id="btnConnexion" value="Connexion"></div>
                 </form>
             </div>
             <div id="divTabId">

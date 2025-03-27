@@ -4,11 +4,11 @@ const span = document.querySelector('span');
 
 
 btnajout.addEventListener('click', function () {
-    let nbclick = Number(document.querySelector('span').textContent);
-    span.textContent = nbclick + 1;
-    document.querySelector('span').textContent = nbclick + 1;
+    let nbclick = Number(span.textContent);
+    nbclick += 1;
+    span.textContent = nbclick;
 });
 
-btnreinitialiser.addEventListener('click', function () {
-    document.querySelector('span').textContent = 0;
+btnreinitialiser.addEventListener('click', () => {
+    span.textContent = 0;
 });
