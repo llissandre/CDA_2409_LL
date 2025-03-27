@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Évaluation</title>
+    <title>Évaluation en VueJS</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/index.js" async></script>
@@ -30,25 +30,24 @@
                     </div>
                     <input type="submit" id="btnValider" value="Ajouter">
                 </form>
-                <div class="myTable">
-                    <table id="myTable">
-                        <thead>
-                            <tr>
-                                <th>Nom</th>
-                                <th>Prénom</th>
-                                <th>Note</th>
-                                <th>Obtenu</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody">
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Note</th>
+                            <th>Obtenu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="eval of listEvaluations" :key="eval.fullname">
+                            <td>{{getLastname(eval.fullname)}}</td>
+                            <td>{{getFirstname(eval.fullname)}}</td>
+                            <td>{{eval.grade}}</td>
+                            <td>{{obtenu}}</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <ul>
                     <li>Nombre d\'étudiants : ${nbEtudiants}</li>
                     <li>Moyenne de la classe : ${(avgClasse).toFixed(2)}</li>
