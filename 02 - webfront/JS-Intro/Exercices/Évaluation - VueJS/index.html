@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Évaluation</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/index.js" async></script>
+</head>
+
+<body>
+    <main>
+        <div id="app">
+            <div id="filet">
+                <h1>Résultat de l'évaluation</h1>
+                <form action="" id="myFormId">
+                    <legend>Ajouter une note</legend>
+                    <div id="inputs">
+                        <div id="labelmyFormDiv">
+                            <label for="lastnameFirstnameInput">Nom Prénom : </label><br>
+                            <label for="gradeInput">Note : </label><br>
+                        </div>
+                        <div id="InputmyFormDiv">
+                            <input type="text" id="lastnameFirstnameInput" name="lastnameFirstname"><br>
+                            <input type="text" id="gradeInput" name="gradeInput" value="0"><br>
+                        </div>
+                    </div>
+                    <input type="submit" id="btnValider" value="Ajouter">
+                </form>
+                <div class="myTable">
+                    <table id="myTable">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Prénom</th>
+                                <th>Note</th>
+                                <th>Obtenu</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul>
+                    <li>Nombre d\'étudiants : ${nbEtudiants}</li>
+                    <li>Moyenne de la classe : ${(avgClasse).toFixed(2)}</li>
+                    <li>Nombre d"étudiants au-dessus de la moyenne : ${overAvg.length}</li>
+                    <li>Nombre d"étudiants au-dessus de la moyenne des notes de la classe: ${overAvgGrades.length}</li>
+                    <li>Note éliminatoire : ${failingGrade}</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
