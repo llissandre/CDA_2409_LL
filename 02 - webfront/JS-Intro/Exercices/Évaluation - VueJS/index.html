@@ -8,7 +8,7 @@
     <title>Évaluation en VueJS</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./assets/js/index.js" async></script>
+    <script src="./assets/js/index.js" type="module"></script>
 </head>
 
 <body>
@@ -40,20 +40,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="eval of listEvaluations" :key="eval.fullname">
+                        <tr v-for="eval of getGradesSorted" :key="eval.fullname">
                             <td>{{getLastname(eval.fullname)}}</td>
                             <td>{{getFirstname(eval.fullname)}}</td>
                             <td>{{eval.grade}}</td>
-                            <td>{{obtenu}}</td>
+                            <td>{{getObtenu(eval.grade)}}</td>
                         </tr>
                     </tbody>
                 </table>
-                <ul>
-                    <li>Nombre d\'étudiants : ${nbEtudiants}</li>
-                    <li>Moyenne de la classe : ${(avgClasse).toFixed(2)}</li>
-                    <li>Nombre d"étudiants au-dessus de la moyenne : ${overAvg.length}</li>
-                    <li>Nombre d"étudiants au-dessus de la moyenne des notes de la classe: ${overAvgGrades.length}</li>
-                    <li>Note éliminatoire : ${failingGrade}</li>
+                <ul id="ulId">
+                    <li>Nombre d\'étudiants : {{ listEvaluations.length }}</li>
+                    <li>Moyenne de la classe : {{ getAvgClasse }}</li>
+                    <li>Nombre d"étudiants au-dessus de la moyenne : {{ getNbStOverAvg }}</li>
+                    <li>Nombre d"étudiants au-dessus de la moyenne des notes de la classe: {{ getNbStOverAvgClasse }}
+                    </li>
+                    <li>Note éliminatoire : {{ failingGrade }}</li>
                 </ul>
             </div>
         </div>
