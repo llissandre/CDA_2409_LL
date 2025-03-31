@@ -16,151 +16,16 @@
         <h1>Puissance 4</h1>
     </header>
     <main>
-        <div id="grille">
+        <div id="grid">
             <div id="app">
-                <table id="myTable" v-on:click='test'>
-                <!-- <table> -->
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                            <td>
-                                <div></div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <!-- {{ console.table(matrix) }} -->
+                <template v-for="(row, x) in matrix" :key="x">
+                    
+                        <div v-for="(cell, y) in row" :key="y">
+                            <div class="token" :style="{background: cell}" @click="play(y)"></div>
+                        </div>
+
+                </template>
             </div>
         </div>
     </main>
