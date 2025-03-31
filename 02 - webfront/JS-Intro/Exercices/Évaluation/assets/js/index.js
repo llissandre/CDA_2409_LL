@@ -87,7 +87,7 @@ const validate = (e) => {
     let usernameInput = lastnameFirstnameInput.value.trim();
     let lastname = usernameInput.split(' ')[0];
     let firstname = usernameInput.split(' ')[1];
-    let grade = Number(gradeInput.value);
+    let grade = parseInt(gradeInput.value);
     let fullname = lastname + ' ' + firstname;
 
     if (regexUsername.test(lastname) && lastname !== undefined && regexUsername.test(firstname) && firstname !== undefined && grade >= 0 && grade <= 20) {

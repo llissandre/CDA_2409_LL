@@ -11,8 +11,9 @@ const appPuissanceQuatre = {
                 color: 'yellow',
                 score: 0
             },
-            // player1: 'red',
-            // player2: 'yellow',
+            lenghtOfPower4: 7,
+            heightOfPower4: 6,
+
             currentPlayer: 'red',
             winner: null,
             gameOver: false,
@@ -29,42 +30,65 @@ const appPuissanceQuatre = {
             this.currentPlayer = this.player1.color;
             this.winner = null;
             this.gameOver = false;
-        },
-        changePlayer() {
-            this.currentPlayer = this.getCurrentPlayer === this.player1.color ? this.player2.color : this.player1.color;
+
+            this.play(y);
         },
         checkWinner(x, y) {
             let counter = 0;
-            let xPlayer = x;
-            let yPlayer = y;
 
-            console.log(x, y);
-            console.log(this.matrix[x][y]);
-            
+            console.log(this.matrix[x][y], this.getCurrentPlayer, x, y, counter);
 
-            for (i = 0; i >= 0 && i < this.matrix.length && this.matrix[x][y] === this.getCurrentPlayer; i++) {
-                counter++;
-                console.log(x, y, i, counter);
+            // for (let i = 1; i <= 4; i++) {
+            //     let xPlayer = x * i;
+            //     let yPlayer = y * i;
+            //     // this.checkDirection(x, y, counter, i);
+            //     // this.checkDirection(x, y, counter, -i);
 
-                if (counter === 4) {
-                    this.gameOver = true;
-                    this.winner = this.getCurrentPlayer;
-                }
+            //     if (xPlayer >= 0 && xPlayer < this.lenghtOfPower4 && this.matrix[xPlayer][y] === this.getCurrentPlayer) {
+            //         counter++;
+            //         console.log(xPlayer, x, y, counter);
 
-                x++;
-            }
+            //         // if (counter === 4) {
+            //         //     this.gameOver = true;
+            //         //     this.winner = this.getCurrentPlayer;
+            //         //     console.log('if', this.winner);
+            //         // return this.winner;
+            //         console.log(xPlayer, x, y, counter);
+            //         // }
+
+            //         xPlayer++;
+            //     }
+            //     else { i = 4; }
+            // }
+
+
+            // if (this.matrix[x][y] === null)
+            //     return this.winner = null;
+        },
+        // checkDirection(x, y, counter, i) {
+
+        //     if (x >= 0 && x < this.lenghtOfPower4 && y >= 0 && y < this.heightOfPower4 && this.matrix[x][y] === this.getCurrentPlayer) {
+        //         counter++;
+        //         x + i;
+        //         console.log('cD', counter);
+        //     }
+        // },
+        changePlayer() {
+            this.currentPlayer = this.getCurrentPlayer === this.player1.color ? this.player2.color : this.player1.color;
         },
         resetGame() {
             this.startGame();
         },
         play(y) {
+
+
             const currentColumn = this.matrix.map(row => row[y]);
             const x = currentColumn.lastIndexOf(null);
+            this.matrix[x][y] = this.getCurrentPlayer;
+            this.checkWinner(x, y);
 
-            if (x !== -1) {
-                this.matrix[x][y] = this.getCurrentPlayer;
+            if (y !== -1) {
                 this.changePlayer();
-                this.checkWinner(x, y);
             }
         }
     }

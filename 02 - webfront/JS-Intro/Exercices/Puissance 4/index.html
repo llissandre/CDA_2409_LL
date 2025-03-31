@@ -18,13 +18,11 @@
     <main>
         <div id="grid">
             <div id="app">
-                <!-- {{ console.table(matrix) }} -->
-                <template v-for="(row, x) in matrix" :key="x">
-                    
-                        <div v-for="(cell, y) in row" :key="y">
-                            <div class="token" :style="{background: cell}" @click="play(y)"></div>
-                        </div>
-
+                {{ console.table(matrix) }}
+                <template v-for="(row, y) in matrix" :key="y">
+                    <div v-for="(column, x) in row" :key="x">
+                        <div class="token" :style="{background: column}" @click="play(x)"></div>
+                    </div>
                 </template>
             </div>
         </div>

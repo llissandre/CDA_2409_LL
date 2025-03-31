@@ -42,20 +42,20 @@ main {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    
+
     width: 700px;
     height: 600px;
     background-color: var(--color2);
 
     div {
-            width: 100px;
-            height: 100px;
-            background-color: var(--color3);
-            border: 1px solid var(--color4);
-            border-radius: 50px;
-        }
+        width: 100px;
+        height: 100px;
+        background-color: var(--color3);
+        border: 1px solid var(--color4);
+        border-radius: 50px;
+    }
 }
 
-.token{
+.token {
     background-color: var(--color3);
 }
