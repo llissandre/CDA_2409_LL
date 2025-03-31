@@ -1,7 +1,7 @@
 const filet = document.querySelector('#filet');
 const lastnameFirstnameInput = document.querySelector('#lastnameFirstnameInput');
 const gradeInput = document.querySelector('#gradeInput');
-const btnValidate = document.querySelector('#btnValider');
+const btnValidate = document.querySelector('#btnValid');
 const classMyTable = document.querySelector('.myTable');
 const myTable = document.querySelector('#myTable');
 const regexUsername = /^[a-zA-Z-]{2,}$/;
@@ -81,7 +81,7 @@ const display = () => {
     `;
 }
 
-const validate = () => {
+const validate = (e) => {
     e.preventDefault();
 
     let usernameInput = lastnameFirstnameInput.value.trim();
@@ -91,13 +91,12 @@ const validate = () => {
     let fullname = lastname + ' ' + firstname;
 
     if (regexUsername.test(lastname) && lastname !== undefined && regexUsername.test(firstname) && firstname !== undefined && grade >= 0 && grade <= 20) {
-
         data.push({ fullname, grade });
         myTable.innerText = '';
-        
+
         display();
     }
-}
+};
 
 fetchEvaluation();
 btnValidate.addEventListener('click', validate);

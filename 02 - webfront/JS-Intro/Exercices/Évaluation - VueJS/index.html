@@ -28,7 +28,8 @@
                             <input type="text" id="gradeInput" name="gradeInput" value="0"><br>
                         </div>
                     </div>
-                    <input type="submit" id="btnValider" value="Ajouter">
+                    <button type="submit" id="btnValid" @click.prevent="setNewStudent()">Ajouter</button>
+                    <!-- <input type="submit" id="btnValid" value="Ajouter" @click.prevent="setNewStudent()"> -->
                 </form>
                 <table id="myTable">
                     <thead>
@@ -49,10 +50,10 @@
                     </tbody>
                 </table>
                 <ul id="ulId">
-                    <li>Nombre d\'étudiants : {{ listEvaluations.length }}</li>
+                    <li>Nombre d'étudiants : {{ getNbEtudiants }}</li>
                     <li>Moyenne de la classe : {{ getAvgClasse }}</li>
-                    <li>Nombre d"étudiants au-dessus de la moyenne : {{ getNbStOverAvg }}</li>
-                    <li>Nombre d"étudiants au-dessus de la moyenne des notes de la classe: {{ getNbStOverAvgClasse }}
+                    <li>Nombre d'étudiants au-dessus de la moyenne : {{ getNbStOverAvg }}</li>
+                    <li>Nombre d'étudiants au-dessus de la moyenne des notes de la classe: {{ getNbStOverAvgClasse }}
                     </li>
                     <li>Note éliminatoire : {{ failingGrade }}</li>
                 </ul>

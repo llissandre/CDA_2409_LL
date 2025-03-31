@@ -54,14 +54,14 @@ label {
 
 #gradeInput,
 #lastnameFirstnameInput,
-#btnValider {
+#btnValid {
     background-color: var(--color4);
     border: 3px solid var(--color5);
     color: var(--color3);
     padding: 5px 10px;
 }
 
-#btnValider {
+#btnValid {
     margin: 0 0 5px 40px;
 }
 

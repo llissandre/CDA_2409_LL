@@ -8,8 +8,7 @@ const appEvaluation = {
             overAvg: 0,
             overAvgGrades: 0,
             lastnameFirstnameInput: '',
-            gradeInput: '',
-            fullname: ''
+            gradeInput: 0
         }
     },
     async created() {
@@ -38,31 +37,31 @@ const appEvaluation = {
         },
         getGradesSorted() {
             return this.listEvaluations.sort((a, b) => b.grade - a.grade);
-        },
-        setNewStudent() {
-            const regexUsername = /^[a-zA-Z-]{2,}$/;
-            const usernameInput = this.lastnameFirstnameInput.value.trim;
-            const lastname = usernameInput.split(' ')[0];
-            const firstname = usernameInput.split(' ')[1];
-            const grade = this.gradeInput.value;
-            const fullname = `${lastname} ${firstname}`;
-
-            if (regexUsername.test(lastname) && lastname !== undefined && regexUsername.test(firstname) && firstname !== undefined && grade >= 0 && grade <= 20)
-            return this.listEvaluations.push({
-                fullname: this.fullname,
-                grade: this.grade
-            });
         }
     },
-        methods: {
+    methods: {
         getLastname(fullname) {
-            return fullname.split(' ')[0];
+            return fullname.split(' ')[0].charAt(0).toUpperCase() + fullname.split(' ')[0].slice(1).toLowerCase();
         },
         getFirstname(fullname) {
-            return fullname.split(' ')[1];
+            return fullname.split(' ')[0].charAt(0).toUpperCase() + fullname.split(' ')[1].slice(1).toLowerCase();
         },
         getObtenu(grade) {
             return grade >= this.failingGrade ? 'Oui' : 'Non';
+        },
+        setNewStudent() {
+            const regexUsername = /^[a-zA-Z-]{2,}$/;
+            const usernameInput = lastnameFirstnameInput.value.trim();
+            const lastname = usernameInput.split(' ')[0];
+            const firstname = usernameInput.split(' ')[1];
+            const grade = Number(gradeInput.value);
+            const fullname = `${lastname} ${firstname}`;
+
+            if (regexUsername.test(lastname) && lastname !== undefined && regexUsername.test(firstname) && firstname !== undefined && grade >= 0 && grade <= 20)
+                return this.listEvaluations.push({
+                    fullname: fullname,
+                    grade: grade
+                });
         }
     }
 }
