@@ -19,9 +19,11 @@
         <div id="grid">
             <div id="app">
                 {{ console.table(matrix) }}
-                <template v-for="(row, y) in matrix" :key="y">
-                    <div v-for="(column, x) in row" :key="x">
-                        <div class="token" :style="{background: column}" @click="play(x)"></div>
+                <template v-for="(rows, row) in matrix" :key="row">
+                    <div v-for="(columns, column) in rows" :key="column">
+                        <div class="token" :style="{background: columns}" @click="play(column)">
+                            {{ row }}, {{ column }}
+                        </div>
                     </div>
                 </template>
             </div>

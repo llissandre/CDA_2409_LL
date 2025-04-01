@@ -11,8 +11,8 @@ const appPuissanceQuatre = {
                 color: 'yellow',
                 score: 0
             },
-            lenghtOfPower4: 7,
-            heightOfPower4: 6,
+            nbColumnOfP4: 6,
+            nbRowtOfP4: 5,
 
             currentPlayer: 'red',
             winner: null,
@@ -31,63 +31,134 @@ const appPuissanceQuatre = {
             this.winner = null;
             this.gameOver = false;
 
-            this.play(y);
+            this.play(column);
         },
-        checkWinner(x, y) {
-            let counter = 0;
+        checkWinner(row, column) {
+            let counter = 1;
+            let rowPlayer = row;
+            let columnPlayer = column;
 
-            console.log(this.matrix[x][y], this.getCurrentPlayer, x, y, counter);
+            for (let i = 1; i < 4; i++) {
+                columnPlayer++;
 
-            // for (let i = 1; i <= 4; i++) {
-            //     let xPlayer = x * i;
-            //     let yPlayer = y * i;
-            //     // this.checkDirection(x, y, counter, i);
-            //     // this.checkDirection(x, y, counter, -i);
+                if (columnPlayer <= this.nbColumnOfP4 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
+                    counter++;
+                }
+                else {
+                    i = 4;
 
-            //     if (xPlayer >= 0 && xPlayer < this.lenghtOfPower4 && this.matrix[xPlayer][y] === this.getCurrentPlayer) {
-            //         counter++;
-            //         console.log(xPlayer, x, y, counter);
+                    let rowPlayer = row;
+                    let columnPlayer = column;
 
-            //         // if (counter === 4) {
-            //         //     this.gameOver = true;
-            //         //     this.winner = this.getCurrentPlayer;
-            //         //     console.log('if', this.winner);
-            //         // return this.winner;
-            //         console.log(xPlayer, x, y, counter);
-            //         // }
+                    for (let j = 0; j < 4; j++) {
+                        columnPlayer--;
 
-            //         xPlayer++;
+                        if (columnPlayer >= 0 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
+                            counter++;
+                        }
+                        else {
+                            j = 4;
+                        }
+                    }
+                }
+            }
+
+            if (counter === 4) {
+                console.log('Victoire en horizontal, counter : ' + counter);
+            }
+
+            counter = 1;
+            rowPlayer = row;
+            columnPlayer = column;
+            
+            for (let i = 1; i < 4; i++) {
+                rowPlayer++;
+                
+                if (rowPlayer <= this.nbRowOfP4 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
+                    counter++;
+                    
+                }
+                else {
+                    i = 4;
+                    console.log(counter);
+                    
+                    let rowPlayer = row;
+                    let columnPlayer = column;
+                    console.log(rowPlayer);
+                    console.log(counter);
+                    
+                    for (let j = 0; j < 4; j++) {
+                        rowPlayer--;
+                        console.log(rowPlayer);
+                        console.log(this.matrix[rowPlayer][columnPlayer]);
+                        console.log(this.getCurrentPlayer);
+                        
+                        
+                        
+                        if (rowPlayer >= 0 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
+                            counter++;
+                            console.log('yi' + counter);
+                        }
+                        else {
+                            j = 4;
+                        }
+                    }
+                }
+            }
+
+            if (counter === 4) {
+                console.log('Victoire en vertical' + counter);
+            }
+
+
+
+
+
+            // console.log('column : ' + column, 'columnPlayer : ' + columnPlayer, ' counter : ' + counter, this.matrix[row][column], this.getCurrentPlayer, ' nb : ' + this.nbColumnOfP4);
+            // console.log('counter : ' + counter);
+
+            // if (columnPlayer >= 0 && columnPlayer < this.nbColumnOfP4 && this.matrix[columnPlayer][column] === this.getCurrentPlayer) {
+            //     counter++;
+            //     console.log('column : ' + column, 'columnPlayer : ' + columnPlayer, ' column : ' + column, ' column : ' + counter);
+
+            //     if (counter === 4) {
+            //         this.gameOver = true;
+            //         this.winner = this.getCurrentPlayer;
+            //         console.log('if', this.winner);
+            //         return this.winner;
+            //         console.log(columnPlayer, column, column, counter);
             //     }
-            //     else { i = 4; }
+
+            //     columnPlayer++;
+            // }
+            // else { i = 4; }
             // }
 
 
-            // if (this.matrix[x][y] === null)
-            //     return this.winner = null;
         },
-        // checkDirection(x, y, counter, i) {
+        checkDirection(row, column, counter, i) {
 
-        //     if (x >= 0 && x < this.lenghtOfPower4 && y >= 0 && y < this.heightOfPower4 && this.matrix[x][y] === this.getCurrentPlayer) {
-        //         counter++;
-        //         x + i;
-        //         console.log('cD', counter);
-        //     }
-        // },
+            // if (columnPlayer >= 0 && columnPlayer < this.nbRowtOfP44 && this.matrix[columnPlayer][column] === this.getCurrentPlayer) {
+            //     counter++;
+            //     row + i;
+            //     console.log('cD', counter);
+            // }
+        },
         changePlayer() {
             this.currentPlayer = this.getCurrentPlayer === this.player1.color ? this.player2.color : this.player1.color;
         },
         resetGame() {
             this.startGame();
         },
-        play(y) {
+        play(column) {
 
 
-            const currentColumn = this.matrix.map(row => row[y]);
-            const x = currentColumn.lastIndexOf(null);
-            this.matrix[x][y] = this.getCurrentPlayer;
-            this.checkWinner(x, y);
+            const currentColumn = this.matrix.map(row => row[column]);
+            const row = currentColumn.lastIndexOf(null);
+            this.matrix[row][column] = this.getCurrentPlayer;
+            this.checkWinner(row, column);
 
-            if (y !== -1) {
+            if (column !== -1) {
                 this.changePlayer();
             }
         }
