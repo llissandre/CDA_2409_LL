@@ -1,7 +1,9 @@
 const appCollectionVegetables = {
     data() {
         return {
-            collectionVegetables: []
+            collectionVegetables: [],
+            sortKey: '',
+            sortIncrease: true
         }
     },
     async created() {
@@ -14,16 +16,44 @@ const appCollectionVegetables = {
         }
     },
     computed: {
-        
+
     },
     methods: {
-        setStatusFresh() {
-            this.collectionVegetables.forEach(element => {
-                if (element.Fresh === 1)
-                    return element.Fresh = 'oui';
-                else if (element.Fresh === 0)
-                    return element.Fresh = 'non';
-            });
+        setStatusFresh(Fresh) {
+            if (Fresh === 1)
+                return Fresh = 'oui';
+            else if (Fresh === 0)
+                return Fresh = 'non';
+        },
+        sortArrow() {
+            arrow.forEach(e => e.textContent = '');
+
+            if (sortKey) {
+                const arrowIds = '#arrow-' + sortKey;
+
+                if (arrowIds)
+                    arrowIds.textContent = sortInscrease ? ' ▼' : ' ▲';
+            }
+        },
+        sortTable(key) {
+            if (sortKey === key)
+                sortInscrease = !sortInscrease;
+            else {
+                sortKey = key;
+                sortInscrease = true;
+            }
+
+            this.sortArrow();
+
+            if (sortKey) {
+                collectionCereals = collectionCereals.sort((a, b) => {
+                    const valA = a[sortKey];
+                    const valB = b[sortKey];
+                    const compare = valA > valB ? 1 : valA < valB ? -1 : 0;
+                    return sortInscrease ? compare : -compare;
+                });
+
+            }
         }
     }
 }

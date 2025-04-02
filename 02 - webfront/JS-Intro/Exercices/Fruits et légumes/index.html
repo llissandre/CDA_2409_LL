@@ -36,21 +36,21 @@
                 <table id="myTable">
                     <thead>
                         <tr>
-                            <th>nom</th>
-                            <th>variété</th>
-                            <th>couleur</th>
-                            <th>durée de conservation</th>
-                            <th>frais</th>
+                            <th data-sort="name" @click="sortTable(th.dataset.sort)">nom<span class="arrow" id="arrow-name"></span></th>
+                            <th data-sort="variety" @click="sortTable(th.dataset.sort)">variété<span class="arrow" id="arrow-variety"></span></th>
+                            <th data-sort="color" @click="sortTable(th.dataset.sort)">couleur<span class="arrow" id="arrow-color"></span></th>
+                            <th data-sort="lifeTime" @click="sortTable(th.dataset.sort)">durée de conservation<span class="arrow" id="arrow-lifeTime"></span></th>
+                            <th data-sort="fresh" @click="sortTable(th.dataset.sort)">frais<span class="arrow" id="arrow-fresh"></span></th>
                             <th>actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="vege of collectionVegetables" :key="vege">
+                        <tr v-for="vege of collectionVegetables" :key="vege.Fresh">
                             <td>{{vege.Name}}</td>
                             <td>{{vege.Variety}}</td>
                             <td>{{vege.PrimaryColor}}</td>
                             <td>{{vege.LifeTime}}</td>
-                            <td>{{setStatusFresh()}}</td>
+                            <td>{{setStatusFresh(vege.Fresh)}}</td>
                             <td>editer . supprimer</td>
                         </tr>
                     </tbody>
