@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "lastname": "Doe",
+        "firstname": "John",
+        "birthday": "1981-11-12",
+        "salary": 2250,
+        "password": "1234"
+    },
+    {
+        "id": 2,
+        "lastname": "Grande",
+        "firstname": "Léa",
+        "birthday": "2001-08-28",
+        "salary": 2165,
+        "password": "123456"
+    },
+    {
+        "id": 3,
+        "lastname": "Makenzie",
+        "firstname": "Roy",
+        "birthday": "1992-07-12",
+        "salary": 2090,
+        "password": "azerty"
+    }
+]

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau légume</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/index.js" type="module"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div id="image"></div>
+        </header>
+        <main>
+            <div id="newVegetable">
+                <form action="">
+                    <fieldset>
+                        <legend>Nouveau légume</legend>
+                        <div>
+                            <label for="name">Nom</label>
+                            <input type="text" id="name">
+                        </div>
+                        <div>
+                            <label for="variety">Variété</label>
+                            <input type="text" id="variety">
+                        </div>
+                        <div>
+                            <label for="primarycolor">Couleur</label>
+                            <input type="text" id="primarycolor">
+                        </div>
+                        <div>
+                            <label for="lifetime">Durée de conservation</label>
+                            <input type="text" id="lifetime">
+                        </div>
+                        <div>
+                            <label for="fresh">Frais</label>
+                            <input type="text" id="fresh">
+                        </div>
+                        <div>
+                            <label for="price">Prix</label>
+                            <input type="text" id="price">
+                        </div>
+                        <div>
+                            <label for=""></label>
+                            <input type="submit" value="Valider">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+
+</html>

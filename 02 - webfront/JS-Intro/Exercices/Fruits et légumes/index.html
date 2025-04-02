@@ -7,75 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index de fruits et légumes</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/font/Source_Sans_3/SourceSans3-VariableFont_wght.ttf">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/index.js" type="module"></script>
 </head>
 
 <body>
-    <header>
-        <div id="image"></div>
-        <nav>
-            <div id="vente">
-                <ul>
-                    <li>ventes</li>
-                    <li>nouvelle vente</li>
-                </ul>
+    <div id="app">
+        <header>
+            <div id="image"></div>
+            <nav>
+                <div id="vente">
+                    <ul>
+                        <li>ventes</li>
+                        <li>nouvelle vente</li>
+                    </ul>
+                </div>
+                <div id="légume">
+                    <ul>
+                        <li>légumes</li>
+                        <li>nouveau légume</li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <h1>Liste des légumes</h1>
+            <div id="legumes">
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th>nom</th>
+                            <th>variété</th>
+                            <th>couleur</th>
+                            <th>durée de conservation</th>
+                            <th>frais</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="vege of collectionVegetables" :key="vege">
+                            <td>{{vege.Name}}</td>
+                            <td>{{vege.Variety}}</td>
+                            <td>{{vege.PrimaryColor}}</td>
+                            <td>{{vege.LifeTime}}</td>
+                            <td>{{setStatusFresh()}}</td>
+                            <td>editer . supprimer</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div id="légume">
-                <ul>
-                    <li>légumes</li>
-                    <li>nouveau légume</li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <h1>Liste des légumes</h1>
-
-        <div>
-            <table id="myTable">
-                <thead>
-                    <tr>
-                        <th>nom</th>
-                        <th>variété</th>
-                        <th>couleur</th>
-                        <th>durée conservation</th>
-                        <th>frais</th>
-                        <th>actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>chou</td>
-                        <td>frisé</td>
-                        <td>vert</td>
-                        <td>30</td>
-                        <td>non</td>
-                        <td>editer . supprimer</td>
-                    </tr>
-                    <tr>
-                        <td>poireau</td>
-                        <td>carlton</td>
-                        <td>vert clair</td>
-                        <td>20</td>
-                        <td>non</td>
-                        <td>editer . supprimer</td>
-                    </tr>
-                    <tr>
-                        <td>carotte</td>
-                        <td>nantaise</td>
-                        <td>orange</td>
-                        <td>90</td>
-                        <td>non</td>
-                        <td>editer . supprimer</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </main>
-    <footer></footer>
+        </main>
+        <footer></footer>
+    </div>
 </body>
 
 </html>
