@@ -12,7 +12,7 @@ const appPuissanceQuatre = {
                 score: 0
             },
             nbColumnOfP4: 6,
-            nbRowtOfP4: 5,
+            nbRowOfP4: 5,
 
             currentPlayer: 'red',
             winner: null,
@@ -38,81 +38,92 @@ const appPuissanceQuatre = {
             let rowPlayer = row;
             let columnPlayer = column;
 
-            for (let i = 1; i < 4; i++) {
-                columnPlayer++;
+            // for (let i = 1; i < 4; i++) {
+            //     columnPlayer++;
 
-                if (columnPlayer <= this.nbColumnOfP4 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
-                    counter++;
-                }
-                else {
-                    i = 4;
+            //     if (columnPlayer <= this.nbColumnOfP4 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
+            //         counter++;
+            //     }
+            //     else {
+            //         i = 4;
 
-                    let rowPlayer = row;
-                    let columnPlayer = column;
+            //         let rowPlayer = row;
+            //         let columnPlayer = column;
 
-                    for (let j = 0; j < 4; j++) {
-                        columnPlayer--;
+            //         for (let j = 0; j < 4; j++) {
+            //             columnPlayer--;
 
-                        if (columnPlayer >= 0 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
-                            counter++;
-                        }
-                        else {
-                            j = 4;
-                        }
-                    }
-                }
-            }
+            //             if (columnPlayer >= 0 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
+            //                 counter++;
 
-            if (counter === 4) {
-                console.log('Victoire en horizontal, counter : ' + counter);
-            }
+            //             }
+            //             else {
+            //                 j = 4;
+            //             }
+            //         }
+            //     }
+            // }
 
-            counter = 1;
-            rowPlayer = row;
-            columnPlayer = column;
+            // if (counter === 4) {
+            //     alert('Victoire en horizontal de ' + this.getCurrentPlayer + ', avec ' + counter + ' points.');
+            // }
+
+            // counter = 1;
+            // rowPlayer = row;
+            // columnPlayer = column;
+
+            // for (let i = 1; i < 4; i++) {
+            //     rowPlayer++;
+
+            //     if (rowPlayer <= this.nbRowOfP4 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
+            //         counter++;
+
+            //     }
+            //     else {
+            //         i = 4;
+            //         console.log(counter, i);
+            //     }
+            // }
+            
+            // if (counter === 4) {
+            //     alert('Victoire en vertical de ' + this.getCurrentPlayer + ', avec ' + counter + ' points.');
+            // }
+            
+            // counter = 1;
+            // rowPlayer = row;
+            // columnPlayer = column;
             
             for (let i = 1; i < 4; i++) {
+                columnPlayer++;
                 rowPlayer++;
                 
-                if (rowPlayer <= this.nbRowOfP4 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
+                if (columnPlayer <= this.nbColumnOfP4 && rowPlayer <= nbRowOfP4 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
                     counter++;
-                    
                 }
                 else {
                     i = 4;
-                    console.log(counter);
-                    
-                    let rowPlayer = row;
-                    let columnPlayer = column;
-                    console.log(rowPlayer);
-                    console.log(counter);
-                    
-                    for (let j = 0; j < 4; j++) {
-                        rowPlayer--;
-                        console.log(rowPlayer);
-                        console.log(this.matrix[rowPlayer][columnPlayer]);
-                        console.log(this.getCurrentPlayer);
-                        
-                        
-                        
-                        if (rowPlayer >= 0 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
-                            counter++;
-                            console.log('yi' + counter);
-                        }
-                        else {
-                            j = 4;
-                        }
-                    }
+                    console.log(counter, i);
+
+                    // let rowPlayer = row;
+                    // let columnPlayer = column;
+
+                    // for (let j = 0; j < 4; j++) {
+                    //     columnPlayer--;
+
+                    //     if (columnPlayer >= 0 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
+                    //         counter++;
+
+                    //     }
+                    //     else {
+                    //         j = 4;
+                    //     }
+                    // }
                 }
             }
 
             if (counter === 4) {
-                console.log('Victoire en vertical' + counter);
+                alert('Victoire en horizontal de ' + this.getCurrentPlayer + ', avec ' + counter + ' points.');
             }
-
-
-
-
 
             // console.log('column : ' + column, 'columnPlayer : ' + columnPlayer, ' counter : ' + counter, this.matrix[row][column], this.getCurrentPlayer, ' nb : ' + this.nbColumnOfP4);
             // console.log('counter : ' + counter);
@@ -138,11 +149,6 @@ const appPuissanceQuatre = {
         },
         checkDirection(row, column, counter, i) {
 
-            // if (columnPlayer >= 0 && columnPlayer < this.nbRowtOfP44 && this.matrix[columnPlayer][column] === this.getCurrentPlayer) {
-            //     counter++;
-            //     row + i;
-            //     console.log('cD', counter);
-            // }
         },
         changePlayer() {
             this.currentPlayer = this.getCurrentPlayer === this.player1.color ? this.player2.color : this.player1.color;
@@ -151,12 +157,12 @@ const appPuissanceQuatre = {
             this.startGame();
         },
         play(column) {
-
-
             const currentColumn = this.matrix.map(row => row[column]);
             const row = currentColumn.lastIndexOf(null);
             this.matrix[row][column] = this.getCurrentPlayer;
             this.checkWinner(row, column);
+            console.log(row, column);
+            
 
             if (column !== -1) {
                 this.changePlayer();

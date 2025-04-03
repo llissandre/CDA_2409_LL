@@ -22,7 +22,7 @@
                 <template v-for="(rows, row) in matrix" :key="row">
                     <div v-for="(columns, column) in rows" :key="column">
                         <div class="token" :style="{background: columns}" @click="play(column)">
-                            {{ row }}, {{ column }}
+                            {{ column + 1 }}, {{ row +1 }}
                         </div>
                     </div>
                 </template>
