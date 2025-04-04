@@ -14,154 +14,152 @@ const appPuissanceQuatre = {
             nbColumnOfP4: 6,
             nbRowOfP4: 5,
 
-            currentPlayer: 'red',
+            currentPlayerColor: 'red',
+            winningTokens: [],
             winner: null,
             gameOver: false,
-            matrix: [...Array(6)].map(() => Array(7).fill(null)),
+            matrix: [],
+            hoveredColumn: null
         }
     },
     computed: {
         getCurrentPlayer() {
-            return this.currentPlayer === this.player1.color ? this.player1.color : this.player2.color;
+            return this.currentPlayerColor === this.player1.color ? this.player1 : this.player2;
+        },
+        isEmpty() {
+            return this.matrix.every(row => row.every(column => column === null));
+        },
+        manageStateMessage() {
+            if (this.winner) {
+                return this.winner.name + ' a gagné cette manche !';
+            } else if (this.gameOver) {
+                return "Match nul!";
+            } else if (this.isEmpty) {
+                return "Plateau de jeu vide";
+            } else {
+                return 'Partie en cours, au tour de ' + this.getCurrentPlayer.name + '('
+                    + this.getCurrentPlayer.color + ')' + " de jouer";
+            }
         }
     },
+    mounted() {
+        this.initMatrix();
+        this.loadScores()
+    },
     methods: {
-        startGame() {
-            this.currentPlayer = this.player1.color;
-            this.winner = null;
-            this.gameOver = false;
-
-            this.play(column);
+        initMatrix() {
+            this.matrix = [...Array(this.nbRowOfP4 + 1)].map(() => Array(this.nbColumnOfP4 + 1).fill(null));
         },
-        checkWinner(row, column) {
-            let counter = 1;
-            let rowPlayer = row;
-            let columnPlayer = column;
-
-            // for (let i = 1; i < 4; i++) {
-            //     columnPlayer++;
-
-            //     if (columnPlayer <= this.nbColumnOfP4 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
-            //         counter++;
-            //     }
-            //     else {
-            //         i = 4;
-
-            //         let rowPlayer = row;
-            //         let columnPlayer = column;
-
-            //         for (let j = 0; j < 4; j++) {
-            //             columnPlayer--;
-
-            //             if (columnPlayer >= 0 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
-            //                 counter++;
-            //             }
-            //             else {
-            //                 j = 4;
-            //             }
-            //         }
-            //     }
-            // }
-
-            // if (counter === 4) {
-            //     alert('Victoire en horizontal de ' + this.getCurrentPlayer + ', avec ' + counter + ' points.');
-            // }
-
-            // counter = 1;
-            // rowPlayer = row;
-            // columnPlayer = column;
-
-            // for (let i = 1; i < 4; i++) {
-            //     rowPlayer++;
-
-            //     if (rowPlayer <= this.nbRowOfP4 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
-            //         counter++;
-            //     }
-            //     else {
-            //         i = 4;
-
-            //         let rowPlayer = row;
-            //         let columnPlayer = column;
-
-            //         for (let j = 0; j < 4; j++) {
-            //             rowPlayer--;
-
-            //             if (rowPlayer > 0 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
-            //                 counter++;
-            //             }
-            //             else {
-            //                 j = 4;
-            //             }
-            //         }
-            //     }
-            // }
-
-            // if (counter === 4) {
-            //     alert('Victoire en vertical de ' + this.getCurrentPlayer + ', avec ' + counter + ' points.');
-            // }
-
-            // counter = 1;
-            // rowPlayer = row;
-            // columnPlayer = column;
-
-            for (let i = 1; i < 4; i++) {
-                console.log(counter, i, this.matrix[rowPlayer][columnPlayer], this.getCurrentPlayer);
-                console.log(rowPlayer, columnPlayer);
-                columnPlayer++;
-                rowPlayer++;
-
-                if (columnPlayer <= this.nbColumnOfP4 && rowPlayer <= this.nbRowOfP4) {
-
-                    if (this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
-                        counter++;
-                        console.log(counter);
-
-                    }
-                }
-                else {
-                    i = 4;
-                    console.log(i);
-
-
-                    let rowPlayer = row;
-                    let columnPlayer = column;
-
-                    for (let j = 0; j < 4; j++) {
-                        columnPlayer--;
-
-                        if (columnPlayer >= 0 && this.matrix[rowPlayer][columnPlayer] === this.getCurrentPlayer && counter < 4) {
-                            counter++;
-                        }
-                        else {
-                            j = 4;
-                        }
-                    }
-                }
-            }
-
-            if (counter === 4) {
-                alert('Victoire en diagonale de ' + this.getCurrentPlayer + ', avec ' + counter + ' points.');
-            }
-        },
-        checkDirection(row, column, counter, i) {
-
-        },
-        changePlayer() {
-            this.currentPlayer = this.getCurrentPlayer === this.player1.color ? this.player2.color : this.player1.color;
+        getPreviewToken(row, column) {
+            if (this.hoveredColumn !== column || this.matrix[row][column] !== null ||
+                this.gameOver || this.winner) return '';
+            const columnTokens = this.matrix.map(row => row[column]);
+            return columnTokens.lastIndexOf(null) === row ? 'preview-' + this.getCurrentPlayer.color : '';
         },
         resetGame() {
-            this.startGame();
+            this.currentPlayerColor = this.player1.color;
+            this.winner = null;
+            this.gameOver = false;
+            this.winningTokens = []; // Reset les contours gold
+            this.initMatrix();
+        },
+        resetScore() {
+            this.player1.score = 0;
+            this.player2.score = 0;
+            this.saveScores();
         },
         play(column) {
+            if (this.gameOver || this.winner) return;
             const currentColumn = this.matrix.map(row => row[column]);
             const row = currentColumn.lastIndexOf(null);
 
-            console.log(column, row);
-
             if (row !== -1) {
-                this.matrix[row][column] = this.getCurrentPlayer;
-                this.checkWinner(row, column);
-                this.changePlayer();
+                this.matrix[row][column] = this.currentPlayerColor;
+
+                if (this.checkWinner(row, column)) {
+                    this.winner = this.getCurrentPlayer;
+                    this.winner.score++;
+                    this.saveScores();
+                    this.gameOver = true;
+                }
+                else if (this.isFull()) {
+                    //Match nul
+                    this.gameOver = true;
+                }
+                else {
+                    this.changePlayer();
+                }
+            }
+        },
+        changePlayer() {
+            this.currentPlayerColor = this.getCurrentPlayer.color === this.player1.color ? this.player2.color : this.player1.color;
+        },
+        isFull() {
+            return this.matrix.every(row => row.every(column => column !== null));
+        },
+
+        isWinningToken(row, column) {
+            return this.winningTokens.some(token => token.row === row && token.column === column);
+        },
+        checkWinner(row, column) {
+            const directions = [
+                { rowDir: 0, columnDir: 1 },   // Horizontal --
+                { rowDir: 1, columnDir: 0 },   // Vertical |
+                { rowDir: 1, columnDir: 1 },   // Diagonale \
+                { rowDir: -1, columnDir: 1 },  // Diagonale /
+            ];
+
+            for (const { rowDir, columnDir } of directions) {
+                const line = [{ row, column }];
+
+                // Avant
+                let r = row - rowDir;
+                let c = column - columnDir;
+                while (
+                    r >= 0 && r <= this.nbRowOfP4 &&
+                    c >= 0 && c <= this.nbColumnOfP4 &&
+                    this.matrix[r][c] === this.currentPlayerColor
+                ) {
+                    line.unshift({ row: r, column: c });
+                    r -= rowDir;
+                    c -= columnDir;
+                }
+
+                // Après
+                r = row + rowDir;
+                c = column + columnDir;
+                while (
+                    r >= 0 && r <= this.nbRowOfP4 &&
+                    c >= 0 && c <= this.nbColumnOfP4 &&
+                    this.matrix[r][c] === this.currentPlayerColor
+                ) {
+                    line.push({ row: r, column: c });
+                    r += rowDir;
+                    c += columnDir;
+                }
+
+                if (line.length >= 4) {
+                    this.winningTokens = line;
+                    return true;
+                }
+            }
+
+            return false;
+        },
+        saveScores() {
+            const scores = {
+                player1: this.player1.score,
+                player2: this.player2.score
+            };
+            localStorage.setItem('p4-scores', JSON.stringify(scores));
+        },
+
+        loadScores() {
+            const saved = localStorage.getItem('p4-scores');
+            if (saved) {
+                const scores = JSON.parse(saved);
+                this.player1.score = scores.player1;
+                this.player2.score = scores.player2;
             }
         }
     }

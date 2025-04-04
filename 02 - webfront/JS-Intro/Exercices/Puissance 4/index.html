@@ -16,18 +16,30 @@
         <h1>Puissance 4</h1>
     </header>
     <main>
-        <div id="grid">
-            <div id="app">
-                {{ console.table(matrix) }}
-                <template v-for="(rows, row) in matrix" :key="row">
-                    <div v-for="(columns, column) in rows" :key="column">
-                        <div class="token" :style="{background: columns}" @click="play(column)">
-                            {{ column + 1 }}, {{ row +1 }}
+        <div id="app">
+            <div class="score">
+                <p>{{player1.name}} ({{player1.color}} / {{player1.score}})</p>
+                <p>{{player2.name}} ({{player2.color}} / {{player2.score}})</p>
+            </div>
+            <p class="state">{{ manageStateMessage}}</p>
+
+            {{ console.table(matrix) }}
+
+            <div class=" grid">
+                <template v-for="(row, rowIndex) in matrix" :key="rowIndex">
+                    <div v-for="(column, columnIndex) in row" :key="columnIndex">
+                        <div :class="['token', column, getPreviewToken(rowIndex, columnIndex), isWinningToken(rowIndex, columnIndex) ? 'winnerToken' : '']"
+                            @click="play(columnIndex)" @mouseover="hoveredColumn = columnIndex"
+                            @mouseleave="hoveredColumn=null">
+                            <!-- {{ columnIndex + 1 }}, {{ rowIndex +1 }} -->
                         </div>
                     </div>
                 </template>
             </div>
-        </div>
+            <div class="button-container">
+                <button @click="resetGame">Recommencer</button>
+                <button @click="resetScore">Réinitialiser le score</button>
+            </div>
     </main>
     <footer></footer>
 </body>
