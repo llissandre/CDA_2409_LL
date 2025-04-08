@@ -32,7 +32,7 @@ async function fetchCereals() {
             throw new Error('La réponse n\'est pas ok')
         }
         collectionCereals = await reponse.json();
-        display();
+        // display();
     } catch (error) {
         console.error('Un problème est survenu lors de la récupération : ', error);
         collectionCereals = [];

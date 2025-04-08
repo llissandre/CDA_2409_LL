@@ -29,7 +29,7 @@ const appCollectionVegetables = {
             arrow.forEach(e => e.textContent = '');
 
             if (sortKey) {
-                const arrowIds = '#arrow-' + sortKey;
+                const arrowIds = document.getElementById('arrow-' + sortKey);
 
                 if (arrowIds)
                     arrowIds.textContent = sortInscrease ? ' ▼' : ' ▲';
@@ -46,7 +46,9 @@ const appCollectionVegetables = {
             this.sortArrow();
 
             if (sortKey) {
-                collectionCereals = collectionCereals.sort((a, b) => {
+                console.log(sortKey, sortInscrease);
+
+                collectionVegetables = collectionVegetables.sort((a, b) => {
                     const valA = a[sortKey];
                     const valB = b[sortKey];
                     const compare = valA > valB ? 1 : valA < valB ? -1 : 0;
