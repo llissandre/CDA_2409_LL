@@ -20,7 +20,7 @@ const tfoot = myTable.createTFoot();
 let nutriscore = '';
 let color = '';
 let sortKey = '';
-let sortInscrease = true;
+let sortIncrease = true;
 
 async function fetchCereals() {
     try {
@@ -32,7 +32,7 @@ async function fetchCereals() {
             throw new Error('La réponse n\'est pas ok')
         }
         collectionCereals = await reponse.json();
-        // display();
+        display();
     } catch (error) {
         console.error('Un problème est survenu lors de la récupération : ', error);
         collectionCereals = [];
@@ -83,7 +83,7 @@ function display() {
             const valA = a[sortKey];
             const valB = b[sortKey];
             const compare = valA > valB ? 1 : valA < valB ? -1 : 0;
-            return sortInscrease ? compare : -compare;
+            return sortIncrease ? compare : -compare;
         });
     }
 
@@ -167,10 +167,10 @@ const getNSCheckbox = (rating) => {
 
 const sortTable = (key) => {
     if (sortKey === key)
-        sortInscrease = !sortInscrease;
+        sortIncrease = !sortIncrease;
     else {
         sortKey = key;
-        sortInscrease = true;
+        sortIncrease = true;
     }
     
     sortArrow();
@@ -178,13 +178,14 @@ const sortTable = (key) => {
 }
 
 const sortArrow = () => {
+    // Permet de supprimer le contenu des th de la table #myTable
     arrow.forEach(e => e.textContent = '');
     
     if (sortKey) {
         const arrowIds = document.getElementById('arrow-' + sortKey);
         
         if (arrowIds)
-            arrowIds.textContent = sortInscrease ? ' ▼' : ' ▲';
+            arrowIds.textContent = sortIncrease ? ' ▼' : ' ▲';
     }
 }
 

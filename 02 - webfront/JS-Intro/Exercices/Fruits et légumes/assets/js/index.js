@@ -9,8 +9,13 @@ const appCollectionVegetables = {
     async created() {
         try {
             const response = await fetch('./assets/json/legumos.json');
+
             const json = await response.json();
-            this.collectionVegetables = json;
+            if (Array.isArray(json)) {
+                this.collectionVegetables = json;
+            } else {
+                console.error('Les données récupérées ne sont pas un tableau');
+            }
         } catch (error) {
             console.error('Un problème est survenu lors de la récupération :', error);
         }
@@ -20,41 +25,45 @@ const appCollectionVegetables = {
     },
     methods: {
         setStatusFresh(Fresh) {
-            if (Fresh === 1)
-                return Fresh = 'oui';
-            else if (Fresh === 0)
-                return Fresh = 'non';
-        },
-        sortArrow() {
-            arrow.forEach(e => e.textContent = '');
-
-            if (sortKey) {
-                const arrowIds = document.getElementById('arrow-' + sortKey);
-
-                if (arrowIds)
-                    arrowIds.textContent = sortInscrease ? ' ▼' : ' ▲';
-            }
+            return Fresh === 1 ? 'oui' : 'non';
         },
         sortTable(key) {
-            if (sortKey === key)
-                sortInscrease = !sortInscrease;
+            if (this.sortKey === key)
+                this.sortIncrease = !this.sortIncrease;
             else {
-                sortKey = key;
-                sortInscrease = true;
+                this.sortKey = key;
+                this.sortIncrease = true;
             }
 
-            this.sortArrow();
+            if (this.sortKey) {
+                this.collectionVegetables = this.collectionVegetables.sort((a, b) => {
+                    const valA = a[this.sortKey];
+                    const valB = b[this.sortKey];
+                    let compare = 0;
 
-            if (sortKey) {
-                console.log(sortKey, sortInscrease);
+                    console.log(this.collectionVegetables, 'valA:', valA, 'valB:', valB, 'compare:', compare, 'this.sortKey:', this.sortKey, 'this.sortIncrease:', this.sortIncrease, a, b, typeof valA, typeof valB);
 
-                collectionVegetables = collectionVegetables.sort((a, b) => {
-                    const valA = a[sortKey];
-                    const valB = b[sortKey];
-                    const compare = valA > valB ? 1 : valA < valB ? -1 : 0;
-                    return sortInscrease ? compare : -compare;
+                    // Vérification si les valeurs existent
+                    if (valA == null || valB == null) {
+                        console.warn(`Propriété manquante pour ${this.sortKey}:`, a, b);
+                        return 0;
+                        // Si l'une des valeurs est null ou undefined, on ne trie pas ces éléments
+                    }
+
+                    // On vérifie si les valeurs sont des chaînes de caractères ou des nombres avant de les comparer
+                    if (typeof valA === 'string' && typeof valB === 'string') {
+                        compare = valA.localeCompare(valB);
+                    }
+                    else if (typeof valA === 'number' && typeof valB === 'number') {
+                        compare = valA - valB;
+                    } else {
+                        console.warn('Les valeurs ne sont pas comparables :', valA, valB);
+                    }
+
+                    // Si compare est 0, cela signifie que les valeurs sont égales
+                    // Dans ce cas, nous devons décider comment les trier
+                    return this.sortIncrease ? compare : -compare;
                 });
-
             }
         }
     }

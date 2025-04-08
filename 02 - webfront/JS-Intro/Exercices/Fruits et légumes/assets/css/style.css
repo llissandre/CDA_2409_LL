@@ -101,6 +101,14 @@ main {
         width: 100%;
         justify-items: center;
 
+        .arrow-up::after {
+            content: ' ▲';
+        }
+
+        .arrow-down::after {
+            content: ' ▼';
+        }
+
         #myTable {
             font-size: 1.1rem;
             font-weight: 500;
@@ -159,8 +167,8 @@ main {
                     border-radius: 5px;
                     padding: 10px;
                 }
-                
-                input:focus{
+
+                input:focus {
                     outline: none;
                 }
             }
