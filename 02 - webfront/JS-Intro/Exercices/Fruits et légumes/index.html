@@ -36,11 +36,21 @@
                 <table id="myTable">
                     <thead>
                         <tr>
-                            <th @click="sortTable('name')">nom<span :class="['arrow', sortKey === 'name' ? (sortIncrease ? 'arrow-down' : 'arrow-up') : '']" id="arrow-name"></span></th>
-                            <th @click="sortTable('variety')">variété<span :class="['arrow', sortKey === 'variety' ? (sortIncrease ? 'arrow-down' : 'arrow-up') : '']" id="arrow-variety"></span></th>
-                            <th @click="sortTable('color')">couleur<span :class="['arrow', sortKey === 'color' ? (sortIncrease ? 'arrow-down' : 'arrow-up') : '']" id="arrow-color"></span></th>
-                            <th @click="sortTable('lifeTime')">durée de conservation<span :class="['arrow', sortKey === 'lifeTime' ? (sortIncrease ? 'arrow-down' : 'arrow-up') : '']" id="arrow-lifeTime"></span></th>
-                            <th @click="sortTable('fresh')">frais<span :class="['arrow', sortKey === 'fresh' ? (sortIncrease ? 'arrow-down' : 'arrow-up') : '']" id="arrow-fresh"></span></th>
+                            <th @click="sortTable('Name')">nom<span
+                                    :class="['arrow', sortKey === 'Name' ? (sortIncrease ? 'arrow-down' : 'arrow-up') : '']"
+                                    id="arrow-name"></span></th>
+                            <th @click="sortTable('Variety')">variété<span
+                                    :class="['arrow', sortKey === 'Variety' ? (sortIncrease ? 'arrow-down' : 'arrow-up') : '']"
+                                    id="arrow-variety"></span></th>
+                            <th @click="sortTable('PrimaryColor')">couleur<span
+                                    :class="['arrow', sortKey === 'PrimaryColor' ? (sortIncrease ? 'arrow-down' : 'arrow-up') : '']"
+                                    id="arrow-PrimaryColor"></span></th>
+                            <th @click="sortTable('LifeTime')">durée de conservation<span
+                                    :class="['arrow', sortKey === 'LifeTime' ? (sortIncrease ? 'arrow-down' : 'arrow-up') : '']"
+                                    id="arrow-LifeTime"></span></th>
+                            <th @click="sortTable('Fresh')">frais<span
+                                    :class="['arrow', sortKey === 'Fresh' ? (sortIncrease ? 'arrow-down' : 'arrow-up') : '']"
+                                    id="arrow-Fresh"></span></th>
                             <th>actions</th>
                         </tr>
                     </thead>

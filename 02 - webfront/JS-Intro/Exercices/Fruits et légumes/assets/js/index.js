@@ -2,6 +2,7 @@ const appCollectionVegetables = {
     data() {
         return {
             collectionVegetables: [],
+            collectionSales: [],
             sortKey: '',
             sortIncrease: true
         }
@@ -19,6 +20,19 @@ const appCollectionVegetables = {
         } catch (error) {
             console.error('Un problème est survenu lors de la récupération :', error);
         }
+    }, async created() {
+        try {
+            const response = await fetch('./assets/json/legumos-sales.json');
+
+            const json = await response.json();
+            if (Array.isArray(json)) {
+                this.collectionSales = json;
+            } else {
+                console.error('Les données récupérées ne sont pas un tableau');
+            }
+        } catch (error) {
+            console.error('Un problème est survenu lors de la récupération :', error);
+        }
     },
     computed: {
 
@@ -28,6 +42,8 @@ const appCollectionVegetables = {
             return Fresh === 1 ? 'oui' : 'non';
         },
         sortTable(key) {
+            console.log('key', key);
+
             if (this.sortKey === key)
                 this.sortIncrease = !this.sortIncrease;
             else {
@@ -41,16 +57,6 @@ const appCollectionVegetables = {
                     const valB = b[this.sortKey];
                     let compare = 0;
 
-                    console.log(this.collectionVegetables, 'valA:', valA, 'valB:', valB, 'compare:', compare, 'this.sortKey:', this.sortKey, 'this.sortIncrease:', this.sortIncrease, a, b, typeof valA, typeof valB);
-
-                    // Vérification si les valeurs existent
-                    if (valA == null || valB == null) {
-                        console.warn(`Propriété manquante pour ${this.sortKey}:`, a, b);
-                        return 0;
-                        // Si l'une des valeurs est null ou undefined, on ne trie pas ces éléments
-                    }
-
-                    // On vérifie si les valeurs sont des chaînes de caractères ou des nombres avant de les comparer
                     if (typeof valA === 'string' && typeof valB === 'string') {
                         compare = valA.localeCompare(valB);
                     }
