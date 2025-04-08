@@ -4,7 +4,8 @@ const appCollectionVegetables = {
             collectionVegetables: [],
             collectionSales: [],
             sortKey: '',
-            sortIncrease: true
+            sortIncrease: true,
+
         }
     },
     async created() {
@@ -35,9 +36,17 @@ const appCollectionVegetables = {
         }
     },
     computed: {
-
     },
     methods: {
+        getFrenchDate(date) {
+                const saleDate = new Date(date);
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                // const dateFr = saleDate.toLocaleDateString("fr-FR", options);
+                const dateFr = String(saleDate.getDate()).padStart(2, '0') + '/' + String(saleDate.toLocaleString('fr-FR', { month: 'numeric' })).padStart(2, '0') + '/' + saleDate.getFullYear();
+                
+                console.log('date', date);
+                return dateFr;
+        },
         setStatusFresh(Fresh) {
             return Fresh === 1 ? 'oui' : 'non';
         },

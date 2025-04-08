@@ -33,61 +33,14 @@
         <main>
             <h1>Liste des ventes</h1>
             <div id="ventes">
-                <div>
-                    <h2>chou frisé</h2>
-                    <h2>(15kgs)</h2>
-                    <p>03/02/2020</p>
+                <div v-for="sale of collectionSales" :key="sale.Id" class="ventes">
+                    <h2>{{  sale. Name }} {{ sale.Variety}}</h2>
+                    <h2>({{sale.SaleWeight}}KG)</h2>
+                    <p>
+                        {{ getFrenchDate(sale.SaleDate) }}
+                    </p>
                 </div>
-                <div>
-                    <h2>chou frisé</h2>
-                    <h2>(7kgs)</h2>
-                    <p>04/02/2020</p>
-                </div>
-                <div>
-                    <h2>carotte nantaise</h2>
-                    <h2>(23kgs)</h2>
-                    <p>04/02/2020</p>
-                </div>
-                <div>
-                    <h2>chou frisé</h2>
-                    <h2>(9kgs)</h2>
-                    <p>06/02/2020</p>
-                </div>
-                <div>
-                    <h2>chou frisé</h2>
-                    <h2>(9kgs)</h2>
-                    <p>06/02/2020</p>
-                </div>
-                <div>
-                    <h2>chou frisé</h2>
-                    <h2>(9kgs)</h2>
-                    <p>06/02/2020</p>
-                </div>
-                <div>
-                    <h2>chou frisé</h2>
-                    <h2>(9kgs)</h2>
-                    <p>06/02/2020</p>
-                </div>
-                <div>
-                    <h2>poireau carlton</h2>
-                    <h2>(8kgs)</h2>
-                    <p>07/02/2020</p>
-                </div>
-                <div>
-                    <h2>carotte nantaise</h2>
-                    <h2>(23kgs)</h2>
-                    <p>09/02/2020</p>
-                </div>
-                <div>
-                    <h2>chou frisé</h2>
-                    <h2>(5kgs)</h2>
-                    <p>15/02/2020</p>
-                </div>
-                <div>
-                    <h2>carotte nantaise</h2>
-                    <h2>(11kgs)</h2>
-                    <p>15/02/2020</p>
-                </div>
+               
             </div>
         </main>
         <footer></footer>
