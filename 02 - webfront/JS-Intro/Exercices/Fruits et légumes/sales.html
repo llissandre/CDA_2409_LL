@@ -19,13 +19,13 @@
                 <div id="vente">
                     <ul>
                         <li>ventes</li>
-                        <li>nouvelle vente</li>
+                        <li><a href="newSale.html">nouvelle vente</a></li>
                     </ul>
                 </div>
                 <div id="légume">
                     <ul>
-                        <li>légumes</li>
-                        <li>nouveau légume</li>
+                        <li><a href="index.html">légumes</a></li>
+                        <li><a href="newVegetable.html">nouveau légume</a></li>
                     </ul>
                 </div>
             </nav>
@@ -33,17 +33,21 @@
         <main>
             <h1>Liste des ventes</h1>
             <div id="ventes">
-                <div v-for="sale of collectionSales" :key="sale.Id" class="ventes">
-                    <h2>{{  sale. Name }} {{ sale.Variety}}</h2>
+                <div v-for="sale of collectionSales">
+                    <h2>{{ sale. Name }} {{ sale.Variety}}</h2>
                     <h2>({{sale.SaleWeight}}KG)</h2>
                     <p>
                         {{ getFrenchDate(sale.SaleDate) }}
                     </p>
                 </div>
-               
             </div>
         </main>
-        <footer></footer>
+        <footer>
+            <div class="button-container">
+                <button @click="resetGame">Supprimer les données sauvegardées</button>
+                <button @click="resetScore">Télécharger le fichier json</button>
+            </div>
+        </footer>
     </div>
 </body>
 

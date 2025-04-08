@@ -21,7 +21,7 @@ const appCollectionVegetables = {
         } catch (error) {
             console.error('Un problème est survenu lors de la récupération :', error);
         }
-    }, async created() {
+
         try {
             const response = await fetch('./assets/json/legumos-sales.json');
 
@@ -39,13 +39,13 @@ const appCollectionVegetables = {
     },
     methods: {
         getFrenchDate(date) {
-                const saleDate = new Date(date);
-                const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                // const dateFr = saleDate.toLocaleDateString("fr-FR", options);
-                const dateFr = String(saleDate.getDate()).padStart(2, '0') + '/' + String(saleDate.toLocaleString('fr-FR', { month: 'numeric' })).padStart(2, '0') + '/' + saleDate.getFullYear();
-                
-                console.log('date', date);
-                return dateFr;
+            const saleDate = new Date(date);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            // const dateFr = saleDate.toLocaleDateString("fr-FR", options);
+            const dateFr = String(saleDate.getDate()).padStart(2, '0') + '/' + String(saleDate.toLocaleString('fr-FR', { month: 'numeric' })).padStart(2, '0') + '/' + saleDate.getFullYear();
+
+            console.log('date', date);
+            return dateFr;
         },
         setStatusFresh(Fresh) {
             return Fresh === 1 ? 'oui' : 'non';

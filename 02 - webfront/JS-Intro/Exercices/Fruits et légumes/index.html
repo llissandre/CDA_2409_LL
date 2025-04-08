@@ -18,14 +18,14 @@
             <nav>
                 <div id="vente">
                     <ul>
-                        <li>ventes</li>
-                        <li>nouvelle vente</li>
+                        <li><a href="sales.html">ventes</a></li>
+                        <li><a href="newSale.html">nouvelle vente</a></li>
                     </ul>
                 </div>
                 <div id="légume">
                     <ul>
                         <li>légumes</li>
-                        <li>nouveau légume</li>
+                        <li><a href="newVegetable.html">nouveau légume</a></li>
                     </ul>
                 </div>
             </nav>
@@ -67,7 +67,12 @@
                 </table>
             </div>
         </main>
-        <footer></footer>
+        <footer>
+            <div class=" button-container">
+                <button @click="resetGame">Supprimer les données sauvegardées</button>
+                <button @click="resetScore">Télécharger le fichier json</button>
+            </div>
+        </footer>
     </div>
 </body>
 
