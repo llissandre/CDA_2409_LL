@@ -32,6 +32,10 @@
         </header>
         <main>
             <h1>Liste des légumes</h1>
+            <div class=" button-container">
+                <button @click="resetSave">Supprimer les données sauvegardées</button>
+                <button @click="downloadJSON">Télécharger le fichier json</button>
+            </div>
             <div id="legumes">
                 <table id="myTable">
                     <thead>
@@ -55,23 +59,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="vege of collectionVegetables" :key="vege.Id">
+                        <tr v-for="(vege, index) in collectionVegetables" :key="vege.Id">
                             <td>{{vege.Name}}</td>
                             <td>{{vege.Variety}}</td>
                             <td>{{vege.PrimaryColor}}</td>
                             <td>{{vege.LifeTime}}</td>
                             <td>{{setStatusFresh(vege.Fresh)}}</td>
-                            <td>editer . supprimer</td>
+                            <td> <span @click="editFruit(index)" :class="['pointer']">editer</span> . <span @click="deleteFruit(index)" :class="['pointer']">supprimer</span></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </main>
         <footer>
-            <div class=" button-container">
-                <button @click="resetGame">Supprimer les données sauvegardées</button>
-                <button @click="resetScore">Télécharger le fichier json</button>
-            </div>
+            <p>&copy; Coopérative bio - 2025</p>
         </footer>
     </div>
 </body>

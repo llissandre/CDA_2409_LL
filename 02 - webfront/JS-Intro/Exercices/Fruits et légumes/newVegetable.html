@@ -18,32 +18,35 @@
         </header>
         <main>
             <div id="newVegetable">
-                <form action="">
+                <form action="" @submit.prevent="saveVegetable">
                     <fieldset>
                         <legend>Nouveau légume</legend>
                         <div>
                             <label for="name">Nom</label>
-                            <input type="text" id="name">
+                            <input type="text" id="name" v-model="newVegetable.Name" required>
                         </div>
                         <div>
                             <label for="variety">Variété</label>
-                            <input type="text" id="variety">
+                            <input type="text" id="variety" v-model="newVegetable.Variety" required>
                         </div>
                         <div>
                             <label for="primarycolor">Couleur primaire</label>
-                            <input type="text" id="primarycolor">
+                            <input type="text" id="primarycolor" v-model="newVegetable.PrimaryColor" required>
                         </div>
                         <div>
                             <label for="lifetime">Durée de conservation</label>
-                            <input type="text" id="lifetime">
+                            <input type="text" id="lifetime" v-model="newVegetable.LifeTime" required>
                         </div>
                         <div>
-                            <label for="fresh">Frais</label>
-                            <input type="text" id="fresh">
+                            <label for="fresh">Est-ce frais ?</label>
+                            <select v-model.number="vegetable.Fresh" required>
+                                <option :value="1">Oui</option>
+                                <option :value="0">Non</option>
+                            </select>
                         </div>
                         <div>
                             <label for="price">Prix</label>
-                            <input type="text" id="price">
+                            <input type="text" id="price" v-model="newVegetable.Price" required>
                         </div>
                         <div>
                             <label for=""></label>

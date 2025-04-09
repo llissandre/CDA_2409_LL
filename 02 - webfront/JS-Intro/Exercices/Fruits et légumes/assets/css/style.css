@@ -31,6 +31,10 @@ body {
     background-color: var(--color4);
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 header {
     #image {
         background-image: url(../img/legumos.jpg);
@@ -79,6 +83,27 @@ main {
         font-size: 3vw;
         font-weight: 700;
         margin: 20px;
+    }
+
+    .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20px 0;
+        gap: 20px;
+
+        button {
+            padding: 10px 40px;
+            background-color: var(--color1);
+            color: var(--color4);
+            text-transform: uppercase;
+            border: none;
+
+            &:hover {
+                cursor: pointer;
+                color: var(--color2);
+            }
+        }
     }
 
     #ventes {
@@ -185,23 +210,10 @@ main {
     }
 }
 
-.button-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px 0;
-    gap: 20px;
-}
-
-button {
-    padding: 10px 40px;
+footer {
     background-color: var(--color1);
     color: var(--color4);
-    text-transform: uppercase;
-    border: none;
-
-    &:hover {
-        cursor: pointer;
-        color: var(--color2);
-    }
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
 }

@@ -43,7 +43,7 @@ const appPuissanceQuatre = {
         }
     },
     mounted() {
-        this.initMatrix();
+        this.initMatrix(),
         this.loadScores()
     },
     methods: {

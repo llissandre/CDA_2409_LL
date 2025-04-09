@@ -32,6 +32,10 @@
         </header>
         <main>
             <h1>Liste des ventes</h1>
+            <div class="button-container">
+                <button @click="">Supprimer les données sauvegardées</button>
+                <button @click="">Télécharger le fichier json</button>
+            </div>
             <div id="ventes">
                 <div v-for="sale of collectionSales">
                     <h2>{{ sale. Name }} {{ sale.Variety}}</h2>
@@ -43,10 +47,7 @@
             </div>
         </main>
         <footer>
-            <div class="button-container">
-                <button @click="resetGame">Supprimer les données sauvegardées</button>
-                <button @click="resetScore">Télécharger le fichier json</button>
-            </div>
+            <p>&copy; Coopérative bio - 2025</p>
         </footer>
     </div>
 </body>
