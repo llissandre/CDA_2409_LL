@@ -23,31 +23,34 @@
                         <legend>Nouvelle vente</legend>
                         <div>
                             <label for="date">Date de vente</label>
-                            <input type="date" id="date">
+                            <input type="date" id="date" required>
                         </div>
                         <div>
                             <label for="saleWeight">Poids</label>
-                            <input type="text" id="saleWeight">
+                            <input type="text" id="saleWeight" required>
                         </div>
                         <div>
                             <label for="unitPrice">Prix</label>
-                            <input type="text" id="unitPrice">
+                            <input type="text" id="unitPrice" required>
                         </div>
-                        <div>
-                            <label for="saleActive">Vente active</label>
-                            <input type="text" id="saleActive">
+                        <div id="saleActiveDiv">
+                            <label for="saleActive">Est-ce frais ?</label>
+                            <select v-model="saleActive" id="saleActive" required>
+                                <option :value="1">Oui</option>
+                                <option :value="0">Non</option>
+                            </select>
                         </div>
                         <div>
                             <label for="vegetableId">Identifiant du légume</label>
-                            <input type="text" id="vegetableId">
+                            <input type="text" id="vegetableId" required>
                         </div>
                         <div>
                             <label for="name">Nom</label>
-                            <input type="text" id="name">
+                            <input type="text" id="name" required>
                         </div>
                         <div>
                             <label for="variety">Variété</label>
-                            <input type="text" id="variety">
+                            <input type="text" id="variety" required>
                         </div>
                         <div>
                             <label for=""></label>

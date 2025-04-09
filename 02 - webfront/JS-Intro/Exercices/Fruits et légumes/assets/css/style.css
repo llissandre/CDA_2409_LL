@@ -194,6 +194,7 @@ main {
                     align-content: center;
                 }
 
+                select,
                 input {
                     background-color: var(--color1);
                     color: var(--color4);
@@ -202,6 +203,7 @@ main {
                     padding: 10px;
                 }
 
+                select,
                 input:focus {
                     outline: none;
                 }

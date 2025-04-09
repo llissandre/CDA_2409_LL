@@ -18,7 +18,9 @@
         </header>
         <main>
             <div id="newVegetable">
-                <form action="" method="post" @submit.prevent="addVegetable">
+                <form
+                    action="http://127.0.0.1:5500/02%20-%20webfront/JS-Intro/Exercices/Fruits%20et%20l%C3%A9gumes/index.html"
+                    method="post">
                     <fieldset>
                         <legend>Nouveau légume</legend>
                         <div>
@@ -37,9 +39,9 @@
                             <label for="lifetime">Durée de conservation</label>
                             <input type="text" id="lifetime" required>
                         </div>
-                        <div>
+                        <div id="fresh">
                             <label for="fresh">Est-ce frais ?</label>
-                            <select v-model.number="vegetable.Fresh" required>
+                            <select v-model="Fresh" required>
                                 <option :value="1">Oui</option>
                                 <option :value="0">Non</option>
                             </select>

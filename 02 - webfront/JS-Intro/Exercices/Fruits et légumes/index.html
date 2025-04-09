@@ -33,8 +33,8 @@
         <main>
             <h1>Liste des légumes</h1>
             <div class=" button-container">
-                <button @click="resetSave">Supprimer les données sauvegardées</button>
-                <button @click="downloadJSON">Télécharger le fichier json</button>
+                <button @click="resetSaveVegetables">Supprimer les données sauvegardées</button>
+                <button @click="downloadJSONVegetables">Télécharger le fichier json</button>
             </div>
             <div id="legumes">
                 <table id="myTable">
@@ -65,7 +65,8 @@
                             <td>{{vege.PrimaryColor}}</td>
                             <td>{{vege.LifeTime}}</td>
                             <td>{{setStatusFresh(vege.Fresh)}}</td>
-                            <td> <span @click="editVegetable(index)" :class="['pointer']">Editer</span> . <span @click="deleteVegetable(index)" :class="['pointer']">Supprimer</span></td>
+                            <td> <span @click="editVegetable(index)" :class="['pointer']">Editer</span> . <span
+                                    @click="deleteVegetable(index)" :class="['pointer']">Supprimer</span></td>
                         </tr>
                     </tbody>
                 </table>

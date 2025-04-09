@@ -16,7 +16,7 @@ const appCollectionVegetables = {
             const json = await response.json();
             if (Array.isArray(json)) {
                 this.collectionVegetables = json;
-                this.load();
+                this.loadVegetables();
             } else {
                 console.error('Les données récupérées ne sont pas un tableau');
             }
@@ -31,6 +31,7 @@ const appCollectionVegetables = {
             const json = await response.json();
             if (Array.isArray(json)) {
                 this.collectionSales = json;
+                this.loadSales();
             } else {
                 console.error('Les données récupérées ne sont pas un tableau');
             }
@@ -41,10 +42,11 @@ const appCollectionVegetables = {
     },
     computed: {
 
-        
+
     },
     mounted() {
-        this.load();
+        this.loadVegetables();
+        this.loadSales();
     },
     methods: {
         getFrenchDate(date) {
@@ -85,27 +87,41 @@ const appCollectionVegetables = {
                 });
             }
         },
-        save() {
-            console.log('save', this.collectionVegetablesStorage);
-            
+        saveVegetables() {
             window.localStorage.setItem('collectionVegetables', JSON.stringify(this.collectionVegetablesStorage));
         },
-        load() {
+        saveSales() {
+            window.localStorage.setItem('collectionSales', JSON.stringify(this.collectionSalesStorage));
+        },
+        loadVegetables() {
             const storage = localStorage.getItem('collectionVegetables');
-            console.log(this.collectionVegetables);
-            
-            if (storage === null){
+
+            if (storage === null) {
                 this.collectionVegetablesStorage = this.collectionVegetables;
             }
             else if (storage) {
                 this.collectionVegetablesStorage = JSON.parse(storage);
             }
         },
-        resetSave() {
-            localStorage.removeItem('collectionVegetables');
-            this.load();
+        loadSales() {
+            const storage = localStorage.getItem('collectionSales');
+
+            if (storage === null) {
+                this.collectionSalesStorage = this.collectionSales;
+            }
+            else if (storage) {
+                this.collectionSalesStorage = JSON.parse(storage);
+            }
         },
-        downloadJSON() {
+        resetSaveVegetables() {
+            window.localStorage.removeItem('collectionVegetables');
+            location.reload();
+        },
+        resetSaveSales() {
+            window.localStorage.removeItem('collectionSales');
+            winlocationow.reload();
+        },
+        downloadJSONVegetables() {
             const json = JSON.stringify(this.collectionVegetablesStorage, null, 2);
             const blob = new Blob([json]);
             const url = URL.createObjectURL(blob);
@@ -116,20 +132,33 @@ const appCollectionVegetables = {
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
+        }, downloadJSONSales() {
+            const json = JSON.stringify(this.collectionSalesStorage, null, 2);
+            const blob = new Blob([json]);
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'collectionSales.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
         },
         addVegetable() {
 
             this.collectionVegetablesStorage.push({
 
             });
-            this.save();
+            this.saveVegetables();
         },
         deleteVegetable(index) {
-            this.collectionVegetablesStorage.splice(index, 1);
-            this.save();
+            if (confirm('Supprimer ce légume ?')) {
+                this.collectionVegetablesStorage.splice(index, 1);
+                this.saveVegetables();
+            }
         },
         editVegetable(index) {
-            
+
             if (index >= 0 && index < this.collectionVegetablesStorage.length) {
                 const vege = this.collectionVegetablesStorage[index];
                 const newName = prompt('Modifier le nom du légume :', vege.Name);
@@ -161,7 +190,7 @@ const appCollectionVegetables = {
                 alert('Index invalide');
             }
 
-            this.save();
+            this.saveVegetables();
         },
     }
 }
