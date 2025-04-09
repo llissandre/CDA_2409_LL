@@ -2,6 +2,7 @@ const appCollectionVegetables = {
     data() {
         return {
             collectionVegetables: [],
+            collectionVegetablesStorage: [],
             collectionSales: [],
             sortKey: '',
             sortIncrease: true,
@@ -15,11 +16,13 @@ const appCollectionVegetables = {
             const json = await response.json();
             if (Array.isArray(json)) {
                 this.collectionVegetables = json;
+                this.load();
             } else {
                 console.error('Les données récupérées ne sont pas un tableau');
             }
         } catch (error) {
             console.error('Un problème est survenu lors de la récupération :', error);
+            this.collectionVegetables = [];
         }
 
         try {
@@ -33,9 +36,12 @@ const appCollectionVegetables = {
             }
         } catch (error) {
             console.error('Un problème est survenu lors de la récupération :', error);
+            this.collectionSales = [];
         }
     },
     computed: {
+
+        
     },
     mounted() {
         this.load();
@@ -61,7 +67,7 @@ const appCollectionVegetables = {
             }
 
             if (this.sortKey) {
-                this.collectionVegetables = this.collectionVegetables.sort((a, b) => {
+                this.collectionVegetablesStorage = this.collectionVegetablesStorage.sort((a, b) => {
                     const valA = a[this.sortKey];
                     const valB = b[this.sortKey];
                     let compare = 0;
@@ -80,22 +86,28 @@ const appCollectionVegetables = {
             }
         },
         save() {
-            console.log('save', this.collectionVegetables);
+            console.log('save', this.collectionVegetablesStorage);
             
-            localStorage.setItem('collectionVegetables', JSON.stringify(this.collectionVegetables));
+            window.localStorage.setItem('collectionVegetables', JSON.stringify(this.collectionVegetablesStorage));
         },
         load() {
             const storage = localStorage.getItem('collectionVegetables');
-            if (storage) {
-                this.collectionVegetables = JSON.parse(storage);
+            console.log(this.collectionVegetables);
+            
+            if (storage === null){
+                this.collectionVegetablesStorage = this.collectionVegetables;
+            }
+            else if (storage) {
+                this.collectionVegetablesStorage = JSON.parse(storage);
             }
         },
         resetSave() {
             localStorage.removeItem('collectionVegetables');
+            this.load();
         },
         downloadJSON() {
-            const json = JSON.stringify(this.collectionVegetables, null, 2);
-            const blob = new Blob([json], { type: 'application/json' });
+            const json = JSON.stringify(this.collectionVegetablesStorage, null, 2);
+            const blob = new Blob([json]);
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
@@ -105,29 +117,39 @@ const appCollectionVegetables = {
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
         },
-        addFruit() {
-            this.collectionVegetables.push({
+        addVegetable() {
+
+            this.collectionVegetablesStorage.push({
 
             });
             this.save();
         },
-        deleteFruit(index) {
-            console.log('deleteFruit', index);
-
-            this.collectionVegetables.splice(index, 1);
+        deleteVegetable(index) {
+            this.collectionVegetablesStorage.splice(index, 1);
             this.save();
         },
-        editFruit(index) {
-            console.log('editFruit', index);
-
-            if (index >= 0 && index < this.collectionVegetables.length) {
-                const vege = this.collectionVegetables[index];
-                const newName = prompt('Modifier le nom du vege:', vege.Name);
-                const newPrice = prompt('Modifier le prix du fruit:', vege.Price);
-                const newFresh = prompt('Le fruit est-il frais:', vege.Fresh);
+        editVegetable(index) {
+            
+            if (index >= 0 && index < this.collectionVegetablesStorage.length) {
+                const vege = this.collectionVegetablesStorage[index];
+                const newName = prompt('Modifier le nom du légume :', vege.Name);
+                const newVariety = prompt('Modifier la variété du légume :', vege.Variety);
+                const newPrimaryColor = prompt('Modifier la couleur primaire du légume :', vege.PrimaryColor);
+                const newLifeTime = prompt('Modifier la durée de conservation du légume :', vege.LifeTime);
+                const newPrice = prompt('Modifier le prix du légume :', vege.Price);
+                const newFresh = prompt('Le légume est-il frais:', vege.Fresh);
 
                 if (newName !== null) {
                     vege.Name = newName;
+                }
+                if (newVariety !== null) {
+                    vege.Variety = newVariety;
+                }
+                if (newPrimaryColor !== null) {
+                    vege.PrimaryColor = newPrimaryColor;
+                }
+                if (newLifeTime !== null) {
+                    vege.LifeTime = newLifeTime;
                 }
                 if (newPrice !== null) {
                     vege.Price = parseFloat(newPrice);
@@ -135,11 +157,11 @@ const appCollectionVegetables = {
                 if (newFresh !== null) {
                     vege.Fresh = parseInt(newFresh);
                 }
-
-                this.save();
             } else {
-                console.log('Index invalide');
+                alert('Index invalide');
             }
+
+            this.save();
         },
     }
 }

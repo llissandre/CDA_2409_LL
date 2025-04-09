@@ -33,8 +33,8 @@
         <main>
             <h1>Liste des ventes</h1>
             <div class="button-container">
-                <button @click="">Supprimer les données sauvegardées</button>
-                <button @click="">Télécharger le fichier json</button>
+                <button @click="resetSave">Supprimer les données sauvegardées</button>
+                <button @click="downloadJSON">Télécharger le fichier json</button>
             </div>
             <div id="ventes">
                 <div v-for="sale of collectionSales">

@@ -59,13 +59,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(vege, index) in collectionVegetables" :key="vege.Id">
+                        <tr v-for="(vege, index) in collectionVegetablesStorage" :key="vege.Id">
                             <td>{{vege.Name}}</td>
                             <td>{{vege.Variety}}</td>
                             <td>{{vege.PrimaryColor}}</td>
                             <td>{{vege.LifeTime}}</td>
                             <td>{{setStatusFresh(vege.Fresh)}}</td>
-                            <td> <span @click="editFruit(index)" :class="['pointer']">editer</span> . <span @click="deleteFruit(index)" :class="['pointer']">supprimer</span></td>
+                            <td> <span @click="editVegetable(index)" :class="['pointer']">Editer</span> . <span @click="deleteVegetable(index)" :class="['pointer']">Supprimer</span></td>
                         </tr>
                     </tbody>
                 </table>
