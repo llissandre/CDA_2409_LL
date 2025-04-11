@@ -18,7 +18,7 @@
             <nav>
                 <div id="vente">
                     <ul>
-                        <li>ventes</li>
+                        <!-- <li>ventes</li> -->
                         <li><a href="newSale.html">nouvelle vente</a></li>
                     </ul>
                 </div>
@@ -33,11 +33,12 @@
         <main>
             <h1>Liste des ventes</h1>
             <div class="button-container">
-                <button @click="resetSaveSales">Supprimer les données sauvegardées</button>
-                <button @click="downloadJSONSales">Télécharger le fichier json</button>
+                <button @click="resetSave('collectionSales')">Supprimer les données sauvegardées</button>
+                <button @click="downloadJSON('collectionSales', this.collectionSalesStorage)">Télécharger le
+                    fichier json</button>
             </div>
             <div id="ventes">
-                <div v-for="sale of collectionSales">
+                <div v-for="(sale, index) in collectionSalesStorage" :key="sale.SaleId">
                     <h2>{{ sale. Name }} {{ sale.Variety}}</h2>
                     <h2>({{sale.SaleWeight}}KG)</h2>
                     <p>

@@ -18,43 +18,37 @@
         </header>
         <main>
             <div id="newSale">
-                <form action="">
+                <form @submit.prevent="newSale">
                     <fieldset>
                         <legend>Nouvelle vente</legend>
                         <div>
-                            <label for="date">Date de vente</label>
-                            <input type="date" id="date" required>
+                            <label for="vegetableId">Légume</label>
+                            <select v-model="newSale.VegetableId" required>
+                                <option disabled value="">-- Choisir un légume --</option>
+                                <option v-for="vegetable in collectionVegetablesStorage" :key="vegetable.Id"
+                                    :value="vegetable.Id">
+                                    {{ vegetable.Name }} - {{ vegetable.Variety }}
+                                </option>
+                            </select>
                         </div>
                         <div>
                             <label for="saleWeight">Poids</label>
-                            <input type="text" id="saleWeight" required>
+                            <input type="number" id="saleWeight" v-model="newSale.SaleWeight" required>
                         </div>
                         <div>
-                            <label for="unitPrice">Prix</label>
-                            <input type="text" id="unitPrice" required>
+                            <label for="date">Date de vente</label>
+                            <input type="date" id="date" v-model="newSale.SaleDate" required>
                         </div>
                         <div id="saleActiveDiv">
-                            <label for="saleActive">Est-ce frais ?</label>
-                            <select v-model="saleActive" id="saleActive" required>
+                            <label for="saleActive">Est-ce que la vente est active ?</label>
+                            <select v-model="SaleActive" id="saleActive" v-model="newSale.SaleActive" required>
                                 <option :value="1">Oui</option>
                                 <option :value="0">Non</option>
                             </select>
                         </div>
                         <div>
-                            <label for="vegetableId">Identifiant du légume</label>
-                            <input type="text" id="vegetableId" required>
-                        </div>
-                        <div>
-                            <label for="name">Nom</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div>
-                            <label for="variety">Variété</label>
-                            <input type="text" id="variety" required>
-                        </div>
-                        <div>
                             <label for=""></label>
-                            <input type="submit" value="Valider">
+                            <input type="submit" value="Ajouter la vente">
                         </div>
                     </fieldset>
                 </form>

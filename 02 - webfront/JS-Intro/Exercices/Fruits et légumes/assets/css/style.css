@@ -187,7 +187,7 @@ main {
 
             div {
                 display: grid;
-                grid-template-columns: repeat(2, 200px);
+                grid-template-columns: 250px 300px;
                 margin: 10px;
 
                 label {

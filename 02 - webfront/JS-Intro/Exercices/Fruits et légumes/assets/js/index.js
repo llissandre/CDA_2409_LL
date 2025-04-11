@@ -1,12 +1,31 @@
+import { getLocalData, saveLocalData } from './assets/js/storageManager.js';
+
 const appCollectionVegetables = {
     data() {
         return {
             collectionVegetables: [],
             collectionVegetablesStorage: [],
             collectionSales: [],
+            collectionSalesStorage: [],
             sortKey: '',
             sortIncrease: true,
-
+            newVegetable: {
+                Id: null,
+                Name: '',
+                Variety: '',
+                PrimaryColor: '',
+                LifeTime: 0,
+                Fresh: 1,
+                Price: 0
+            },
+            newSale: {
+                Id: null,
+                SaleDate: '',
+                SaleWeight: 0,
+                SaleUnitPrice: 0,
+                SaleActive: '',
+                VegetableId: ''
+            }
         }
     },
     async created() {
@@ -16,7 +35,7 @@ const appCollectionVegetables = {
             const json = await response.json();
             if (Array.isArray(json)) {
                 this.collectionVegetables = json;
-                this.loadVegetables();
+                this.loadTo('collectionVegetablesStorage', 'collectionVegetables', this.collectionVegetables);
             } else {
                 console.error('Les données récupérées ne sont pas un tableau');
             }
@@ -31,7 +50,7 @@ const appCollectionVegetables = {
             const json = await response.json();
             if (Array.isArray(json)) {
                 this.collectionSales = json;
-                this.loadSales();
+                this.loadTo('collectionSalesStorage', 'collectionSales', this.collectionSales);
             } else {
                 console.error('Les données récupérées ne sont pas un tableau');
             }
@@ -41,12 +60,12 @@ const appCollectionVegetables = {
         }
     },
     computed: {
-
-
     },
     mounted() {
-        this.loadVegetables();
-        this.loadSales();
+        this.loadTo('collectionVegetablesStorage', 'collectionVegetables', this.collectionVegetables);
+        this.loadTo('collectionSalesStorage', 'collectionSales', this.collectionSales);
+        // this.loadVegetables();
+        // this.loadSales();
     },
     methods: {
         getFrenchDate(date) {
@@ -70,127 +89,73 @@ const appCollectionVegetables = {
 
             if (this.sortKey) {
                 this.collectionVegetablesStorage = this.collectionVegetablesStorage.sort((a, b) => {
-                    const valA = a[this.sortKey];
-                    const valB = b[this.sortKey];
+                    const valeurA = a[this.sortKey];
+                    const valeurB = b[this.sortKey];
                     let compare = 0;
 
-                    if (typeof valA === 'string' && typeof valB === 'string') {
-                        compare = valA.localeCompare(valB);
+                    if (typeof valeurA === 'string' && typeof valeurB === 'string') {
+                        compare = valeurA.localeCompare(valeurB);
                     }
-                    else if (typeof valA === 'number' && typeof valB === 'number') {
-                        compare = valA - valB;
+                    else if (typeof valeurA === 'number' && typeof valeurB === 'number') {
+                        compare = valeurA - valeurB;
                     } else {
-                        console.warn('Les valeurs ne sont pas comparables :', valA, valB);
+                        console.warn('Les valeurs ne sont pas comparables :', valeurA, valeurB);
                     }
 
                     return this.sortIncrease ? compare : -compare;
                 });
             }
         },
-        saveVegetables() {
-            window.localStorage.setItem('collectionVegetables', JSON.stringify(this.collectionVegetablesStorage));
-        },
-        saveSales() {
-            window.localStorage.setItem('collectionSales', JSON.stringify(this.collectionSalesStorage));
-        },
-        loadVegetables() {
-            const storage = localStorage.getItem('collectionVegetables');
-
-            if (storage === null) {
-                this.collectionVegetablesStorage = this.collectionVegetables;
+        getLastId(data) {
+            if (data.length === 0) {
+                return 1;
+            } else {
+                const lastItem = data.length;
+                return lastItem.Id + 1;
             }
-            else if (storage) {
-                this.collectionVegetablesStorage = JSON.parse(storage);
-            }
-        },
-        loadSales() {
-            const storage = localStorage.getItem('collectionSales');
-
-            if (storage === null) {
-                this.collectionSalesStorage = this.collectionSales;
-            }
-            else if (storage) {
-                this.collectionSalesStorage = JSON.parse(storage);
-            }
-        },
-        resetSaveVegetables() {
-            window.localStorage.removeItem('collectionVegetables');
-            location.reload();
-        },
-        resetSaveSales() {
-            window.localStorage.removeItem('collectionSales');
-            winlocationow.reload();
-        },
-        downloadJSONVegetables() {
-            const json = JSON.stringify(this.collectionVegetablesStorage, null, 2);
-            const blob = new Blob([json]);
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'collectionVegetables.json';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }, downloadJSONSales() {
-            const json = JSON.stringify(this.collectionSalesStorage, null, 2);
-            const blob = new Blob([json]);
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'collectionSales.json';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        },
-        addVegetable() {
-
-            this.collectionVegetablesStorage.push({
-
-            });
-            this.saveVegetables();
         },
         deleteVegetable(index) {
             if (confirm('Supprimer ce légume ?')) {
                 this.collectionVegetablesStorage.splice(index, 1);
-                this.saveVegetables();
+                // this.saveVegetables();
+                this.save('collectionVegetablesStorage', this.collectionVegetablesStorage);
             }
         },
         editVegetable(index) {
 
             if (index >= 0 && index < this.collectionVegetablesStorage.length) {
-                const vege = this.collectionVegetablesStorage[index];
-                const newName = prompt('Modifier le nom du légume :', vege.Name);
-                const newVariety = prompt('Modifier la variété du légume :', vege.Variety);
-                const newPrimaryColor = prompt('Modifier la couleur primaire du légume :', vege.PrimaryColor);
-                const newLifeTime = prompt('Modifier la durée de conservation du légume :', vege.LifeTime);
-                const newPrice = prompt('Modifier le prix du légume :', vege.Price);
-                const newFresh = prompt('Le légume est-il frais:', vege.Fresh);
+                const vegetable = this.collectionVegetabletablesStorage[index];
+                const newName = prompt('Modifier le nom du légume :', vegetable.Name);
+                const newVariety = prompt('Modifier la variété du légume :', vegetable.Variety);
+                const newPrimaryColor = prompt('Modifier la couleur primaire du légume :', vegetable.PrimaryColor);
+                const newLifeTime = prompt('Modifier la durée de conservation du légume :', vegetable.LifeTime);
+                const newPrice = prompt('Modifier le prix du légume :', vegetable.Price);
+                const newFresh = prompt('Le légume est-il frais:', vegetable.Fresh);
 
                 if (newName !== null) {
-                    vege.Name = newName;
+                    vegetable.Name = newName;
                 }
                 if (newVariety !== null) {
-                    vege.Variety = newVariety;
+                    vegetable.Variety = newVariety;
                 }
                 if (newPrimaryColor !== null) {
-                    vege.PrimaryColor = newPrimaryColor;
+                    vegetable.PrimaryColor = newPrimaryColor;
                 }
                 if (newLifeTime !== null) {
-                    vege.LifeTime = newLifeTime;
+                    vegetable.LifeTime = newLifeTime;
                 }
                 if (newPrice !== null) {
-                    vege.Price = parseFloat(newPrice);
+                    vegetable.Price = parseFloat(newPrice);
                 }
                 if (newFresh !== null) {
-                    vege.Fresh = parseInt(newFresh);
+                    vegetable.Fresh = parseInt(newFresh);
                 }
             } else {
                 alert('Index invalide');
             }
 
-            this.saveVegetables();
+            // this.saveVegetables();
+            this.save('collectionVegetablesStorage', this.collectionVegetablesStorage);
         },
     }
 }

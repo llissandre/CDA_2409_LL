@@ -24,7 +24,7 @@
                 </div>
                 <div id="légume">
                     <ul>
-                        <li>légumes</li>
+                        <!-- <li>légumes</li> -->
                         <li><a href="newVegetable.html">nouveau légume</a></li>
                     </ul>
                 </div>
@@ -33,8 +33,9 @@
         <main>
             <h1>Liste des légumes</h1>
             <div class=" button-container">
-                <button @click="resetSaveVegetables">Supprimer les données sauvegardées</button>
-                <button @click="downloadJSONVegetables">Télécharger le fichier json</button>
+                <button @click="resetSave('collectionVegetables')">Supprimer les données sauvegardées</button>
+                <button @click="downloadJSON('collectionVegetables', this.collectionVegetablesStorage)">Télécharger le
+                    fichier json</button>
             </div>
             <div id="legumes">
                 <table id="myTable">
@@ -59,12 +60,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(vege, index) in collectionVegetablesStorage" :key="vege.Id">
-                            <td>{{vege.Name}}</td>
-                            <td>{{vege.Variety}}</td>
-                            <td>{{vege.PrimaryColor}}</td>
-                            <td>{{vege.LifeTime}}</td>
-                            <td>{{setStatusFresh(vege.Fresh)}}</td>
+                        <tr v-for="(vegetable, index) in collectionVegetablesStorage" :key="vegetable.Id">
+                            <td>{{vegetable.Name}}</td>
+                            <td>{{vegetable.Variety}}</td>
+                            <td>{{vegetable.PrimaryColor}}</td>
+                            <td>{{vegetable.LifeTime}}</td>
+                            <td>{{setStatusFresh(vegetable.Fresh)}}</td>
                             <td> <span @click="editVegetable(index)" :class="['pointer']">Editer</span> . <span
                                     @click="deleteVegetable(index)" :class="['pointer']">Supprimer</span></td>
                         </tr>
