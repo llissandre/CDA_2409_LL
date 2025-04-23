@@ -1,0 +1,12 @@
+ArticlesNOTINJournal
+
+SELECT       IDArticle, Titre AS TitreArticle, Corps, Auteur
+FROM         article
+WHERE        (IDArticle NOT IN (SELECT IDArticle FROM composition WHERE (IDJournal = @IDJournal)))
+
+
+ArticlesINJournal
+
+SELECT       IDArticle, Titre AS TitreArticle, Corps, Auteur
+FROM         article
+WHERE        (IDArticle IN (SELECT IDArticle FROM composition WHERE (IDJournal = @IDJournal)))
