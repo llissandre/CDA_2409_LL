@@ -64,6 +64,13 @@ namespace ClassLibraryExercices
                     , nameof(contenuEnLitre));
             }
 
+            if(contenuEnLitre > contenanceEnLitre)
+            {
+                //L�instruction throw l�ve une exception :
+                throw new ArgumentException("Le contenu en litre ne peut pas �tre sup�rieur � la contenance en litre !"
+                    , nameof(contenuEnLitre));
+            }
+
             _contenanceEnLitre = contenanceEnLitre;
             _contenuEnLitre = contenuEnLitre;
             _estOuverte = estOuverte;
@@ -164,14 +171,14 @@ namespace ClassLibraryExercices
         /// <exception cref="ArgumentException"></exception>
         public bool Vider(float quantiteEnLitre)
         {
-            if (quantiteEnLitre < 0)
+            if (quantiteEnLitre <= 0)
             {
                 //L�instruction throw l�ve une exception :
                 throw new ArgumentException(nameof(quantiteEnLitre),
                 "La quantit� d'eau � vider doit �tre sup�rieure � 0 !");
             }
 
-            if (_estOuverte == true && quantiteEnLitre > 0 && _contenuEnLitre - quantiteEnLitre >= 0)
+            if (_estOuverte == true && _contenuEnLitre - quantiteEnLitre >= 0)
             {
                 _contenuEnLitre -= quantiteEnLitre;
                 return true;
@@ -207,14 +214,14 @@ namespace ClassLibraryExercices
         /// <exception cref="ArgumentException"></exception>
         public bool Remplir(float quantiteEnLitre)
         {
-            if (quantiteEnLitre < 0)
+            if (quantiteEnLitre <= 0)
             {
                 //L�instruction throw l�ve une exception :
                 throw new ArgumentException("La quantit� d'eau � remplir doit �tre sup�rieure � 0 !"
                     , nameof(quantiteEnLitre));
             }
 
-            if (_estOuverte == true && quantiteEnLitre > 0 && _contenuEnLitre + quantiteEnLitre <= _contenanceEnLitre)
+            if (_estOuverte == true && _contenuEnLitre + quantiteEnLitre <= _contenanceEnLitre)
             {
                 _contenuEnLitre += quantiteEnLitre;
                 return true;
