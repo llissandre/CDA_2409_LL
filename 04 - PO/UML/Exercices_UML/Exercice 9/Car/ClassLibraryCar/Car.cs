@@ -10,7 +10,9 @@ namespace ClassLibraryCar
     {
         private string _brand;
         private string _model;
-
+        private int _wheelSize;
+        private float _wheelWear;
+        private FuelType _engineType;
 
         public Car() { }
 
@@ -18,6 +20,24 @@ namespace ClassLibraryCar
         {
             _brand = brand;
             _model = model;
+            _wheelSize = wheelSize;
+            _wheelWear = wheelWear;
+            _engineType = engineType;
+        }
+
+        public Car(Car newCar)
+            : this(newCar._brand, newCar._model, newCar._wheelSize, newCar._wheelWear, newCar._engineType) { }
+
+        public bool MoveForward() {
+        
+        }
+
+        public bool Start() {
+
+        }
+        
+        public bool Stop() {
+
         }
     }
 }

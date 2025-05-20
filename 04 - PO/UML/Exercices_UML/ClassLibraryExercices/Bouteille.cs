@@ -18,13 +18,13 @@ namespace ClassLibraryExercices
         private bool _estOuverte;
 
         /// <summary>
-        /// constructeurs
+        /// Constructeurs
         /// Un constructeur est, en programmation orient�e objet, une fonction particuli�re appel�e lors de l'instanciation.
         /// Elle permet d'allouer la m�moire n�cessaire � l'objet et d'initialiser ses attributs.
         /// </summary>
 
 
-        //constructeurs par defaut
+        //Constructeurs par defaut
         /// <summary>
         /// Le terme � constructeur par d�faut � fait r�f�rence � un constructeur qui n'accepte aucun argument d'entr�e.
         /// Chaque instance de classe doit �tre initialis�e avec les m�mes valeurs dans un constructeur par d�faut.

@@ -8,49 +8,70 @@ namespace ClassLibraryCar
 {
     public class Engine
     {
+        /// <summary>
+        /// Attributs privés
+        /// </summary>
         private bool _isRunning;
         private FuelType _fuelType;
 
-        public Engine() { }
 
+        // Constructeurs par défaut
+        //public Engine()
+        //{
+        //    _isRunning = false;
+        //    _fuelType = FuelType.Diesel;
+        //}
+        public Engine()
+            : this(false, FuelType.Diesel) { }
+
+        // Constructeurs classique
         public Engine(bool isRunning, FuelType fuelType)
         {
             _isRunning = isRunning;
             _fuelType = fuelType;
         }
 
+        // Constructeur par clonage
         public Engine(Engine newEngine)
             : this(newEngine._isRunning, newEngine._fuelType) { }
 
+        // Propriétés
+        /// <summary>
+        /// Démarrer le moteur
+        /// </summary>
+        /// <returns></returns>
         public bool StartEngine()
         {
             if (!_isRunning)
             {
                 _isRunning = true;
-                Console.WriteLine("Engine started.");
+                //Engine started
                 return true;
             }
             else
             {
-                Console.WriteLine("Engine is already running.");
+                //Engine is already running
                 return false;
             }
         }
 
+        /// <summary>
+        /// Arrêter le moteur
+        /// </summary>
+        /// <returns></returns>
         public bool StopEngine()
         {
             if (_isRunning)
             {
                 _isRunning = false;
-                Console.WriteLine("Engine stopped.");
+                //Engine stopped
                 return true;
             }
             else
             {
-                Console.WriteLine("Engine is already stopped.");
+                //Engine is already stopped
                 return false;
             }
         }
     }
-
 }

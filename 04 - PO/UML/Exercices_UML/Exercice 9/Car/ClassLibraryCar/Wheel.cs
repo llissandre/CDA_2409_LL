@@ -8,12 +8,18 @@ namespace ClassLibraryCar
 {
     public class Wheel
     {
+        /// <summary>
+        /// Attributs privés
+        /// </summary>
         private int _size;
         private float _wear;
         private bool _isSpinning;
 
-        public Wheel() { }
+        // Constructeur par défaut
+        public Wheel()
+        : this(16, 0, false) { }
 
+        // Constructeur classique
         public Wheel(int size, float wear, bool isSpinning)
         {
             _size = size;
@@ -28,19 +34,45 @@ namespace ClassLibraryCar
         //    _isSpinning = newWheel._isSpinning;
         //}
 
+        // Constructeur par clonage
         public Wheel(Wheel newWheel)
             : this(newWheel._size, newWheel._wear, newWheel._isSpinning) { }
 
-        public bool move()
+        // Propriétés
+        /// <summary>
+        /// Faire tourner la roue
+        /// </summary>
+        /// <returns></returns>
+        public bool Move()
         {
-            if (_isSpinning)
+            if (!_isSpinning)
             {
-                Console.WriteLine("The wheel is moving.");
+                _isSpinning = true;
+                //The wheel is moving
                 return true;
             }
             else
             {
-                Console.WriteLine("The wheel is not moving.");
+                //The wheel is already spinning
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Arrêter la rotation de la roue
+        /// </summary>
+        /// <returns></returns>
+        public bool Stop()
+        {
+            if (_isSpinning)
+            {
+                _isSpinning = false;
+                //The wheel is stopped
+                return true;
+            }
+            else
+            {
+                //The wheel is already spinning
                 return false;
             }
         }

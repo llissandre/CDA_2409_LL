@@ -1,0 +1,157 @@
+On entend le son, Oh là là, mais quelle efficacité.
+THIRY Sophie 0 minutes 9 secondes
+Ça me réussit d'être Tata là.
+THIRY Sophie 0 minutes 13 secondes
+Ouais Sabri sais, mais j'ai juste envie de m'écrouler de dormir. Je crois d'excès, pas trop d'excitation.
+THIRY Sophie 0 minutes 18 secondes
+Alors, on était où ? On était parle ? Je me rappelle bien par là, ouais Ah donc on était en train de voir la voiture et la personne d'accord ? Maintenant on va voir un concept qui toujours met plein de stress aux stagiaires qui s'appelle l'agrégation de composition, ça c'est un.
+THIRY Sophie 0 minutes 42 secondes
+Truc, je crois que en UML c'est la terreur de de l'u ML ce truc hein alors pourtant c'est pas si compliqué que ça. Mais voilà l'agrégation composition c'est une association qui est particulière, ça veut dire qu'il y a quelque chose qui appartient à quelque chose.
+THIRY Sophie 0 minutes 56 secondes
+D'autre genre, une voiture à 4 roues la voiture, elle est on peut dire composée de 4 roues. Un dessin contient un ensemble de figures géométriques, donc un un dessin est composé de figures géométriques, ça les CD à on va faire, on a un design Pattern pour faire.
+THIRY Sophie 1 minute 15 secondes
+Simple, ça va être rigolo.
+THIRY Sophie 1 minute 20 secondes
+Si, si vous allez voir Ben franchement hein.
+THIRY Sophie 1 minute 24 secondes
+Ouais bon peut être que chez moi pour moi c'est rigolo mais au début ce sera pas rigolo, pas rigoler tout de suite mais vous allez voir après, vous allez adorer c'est mais au début pas tout de suite. On est une présentation PowerPoint est composée de transparents donc on peu.
+THIRY Sophie 1 minute 40 secondes
+Dire une présentation. Ben là, ils ont marqué est composée de transparents, une équipe de recherche est composée d'un ensemble de personnes.
+THIRY Sophie 54 minutes 38 secondes
+Si je fais une section ici, une section est composée de stagiaires. On va dire une section s'il y a pas un minimum un stagiaire dedans, on peut même pas la créer. La section dans le logiciel.
+THIRY Sophie 54 minutes 48 secondes
+Et pourquoi je choisirais l'un ou l'autre ?
+THIRY Sophie 54 minutes 55 secondes
+Mieux informatiquement ? Mettre un 0 étoile, c'est à dire, je crée la section, je sais que je vais aller rajouter des gens dedans, mais j'oblige pas dès le début parce que sinon il faut que j'en choisisse un. Et pourquoi l'un ou l'autre ? Il y a pas de raison. Vous sentez la ?
+THIRY Sophie 55 minutes 9 secondes
+Sensibilité là 0 ça peut être 8 chiffres en fait non ? Si on met 0 ça veut dire quand je crée le laboratoire je suis pas obligé de lui mettre tout de suite une équipe de recherche mais on.
+THIRY Sophie 55 minutes 21 secondes
+Ouais, plus tard, tout à fait.
+THIRY Sophie 55 minutes 24 secondes
+Bon, t'en as vu, qu'est ce que c'est ? Ah oui, y en a encore beaucoup. Oh pu, allez, on va le finir, on va, on va, on va lui faire la peau là donc là c'est un diagramme d'objet dont l'objectif c'est de montrer les salariés dans une entreprise, donc là.
+THIRY Sophie 55 minutes 41 secondes
+J'ai un un salarié, c'est Tom Kardoso, voyez calife PDG.
+THIRY Sophie 55 minutes 47 secondes
+Il encadre. Heureusement qu'ils sont là pour nous encadrer parce que je pars en cacahuète.
+THIRY Sophie 55 minutes 53 secondes
+Ils encadrent.
+THIRY Sophie 55 minutes 56 secondes
+Des cadres, Ben par exemple, Francine communaux. Voilà qui est une autre RFO et l'encadre. Je sais pas la responsable de la cantine et Francine Communodo encadre Sophie Thierry, formatrice, Franck Chatelot, formateur Michael, formateur.
+THIRY Sophie 56 minutes 15 secondes
+Ça va maintenant, comment ? Je représente ça de façon UML parce qu'on est tous quand même que des salariés, même le PDG. Des fois, il a oublié, mais il est aussi un salarié.
+THIRY Sophie 56 minutes 34 secondes
+Les objets, j'ai juste pas donné, oui, c'est un diagramme d'objet, vous voyez ? C'est souligné. Ouais pardon Ouais, tu Allais peut être trop vite au début, donc c'est que des objets donc là j'ai pris une belle photo de famille de la pyramide du CRM.
+THIRY Sophie 56 minutes 47 secondes
+Comment je vous présente ça au niveau classe et là, c'est un bel exemple de classe RÉFLEXIVE sur elle même, ça veut dire l'association, c'est le salarié vers salarié parce que ce sont tous des salariés. Donc je lis une instance de salarié peut avoir étoile collaborateur, les collaborateurs c'est C ?
+THIRY Sophie 57 minutes 8 secondes
+Qui sont en dessous. C'est un beau mot pour dire les sous fifres, voilà.
+THIRY Sophie 57 minutes 14 secondes
+Et après une instance de salarié ?
+THIRY Sophie 57 minutes 18 secondes
+Elle est toujours encadrée au minimum. Enfin au minimum par 0, parce que le PDG en haut, il est encadré par personne, c'est peut être ça qui déconne ou par.
+THIRY Sophie 57 minutes 29 secondes
+Voilà, ça y est, je peux pas m'empêcher.
+THIRY Sophie 57 minutes 32 secondes
+C'est peut être ça ou la sa ***** par il doit rendre des comptes à personne par 0 point point un d'accord et là on a une belle réflexion, un beau truc réflexif et on choisit quand même une navigabilité parce que sinon on s'en sort plus, vous voyez ça dev.
+THIRY Sophie 57 minutes 48 secondes
+Il faut donc, c'est toujours du haut vers le bas. Voilà voilà alors que souvent on connaît mieux ceux du, le bas connaît mieux ceux qui sont en haut, hein. C'est ça qu'on philosophique, donc c'est une belle expérience, un truc.
+THIRY Sophie 58 minutes 3 secondes
+Réflexif, c'est pour vous montrer qu'on peut avoir des associations entre 2 entre la même classe.
+THIRY Sophie 58 minutes 13 secondes
+02.1, je vois pas où ça ?
+THIRY Sophie 58 minutes 19 secondes
+Là, là celui-là. Sophie Thierry à 0 point point un supérieur et j'en ai une. C'est Francine communaux, voilà, c'est ça.
+THIRY Sophie 58 minutes 33 secondes
+Tom Cardoso a 0 ou un supérieur. En effet, il a pas de chef le chef.
+THIRY Sophie 58 minutes 42 secondes
+Voilà, on continue là, c'est pour vous montrer un peu dans le composition.
+THIRY Sophie 58 minutes 47 secondes
+Des fois, on peut montrer.
+THIRY Sophie 58 minutes 49 secondes
+Vous voyez ? La fenêtre est composée, c'est la fenêtre informatique, hein d'un ascenseur vertical horizontal. Texte. Ça, c'est l'objet. On peut aussi des fois les représenter comme ça, parce que c'est une composition. Et on montre bien que l'un est dans l'autre. Mais franchement, c'est on peut pas le faire.
+THIRY Sophie 59 minutes 4 secondes
+Donc voilà, c'était juste un petit truc. Et vous savez quoi ?
+THIRY Sophie 59 minutes 10 secondes
+Ah non, c'est pas 12h00.
+THIRY Sophie 59 minutes 10 secondes
+Y a encore un et que 35. Voilà donc vous allez, pouvoir encore, trifouiller un peu vos diagrammes un tout petit peu si vous vous trouvez encore un un peu d'énergie à quelque part.
+THIRY Sophie 59 minutes 28 secondes
+Voilà, voilà, voilà, c'est fou qu'on me a un goût pour le ménage prononcé, hein.
+THIRY Sophie 59 minutes 34 secondes
+Donc lundi, Ben on va faire. Vous faites les diagrammes UML dès que vous avez fini, hein, vous me l'envoyez, je regarde, je regarde, je regarde et si je vois qu'il y en a un qui coince beaucoup, on le fera au tableau.
+THIRY Sophie 59 minutes 46 secondes
+Voilà F comme ça.
+THIRY Sophie 59 minutes 50 secondes
+Et il faudrait qu'on commence après à passer en code, alors je vais peut être faire des sauts dans les exercices sur certains trucs parce que moi c'était 3 choses que j'avais prévu avec vous hein, c'est ça ?
+THIRY Sophie 1 heure
+C'est quoi que vous devez avoir ? Après, je sais plus, alors on va aller voir ça.
+THIRY Sophie 1 heure 7 secondes
+Oui OK ouais bah y a eu aussi.
+THIRY Sophie 1 heure 12 secondes
+Alors attendez, je vais aller voir dans le planning où vous devrez être. Il y a un truc aussi, qu'il faudrait qu'on remplisse, qu'on fait jamais bien. C'est la carte. Vous savez, votre carte de progression là, vous l'avez ? Ouais celle-là, il faudra qu'on la fasse aussi parce qu'en RET.
+THIRY Sophie 1 heure 26 secondes
+Si c'est une catastrophe, planning des formations. Je regardais où vous êtes, je touche actuellement, oui, à fond. C'est là, j'ai j'ai marqué un signe pour dire aux collègues, ne touchez pas, je suis en train de la faire à fond à fond, donc ça, vous êtes où ? C'est le.
+THIRY Sophie 1 heure 42 secondes
+Planning donc, vous vous êtes les DW 20 503 ou qu'on est en quoi là on est en 2025 ? Nous sommes le 10.
+THIRY Sophie 1 heure 55 secondes
+5555 là donc ? Ah non, ça va si je vous avais pris c'est non non ? 16 16 Ouais 3 semaines donc là 23. C'est donc le 23 donc on a encore une semaine et en effet après.
+THIRY Sophie 1 heure 1 minute 19 secondes
+Vous passez normalement sur du merise.
+THIRY Sophie 1 heure 1 minute 24 secondes
+Ça va ressembler beaucoup à ce qu'on fait, mais en base de données à bien. Ou alors attendez, je suis en train de regarder parce que les codes des fois j'ai non. Pardon, c'est du web. Passer en web statique semblerait.
+THIRY Sophie 1 heure 1 minute 40 secondes
+HTMLCSS machin.
+THIRY Sophie 1 heure 1 minute 43 secondes
+Enfin ouais donc là on a les modules donc là j'ai M 3M 3 en M 3 c'était en alors ouf commence à fatiguer là ouais ça c'est ça fait partie aussi de mes boulots là donc je suis en retard parce que je devrais mettre la 2000.
+THIRY Sophie 1 heure 2 minutes 2 secondes
+26 j'ai pas mis plein de trucs donc là M 3 en DWM et M 2F web.
+THIRY Sophie 1 heure 2 minutes 11 secondes
+En M 2.
+THIRY Sophie 1 heure 2 minutes 14 secondes
+M 2F web M 2F web. Donc ouais, c'est ça web.
+THIRY Sophie 1 heure 2 minutes 20 secondes
+Et M 3 développer des a développer des composants de métier plus API.
+THIRY Sophie 1 heure 2 minutes 27 secondes
+Tiens, tiens, tiens, est ce que moi j'avais gagné grattouiller un peu dessus ?
+THIRY Sophie 1 heure 2 minutes 36 secondes
+Ouais.
+THIRY Sophie 1 heure 2 minutes 36 secondes
+Il faut que je regarde.
+THIRY Sophie 1 heure 2 minutes 45 secondes
+Non M 2 web voilà, ouais, ça doit être du web. Je vais voir peut être, je vais négocier avec Franck quelques jours en plus.
+THIRY Sophie 1 heure 2 minutes 54 secondes
+Pour finir les programmes.
+THIRY Sophie 1 heure 2 minutes 58 secondes
+Alors et voilà, j'ai rien fait. Oh ******, j'ai dû.
+THIRY Sophie 1 heure 3 minutes 4 secondes
+Là, normalement c'était jaune, donc ça, Ouh, c'était jaune.
+THIRY Sophie 1 heure 3 minutes 7 secondes
+Normalement, ça doit être nickel.
+THIRY Sophie 1 heure 3 minutes 10 secondes
+Donc ça veut dire que Franck, il est sur un autre groupe en web donc il va être sur 2 groupes.
+THIRY Sophie 1 heure 3 minutes 20 secondes
+Ouais.
+THIRY Sophie 1 heure 3 minutes 20 secondes
+Ça veut dire que Franck, il va se partager entre 2 groupes là, parce que ça doit être Mickael qui devait être le jaune, c'est Michael vers ses espoirs, fait Franck. Oh, c'est moi.
+THIRY Sophie 1 heure 3 minutes 31 secondes
+J'ai gardé la couleur de.
+THIRY Sophie 1 heure 3 minutes 34 secondes
+Parce que y a personne qui voulait le rose.
+THIRY Sophie 1 heure 3 minutes 39 secondes
+Ah ouais, vous étiez prévu avec Michael sur des pas mal de semaines hein ? Ouais.
+THIRY Sophie 1 heure 3 minutes 47 secondes
+Ces examens, ils sont toujours en train d'avancer tout ça.
+THIRY Sophie 1 heure 3 minutes 52 secondes
+Là, ouais, je pense pas qu'il va revenir au plus à mi-temps mais c'est pas encore assez clair pour qu'il puisse de toute façon il tient pas plus que 15 Min sur un ordinateur donc sur un écran donc il peut pas tenir plus.
+THIRY Sophie 1 heure 4 minutes 3 secondes
+Ouais, juste la question, c'est surtout c'est qu'il perd pas totalement la vue c'est ça ? Ouais Ben par contre.
+THIRY Sophie 1 heure 4 minutes 12 secondes
+Pas son souci de santé.
+THIRY Sophie 1 heure 4 minutes 13 secondes
+Il a, il a un œil, vous l'avez dit, qui est totalement bousillé. Déjà, ouais, c'est un grand bouger et c'est son œil bon qui a.
+THIRY Sophie 1 heure 4 minutes 21 secondes
+Fin gent je pense.
+THIRY Sophie 1 heure 4 minutes 25 secondes
+Ouais, merci.
+THIRY Sophie 1 heure 4 minutes 29 secondes
+Oui.
