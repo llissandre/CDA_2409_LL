@@ -12,7 +12,7 @@ namespace ClassLibraryCar
         /// Private attributes
         /// </summary>
         private bool _isRunning;
-        private FuelType _fuelType;
+        private EngineFuelType _fuelType;
 
         /// <summary>
         /// Default constructors
@@ -23,19 +23,26 @@ namespace ClassLibraryCar
         //    _fuelType = FuelType.Diesel;
         //}
         public Engine()
-            : this(false, FuelType.Diesel) { }
+            : this(false, EngineFuelType.Diesel) { }
 
         /// <summary>
         /// Classic constructor
         /// </summary>
         /// <param name="isRunning"></param>
         /// <param name="fuelType"></param>
-        public Engine(bool isRunning, FuelType fuelType)
+        public Engine(bool isRunning, EngineFuelType fuelType)
         {
-            if (isRunning != true || isRunning != false || isRunning == null)
+            if (isRunning != true && isRunning != false)
                 throw new ArgumentException("IsRunning must be true or false");
 
             _isRunning = isRunning;
+            _fuelType = fuelType;
+        }
+
+
+        public Engine(EngineFuelType fuelType)
+            : this(false, fuelType)
+        {
             _fuelType = fuelType;
         }
 
@@ -98,11 +105,13 @@ namespace ClassLibraryCar
                     wl.Move();
                     wr.Move();
                     //Drive wheels
-                    return true;
+                    //The wheels are moving
+                    
+                    return wl._isSpinning && wr._isSpinning;
                 }
                 //Wheels are already moving
-                return false;
             }
+
             //Engine is not running
             return false;
         }
@@ -125,11 +134,13 @@ namespace ClassLibraryCar
                     wl.Stop();
                     wr.Stop();
                     //Stop wheels
-                    return true;
+                    //The wheels are stopped
+
+                    return !wl._isSpinning && !wr._isSpinning;
                 }
                 //Wheels are already stopped
-                return false;
             }
+
             //Engine is not running
             return false;
         }

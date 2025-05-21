@@ -12,7 +12,7 @@
         /// <summary>
         /// Default constructor
         /// </summary>
-        public Wheel()
+        public Wheel(Engine engineUsed)
         : this(16, 0, false) { }
 
         /// <summary>
@@ -21,6 +21,7 @@
         /// <param name="size"></param>
         /// <param name="wear"></param>
         /// <param name="isSpinning"></param>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public Wheel(int size, float wear, bool isSpinning)
         {
             if (size < 13)
@@ -29,7 +30,7 @@
             if (wear < 0 || wear > 1)
                 throw new ArgumentOutOfRangeException("Wear must be between 0 and 1");
             
-            if (isSpinning != true || isSpinning != false || isSpinning == null)
+            if (isSpinning != true && isSpinning != false)
                 throw new ArgumentException("IsSpinning must be true or false");
 
             _size = size;
@@ -38,17 +39,36 @@
         }
 
         /// <summary>
+        /// Constructor with default value
+        /// </summary>
+        /// <param name="size"></param>
+        /// <param name="wear"></param>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        public Wheel(int size, float wear)
+            :this(size, wear, false)
+        {
+            if (size < 13)
+                throw new ArgumentOutOfRangeException("Size must be over or equal 13");
+
+            if (wear < 0 || wear > 1)
+                throw new ArgumentOutOfRangeException("Wear must be between 0 and 1");
+            
+            _size = size;
+            _wear = wear;
+        }
+
+        /// <summary>
         /// Constructors by cloning
         /// </summary>
-        /// <param name="newWheel"></param>
+        /// <param name="wheelToClone"></param>
         //public Wheel(Wheel newWheel)
         //{
         //    _size = newWheel._size;
         //    _wear = newWheel._wear;
         //    _isSpinning = newWheel._isSpinning;
         //}
-        public Wheel(Wheel newWheel)
-            : this(newWheel._size, newWheel._wear, newWheel._isSpinning) { }
+        public Wheel(Wheel wheelToClone)
+            : this(wheelToClone._size, wheelToClone._wear, wheelToClone._isSpinning) { }
 
         /// <summary>
         /// Propertie

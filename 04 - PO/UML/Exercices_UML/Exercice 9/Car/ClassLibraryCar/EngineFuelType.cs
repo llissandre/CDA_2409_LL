@@ -3,7 +3,7 @@
     /// <summary>
     /// List of fuel types
     /// </summary>
-    public enum FuelType
+    public enum EngineFuelType
     {
             Gasoline,
             Diesel,
