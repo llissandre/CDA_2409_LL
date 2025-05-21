@@ -4,11 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryCar", "ClassLibraryCar\ClassLibraryCar.csproj", "{6B0C69E0-131F-4A58-B209-FD511C8F1F35}"
-	ProjectSection(ProjectDependencies) = postProject
-		{3A4EE2FC-A0A0-4172-AD21-4C00E03C37B3} = {3A4EE2FC-A0A0-4172-AD21-4C00E03C37B3}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppCar", "ConsoleAppCar\ConsoleAppCar.csproj", "{3A4EE2FC-A0A0-4172-AD21-4C00E03C37B3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6B0C69E0-131F-4A58-B209-FD511C8F1F35} = {6B0C69E0-131F-4A58-B209-FD511C8F1F35}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

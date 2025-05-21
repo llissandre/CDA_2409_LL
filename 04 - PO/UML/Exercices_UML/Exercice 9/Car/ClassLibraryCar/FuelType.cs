@@ -1,7 +1,7 @@
 ﻿namespace ClassLibraryCar
 {
     /// <summary>
-    /// Enumération des types de carburant
+    /// List of fuel types
     /// </summary>
     public enum FuelType
     {
