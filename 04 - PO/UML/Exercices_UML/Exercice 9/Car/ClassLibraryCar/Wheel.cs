@@ -12,7 +12,7 @@
         /// <summary>
         /// Default constructor
         /// </summary>
-        public Wheel(Engine engineUsed)
+        public Wheel()
         : this(16, 0, false) { }
 
         /// <summary>

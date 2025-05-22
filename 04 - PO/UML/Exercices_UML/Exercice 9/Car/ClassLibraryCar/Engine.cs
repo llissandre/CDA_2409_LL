@@ -67,7 +67,7 @@ namespace ClassLibraryCar
                 return true;
             }
             //Engine is already running
-            return false;
+            throw new Exception("Engine is already running");
         }
 
         /// <summary>
@@ -75,74 +75,62 @@ namespace ClassLibraryCar
         /// Stop the engine
         /// </summary>
         /// <returns></returns>
-        public bool StopEngine()
+        public bool StopEngine(Wheel lfw, Wheel rfw)
         {
             if (_isRunning)
             {
-                _isRunning = false;
+                if (lfw._isSpinning && rfw._isSpinning)
+                {
+                    StopDrivingWheels(lfw, rfw);
+                }
                 //Engine stopped
+                _isRunning = false;
                 return true;
             }
             //Engine is already stopped
-            return false;
+            throw new Exception("Engine is already stopped");
         }
 
         /// <summary>
         /// Propertie
         /// Drive the wheels
         /// </summary>
-        /// <param name="wl">left wheel</param>
-        /// <param name="wr">right wheel</param>
+        /// <param name="lfw">left wheel</param>
+        /// <param name="rfw">right wheel</param>
         /// <returns></returns>
-        public bool DriveWheels(Wheel wl, Wheel wr)
+        public bool DriveWheels(Wheel lfw, Wheel rfw)
         {
             //Check if the engine is running
             if (_isRunning)
-            {
-                //Check if the wheels are not spinning
-                if (!wl._isSpinning && !wr._isSpinning)
-                {
-                    wl.Move();
-                    wr.Move();
-                    //Drive wheels
-                    //The wheels are moving
-                    
-                    return wl._isSpinning && wr._isSpinning;
-                }
-                //Wheels are already moving
-            }
+                //Move wheels
+                return lfw.Move() && rfw.Move();
 
             //Engine is not running
-            return false;
+            throw new Exception("Engine is not running");
         }
 
         /// <summary>
         /// Propertie
         /// Stop training the wheels
         /// </summary>
-        /// <param name="wl">left wheel</param>
-        /// <param name="wr">right wheel</param>
+        /// <param name="lfw">left wheel</param>
+        /// <param name="rfw">right wheel</param>
         /// <returns></returns>
-        public bool stopDrivingWheels(Wheel wl, Wheel wr)
+        public bool StopDrivingWheels(Wheel lfw, Wheel rfw)
         {
             //Check if the engine is running
             if (_isRunning)
             {
                 //Check if the wheels are spinning
-                if (wl._isSpinning && wr._isSpinning)
-                {
-                    wl.Stop();
-                    wr.Stop();
+                if (lfw._isSpinning && rfw._isSpinning)
                     //Stop wheels
-                    //The wheels are stopped
+                    return lfw.Stop() && rfw.Stop();
 
-                    return !wl._isSpinning && !wr._isSpinning;
-                }
                 //Wheels are already stopped
+                throw new Exception("Wheels are already stopped");
             }
-
             //Engine is not running
-            return false;
+            throw new Exception("Engine is not running");
         }
 
         /// <summary>
@@ -154,8 +142,8 @@ namespace ClassLibraryCar
         /// <returns>La fonction renvoie une chaîne de caractères servant � décrire l'objet concerné.</returns>
         public override string ToString()
         {
-            return base.ToString() + "Engine: " + (_isRunning ? "Running" : "Stopped")
-            + "\nFuel type: " + _fuelType;
+            return base.ToString() + ", Engine " + (_isRunning ? "Running" : "Stopped;")
+            + " Fuel type: " + _fuelType;
         }
     }
 }
