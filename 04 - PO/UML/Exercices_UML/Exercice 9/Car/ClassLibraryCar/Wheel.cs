@@ -30,8 +30,11 @@
             if (wear < 0 || wear > 1)
                 throw new ArgumentOutOfRangeException("Wear must be between 0 and 1");
             
-            if (isSpinning != true && isSpinning != false)
-                throw new ArgumentException("IsSpinning must be true or false");
+            if (isSpinning != false)
+                throw new ArgumentException("IsSpinning must be false");
+
+            if(isSpinning == true)
+                throw new ArgumentException("IsSpinning must be false");
 
             _size = size;
             _wear = wear;
@@ -79,15 +82,12 @@
         {
             if (!_isSpinning)
             {
-                _isSpinning = true;
                 //The wheel is moving
-                return true;
+                return _isSpinning = true;
             }
-            else
-            {
+            
                 //The wheel is already spinning
-                return false;
-            }
+                return _isSpinning = true;
         }
 
         /// <summary>
@@ -99,15 +99,12 @@
         {
             if (_isSpinning)
             {
-                _isSpinning = false;
                 //The wheel is stopped
-                return true;
+                return _isSpinning = false;
             }
-            else
-            {
-                //The wheel is already spinning
-                return false;
-            }
+
+                //The wheel is already stopped
+                return _isSpinning = false;
         }
 
         /// <summary>

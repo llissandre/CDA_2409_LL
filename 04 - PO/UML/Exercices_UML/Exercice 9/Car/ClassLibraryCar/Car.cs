@@ -88,24 +88,35 @@ namespace ClassLibraryCar
                   new Engine(carToClone._engineUsed)) { }
 
 
-        public bool MoveForward()
-        {
-
-        }
-
         public bool Start()
         {
+            return _engineUsed.StartEngine();
+        }
 
+        public bool MoveForward()
+        {
+            return _engineUsed.DriveWheels(_leftFrontWheel, _rightFrontWheel);
         }
 
         public bool ToSlowDown()
         {
-
+            return _engineUsed.StopDrivingWheels(_leftFrontWheel, _rightFrontWheel);
         }
 
         public bool Stop()
         {
+            return _engineUsed.StopEngine(_leftFrontWheel, _rightFrontWheel);
+        }
 
+        public override string ToString()
+        {
+            return base.ToString() + ", "
+            + _rightFrontWheel.ToString() + ", "
+            + _leftFrontWheel.ToString() + ", "
+            + _rightRearWheel.ToString() + ", "
+            + _leftRearWheel.ToString() + ", "
+            + _engineUsed.ToString() + ", "
+            + _spareWheel?.ToString() ?? "No spare wheel";
         }
     }
 }

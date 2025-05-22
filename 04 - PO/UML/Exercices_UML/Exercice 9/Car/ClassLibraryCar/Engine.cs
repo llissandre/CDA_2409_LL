@@ -32,14 +32,20 @@ namespace ClassLibraryCar
         /// <param name="fuelType"></param>
         public Engine(bool isRunning, EngineFuelType fuelType)
         {
-            if (isRunning != true && isRunning != false)
-                throw new ArgumentException("IsRunning must be true or false");
+            if (isRunning != false)
+                throw new ArgumentException("IsRunning must be false");
+
+            if(isRunning == true)
+                throw new ArgumentException("IsRunning must be false");
 
             _isRunning = isRunning;
             _fuelType = fuelType;
         }
 
-
+        /// <summary>
+        /// Constructor with default value
+        /// </summary>
+        /// <param name="fuelType"></param>
         public Engine(EngineFuelType fuelType)
             : this(false, fuelType)
         {
@@ -58,13 +64,13 @@ namespace ClassLibraryCar
         /// Start the engine
         /// </summary>
         /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public bool StartEngine()
         {
             if (!_isRunning)
             {
-                _isRunning = true;
                 //Engine started
-                return true;
+                return _isRunning = true;
             }
             //Engine is already running
             throw new Exception("Engine is already running");
@@ -74,6 +80,8 @@ namespace ClassLibraryCar
         /// Propertie
         /// Stop the engine
         /// </summary>
+        /// <param name="lfw"></param>
+        /// <param name="rfw"></param>
         /// <returns></returns>
         public bool StopEngine(Wheel lfw, Wheel rfw)
         {
@@ -84,20 +92,20 @@ namespace ClassLibraryCar
                     StopDrivingWheels(lfw, rfw);
                 }
                 //Engine stopped
-                _isRunning = false;
-                return true;
+                return _isRunning = false;
             }
             //Engine is already stopped
-            throw new Exception("Engine is already stopped");
+            return _isRunning = false;
         }
 
         /// <summary>
         /// Propertie
         /// Drive the wheels
         /// </summary>
-        /// <param name="lfw">left wheel</param>
-        /// <param name="rfw">right wheel</param>
+        /// <param name="lfw"></param>
+        /// <param name="rfw"></param>
         /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public bool DriveWheels(Wheel lfw, Wheel rfw)
         {
             //Check if the engine is running
@@ -111,11 +119,12 @@ namespace ClassLibraryCar
 
         /// <summary>
         /// Propertie
-        /// Stop training the wheels
+        /// Stop the wheels
         /// </summary>
-        /// <param name="lfw">left wheel</param>
-        /// <param name="rfw">right wheel</param>
+        /// <param name="lfw"></param>
+        /// <param name="rfw"></param>
         /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public bool StopDrivingWheels(Wheel lfw, Wheel rfw)
         {
             //Check if the engine is running
