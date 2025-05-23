@@ -35,15 +35,12 @@ namespace ClassLibraryCar
             if (isRunning != false)
                 throw new ArgumentException("IsRunning must be false");
 
-            if(isRunning == true)
-                throw new ArgumentException("IsRunning must be false");
-
             _isRunning = isRunning;
             _fuelType = fuelType;
         }
 
         /// <summary>
-        /// Constructor with default value
+        /// Hybrid classic constructor
         /// </summary>
         /// <param name="fuelType"></param>
         public Engine(EngineFuelType fuelType)
@@ -55,9 +52,9 @@ namespace ClassLibraryCar
         /// <summary>
         /// Constructor by cloning
         /// </summary>
-        /// <param name="newEngine"></param>
-        public Engine(Engine newEngine)
-            : this(newEngine._isRunning, newEngine._fuelType) { }
+        /// <param name="engineToClone"></param>
+        public Engine(Engine engineToClone)
+            : this(engineToClone._isRunning, engineToClone._fuelType) { }
 
         /// <summary>
         /// Propertie
@@ -70,9 +67,11 @@ namespace ClassLibraryCar
             if (!_isRunning)
             {
                 //Engine started
-                return _isRunning = true;
+                _isRunning = true;
+                return true;
             }
             //Engine is already running
+            //return false;
             throw new Exception("Engine is already running");
         }
 
@@ -92,10 +91,11 @@ namespace ClassLibraryCar
                     StopDrivingWheels(lfw, rfw);
                 }
                 //Engine stopped
-                return _isRunning = false;
+                _isRunning = false;
+                return true;
             }
             //Engine is already stopped
-            return _isRunning = false;
+            return false;
         }
 
         /// <summary>
@@ -114,7 +114,8 @@ namespace ClassLibraryCar
                 return lfw.Move() && rfw.Move();
 
             //Engine is not running
-            throw new Exception("Engine is not running");
+            return false;
+            //throw new Exception("Engine is not running");
         }
 
         /// <summary>
@@ -136,10 +137,12 @@ namespace ClassLibraryCar
                     return lfw.Stop() && rfw.Stop();
 
                 //Wheels are already stopped
-                throw new Exception("Wheels are already stopped");
+                //throw new Exception("Wheels are already stopped");
+                return false;
             }
             //Engine is not running
-            throw new Exception("Engine is not running");
+            //throw new Exception("Engine is not running");
+            return false;
         }
 
         /// <summary>
@@ -148,7 +151,7 @@ namespace ClassLibraryCar
         /// Lorsqu'on définit une classe, il peut être très utile de redéfinir la méthode toString afin de donner une description satisfaisante des objets de cette classe.
         /// Beaucoup de classes de l'API redéfinissent la m�thode toString.
         /// </summary>
-        /// <returns>La fonction renvoie une chaîne de caractères servant � décrire l'objet concerné.</returns>
+        /// <returns>La fonction renvoie une chaîne de caractères servant à décrire l'objet concerné.</returns>
         public override string ToString()
         {
             return base.ToString() + ", Engine " + (_isRunning ? "Running" : "Stopped;")

@@ -53,24 +53,22 @@ namespace ClassLibraryCar
         }
 
         /// <summary>
-        /// Classic constructor with default values
+        /// Hybrid classic constructor
         /// </summary>
-        /// <param name="brand"></param>
+        /// <param name="brand"></param>²
         /// <param name="model"></param>
         /// <param name="wheelSize"></param>
         /// <param name="wheelWear"></param>
         /// <param name="fuelType"></param>
-        private Car(string brand, string model, int wheelSize, float wheelWear, EngineFuelType fuelType)
-        {
-            _brand = brand;
-            _model = model;
-            _spareWheel = new Wheel(wheelSize, wheelWear);
-            _rightFrontWheel = new Wheel(wheelSize, wheelWear);
-            _leftFrontWheel = new Wheel(wheelSize, wheelWear);
-            _rightRearWheel = new Wheel(wheelSize, wheelWear);
-            _leftRearWheel = new Wheel(wheelSize, wheelWear);
-            _engineUsed = new Engine(fuelType);
-        }
+        public Car(string brand, string model, int wheelSize, float wheelWear, EngineFuelType fuelType)
+            :this(brand, model, 
+                 new Wheel(wheelSize, wheelWear), 
+                 new Wheel(wheelSize, wheelWear), 
+                 new Wheel(wheelSize, wheelWear), 
+                 new Wheel(wheelSize, wheelWear), 
+                 new Wheel(wheelSize, wheelWear),
+                 new Engine(fuelType))
+        {  }
 
         /// <summary>
         /// Constructor by cloning
@@ -87,27 +85,49 @@ namespace ClassLibraryCar
                   new Wheel(carToClone._leftRearWheel), 
                   new Engine(carToClone._engineUsed)) { }
 
-
+        /// <summary>
+        /// Start the engine
+        /// </summary>
+        /// <returns></returns>
         public bool Start()
         {
             return _engineUsed.StartEngine();
         }
 
+        /// <summary>
+        /// Move the car forward
+        /// </summary>
+        /// <returns></returns>
         public bool MoveForward()
         {
             return _engineUsed.DriveWheels(_leftFrontWheel, _rightFrontWheel);
         }
 
+        /// <summary>
+        /// Slow down the car
+        /// </summary>
+        /// <returns></returns>
         public bool ToSlowDown()
         {
             return _engineUsed.StopDrivingWheels(_leftFrontWheel, _rightFrontWheel);
         }
 
+        /// <summary>
+        /// Stop the engine
+        /// </summary>
+        /// <returns></returns>
         public bool Stop()
         {
             return _engineUsed.StopEngine(_leftFrontWheel, _rightFrontWheel);
         }
 
+        /// <summary>
+        /// Propertie ToString()
+        /// La méthode toString est définie dans la classe Object; en conséquence toutes les classes C# en hérite.
+        /// Lorsqu'on définit une classe, il peut être très utile de redéfinir la méthode toString afin de donner une description satisfaisante des objets de cette classe.
+        /// Beaucoup de classes de l'API redéfinissent la m�thode toString.
+        /// </summary>
+        /// <returns>La fonction renvoie une chaîne de caractères servant à décrire l'objet concerné.</returns>
         public override string ToString()
         {
             return base.ToString() + ", "
@@ -116,7 +136,7 @@ namespace ClassLibraryCar
             + _rightRearWheel.ToString() + ", "
             + _leftRearWheel.ToString() + ", "
             + _engineUsed.ToString() + ", "
-            + _spareWheel?.ToString() ?? "No spare wheel";
+            + (_spareWheel == null ? "No spare wheel" : _spareWheel?.ToString());
         }
     }
 }

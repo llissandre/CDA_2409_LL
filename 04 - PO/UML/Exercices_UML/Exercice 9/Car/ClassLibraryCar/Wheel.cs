@@ -13,7 +13,7 @@
         /// Default constructor
         /// </summary>
         public Wheel()
-        : this(16, 0, false) { }
+        : this(16, 0) { }
 
         /// <summary>
         /// Classic constructor
@@ -33,16 +33,13 @@
             if (isSpinning != false)
                 throw new ArgumentException("IsSpinning must be false");
 
-            if(isSpinning == true)
-                throw new ArgumentException("IsSpinning must be false");
-
             _size = size;
             _wear = wear;
             _isSpinning = isSpinning;
         }
 
         /// <summary>
-        /// Constructor with default value
+        /// Hybrid classic constructor
         /// </summary>
         /// <param name="size"></param>
         /// <param name="wear"></param>
@@ -64,14 +61,14 @@
         /// Constructors by cloning
         /// </summary>
         /// <param name="wheelToClone"></param>
-        //public Wheel(Wheel newWheel)
+        //public Wheel(Wheel wheelToClone)
         //{
-        //    _size = newWheel._size;
-        //    _wear = newWheel._wear;
-        //    _isSpinning = newWheel._isSpinning;
+        //    _size = wheelToClone._size;
+        //    _wear = wheelToClone._wear;
+        //    _isSpinning = wheelToClone._isSpinning;
         //}
         public Wheel(Wheel wheelToClone)
-            : this(wheelToClone._size, wheelToClone._wear, wheelToClone._isSpinning) { }
+            : this(wheelToClone._size, wheelToClone._wear) { }
 
         /// <summary>
         /// Propertie
@@ -83,11 +80,12 @@
             if (!_isSpinning)
             {
                 //The wheel is moving
-                return _isSpinning = true;
+                _isSpinning = true;
+                return true;
             }
             
                 //The wheel is already spinning
-                return _isSpinning = true;
+                return false;
         }
 
         /// <summary>
@@ -100,11 +98,12 @@
             if (_isSpinning)
             {
                 //The wheel is stopped
-                return _isSpinning = false;
+                _isSpinning = false;
+                return true;
             }
 
                 //The wheel is already stopped
-                return _isSpinning = false;
+                return false;
         }
 
         /// <summary>
@@ -113,13 +112,13 @@
         /// Lorsqu'on définit une classe, il peut être très utile de redéfinir la méthode toString afin de donner une description satisfaisante des objets de cette classe.
         /// Beaucoup de classes de l'API redéfinissent la m�thode toString.
         /// </summary>
-        /// <returns>La fonction renvoie une chaîne de caractères servant � décrire l'objet concerné.</returns>
+        /// <returns>La fonction renvoie une chaîne de caractères servant à décrire l'objet concerné.</returns>
         public override string ToString()
         {
             return $"Size: {_size}, Wear: {_wear}, Is Spinning: {_isSpinning}";
         }
 
-        //Renvoie le nom et le chemin de la classe, et une cha�ne de caract�res servant � d�crire l'objet concern�.
+        //Renvoie le nom et le chemin de la classe, et une chaîne de caractères servant à décrire l'objet concerné.
         //return base.ToString() + " : Size : " + _size + ", Wear : " + _wear + ", Is Spinning : " + _isSpinning;
     }
 }
