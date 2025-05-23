@@ -40,7 +40,7 @@ namespace ClassLibraryCar
         /// <param name="rightRearWheel"></param>
         /// <param name="leftRearWheel"></param>
         /// <param name="engineUsed"></param>
-        public Car(string brand, string model, Wheel? spareWheel, Wheel rightFrontWheel, Wheel leftFrontWheel, Wheel rightRearWheel, Wheel leftRearWheel, Engine engineUsed)
+        private Car(string brand, string model, Wheel? spareWheel, Wheel rightFrontWheel, Wheel leftFrontWheel, Wheel rightRearWheel, Wheel leftRearWheel, Engine engineUsed)
         {
             _brand = brand;
             _model = model;
