@@ -25,5 +25,8 @@
             _balance = balance;
             _authorizedOverdraft = authorizedOverdraft;
         }
+
+        public BankAccount(BankAccount bankAccountToClone) 
+        :this() { }
     }
 }
