@@ -4,6 +4,11 @@ namespace ClassLibraryBankAccount
 {
     public class BankAccount
     {
+
+        /// <summary>
+        /// Attributes of the BankAccount class
+        /// </summary>
+
         //private string _accountNumber;
         //private string _ownerName;
         //private decimal _balance;
