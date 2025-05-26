@@ -170,6 +170,13 @@ namespace ClassLibraryBankAccount
             return false;
         }
 
+        /// <summary>
+        /// Propertie ToString()
+        /// La méthode toString est définie dans la classe Object; en conséquence toutes les classes C# en hérite.
+        /// Lorsqu'on définit une classe, il peut être très utile de redéfinir la méthode toString afin de donner une description satisfaisante des objets de cette classe.
+        /// Beaucoup de classes de l'API redéfinissent la m�thode toString.
+        /// </summary>
+        /// <returns>La fonction renvoie une chaîne de caractères servant à décrire l'objet concerné.</returns>
         public override string ToString()
         {
             return base.ToString() + 

@@ -40,9 +40,10 @@
         /// Method to indicate the position of the point
         /// </summary>
         /// <returns></returns>
-        public Point IndicatePosition()
+        public string IndicatePosition()
         {
-            return new Point(_abscissa, _ordonate);
+            return "Abscisse : " + _abscissa +
+                " , Ordonnée : " + _ordonate;
         }
 
         /// <summary>
@@ -51,11 +52,24 @@
         /// <param name="abscissa"></param>
         /// <param name="ordonate"></param>
         /// <returns></returns>
-        public Point Move(float abscissa, float ordonate)
+        public void Move(float abscissa, float ordonate)
         {
             _abscissa += abscissa;
             _ordonate += ordonate;
-            return this;
+        }
+
+        /// <summary>
+        /// Propertie ToString()
+        /// La méthode toString est définie dans la classe Object; en conséquence toutes les classes C# en hérite.
+        /// Lorsqu'on définit une classe, il peut être très utile de redéfinir la méthode toString afin de donner une description satisfaisante des objets de cette classe.
+        /// Beaucoup de classes de l'API redéfinissent la m�thode toString.
+        /// </summary>
+        /// <returns>La fonction renvoie une chaîne de caractères servant à décrire l'objet concerné.</returns>
+        public override string ToString()
+        {
+            return base.ToString() +
+                " , Abscisse : " + _abscissa +
+                " , Ordonnée : " + _ordonate;
         }
 
         /// <summary>
@@ -71,7 +85,8 @@
         /// Method to build the point by the abscissa
         /// </summary>
         /// <returns></returns>
-        public Point SymmetricalXAxis() {
+        public Point SymmetricalXAxis()
+        {
             return new Point(_abscissa, -_ordonate);
         }
 
@@ -81,6 +96,20 @@
         /// <returns></returns>
         public Point SymmetricalOrigin()
         {
-            return 
+            Point pointSYaxis = SymmetricalYAxis();
+            Point pointSXaxis = pointSYaxis.SymmetricalXAxis();
+            return pointSXaxis;
+        }
+
+        /// <summary>
+        /// Method to swap the coordinates of the point
+        /// </summary>
+        /// <returns></returns>
+        public void SwapCoordinates()
+        {
+            float temp = _ordonate;
+            _ordonate = _abscissa;
+            _abscissa = temp;
         }
     }
+}
