@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ClassLibraryBankAccount.BankAccount">
+    <Position X="3" Y="1" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>EACAAIAAAAAAAAAFAAAAAQAAEAAAAAAAAABAACAAAAA=</HashCode>
+      <FileName>BankAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
