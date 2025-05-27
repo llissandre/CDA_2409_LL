@@ -5,8 +5,18 @@
         /// <summary>
         /// Attributes of the Point class.
         /// </summary>
-        public float _abscissa { get; private set; }
-        public float _ordonate { get; private set; }
+        private float _abscissa;
+        private float _ordonate;
+
+        /// <summary>
+        /// Getters for the attributes of the Point class.
+        /// </summary>
+        public float Abscissa { get => _abscissa; }
+        public float Ordonate { get => _ordonate; }
+
+        //public float _abscissa { get; private set; }
+        //public float _ordonate { get; private set; }
+
 
         /// <summary>
         /// Default constructor that initializes the point with given coordinates
@@ -30,11 +40,14 @@
         /// Clone constructor
         /// </summary>
         /// <param name="pointToClone"></param>
+        //public Point(Point pointToClone)
+        //{
+        //    _abscissa = pointToClone._abscissa;
+        //    _ordonate = pointToClone._ordonate;
+        //}
         public Point(Point pointToClone)
-        {
-            _abscissa = pointToClone._abscissa;
-            _ordonate = pointToClone._ordonate;
-        }
+            : this(pointToClone._abscissa, pointToClone._ordonate)
+        { }
 
         /// <summary>
         /// Method to indicate the position of the point
@@ -78,7 +91,8 @@
         /// <returns></returns>
         public Point SymmetricalYAxis()
         {
-            return new Point(-_abscissa, _ordonate);
+            Point pointSymmetricalYAxis = new Point(-_abscissa, _ordonate);
+            return pointSymmetricalYAxis;
         }
 
         /// <summary>
@@ -87,7 +101,8 @@
         /// <returns></returns>
         public Point SymmetricalXAxis()
         {
-            return new Point(_abscissa, -_ordonate);
+            Point pointSymmetricalXAxis = new Point(_abscissa, -_ordonate);
+            return pointSymmetricalXAxis;
         }
 
         /// <summary>
@@ -96,9 +111,9 @@
         /// <returns></returns>
         public Point SymmetricalOrigin()
         {
-            Point pointSYaxis = SymmetricalYAxis();
-            Point pointSXaxis = pointSYaxis.SymmetricalXAxis();
-            return pointSXaxis;
+            Point pointSymmetricalYOrigin = SymmetricalYAxis();
+            Point pointSymmetricalXOrigin = pointSymmetricalYOrigin.SymmetricalXAxis();
+            return pointSymmetricalXOrigin;
         }
 
         /// <summary>

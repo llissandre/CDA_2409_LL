@@ -2,22 +2,28 @@
 
 namespace ClassLibraryBankAccount
 {
-    public class BankAccount
+    public class BankAccount : IComparable<BankAccount>, IComparable<Object>
     {
 
         /// <summary>
         /// Attributes of the BankAccount class
         /// </summary>
+        private string _accountNumber;
+        private string _ownerName;
+        private decimal _balance;
+        private decimal _authorizedOverdraft;
 
-        //private string _accountNumber;
-        //private string _ownerName;
-        //private decimal _balance;
-        //private decimal _authorizedOverdraft;
-
-        public string _accountNumber { get; private set; }
-        public string _ownerName { get; private set; }
-        public decimal _balance { get; private set; }
-        public decimal _authorizedOverdraft { get; private set; }
+        /// <summary>
+        /// Getters for the BankAccount class attributes
+        /// </summary>
+        public string AccountNumber { get => _accountNumber; }
+        public string OwnerName { get => _ownerName; }
+        public decimal Balance { get => _balance; }
+        public decimal AuthorizedOverdraft { get => _authorizedOverdraft; }
+        //public string _accountNumber { get; private set; }
+        //public string _ownerName { get; private set; }
+        //public decimal _balance { get; private set; }
+        //public decimal _authorizedOverdraft { get; private set; }
 
         /// <summary>
         /// Default constructors
@@ -149,25 +155,41 @@ namespace ClassLibraryBankAccount
         }
 
         /// <summary>
-        /// Compare balance between the current account and another account
+        /// Compare the current account with another BankAccount object
         /// </summary>
         /// <param name="otherAccount"></param>
-        /// <param name="_balance"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public bool Compar(BankAccount otherAccount)
+        public int CompareTo(BankAccount? otherAccount)
         {
             if (otherAccount == null)
             {
                 throw new ArgumentNullException(nameof(otherAccount), "Other account cannot be null");
             }
 
-            if (_balance > otherAccount._balance)
+            return Balance.CompareTo(otherAccount.Balance);
+        }
+
+        /// <summary>
+        /// Compare the current account with another object
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentException"></exception>
+        public int CompareTo(object? obj)
+        {
+            if (obj == null)
             {
-                return true;
+                throw new ArgumentNullException(nameof(obj), "Other object cannot be null");
             }
 
-            return false;
+            if (obj is BankAccount otherAccount)
+            {
+                return Balance.CompareTo(otherAccount.Balance);
+            }
+
+            throw new ArgumentException("Object is not a BankAccount", nameof(obj));
         }
 
         /// <summary>
@@ -179,11 +201,11 @@ namespace ClassLibraryBankAccount
         /// <returns>La fonction renvoie une chaîne de caractères servant à décrire l'objet concerné.</returns>
         public override string ToString()
         {
-            return base.ToString() + 
-                " , Account Number : " + _accountNumber + 
-                " , Owner Name : " + _ownerName + 
-                " , Balance : " + _balance + 
-                " , Authorized Overdraft : " + _authorizedOverdraft;
+            return base.ToString() +
+                " , Account Number : " + AccountNumber +
+                " , Owner Name : " + OwnerName +
+                " , Balance : " + Balance +
+                " , Authorized Overdraft : " + AuthorizedOverdraft;
         }
     }
 }

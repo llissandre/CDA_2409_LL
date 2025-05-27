@@ -39,4 +39,14 @@ account2.Debit(200);
 account3.Transfer(account1, 100);
 //account3.Transfer(account1, -100);
 
-account1.Compar(account3);
+//account1.Compar(account3);
+
+List<BankAccount> accounts = new List<BankAccount>
+{
+    account1,
+    account2,
+    account3
+};
+
+accounts.Sort(); // Utilise la méthode CompareTo de BankAccount
+accounts.Sort(new ComparaisonAccountByAccountNumber()); // Utilise la méthode Compare de ComparaisonAccountByAccountNumber
