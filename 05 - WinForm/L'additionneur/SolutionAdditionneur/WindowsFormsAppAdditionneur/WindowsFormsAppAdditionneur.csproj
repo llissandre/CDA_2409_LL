@@ -55,6 +55,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAdditionneur.resx">
+      <DependentUpon>FormAdditionneur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -79,8 +82,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibraryAdd\ClassLibraryAdditionneur.csproj">
-      <Project>{cabf9a99-f98d-4f10-926b-8af4eaf0d67f}</Project>
+    <ProjectReference Include="..\ClassLibraryAdditionneur\ClassLibraryAdditionneur.csproj">
+      <Project>{eb4eff7f-e610-454f-af67-2dca66a618d3}</Project>
       <Name>ClassLibraryAdditionneur</Name>
     </ProjectReference>
   </ItemGroup>

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("ClassLibraryAdd")]
+[assembly: AssemblyTitle("ClassLibraryAdditionneur")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CRM")]
-[assembly: AssemblyProduct("ClassLibraryAdd")]
+[assembly: AssemblyProduct("ClassLibraryAdditionneur")]
 [assembly: AssemblyCopyright("Copyright © CRM 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-[assembly: Guid("cabf9a99-f98d-4f10-926b-8af4eaf0d67f")]
+[assembly: Guid("eb4eff7f-e610-454f-af67-2dca66a618d3")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //
