@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PachaDataFormationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="DeleteSession" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Calendrier">
+          <Parameter Name="SessionId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetSessions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Calendrier">
+          <Parameter Name="Annee" Type="int" Mode="In" />
+          <Parameter Name="Semaine" Type="tinyint" Mode="In" />
+        </Function>
+        <EntityContainer Name="PachaDataFormationModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PachaDataFormationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PachaDataFormationEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="DeleteSession">
+            <Parameter Name="SessionId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetSessions" EntitySet="SessionSet" ReturnType="Collection(PachaDataFormationModel.Session)">
+            <Parameter Name="Annee" Mode="In" Type="Int32" />
+            <Parameter Name="Semaine" Mode="In" Type="Byte" />
+          </FunctionImport>
+          <EntitySet Name="SessionSet" EntityType="PachaDataFormationModel.Session" />
+        </EntityContainer>
+        <ComplexType Name="GetSessions_Result">
+          <Property Type="String" Name="Titre" Nullable="false" MaxLength="200" />
+          <Property Type="Int32" Name="SessionId" Nullable="false" />
+          <Property Type="DateTime" Name="DateDebut" Nullable="false" />
+          <Property Type="Byte" Name="Duree" Nullable="true" />
+          <Property Type="Int32" Name="Inscrits" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="SessionId" />
+          </Key>
+          <Property Name="SessionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Titre" Nullable="false" MaxLength="200" />
+          <Property Type="DateTime" Name="DateDebut" Nullable="false" />
+          <Property Type="Byte" Name="Duree" Nullable="true" />
+          <Property Type="Int32" Name="Inscrits" Nullable="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PachaDataFormationModelStoreContainer" CdmEntityContainer="PachaDataFormationEntities" >
+          <FunctionImportMapping FunctionImportName="DeleteSession" FunctionName="PachaDataFormationModel.Store.DeleteSession" />
+          <FunctionImportMapping FunctionImportName="GetSessions" FunctionName="PachaDataFormationModel.Store.GetSessions">
+          </FunctionImportMapping>
+          <EntitySetMapping Name="SessionSet">
+            <EntityTypeMapping TypeName="PachaDataFormationModel.Session">
+              <ModificationFunctionMapping>
+                <DeleteFunction FunctionName="PachaDataFormationModel.Store.DeleteSession">
+                  <ScalarProperty Name="SessionId" ParameterName="SessionId" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

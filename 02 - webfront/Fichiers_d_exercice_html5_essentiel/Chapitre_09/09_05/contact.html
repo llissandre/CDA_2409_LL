@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="Contactez Damien Bruyndonckx et prolongez la discussion autour des sujets touchant à la photographie ou pour tout autre type de renseignements" />
+        <title>Le monde en noir &amp; blanc - Contactez nous</title>
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="/css/nb.css" />
+        <script src="/js/jquery-3.4.1.min.js"></script>
+        <script src="/js/menu.js"></script>
+    </head>
+    <body>
+        <header id="mainHeader">
+            <img src="/images/layout/nb_logo.svg" alt="Logo N&B" id="logoImg" />
+            <h1>Le monde en noir &amp; blanc</h1>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="galleries.html">Galeries</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <button id="menuToggle"><img src="/images/layout/hamburger.svg" alt="Ouvrir / Fermer le menu" /></button>
+        </header><!--Ici se termine le #mainHeader-->
+        <section id="pageContent" class="oneCol contact">
+            <main>
+                <h1>Contactez-nous</h1>
+                <p>Merci de compléter le formulaire suivant pour nous contacter. Tous les champs de ce formulaire sont requis.</p>
+                <form id="frmContact" action="merci.html">
+                    <div>
+                        <div>
+                            <label for="fName">Prénom</label>
+                            <input type="text" name="fName" id="fName" required />
+                        </div>
+                        <div>
+                            <label for="lName">Nom de famille</label>
+                            <input type="text" name="lName" id="lName" required />
+                        </div>
+                        <div>
+                            <label for="email">Votre e-mail</label>
+                            <input type="email" name="email" id="email" required />
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="message">Votre message</label>
+                            <textarea name="message" id="message" required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </main>
+        </section><!--Ici se termine le #pageContent-->
+        <footer id="mainFooter">
+            <p>&copy; Copyright Damien Bruyndonckx - 2019</p>
+        </footer><!--Ici se termine le #mainFooter-->
+    </body>
+</html>

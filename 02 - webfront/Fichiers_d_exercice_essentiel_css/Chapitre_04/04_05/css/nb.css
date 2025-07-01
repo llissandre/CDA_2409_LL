@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Cantarell|Raleway&display=swap');
+
+
+body {
+    font-family: Raleway, Verdana, Geneva, Tahoma, sans-serif;
+}
+.accessibility {
+    position: absolute;
+    left: -15000px;
+}
+main h1 {
+    color: red;
+    text-align: right;
+}
+#mainHeader, #mainFooter{
+    background-color: red;
+}
+#mainHeader > h1 {
+    color: brown;
+    font-family: Cantarell, Verdana, Geneva, Tahoma, sans-serif;
+}
+#mainNav a{
+    color: white;
+}
+#mainNav a:hover{
+    color: brown;
+}
+aside h1{
+    color: green;
+}

@@ -1,0 +1,22 @@
+#pageContent.blogList #leftCol article{
+    padding: 20px;
+}
+#pageContent.blogList #leftCol article header{
+    border-bottom: 1px solid var(--black);
+}
+#pageContent.blogList #leftCol article header h1{
+    margin: 0;
+    color: var(--green);
+    font-size: 1.3em;
+}
+#pageContent.blogList #leftCol article header p{
+    font-size: .8em;
+    font-style: italic;
+}
+#pageContent.blogList #leftCol article a{
+    color: var(--red);
+    text-decoration: none;
+}
+#pageContent.blogList #leftCol article a:hover{
+    text-decoration: underline;
+}

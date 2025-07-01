@@ -1,0 +1,16 @@
+#pageContent.galleries ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+ }
+#pageContent.galleries ul li{
+    background-color: var(--white);
+    padding: 10px;
+}
+#pageContent.galleries ul li a{
+    color: var(--black);
+    text-decoration: none;
+}
+#pageContent.galleries ul li:hover{
+    background-color: var(--shaded-red);
+}

@@ -1,0 +1,31 @@
+#pageContent.text h1{
+    font-size: 1.8em;
+    color: var(--red);
+    letter-spacing: .1em;
+}
+#pageContent.text h2{
+    font-size: 1.5em;
+    font-weight: normal;
+    letter-spacing: .1em;
+    margin-top: 50px;
+}
+#pageContent.text img{
+    max-width: 100%;
+    height: auto;
+}
+#pageContent.text dl {
+    border: 1px solid var(--black);
+    background-color: var(--white);
+    padding: 20px;
+    color: var(--black);
+}
+#pageContent.text dl dt {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#pageContent.text dl dd {
+    margin: 10px 0 10px 20px;
+}
+#pageContent.galleries h1 {
+    color: var(--white);
+}
