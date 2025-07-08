@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>N&B photographies - Galeries</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/nb.css">
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+              crossorigin="anonymous"></script>
+    <script src="js/menu.js"></script>
+</head>
+<body>
+    <header id="mainHeader">
+            <img src="images/layout/nb_logo.svg" alt="Logo NB" id="logoImg" />
+            <h1>le monde en Noir &amp; Blanc</h1>
+            <nav id="mainNav">
+                <h1 class="accessibility">Menu principal</h1>
+                <div class="accessibility"><a href="#pageContent" title="Accéder directement au contenu principal directement ">Passer le menu</a></div>
+                <ul>
+                    <li><a href="index.html" title="Vers la page d'accueil du site 'Le monde en noir et balnc'">Accueil</a></li>
+                    <li><a href="galleries.html" title="Vers les galeries photos de ce site">Galeries</a></li>
+                    <li><a href="contact.html" title="Vers la page de contact de ce site">Contact</a></li>
+                    <li><a href="about.html" title="vers la page À propos pour en savoir plus sur ce site">À propos</a></li>
+                    <li><a href="blog.html" title="Vers la page d'accueil de notre bloc sur ce site">Blog</a></li>
+                </ul>
+            </nav>
+            <button id="menuToggle" class="hamburger"><img src="images/layout/hamburger.svg" alt="Ouvrir / Fermer le menu"></button>
+    </header>
+    
+    <section id="pageContent" class="oneCol galleries">
+        <main id="singleGallery">
+            <h1>Bretagne 2019</h1>
+            <ul>
+                <li><img src="images/image-1.jpg" alt="Plage de bretagne"></li>
+                <li><img src="images/image-2.jpg" alt="Cadre dans le cadre"></li>
+                <li><img src="images/image-3.jpg" alt="Vigie minérale"></li>
+                <li><img src="images/image-4.jpg" alt="Les cheveux du ciel"></li>
+                <li><img src="images/image-5.jpg" alt="Prendre le large"></li>
+                <li><img src="images/image-6.jpg" alt="Manan les p'tits bâteaux"></li>
+            </ul>
+        </main>
+    </section>
+    <footer id="mainFooter">
+        <p>&copy; copyright Damien Bruyndonckx - 2019</p>
+    </footer>
+    <figure id="galleryContainer"><img src="" alt=""></figure>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>N&B photographies - Contact</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/nb.css">
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+              crossorigin="anonymous"></script>
+    <script src="js/menu.js"></script>
+</head>
+<body>
+    <header id="mainHeader">
+            <img src="images/layout/nb_logo.svg" alt="Logo NB" id="logoImg" />
+            <h1>le monde en Noir &amp; Blanc</h1>
+            <nav id="mainNav">
+                <h1 class="accessibility">Menu principal</h1>
+                <div class="accessibility"><a href="#pageContent" title="Accéder directement au contenu principal directement ">Passer le menu</a></div>
+                <ul>
+                    <li><a href="index.html" title="Vers la page d'accueil du site 'Le monde en noir et balnc'">Accueil</a></li>
+                    <li><a href="galleries.html" title="Vers les galeries photos de ce site">Galeries</a></li>
+                    <li><a href="contact.html" title="Vers la page de contact de ce site">Contact</a></li>
+                    <li><a href="about.html" title="vers la page À propos pour en savoir plus sur ce site">À propos</a></li>
+                    <li><a href="blog.html" title="Vers la page d'accueil de notre bloc sur ce site">Blog</a></li>
+                </ul>
+            </nav>
+            <button id="menuToggle" class="hamburger"><img src="images/layout/hamburger.svg" alt="Ouvrir / Fermer le menu"></button>
+    </header>
+    
+    <section id="pageContent" class="oneCol contact">
+        <main>
+            <h1>Contactez-nous</h1>
+            <p>Merci de compléter le formulaire suivant pour nous contacter. Tous les champs de ce formulaire sont requis.</p>
+            <form id="frmContact" action="merci.html" novalidate>
+                <div>  
+                    <div>
+                        <label for="fName">Prénom</label>
+                        <input type="text" name="fName" id="fName" required title="Votre prénom est une information requise">
+                    </div>
+                    <div>
+                        <label for="lName">Nom de Famille</label>
+                        <input type="text" name="lName" id="lName" required>
+                    </div>
+                    <div>
+                        <label for="eMail">Adresse e-mail</label>
+                        <input type="email" name="eMail" id="eMail" required>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="message">Votre Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
+        </main>
+    </section>
+    <footer id="mainFooter">
+        <p>&copy; copyright Damien Bruyndonckx - 2019</p>
+    </footer>
+</body>
+</html>
