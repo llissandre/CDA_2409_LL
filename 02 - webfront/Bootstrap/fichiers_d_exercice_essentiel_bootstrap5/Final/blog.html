@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="navbar navbar-expand-md navbar-light bg-light px-3">
+        <a href="#" class="navbar-brand">
+            <img src="images/one2Learn-Logo.png" alt="Logo One2Learn">
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-content">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-content">
+            <nav>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">À propos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Item 1</a></li>
+                            <li><a class="dropdown-item" href="#">Item 2</a></li>
+                            <li><a class="dropdown-item" href="#">Item 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <form action="" id="searchForm" class="ms-auto">
+                <div class="input-group">
+                    <input type="search" name="q" placeholder="Rechercher" class="form-control">
+                    <button type="submit" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                          </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <button type="button" class="btn btn-primary ms-3" data-bs-toggle="offcanvas" data-bs-target="#userTools">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg>
+        </button>
+    </header>
+    <section class="offcanvas offcanvas-end" id="userTools">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title">Se connecter</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Nom d'utilisateur</label>
+                    <input type="text" class="form-control" name="username" id="username">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" name="password" id="password">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="rememberMe" />
+                    <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
+                </div>
+                <button class="btn btn-primary">Se connecter</button>
+            </form>
+        </div>
+    </section>
+    <div class="container-fluid my-3">
+        <section class="row gy-3">
+            <div class="col-12 col-md-9">
+                <!--Begin Breadcrumb-->
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+                        <li class="breadcrumb-item">Blog</li>
+                    </ol>
+                </nav>
+                <!--End Breadcrumb-->
+                <!--Begin Pagination-->
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">&laquo;</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                    </ul>
+                </nav>
+                <!--End Pagination-->
+                <div class="list-group list-group-flush my-3">
+                    <article class="list-group-item">
+                        <div class="row">
+                            <figure class="col-12 col-md-4 d-none d-md-block">
+                                <img src="images/arbre.jpg" alt="Arbre" class="img-fluid img-thumbnail">
+                            </figure>
+                            <div class="col-12 col-md-8">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat a qui hic nostrum sequi. Nulla quia nesciunt adipisci autem eum. Omnis hic praesentium recusandae. Non saepe vero totam mollitia dicta.
+                                <p>
+                                    <a href="article.html" class="btn btn-primary">Lire la suite</a>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="list-group-item">
+                        <div class="row">
+                            <figure class="col-12 col-md-4 d-none d-md-block">
+                                <img src="images/brouillard.jpg" alt="Brouillard" class="img-fluid img-thumbnail">
+                            </figure>
+                            <div class="col-12 col-md-8">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat a qui hic nostrum sequi. Nulla quia nesciunt adipisci autem eum. Omnis hic praesentium recusandae. Non saepe vero totam mollitia dicta.
+                                <p>
+                                    <a href="article.html" class="btn btn-primary">Lire la suite</a>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="list-group-item">
+                        <div class="row">
+                            <figure class="col-12 col-md-4 d-none d-md-block">
+                                <img src="images/chalet.jpg" alt="Chalet" class="img-fluid img-thumbnail">
+                            </figure>
+                            <div class="col-12 col-md-8">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat a qui hic nostrum sequi. Nulla quia nesciunt adipisci autem eum. Omnis hic praesentium recusandae. Non saepe vero totam mollitia dicta.
+                                <p>
+                                    <a href="article.html" class="btn btn-primary">Lire la suite</a>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="list-group-item">
+                        <div class="row">
+                            <figure class="col-12 col-md-4 d-none d-md-block">
+                                <img src="images/montagnes.jpg" alt="Montagne" class="img-fluid img-thumbnail">
+                            </figure>
+                            <div class="col-12 col-md-8">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat a qui hic nostrum sequi. Nulla quia nesciunt adipisci autem eum. Omnis hic praesentium recusandae. Non saepe vero totam mollitia dicta.
+                                <p>
+                                    <a href="article.html" class="btn btn-primary">Lire la suite</a>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="list-group-item">
+                        <div class="row">
+                            <figure class="col-12 col-md-4 d-none d-md-block">
+                                <img src="images/riviere.jpg" alt="Rivière" class="img-fluid img-thumbnail">
+                            </figure>
+                            <div class="col-12 col-md-8">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat a qui hic nostrum sequi. Nulla quia nesciunt adipisci autem eum. Omnis hic praesentium recusandae. Non saepe vero totam mollitia dicta.
+                                <p>
+                                    <a href="article.html" class="btn btn-primary">Lire la suite</a>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="list-group-item">
+                        <div class="row">
+                            <figure class="col-12 col-md-4 d-none d-md-block">
+                                <img src="images/soiree.jpg" alt="Soirée" class="img-fluid img-thumbnail">
+                            </figure>
+                            <div class="col-12 col-md-8">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat a qui hic nostrum sequi. Nulla quia nesciunt adipisci autem eum. Omnis hic praesentium recusandae. Non saepe vero totam mollitia dicta.
+                                <p>
+                                    <a href="article.html" class="btn btn-primary">Lire la suite</a>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!--Begin Pagination-->
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">&laquo;</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                    </ul>
+                </nav>
+                <!--End Pagination-->
+            </div>
+            <div class="col-12 col-md-3">
+                <section class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h1 class="h5">Catégories</h1>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            <a href="#">Catégorie 1</a>
+                            <span class="badge bg-primary rounded-pill">3</span>
+                        </li>
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            <a href="#">Catégorie 2</a>
+                            <span class="badge bg-primary rounded-pill">10</span>
+                        </li>
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            <a href="#">Catégorie 3</a>
+                            <span class="badge bg-primary rounded-pill">7</span>
+                        </li>
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            <a href="#">Catégorie 4</a>
+                            <span class="badge bg-primary rounded-pill">12</span>
+                        </li>
+                        <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            <a href="#">Catégorie 5</a>
+                            <span class="badge bg-primary rounded-pill">8</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

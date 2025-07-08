@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="navbar navbar-expand-md navbar-light bg-light px-3">
+        <a href="#" class="navbar-brand">
+            <img src="images/one2Learn-Logo.png" alt="Logo One2Learn">
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-content">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-content">
+            <nav>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">À propos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Item 1</a></li>
+                            <li><a class="dropdown-item" href="#">Item 2</a></li>
+                            <li><a class="dropdown-item" href="#">Item 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <form action="" id="searchForm" class="ms-auto">
+                <div class="input-group">
+                    <input type="search" name="q" placeholder="Rechercher" class="form-control">
+                    <button type="submit" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                          </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <button type="button" class="btn btn-primary ms-3" data-bs-toggle="offcanvas" data-bs-target="#userTools">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg>
+        </button>
+    </header>
+    <section class="offcanvas offcanvas-end" id="userTools">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title">Se connecter</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Nom d'utilisateur</label>
+                    <input type="text" class="form-control" name="username" id="username">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" name="password" id="password">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="rememberMe" />
+                    <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
+                </div>
+                <button class="btn btn-primary">Se connecter</button>
+            </form>
+        </div>
+    </section>
+    <main class="container-fluid my-3">
+        <section class="row">
+            <nav class="col-12">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Accueil</a> </li>
+                    <li class="breadcrumb-item active">Contact</li>
+                </ol>
+            </nav>
+            <section class="col12 col-md-6 mb3">
+                <div class="alert alert-info alert-dismissible show fade">
+                    <p class="h4">Lorem, ipsum dolor.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem eum itaque, accusamus delectus sint sapiente!</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+                <h1 class="h3">Nous contacter</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, quos cumque ab labore nulla, laborum perferendis incidunt minus, quam accusamus qui. Ipsum, rerum! Provident delectus velit asperiores. Voluptas, harum tempore?</p>
+                <p>Sint deleniti laboriosam autem aperiam eos tenetur voluptatibus laudantium dolor dignissimos perspiciatis iste ipsum maiores, asperiores corrupti necessitatibus distinctio? Mollitia maiores quis consequatur quia architecto. Beatae debitis ad delectus neque!</p>
+
+                <div class="accordion" id="accordionContact">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordion1">Accordéon 1</button>
+                        </h2>
+                        <section class="accordion-body collapse show" id="accordion1" data-bs-parent="#accordionContact">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem eos, fugit dolore iste dolorum vel dignissimos eveniet, ipsam alias eaque accusantium? Dolore quos, quis soluta consequuntur illo distinctio itaque dignissimos!
+                        </section>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion2">Accordéon 2</button>
+                        </h2>
+                        <section class="accordion-body collapse" id="accordion2" data-bs-parent="#accordionContact">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem eos, fugit dolore iste dolorum vel dignissimos eveniet, ipsam alias eaque accusantium? Dolore quos, quis soluta consequuntur illo distinctio itaque dignissimos!
+                        </section>
+                    </div><div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordion3">Accordéon 3</button>
+                        </h2>
+                        <section class="accordion-body collapse" id="accordion3" data-bs-parent="#accordionContact">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem eos, fugit dolore iste dolorum vel dignissimos eveniet, ipsam alias eaque accusantium? Dolore quos, quis soluta consequuntur illo distinctio itaque dignissimos!
+                        </section>
+                    </div>
+                </div>
+            </section>
+            <section class="col-12 col-md-6">
+                <form action="">
+                    <h2 class="h3">Formulaire de contact</h2>
+                    <fieldset>
+                        <legend>Informations personnelles</legend>
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <div class="mb-3 form-floating">
+                                    <input type="text" name="fName" id="fName" class="form-control" placeholder="Votre prénom">
+                                    <label for="fName">Votre prénom</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="mb-3 form-floating">
+                                    <input type="text" name="lName" id="lName" class="form-control" placeholder="Votre nom de famille">
+                                    <label for="lName">Votre nom de famille</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="mb-3 form-floating">
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Votre email">
+                                    <label for="email">Votre email</label>
+                                    <small class="form-text">Nous ne partagerons pas votre adresse email avec des tiers.</small>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="mb-3 form-floating">
+                                    <select name="country" id="country" class="form-select">
+                                        <option selected>---Choisissez votre pays---</option>
+                                        <option value="BE">Belgique</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="FR">France</option>
+                                        <option value="CH">Suisse</option>
+                                    </select>
+                                    <label for="country">Votre pays</label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Vos préférences</legend>
+
+                        <div class="mb-3">
+                            
+                            <div class="form-check form-switch">
+                                <input type="checkbox" name="newsletter" id="newsletter" value="true" class="form-check-input">
+                                <label class="form-check-label" for="newsletter">Désirez-vous vous inscrire à notre newsletter ?</label>
+                            </div>
+                            
+                        </div>
+
+                        <div class="mb-3">
+                            <p class="h6">Comment avez-vous entendu parler de ce site ? <span class="text-muted">(Plusieurs réponses possibles).</span></p>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="how" value="social" class="form-check-input">Réseaux sociaux
+                                </label>
+                            </div>
+                            
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="how" value="ad" class="form-check-input">Publicité
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Votre Message</legend>
+                        <div class="mb-3 form-floating">
+                            <textarea name="message" id="message" class="form-control" placeholder="Votre message"></textarea>
+                            <label for="message">Votre message</label>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

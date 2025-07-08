@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/toast.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="toast position-absolute end-0" data-bs-autohide="false" style="z-index: 10000;">
+        <div class="toast-header bg-primary text-white">
+            <strong class="me-auto">Bootstrap</strong>
+            <small>Maintenant</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body">
+            Bienvenue dans Bootstrap 5 !
+        </div>
+    </div>
+    <header class="navbar navbar-expand-md navbar-light bg-light px-3">
+        <a href="#" class="navbar-brand">
+            <img src="images/one2Learn-Logo.png" alt="Logo One2Learn">
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-content">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-content">
+            <nav>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">À propos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Item 1</a></li>
+                            <li><a class="dropdown-item" href="#">Item 2</a></li>
+                            <li><a class="dropdown-item" href="#">Item 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <form action="" id="searchForm" class="ms-auto">
+                <div class="input-group">
+                    <input type="search" name="q" placeholder="Rechercher" class="form-control">
+                    <button type="submit" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                          </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <button type="button" class="btn btn-primary ms-3" data-bs-toggle="offcanvas" data-bs-target="#userTools">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg>
+        </button>
+    </header>
+    <section class="offcanvas offcanvas-end" id="userTools">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title">Se connecter</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Nom d'utilisateur</label>
+                    <input type="text" class="form-control" name="username" id="username">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" name="password" id="password">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="rememberMe" />
+                    <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
+                </div>
+                <button class="btn btn-primary">Se connecter</button>
+            </form>
+        </div>
+    </section>
+    <main class="container-fluid my-3">
+        <section class="row mb-3">
+            <div class="col-12 col-lg-8">
+                <img src="images/officeBuilding.jpg" alt="Bureau One2Learn" class="img-fluid rounded">
+            </div>
+            <div class="col-12 col-lg-4 bg-light py-5 px-3">
+                <h1 class="display-4">Lorem, ipsum dolor.</h1>
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam debitis quasi voluptatum neque voluptates sunt.</p>
+                <hr class="my-3">
+                <a href="about.html" class="btn btn-primary">En savoir plus</a>
+            </div>
+        </section>
+        <section class="row gy-3">
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card">
+                    <img src="images/coding.jpg" alt="Coding" class="card-img-top">
+                    <div class="card-body">
+                        <h1 class="h3 card-title">Lorem, ipsum dolor.</h1>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium explicabo, neque temporibus delectus est rem.</p>
+                        <a href="#" class="btn btn-primary">Lire la suite</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card">
+                    <img src="images/mixing.jpg" alt="Mixing" class="card-img-top">
+                    <div class="card-body">
+                        <h1 class="h3 card-title">Lorem, ipsum dolor.</h1>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium explicabo, neque temporibus delectus est rem.</p>
+                        <a href="#" class="btn btn-primary">Lire la suite</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card">
+                    <img src="images/teaching.jpg" alt="Teaching" class="card-img-top">
+                    <div class="card-body">
+                        <h1 class="h3 card-title">Lorem, ipsum dolor.</h1>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium explicabo, neque temporibus delectus est rem.</p>
+                        <a href="#" class="btn btn-primary">Lire la suite</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card">
+                    <img src="images/video.jpg" alt="Vidéo" class="card-img-top">
+                    <div class="card-body">
+                        <h1 class="h3 card-title">Lorem, ipsum dolor.</h1>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium explicabo, neque temporibus delectus est rem.</p>
+                        <a href="#" class="btn btn-primary">Lire la suite</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
