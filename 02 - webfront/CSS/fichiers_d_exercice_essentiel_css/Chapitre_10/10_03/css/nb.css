@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Cantarell|Raleway&display=swap');
+
+:root {
+    --black: #333333;
+    --red: #C1272D;
+    --shaded-red: #DF9595;
+    --green: #00751F;
+    --white: #FFFFFF;
+    --tWhite: rgba(255,255,255,0.8);
+    box-sizing: border-box;
+}
+* {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Raleway, Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--black);
+    font-size: 1rem;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.accessibility {
+    position: absolute;
+    left: -15000px;
+}
+
+#mainHeader, #mainFooter{
+    background-color: var(--red);
+}
+#mainHeader {
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+#logoImg {
+    width: 80px;
+    padding: 5px;
+    z-index: 1000;
+    position: relative;
+}
+#mainHeader > h1 {
+    color: var(--white);
+    font-family: Cantarell, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3em;
+    font-weight: normal;
+    display: none;
+}
+#mainNav {
+    background-color: var(--red);
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    padding-bottom: 10px;
+    display: none;
+}
+#mainNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#mainNav a{
+    color: var(--white);
+    text-decoration: none;
+    font-family: Cantarell, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+}
+#mainNav a:hover{
+    color: var(--shaded-red);
+}
+#pageContent {
+    background: url(/images/image-1.jpg) center center / cover no-repeat fixed;
+    padding: 100px 20px;
+    min-height: 100vh;
+}
+#pageContent.text h1{
+    font-size: 1.8em;
+    color: var(--red);
+    letter-spacing: .1em;
+}
+#pageContent.text h2{
+    font-size: 1.5em;
+    font-weight: normal;
+    letter-spacing: .1em;
+    margin-top: 50px;
+}
+#pageContent.text img{
+    max-width: 100%;
+    height: auto;
+}
+#pageContent.text dl {
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    background-color: var(--white);
+    padding: 20px;
+    color: var(--black);
+}
+#pageContent.text dl dt {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#pageContent.text dl dd {
+    margin: 10px 0 10px 20px;
+}
+
+
+
+main {
+    background-color: var(--tWhite);
+    padding: 20px;
+}
+
+
+#mainFooter{
+    text-align: center;
+    height: 40px;
+    width: 100%;
+    font-size: .5em;
+    position: fixed;
+    bottom: 0;
+}

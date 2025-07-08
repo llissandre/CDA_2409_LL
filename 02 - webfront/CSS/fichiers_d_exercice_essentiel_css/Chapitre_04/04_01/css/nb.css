@@ -1,0 +1,26 @@
+body {
+    font-family: Verdana;
+}
+.accessibility {
+    position: absolute;
+    left: -15000px;
+}
+main h1 {
+    color: red;
+    text-align: right;
+}
+#mainHeader, #mainFooter{
+    background-color: red;
+}
+#mainHeader > h1 {
+    color: brown;
+}
+#mainNav a{
+    color: white;
+}
+#mainNav a:hover{
+    color: brown;
+}
+aside h1{
+    color: green;
+}

@@ -1,0 +1,10 @@
+body {
+    font-family: Verdana;
+}
+main h1 {
+    color: red;
+    text-align: right;
+}
+aside h1{
+    color: green;
+}
