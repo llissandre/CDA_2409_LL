@@ -1,0 +1,52 @@
+[
+	{
+		"nom" : "Joubert",
+		"prenom" : "Donat",
+		"dateNaissance" : "1998-05-14"
+	},
+	{
+		"nom" : "Langlois",
+		"prenom" : "Monique",
+		"dateNaissance" : "1987-02-20"
+	},
+	{
+		"nom" : "Jarry",
+		"prenom" : "Tristan",
+		"dateNaissance" : "1996-02-08"
+	},
+	{
+		"nom" : "Poisson",
+		"prenom" : "Yvette",
+		"dateNaissance" : "1985-10-31"
+	},
+	{
+		"nom" : "Blanchard",
+		"prenom" : "Paul",
+		"dateNaissance" : "1970-06-13"
+	},
+	{
+		"nom" : "Pierron",
+		"prenom" : "Gratien",
+		"dateNaissance" : "1978-01-22"
+	},
+	{
+		"nom" : "Lenoir",
+		"prenom" : "Cerise",
+		"dateNaissance" : "1961-05-25"
+	},
+	{
+		"nom" : "Merle",
+		"prenom" : "Arlette",
+		"dateNaissance" : "1982-11-20"
+	},
+	{
+		"nom" : "Bonhomme",
+		"prenom" : "Sylviane",
+		"dateNaissance" : "1967-06-29"
+	},
+	{
+		"nom" : "Grange",
+		"prenom" : "Rosemonde",
+		"dateNaissance" : "1996-01-25"
+	}
+]
