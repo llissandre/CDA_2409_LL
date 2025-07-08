@@ -1,0 +1,68 @@
+//main: ddxBlog.less
+//rightCol
+
+#mainContent aside {
+	section {
+		background-color: @white;
+		margin-bottom: 20px;
+		border-radius: 5px;
+		> h1 {
+			background-color: @lightBlue;
+			padding: 15px;
+			font-family: @titleFonts;
+			font-weight: bold;
+			font-size: 22pt;
+			color: @red;
+			.borderRadius(5px 5px 0px 0px);
+		}
+	}//end section
+	#about p{
+		padding: 15px;
+		font-style: italic;
+		font-size: @bodySize;
+		strong{
+			font-weight: bold;
+			font-style: normal;
+		}
+	}//end #about p
+	#share #a2a{
+		padding: 15px;
+	}//end #a2a section
+	#categories ul{
+		padding: 15px;
+		li{
+			margin-bottom: 3px;
+			a{
+				display: block;
+				text-decoration: none;
+				font-size: @bodySize;
+				color: @midGrey;
+				padding: 5px;
+				.borderRadius();
+				width: 100%;
+				max-width: 364px;
+				position: relative;
+				&:hover{
+					background-color: @lightGrey;
+					span{
+						background-color: @white;
+					}
+				}
+				span{
+					.horizontal(middle);
+					background-color: @midGrey;
+					color: @red;
+					width: 20px;
+					height: 20px;
+					.borderRadius(50%);
+					text-align: center;
+					padding-top: 2px;
+					font-weight: bold;
+					position: absolute;
+					right: 15px;
+					bottom: 4px;
+				}
+			}//end a
+		}//end LI
+	}//end #catgories ul
+}//end #mainContent aside

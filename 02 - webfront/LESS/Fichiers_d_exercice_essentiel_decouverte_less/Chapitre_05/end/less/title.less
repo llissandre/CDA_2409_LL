@@ -1,0 +1,22 @@
+//main: ddxBlog.less
+//title
+#title{
+	background-color: @green;
+	padding:0px @externalPadding;
+	.wrapper{
+		position: relative;
+		top: 20px;
+	}
+	h1{
+		position: absolute;
+		bottom: 0px;
+		padding: 10px;
+		.responsive;
+		color: @white;
+		font-family: @titleFonts;
+		font-size: @pageTitleSize;
+		background-color: @red;
+		.hexToRgba(@red; 0.80);
+		background-color: @rgbaColor;
+	}
+}

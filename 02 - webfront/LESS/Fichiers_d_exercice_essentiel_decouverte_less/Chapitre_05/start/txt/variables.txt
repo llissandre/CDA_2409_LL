@@ -1,0 +1,33 @@
+//main: ddxBlog.less
+//colors
+
+@darkBlue : #262087;
+@lightBlue : #59BDFF;
+@darkGrey : #333;
+@midGrey : #A8A8A8;
+@lightGrey : #EBE6E1;
+@red : #BA196A;
+@green : #20875A;
+@white : #FFF;
+
+//Fonts
+@titleFonts: Raleway, Verdana, sans-serif;
+@contentFonts: Oxygen, Verdana, sans-serif;
+@bodySize: 12pt;
+@navSizeTablet: @bodySize * 2;
+@navSizeLandscape: @bodySize * 1.5;
+@pageTitleSize: 30pt;
+
+//Breakpoints
+@tabletPortrait: 728px;
+@tabletLandscape: 1024px;
+@wideDesktop: 1480px;
+
+//Grid system
+@colsInGrid: 12;
+@externalPadding: 20px;
+
+//other default values
+@defaultCornerRadius: 5px;
+
+

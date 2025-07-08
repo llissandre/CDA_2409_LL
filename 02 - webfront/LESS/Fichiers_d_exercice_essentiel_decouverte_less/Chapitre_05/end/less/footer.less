@@ -1,0 +1,136 @@
+//main: ddxBlog.less
+//footer
+#footer{
+    background-color: @darkGrey;
+    padding: 20px;
+	section{
+		.horizontal();
+		> h1{
+			color: @white;
+			border-bottom: 1px solid @white;
+			font-size: @bodySize;
+			.columns(8);
+			padding-bottom: 5px;
+			margin-bottom: 15px;
+		}//end h1
+		ul{
+			margin-left: 20px;
+			li{
+				margin-bottom: 10px;
+				a{
+					color: @midGrey;
+					text-decoration: none;
+					font-weight: bold;
+					&:hover{
+						text-decoration: underline;
+					}
+					img{
+						margin-right: 5px;
+						vertical-align: middle;
+					}
+				}//end a
+			}//end li
+		}//end ul
+	}//end section
+	#footerAddress {
+		.columns(12);
+		margin-bottom: 20px;
+		figure{
+			.horizontal(baseline);
+			padding-bottom: 15px;
+			padding-right: 15px;
+			border-bottom: solid 2px @red;
+			.columns(9);
+			img{
+				.columns(3;0;9);
+				.horizontal(baseline);
+				margin-right:10px;
+			}
+			figcaption{
+				color: @lightBlue;
+				.horizontal(baseline);
+				font-size: @bodySize;
+			}
+		}//end figure
+		address {
+			display: none;
+			color: @white;
+			font-size: 10pt;
+			p{
+				margin-bottom: 10px
+			}
+		}//end address
+	}//end#footerAddress
+	#footerLegal{
+		.columns(6);
+		font-size: @bodySize;
+		padding-right:10px;
+		border-right: 2px solid @white;
+	}//end #footerLegal
+	#footerLanguage{
+		.columns(6);
+		font-size: @bodySize;
+		padding-left: 10px;
+	}//end #footerLanguage
+	#copyright{
+		.columns(12);
+		text-align: center;
+		margin-top: 20px;
+		a{
+			display: block;
+			width: 125px;
+			height: 40px;
+			margin: 20px auto;
+			.gradient(@white; @lightGrey);
+			border: 2px solid @midGrey;
+			.borderRadius();
+			color: @darkGrey;
+			text-decoration: none;
+			font-size: @bodySize;
+			padding-top: 3px;
+			span{
+				font-size: 24pt;
+				.horizontal(middle);
+				margin-right: 5px;
+			}//end span
+			&:hover{
+				.gradient(@lightGrey; @white);
+			}
+		}//end a
+		p{
+			color: @white;
+			font-size: 10pt;
+		}
+	}//end copyright
+}//end #footer
+@media (min-width:  @tabletLandscape){
+	#footer{
+		div.row{
+			display: flex;
+		}//end div.row
+		#footerAddress{
+			.columns(4);
+			border-right: 2px solid @white;
+			padding-right: 20px;
+			margin-bottom: 0px;
+			figure{
+				width: 100%;
+				margin-bottom: 10px;
+				img{
+					width: 100%;
+					margin-bottom: 10px
+				}//end img
+			}//end figure
+			address{
+				display: block;
+			}
+		}//end #footerAddress
+		#footerLegal{
+			.columns(4);
+			padding: 0px 10px;
+		}//end#footerLegal
+		#footerLanguage{
+			.columns(4);
+		}//end #footerLanguage
+	}//end #footer
+}

@@ -1,0 +1,84 @@
+//main: ddxBlog.less
+//mainContent
+#mainContent{
+    background-color: @lightGrey;
+    padding: 0px 20px;
+	.wrapper{
+		margin-top: 40px;
+	}
+	article{
+		background-color: @white;
+		padding: 10px;
+		.borderRadius();
+		margin-bottom: 20px;
+		font-size: @bodySize;
+		h2{
+			font-family: @titleFonts;
+			margin-bottom: 15px;
+			color: @green;
+			font-weight: bold;
+			font-size: 1.5em;
+		}//end h2
+		h3{
+			font-family: @titleFonts;
+			margin-bottom: 10px;
+			color: @red;
+			font-weight: bold;
+			font-size: 1.2em;
+		}//end h3
+		p{
+			margin-bottom: 15px;
+			line-height: 1.1em;
+		}//end p
+		#mainContent article .chapeau{
+			font-weight: bold;
+			font-size: 1.2em;
+		}// end .chapeau
+		ul{
+			list-style-type: disc;
+			margin-left: 50px;
+			margin-bottom: 15px;
+		}//end ul
+		ol{
+			list-style-type: decimal;
+			margin-left: 50px;
+			margin-bottom: 15px;
+		}//end OL
+		a{
+			text-decoration: none;
+			color: @red;
+			font-weight: bold;
+			&:hover{
+				text-decoration: underline;
+			}
+		}//end a
+		strong{
+			font-weight: bold;
+		}
+		em{
+			font-style: italic;
+		}
+		.alignLeft{
+			float: left;
+			margin: 0px 10px 10px 0px;
+		}//end .alignLeft
+		.alignRight{
+			float: right;
+			margin: 0px 0px 10px 10px;
+		}//end alignRight
+	}//end article
+}// end #MainContent
+
+//breakpoints
+@media (min-width:  @tabletLandscape){
+	#mainContent{
+		article{
+			.columns(8; 20px);
+			.horizontal();
+		}
+		aside{
+			.columns(4);
+			.horizontal();
+		}
+	}
+}//end tabletLandsacape breakpoint

@@ -1,0 +1,23 @@
+//main: styles.less
+nav{
+    background-color: @linkBkg;
+    border: @baseBorder solid @titleColor;
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        li{
+            display: inline-block;
+            a{
+                color: @linkColor;
+                display: block;
+                padding: 10px;
+                font-size: @linkSize;
+                text-decoration: none;
+                &:hover{
+                    text-decoration: underline;
+                }//end :hover
+            }//end a
+        }//end li
+    }//end ul
+}//end nav

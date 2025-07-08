@@ -1,0 +1,47 @@
+//variables
+@siteWidth: 960px;
+
+@sectionColor: #3bb2ce;
+@headerColor: #F00;
+@footerColor: #0F0;
+
+@defaultPadding: 20px;
+
+@defaultRadius: 20px;
+
+//mixins
+.borderRadius(){
+    .borderRadius(@defaultRadius; @defaultRadius; @defaultRadius; @defaultRadius)
+}
+.borderRadius(@radius){
+    .borderRadius(@radius; @radius; @radius; @radius)
+}
+.borderRadius(@topLeft; @topRight; @bottomRight; @bottomLeft){
+    -webkit-border-radius: @arguments;
+    -moz-border-radius: @arguments;
+    -ms-border-radius: @arguments;
+    -o-border-radius: @arguments;
+    border-radius: @arguments;
+}
+
+
+//styles
+#wrapper{
+    width: @siteWidth;
+    margin: 0px auto;
+}
+header{
+    background-color: @headerColor;
+    padding: @defaultPadding;
+    .borderRadius();
+}
+section {
+    background-color: @sectionColor;
+    padding: @defaultPadding;
+    .borderRadius(10px);
+}
+footer{
+    background-color: @footerColor;
+    padding: @defaultPadding;
+    .borderRadius(40px; 30px; 50px; 100px);
+}

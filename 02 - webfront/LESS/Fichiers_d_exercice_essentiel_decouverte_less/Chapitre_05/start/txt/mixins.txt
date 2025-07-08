@@ -1,0 +1,95 @@
+//main: ddxBlog.less
+//mixins
+
+//Make element responsive
+.responsive(){
+	width: 100%;
+	height: auto;
+}
+//centerContent
+.centerContent(@width: 100%){
+	margin: 0px auto;
+	width: @width;
+}
+//Box sizing mixin
+.boxSizing(@model){
+	-webkit-box-sizing: @model;
+	-moz-box-sizing: @model;
+	-ms-box-sizing: @model;
+	-o-box-sizing: @model;
+	box-sizing: @model;
+}
+//gradients
+.gradient(@from; @to){
+	background-color: @from;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr = @from,endColorstr = @to,GradientType =1 ); // IE6-9
+	background: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+	background: -webkit-linear-gradient(top, @from, @to);
+	background: -moz-linear-gradient(top, @from, @to);
+	background: -ms-linear-gradient(top, @from, @to);
+	background: -o-linear-gradient(top, @from, @to);
+	background: linear-gradient(@from, @to);
+}
+
+//rounded corners
+.borderRadius(@radius:@defaultCornerRadius) when (isNumber(@radius)){
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-ms-border-radius: @radius;
+	-o-border-radius: @radius;
+	border-radius: @radius;
+}
+.borderRadius(@radius:@defaultCornerRadius){
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-ms-border-radius: @radius;
+	-o-border-radius: @radius;
+	border-radius: @radius;
+}
+.borderRadius(first){
+	.borderRadius(first; @defaultCornerRadius);
+}
+.borderRadius(last){
+	.borderRadius(last; @defaultCornerRadius);
+}
+.borderRadius(@direction; @radius:defaultCornerRadius) when (@direction = first){
+	-webkit-border-radius: @radius 0 0 @radius;
+	-moz-border-radius: @radius 0 0 @radius;
+	-ms-border-radius: @radius 0 0 @radius;
+	-o-border-radius: @radius 0 0 @radius;
+	border-radius: @radius 0 0 @radius;
+}
+.borderRadius(@direction; @radius:defaultCornerRadius) when (@direction = last){
+	-webkit-border-radius: 0 @radius @radius 0;
+	-moz-border-radius: 0 @radius @radius 0;
+	-ms-border-radius: 0 @radius @radius 0;
+	-o-border-radius: 0 @radius @radius 0;
+	border-radius: 0 @radius @radius 0;
+}
+//grid classes
+.columns(@numCols; @gutter:0; @gridCols : @colsInGrid ){
+	.cols() when (@gutter = 0){
+		width: percentage(@numCols / @gridCols);
+	}
+	.cols() when (@gutter > 0 ){
+		@totalWidth: percentage(@numCols / @gridCols);
+		width: ~'calc(@{totalWidth} - @{gutter} )';
+		margin-right: @gutter;
+	}
+	.cols();
+}
+//display horizontal
+.horizontal(@vAlign:top){
+	display: inline-block;
+	vertical-align: @vAlign;
+}
+//Hex to rgb
+.hexToRgba(@color, @opacity: 1){
+	@rgbaColor : rgba(red(@color), green(@color), blue(@color), @opacity);
+}
+
+
+
+
+
+

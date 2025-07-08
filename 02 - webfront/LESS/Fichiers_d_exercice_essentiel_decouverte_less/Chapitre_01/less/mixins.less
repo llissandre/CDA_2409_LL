@@ -1,0 +1,34 @@
+//main: styles.less
+//mixins
+
+.horizontal(@align: top){
+	display: inline-block;
+	vertical-align: @align;
+}
+
+.borderRadius(@radius:@defaultRadius){
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-ms-border-radius: @radius;
+	-o-border-radius: @radius;
+	border-radius: @radius;
+}
+.gradient(@baseColor: @lessBrand){
+	background-color: @baseColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(lighten(@baseColor, 30%)), to(@baseColor));
+	@startColor: lighten(@baseColor, 30%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@{startColor}', endColorstr='@{baseColor}');
+	background-image: -webkit-linear-gradient(lighten(@baseColor, 30%), @baseColor);
+	background-image: -moz-linear-gradient(lighten(@baseColor, 30%), @baseColor);
+	background-image: -o-linear-gradient(lighten(@baseColor, 30%), @baseColor);
+	background-image: linear-gradient(lighten(@baseColor, 30%), @baseColor);
+}
+
+.textLink(){
+	color: lighten(@lessBrand, 30%);
+	text-decoration: none;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+

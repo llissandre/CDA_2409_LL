@@ -1,0 +1,55 @@
+//main: ddxBlog.less
+// navigation
+#mainNav{
+	background-color: @darkGrey;
+	padding: 10px @externalPadding;
+	p{
+		text-align: right;
+	}
+	ul{
+		display:none;
+		li{
+			margin: 25px;
+			a{
+				text-decoration: none;
+				color: @white;
+				font-family: @contentFonts;
+				font-size: @navSizeTablet;
+				padding-bottom: 5px;
+				&:hover{
+					color: @lightBlue;
+					border-bottom: 5px solid @lightBlue;
+				}//end :hover
+			}//end a
+		}//end li
+	}//end ul
+}// end #mainNav
+
+
+//breakpoints
+@maxTablet : @tabletLandscape - 1;
+@media (max-width: (@maxTablet) ){
+    #mainNav {
+        position: absolute;
+        z-index: 1000;
+        .columns(12);
+    }
+    #title{
+        margin-top: 80px;
+    }
+}//end tabletPortrait breakpoint
+
+@media (min-width:  @tabletLandscape){
+	#mainNav p{
+		display: none;
+	}
+	#mainNav ul{
+		display:block!important;
+		li{
+			.horizontal(baseline);
+			a{
+				font-size:@navSizeLandscape;
+			}
+		}
+	}
+}//end tabletLandsacape breakpoint

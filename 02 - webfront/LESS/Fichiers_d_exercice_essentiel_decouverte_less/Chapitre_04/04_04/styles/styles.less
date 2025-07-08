@@ -1,0 +1,53 @@
+//variables
+@siteWidth: 960px;
+
+@headerColor: #F00;
+@sectionColor: #3bb2ce;
+@footerColor: #0F0;
+
+@defaultPadding: 20px;
+
+@defaultRadius: 20px;
+
+//mixins
+.borderRadius(){
+    .borderRadius(@defaultRadius; @defaultRadius; @defaultRadius; @defaultRadius)
+}
+.borderRadius(top; @radius: @defaultRadius){
+    .borderRadius(@radius; @radius; 0px; 0px);
+}
+.borderRadius(bottom; @radius: @defaultRadius){
+    .borderRadius(0px; 0px; @radius; @radius);
+}
+.borderRadius(@radius) when (isNumber(@radius)){
+    .borderRadius(@radius; @radius; @radius; @radius)
+}
+.borderRadius(@topLeft; @topRight; @bottomRight; @bottomLeft){
+    -webkit-border-radius: @arguments;
+    -moz-border-radius: @arguments;
+    -ms-border-radius: @arguments;
+    -o-border-radius: @arguments;
+    border-radius: @arguments;
+}
+
+
+//styles
+#wrapper{
+    width: @siteWidth;
+    margin: 0px auto;
+}
+header{
+    background-color: @headerColor;
+    padding: @defaultPadding;
+    .borderRadius(top);
+}
+section {
+    background-color: @sectionColor;
+    padding: @defaultPadding;
+    //.borderRadius();
+}
+footer{
+    background-color: @footerColor;
+    padding: @defaultPadding;
+    .borderRadius(bottom; 40px);
+}

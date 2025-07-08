@@ -1,0 +1,45 @@
+//main: ddxBlog.less
+//Buttons
+
+.button-group{
+	font-size: 0;
+	li{
+		display: inline-block;
+		&.button{
+			a{
+				border-radius:0px;
+			}
+			&:first-child a{
+				.borderRadius(first);
+			}
+			&:last-child a{
+				.borderRadius(last);
+			}
+		}//end .button
+	}//end li
+}//end.button-group
+.button {
+	a{
+		.horizontal(baseline);
+		width: 60px;
+		height: 60px;
+		background-color: @white;
+		color: @darkGrey;
+		border: solid 2px @lightBlue;
+		font-size: 30pt;
+		text-align: center;
+		padding-top: 6px;
+		.borderRadius();
+		&:hover{
+			background-color: @lightBlue;
+		}//end :hover
+	}//end a
+}//end .button
+@media (min-width:  @tabletLandscape){
+	.button a{
+		height: 40px;
+		width: 40px;
+		font-size: 16pt;
+	}
+}//end tabletLandsacape breakpoint
+

@@ -1,0 +1,38 @@
+//main: ddxBlog.less
+// Main Styles
+//setup debault box sizing model
+html{
+	.boxSizing(border-box);
+}
+*,
+*:before,
+*:after{
+	box-sizing: inherit;
+}
+
+body{
+	background-color: @lightGrey;
+	font-family: @contentFonts;
+	color: @darkGrey;
+	font-size:0;
+}
+img.responsive{
+	.responsive();
+}
+.wrapper{
+	max-width: @tabletPortrait;
+	.centerContent();
+	height: 100%;
+}
+
+@media (min-width: @tabletLandscape){
+	.wrapper{
+		max-width: @tabletLandscape;
+	}
+}//end tabletLandsacape breakpoint
+@media (min-width: @wideDesktop){
+    .wrapper{
+        max-width: @wideDesktop;
+    }
+}//end desktop wide breakpoint
+

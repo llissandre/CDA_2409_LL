@@ -1,0 +1,72 @@
+//variables
+@siteWidth: 960px;
+
+@headerColor: #F00;
+@sectionColor: #3bb2ce;
+@footerColor: #0F0;
+
+@defaultPadding: 20px;
+
+@defaultRadius: 20px;
+
+//mixins
+.borderRadius(...){
+    @numArgs: length(@arguments);
+    .makeRadius() when (@numArgs = 0){
+        .createRadius(@defaultRadius; @defaultRadius; @defaultRadius; @defaultRadius);
+    }
+    .makeRadius(@arg: extract(@arguments, 1)) when (@numArgs = 1){
+        .evaluateArgs(@arg) when (isNumber(@arg)){
+            .createRadius(@arg; @arg; @arg; @arg);
+        }
+        .evaluateArgs(top){
+            .createRadius(@defaultRadius; @defaultRadius; 0px; 0px);
+        }
+        .evaluateArgs(bottom){
+            .createRadius(0px; 0px; @defaultRadius; @defaultRadius);
+        }
+        .evaluateArgs(@arg);
+    }
+    .makeRadius(@operation: extract(@arguments, 1); @radius: extract(@arguments, 2)) when (@numArgs = 2){
+        .evaluateArgs(top; @radius) {
+            .createRadius(@radius; @radius; 0px; 0px);
+        }
+        .evaluateArgs(bottom; @radius){
+            .createRadius(0px; 0px; @radius; @radius);
+        }
+        .evaluateArgs(@operation; @radius);
+    }
+    .makeRadius(@topLeft: extract(@arguments, 1); @topRight: extract(@arguments, 2); @bottomRight: extract(@arguments, 3); @BottomLeft: extract(@arguments, 4)) when (@numArgs = 4){
+        .createRadius(@topLeft; @topRight; @bottomRight; @BottomLeft);
+    }
+    .createRadius(@topLeft; @topRight; @bottomRight; @BottomLeft){
+        -webkit-border-radius: @arguments;
+        -moz-border-radius: @arguments;
+        -ms-border-radius: @arguments;
+        -o-border-radius: @arguments;
+        border-radius: @arguments;
+    }
+    .makeRadius();
+}
+
+
+//styles
+#wrapper{
+    width: @siteWidth;
+    margin: 0px auto;
+}
+header{
+    background-color: @headerColor;
+    padding: @defaultPadding;
+    .borderRadius(top);
+}
+section {
+    background-color: @sectionColor;
+    padding: @defaultPadding;
+    //.borderRadius(10px; 5px; 8px; 25px);
+}
+footer{
+    background-color: @footerColor;
+    padding: @defaultPadding;
+    .borderRadius(bottom);
+}

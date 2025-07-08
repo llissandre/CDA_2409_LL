@@ -1,0 +1,52 @@
+//out: something.less
+//header
+#header{
+	background-color: @darkBlue;
+	height: 120px;
+	padding: 15px @externalPadding 0px;
+	figure{
+		.horizontal();
+		.columns(6);
+		img{
+			.columns(4;0;6);
+			height: auto;
+		}//end img
+		figcaption{
+			color: @white;
+			font-size: @bodySize;
+		}// end figcaption
+	}//end figure
+	ul{
+		.columns(6);
+		.horizontal();
+		text-align: right;
+		li{
+			.horizontal(baseline);
+		}// end li
+	}//end ul
+}//end header
+@media (min-width:  @tabletLandscape){
+	#header{
+		height: 100px;
+		figure{
+			.columns(10);
+			img{
+				max-width: 33.333333333%; /*3 colonnes sur 10*/
+				margin-right: 10px;
+				vertical-align: middle;
+			}
+			figcaption{
+				.horizontal(middle);
+				font-size: 18pt;
+			}//end figcaption
+		}//end figure
+		ul{
+			.columns(2);
+		}
+	}//end #header
+}//end tabletLandsacape breakpoint
+@media (min-width: @wideDesktop){
+    #header figure img {
+        .columns(2;0;10);
+    }
+}//end desktop wide breakpoint

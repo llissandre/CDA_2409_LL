@@ -1,0 +1,49 @@
+//variables
+@siteWidth: 960px;
+
+@pageColor: #3bb2ce;
+@headerColor: #F00;
+@sectionColor: #FFF;
+@footerColor: #0F0;
+
+@defaultPadding: 20px;
+@defaultMargin: 10px 0px;
+
+@defaultRadius: 20px;
+
+//mixins
+.borderRadius(@radius: @defaultRadius){
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
+}
+
+
+//styles
+#wrapper{
+    width: @siteWidth;
+    margin: 0px auto;
+}
+body{
+    background-color: @pageColor;
+}
+header{
+    background-color: @headerColor;
+    padding: @defaultPadding;
+    margin: @defaultMargin;
+    .borderRadius();
+}
+section {
+    background-color: @sectionColor;
+    padding: @defaultPadding;
+    margin: @defaultMargin;
+    .borderRadius(10px);
+}
+footer{
+    background-color: @footerColor;
+    padding: @defaultPadding;
+    margin: @defaultMargin;
+    .borderRadius();
+}

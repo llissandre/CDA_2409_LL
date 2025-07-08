@@ -1,0 +1,46 @@
+//variables
+@siteWidth: 960px;
+
+@headerColor: #F00;
+@sectionColor: #3bb2ce;
+@footerColor: #0F0;
+
+@defaultPadding: 20px;
+
+@numCols: 6;
+
+
+//mixins
+.makeCols(@cols: @numCols; @i: 1) when (@i <= @cols) {
+    .col-@{i}{
+        width: (@i * 100% / @numCols);
+        display: inline-block;
+        vertical-align: top;
+        box-sizing: border-box;
+    }
+    .makeCols(@cols, (@i+1));
+}
+.makeCols(@numCols);
+
+
+//styles
+#wrapper{
+    width: @siteWidth;
+    margin: 0px auto;
+}
+header{
+    background-color: @headerColor;
+    padding: @defaultPadding;
+}
+section {
+    background-color: @sectionColor;
+    padding: @defaultPadding;
+    font-size: 0;
+    p{
+        font-size: 12pt;
+    }
+}
+footer{
+    background-color: @footerColor;
+    padding: @defaultPadding;
+}
