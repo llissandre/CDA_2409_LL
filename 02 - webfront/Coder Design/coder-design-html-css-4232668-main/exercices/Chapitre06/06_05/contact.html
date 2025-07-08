@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/mycompany.css">
+</head>
+<body>
+  <div id="mainHeader">
+    <header class="wrapper">
+      <a href="index.html" id="mainLogo">
+        <img src="images/myCompany-logo.svg" alt="Logo">
+      </a>
+      <div id="buttonWrapper">
+        <input type="checkbox" id="menuToggler">
+        <label for="menuToggler" id="toggleButtonContainer"><span></span></label>
+      </div>
+      <nav id="mainMenu">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#">Nos services</a></li>
+          <li><a href="#">Notre société</a></li>
+          <li><a href="#">Nous contacter</a></li>
+        </ul>
+      </nav>
+    </header><!--Fin de header.wrapper-->
+  </div><!--Fin de #mainHeader-->
+  <section id="mainContent">
+    <header style="background-image: url('images/contactBanner.jpg');">
+      <div>
+        <h1 class="wrapper">Contact</h1>
+      </div>
+    </header>
+    <div id="innerContent" class="wrapper">
+      <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima a, tempora eaque harum quaerat necessitatibus,
+        nostrum porro libero tenetur exercitationem ea, magnam quos distinctio. Ullam eaque facilis laudantium quaerat
+        repellat?</p>
+      <form id="contactForm">
+        <div class="form-field">
+          <label for="firstName">Votre prénom</label>
+          <input type="text" name="firstName" id="firstName" placeholder="Votre prénom" required>
+          <p class="error">Veuillez entrer votre prénom.</p>
+        </div>
+        <div class="form-field">
+          <label for="lastName">Votre nom de famille</label>
+          <input type="text" name="lastName" id="lastName" placeholder="Votre nom de famille" required>
+          <p class="error">Veuillez entrer votre nom de famille.</p>
+        </div>
+        <div class="form-field">
+          <label for="email">Votre adresse email</label>
+          <input type="email" name="email" id="email" placeholder="Votre adresse email" required>
+          <p class="error">Veuillez indiquer une adresse email valide.</p>
+        </div>
+        <div class="form-field">
+          <label for="message">Votre message</label>
+          <textarea name="message" id="message" placeholder="Votre message ici" required></textarea>
+          <p class="error">N'oubliez pas d'entrer votre message.</p>
+        </div>
+        <div class="form-checkbox-group-wrapper">
+          <div class="form-checkbox-wrapper">
+            <input type="checkbox" name="privacy" id="privacy" value="true" required role="switch">
+            <label for="privacy">J'accepte la collecte de mes données privées</label>
+            <p class="error">Vous devez accepter la collecte de vos données personnelles.</p>
+          </div>
+          <div class="form-checkbox-wrapper">
+            <input type="checkbox" name="newsletter" id="newsletter" value="true" role="switch">
+            <label for="newsletter">Je veux m'inscrite à la newsletter</label>
+          </div>
+        </div>
+        <div class="form-field">
+          <button type="submit">Envoyer</button>
+        </div>
+      </form>
+    </div>
+  </section><!--Fin de section#mainContent-->
+  <div id="mainFooter">
+    <footer class="wrapper">
+      <figure>
+        <img src="images/myCompany-logo.svg" alt="Logo">
+        <figcaption>
+          <address>
+            Rue de MaSociete, 12<br>
+            12345 Ville<br>
+            France
+          </address>
+        </figcaption>
+      </figure>
+      <nav id="footerNav">
+        <h1>Liens utiles</h1>
+        <ul>
+          <li><a href="#">Politique de cookies</a></li>
+          <li><a href="#">Conditions d'utilisation</a></li>
+          <li><a href="#">Déclaration vie privée</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2024 - MaSociete</p>
+    </footer><!--Fin de footer.wrapper-->
+  </div><!--Fin de #mainFooter-->
+</body>
+</html>

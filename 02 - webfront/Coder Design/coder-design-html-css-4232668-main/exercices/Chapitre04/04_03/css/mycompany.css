@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400&display=swap');
+
+:root {
+  --light-blue: #dee3f4;
+  --blue: #00368c;
+  --blue-hover: #005cf0;
+  --light-grey: #D8D8D8;
+  --mid-grey: #989898;
+  --dark-grey: #626262;
+  --orange: #FF9700;
+  --light-orange: #FFCB80;
+  --white: #FFFFFF;
+  --red: #951313;
+  --green: #348b34;
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  color: var(--dark-grey);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--blue);
+}
+
+#mainHeader {
+  background-color: var(--blue);
+  color: var(--white);
+  height: 50px;
+}
+
+#mainHeader .wrapper {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+#buttonWrapper {
+  justify-self: end;
+}
+
+#menuToggler {
+  display: none;
+}
+
+#mainMenu {
+  display: none;
+}
+
+#mainFooter {
+  background-color: var(--blue);
+  color: var(--white);
+  margin-top: auto;
+}
+
+@media screen and (min-width: 576px) {
+  .wrapper {
+    width: 540px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 720px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .wrapper {
+    width: 960px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .wrapper {
+    width: 1140px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .wrapper {
+    width: 1320px;
+  }
+}

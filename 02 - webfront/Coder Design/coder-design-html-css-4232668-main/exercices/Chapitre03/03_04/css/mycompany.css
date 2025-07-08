@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400&display=swap');
+
+:root {
+  --light-blue: #dee3f4;
+  --blue: #00368c;
+  --blue-hover: #005cf0;
+  --light-grey: #D8D8D8;
+  --mid-grey: #989898;
+  --dark-grey: #626262;
+  --orange: #FF9700;
+  --light-orange: #FFCB80;
+  --white: #FFFFFF;
+  --red: #951313;
+  --green: #348b34;
+}
