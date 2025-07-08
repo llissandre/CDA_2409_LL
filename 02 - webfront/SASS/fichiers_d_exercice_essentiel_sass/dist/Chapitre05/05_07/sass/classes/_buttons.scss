@@ -1,0 +1,22 @@
+.btn{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    padding: space(2);
+    @include border-radius();
+}
+@each $color, $value in $colors {
+    .btn-#{$color}{
+        background-color: $value;
+        @if $enable-transitions {
+            @include transitions(background-color color border);
+        }
+        &:hover{
+            background-color: scale-color($value, $alpha: -20%)
+        }
+    }
+}

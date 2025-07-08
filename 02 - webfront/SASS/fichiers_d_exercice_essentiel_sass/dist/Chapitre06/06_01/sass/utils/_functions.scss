@@ -1,0 +1,11 @@
+@function color($color : 'dark'){
+    @return map-get($colors, $color);
+}
+
+@function space($amount: 3){
+    @return map-get($spaces, $amount);
+}
+
+@function font-size($size: "md"){
+    @return map-get($font-sizes, $size);
+}

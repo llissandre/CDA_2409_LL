@@ -1,0 +1,28 @@
+:root {
+    --body-font: Roboto, Verdana, sans-serif;
+    --title-font: "Roboto Slab", "Times New Roman", "Times", serif;
+    --dark : #333333;
+    --white : #FFF;
+    --blue : #00368C;
+    --headerHeight : 50px;
+}
+
+/** main styles*/
+body {
+    font-family: var(--body-font);
+    font-size: 1rem;
+    color: var(--dark);
+    background-color: var(--white);
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--title-font);
+}
+#mainHeader {
+    height: var(--headerHeight);
+    background-color: var(--blue);
+}
+#mainHeader #logo img {
+    height: var(--headerHeight);
+    width: auto; 
+}
+

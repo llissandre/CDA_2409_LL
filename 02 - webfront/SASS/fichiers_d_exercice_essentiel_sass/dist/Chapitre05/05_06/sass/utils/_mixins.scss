@@ -1,0 +1,32 @@
+@mixin display-grid {
+    display: -ms-grid;
+    display: grid;
+}
+
+@mixin fixed($position) {
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+    #{$position} : 0;
+}
+
+@mixin border-radius($type : "all", $radius : $default-radius){
+    @if ($type == "top") {
+        border-radius: $radius $radius 0 0;
+    }
+    @else if ($type == "left") {
+        border-radius: $radius 0 0 $radius;
+    }
+    @else if ($type == "bottom") {
+        border-radius: 0 0 $radius $radius;
+    }
+    @else if ($type == "right") {
+        border-radius: 0 $radius $radius 0;
+    }
+    @else if ($type == "circle") {
+        border-radius: 50%;
+    }
+    @else{
+        border-radius: $radius;
+    }
+}

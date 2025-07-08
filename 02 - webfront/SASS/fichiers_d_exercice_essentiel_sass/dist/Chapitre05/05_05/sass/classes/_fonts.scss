@@ -1,0 +1,5 @@
+@for $i from 1 through 3 {
+    .#{nth($body-font, $i)} {
+        font-family: nth($body-font, $i);
+    }
+}

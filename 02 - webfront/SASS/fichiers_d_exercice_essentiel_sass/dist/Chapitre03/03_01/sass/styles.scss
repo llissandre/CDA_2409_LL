@@ -1,0 +1,19 @@
+$body-font: Roboto, Verdana, sans-serif;
+$title-font: "Roboto Slab", "Times New Roman", "Times", serif;
+$dark : #333333;
+$white: #FFF;
+
+
+/** main styles*/
+body {
+    font-family: $body-font;
+    font: {
+        size: 1rem;
+    }
+    color: $dark;
+    background-color: $white;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: $title-font;
+}
+

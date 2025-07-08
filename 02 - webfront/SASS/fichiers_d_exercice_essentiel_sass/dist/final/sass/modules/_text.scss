@@ -1,0 +1,85 @@
+#mainContent.text{
+    @for $i from 1 through 6 {
+        h#{$i} {
+            font-size: map-get($heading-font-size, $i);
+        }
+    }//end headings font size
+    h2 {
+        color: color('blue');
+    }
+    h3 {
+        color: color('orange');
+    }
+    header{
+        background-size: cover;
+        background-position: bottom center;
+        min-height: 15rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        div.content{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            h1{
+                @include reset();
+                padding: space();
+                color: color("white");
+                width: 75%;
+                max-width: 500px;
+                background-color:  change-color(color('orange'), $alpha: .8);
+            }//end #mainContent.text header h1
+        }
+    }//end #mainContent.text header
+    div.content{
+        margin: 0 space();
+        //@include center();
+        ul, ol{
+            padding-left: 20px;
+            list-style-position:inside;
+        }
+        img{
+            display: block;
+            margin: space() 0;
+        }
+    }//end #mainContent.text div.content
+    /*Responsive MD and up*/
+    @include media-breakpoint-up ("md") {
+        div.content{
+            img {
+                max-width: 50%;
+                &.left{
+                    float: left;
+                    margin: 0 space() space() 0;
+                }
+                &.right{
+                    float: right;
+                    margin: 0  0 space() space();
+                }
+                &.center {
+                    float: none;
+                    margin: space() auto; 
+                }
+            }//end img
+        }//end div.content
+    }//end @media md and up
+     //Responsive XL and up
+     @include media-breakpoint-up ("lg") {
+         div.content{
+            width: map-get($breakpoints , breakpoint-previous("lg") );
+            @include center();
+             //max-width: 
+             img {
+                 max-width: 33%;
+             }
+         }
+     }//end @media lg and up
+     //Responsive XL and up
+     @include media-breakpoint-up ("xl") {
+        div.content{
+            width: map-get($breakpoints , breakpoint-previous("xl") );
+        }
+     }
+}

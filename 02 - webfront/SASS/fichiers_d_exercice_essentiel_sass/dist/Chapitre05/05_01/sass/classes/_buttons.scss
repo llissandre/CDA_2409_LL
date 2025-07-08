@@ -1,0 +1,11 @@
+.btn {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: color("white");
+    border: none;
+    padding: map-get($spaces, 2);
+    @include border-radius();
+}

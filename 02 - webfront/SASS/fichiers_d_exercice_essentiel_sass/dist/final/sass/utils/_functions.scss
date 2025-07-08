@@ -1,0 +1,39 @@
+@function color($color : 'dark'){
+    @return map-get($colors, $color);
+}
+
+@function space($amount: 3){
+    @return map-get($spaces, $amount);
+}
+
+@function font-size($size: "md"){
+    @return map-get($font-sizes, $size);
+}
+@function breakpoint-previous($name){
+    $names: map-keys($breakpoints);
+    $length: length($names);
+    $n: index($names, $name);
+    @if not $n {
+        @error "breakpoint `#{$name}` not found in `#{$names}`";
+    }
+    @if $n != 1 and $n <= $length {
+        @return nth($names, $n - 1);
+    }
+    @else {
+        @return $name; 
+    }
+};
+@function breakpoint-next($name){
+    $names: map-keys($breakpoints);
+    $length: length($names);
+    $n: index($names, $name);
+    @if not $n {
+        @error "breakpoint `#{$name}` not found in `#{$names}`";
+    }
+    @if $n < $length {
+        @return nth($names, $n + 1);
+    }
+    @else {
+        @return $name; 
+    }
+};

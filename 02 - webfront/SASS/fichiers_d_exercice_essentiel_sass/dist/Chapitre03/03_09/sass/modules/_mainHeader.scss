@@ -1,0 +1,24 @@
+#mainHeader {
+    height: $headerHeight;
+    background-color: map-get($colors, "blue");
+    #logo img {
+        width: auto;
+        height: $headerHeight;
+    }
+    #mainNav ul{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        li a{
+            padding: map-get($spaces , 2 );
+            color: map-get($colors , "white" );
+            font-size: map-get($font-sizes , "lg" );
+            display: block;
+            text-decoration: none;
+            &:hover, .active {
+                background-color: map-get($colors , "blue" );
+            }
+        }
+    }
+}

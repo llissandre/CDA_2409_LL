@@ -1,0 +1,69 @@
+#mainFooter{
+    background-color: color("blue");
+    color: color("white");
+    clear: both;
+    div.row{
+        display: flex;
+        
+        > * {
+            padding: space();
+            flex-grow: 1;
+        }
+    }//end #mainFooter div.row
+    address {
+        font-size: font-size("xs");
+        line-height: space(4);
+    }//end #mainFooter address
+    #footerNav ul{
+        @include reset('list');
+        li {
+            margin: space(2) 0;
+            a {
+                color: color("white");
+                display: block;
+                background-color: lighten(color("blue"), 10);
+                padding: space(2);
+                @include border-radius();
+                text-decoration: none;
+                @if $enable-transitions {
+                    @include transitions("background-color");
+                }
+                &:hover{
+                    background-color: lighten(color("blue"), 20);
+                }
+            }//end #mainFooter #footerNav ul li a
+        }//end #mainFooter #footerNav ul li
+    }//end #mainFooter #footerNav ul
+    #copyright{
+        font-size: font-size("xs");
+        text-align: center;
+        width: 100%;
+    }//end #mainFooter #copyright
+
+    //responsive md and up
+    @include media-breakpoint-up("md"){
+        address {
+            font-size: font-size("md");
+        }
+    }
+    //responsive lg and up
+    @include media-breakpoint-up("lg"){
+        .row{
+            width: map-get($breakpoints , breakpoint-previous("lg") );
+            @include center();
+        }
+        address {
+            font-size: font-size("lg");
+        }
+        #footerNav ul{
+            //max-width: 50%;
+            margin-left: auto;
+        }
+    }
+    //Responsive XL and up
+    @include media-breakpoint-up ("xl") {
+        .row{
+            width: map-get($breakpoints , breakpoint-previous("xl") );
+        }
+     }
+}

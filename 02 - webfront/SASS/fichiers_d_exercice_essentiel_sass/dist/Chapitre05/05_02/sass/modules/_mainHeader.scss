@@ -1,0 +1,40 @@
+#mainHeader {
+    height: $headerHeight;
+    background-color: color("blue");
+    padding: map-get($spaces , 2 );
+    @include fixed(top);
+    @include display-grid();
+    grid-template-columns: 150px 1fr 40px 40px;
+    #logo img {
+        width: auto;
+        height: calc(#{$headerHeight} - #{(map-get($spaces , 2 ) * 2)});
+    }//end #logo img
+    #mainNav ul{
+        display: none;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        li a{
+            padding: map-get($spaces , 2 );
+            color: color("white" );
+            font-size: map-get($font-sizes , "lg" );
+            display: block;
+            text-decoration: none;
+            &:hover, .active {
+                background-color: color("blue");
+            }//end :hover, .active
+        }//end li a
+    }//end #mainNav ul
+    #userTools {
+        img {
+            border: solid 3px color("white");
+            @include border-radius(50%);
+            height: calc(#{$headerHeight} - #{(map-get($spaces , 2 ) * 2)});
+        }
+    }
+    #menuToggle{
+        button{
+            @extend .btn;
+        }
+    }
+}//end #mainHeader

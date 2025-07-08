@@ -1,0 +1,22 @@
+/** main styles*/
+body {
+  font-family: Roboto, Verdana, sans-serif;
+  font-size: 1rem;
+  color: #333333;
+  background-color: #FFF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Slab", "Times New Roman", "Times", serif;
+}
+
+#mainHeader {
+  height: 50px;
+  background-color: #00368C;
+}
+
+#mainHeader #logo img {
+  width: auto;
+  height: 50px;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,61 @@
+//Colors
+$colors: (
+    "blue": #00368C,
+    "orange": #FF9700,
+    "grey": #989898,
+    "dark": #333333,
+    "light": #F8F9FC,
+    "white": #FFF
+);
+
+//fonts
+$body-font: Roboto, Verdana, sans-serif;
+$title-font: "Roboto Slab", "Times New Roman", "Times", serif;
+
+$default-font-size: 1rem;
+$font-sizes: (
+    "xxs": $default-font-size * .5,    
+    "xs": $default-font-size * .8,
+    "sm": $default-font-size * .9,
+    "md": $default-font-size,
+    "lg": $default-font-size * 1.3,
+    "xl": $default-font-size * 1.5,
+    "xxl": $default-font-size * 2
+);
+$heading-font-size: (
+    1: $default-font-size * 2,
+    2: $default-font-size * 1.5,
+    3: $default-font-size * 1.3,
+    4: $default-font-size,
+    5: $default-font-size * .9,
+    6: $default-font-size * .8
+);
+
+//dimensions
+$headerHeight: 50px;
+$default-space: 1rem;
+$spaces: (
+    0: 0,
+    1: $default-space * .25,
+    2: $default-space *.5,
+    3: $default-space,
+    4: $default-space * 1.5,
+    5: $default-space * 3
+);
+
+//responsive
+$breakpoints : (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+//defaults
+$defaultRadius: 5px;
+$default-transition-time: .5s;
+//options
+$make-images-responsive: true;
+$enable-transitions: true;

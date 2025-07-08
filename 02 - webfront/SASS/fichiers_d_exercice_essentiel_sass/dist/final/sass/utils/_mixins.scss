@@ -1,0 +1,85 @@
+@mixin reset($type: ""){
+    padding: 0;
+    margin: 0;
+    @if $type == "list"{
+        list-style-type: none;
+    }
+    @if $type == "link" {
+        text-decoration: none;
+    }
+    @if $type == "heading" {
+        font-weight: normal;
+        font-size: $default-font-size;
+    }
+}//end reset mixin
+
+//Display-grid mixin
+@mixin display-grid {
+    display: -ms-grid;
+    display: grid;
+}
+
+@mixin fixed($position) {
+    position: fixed;
+    #{$position} : 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+//border-radius mixin
+@mixin border-radius($type: "all", $radius: $defaultRadius){
+    @if($type == "top"){
+        border-radius: $radius $radius 0 0;
+    }
+    @else if ($type == "left"){
+        border-radius: $radius 0 0 $radius;
+    }
+    @else if ($type == "bottom"){
+        border-radius:  0 0 $radius $radius;
+    }
+    @else if ($type == "right"){
+        border-radius:  0 $radius $radius 0;
+    }
+    @else if ($type == "circle"){
+        border-radius: 50%
+    }
+    @else {
+        border-radius: $radius
+    }
+}
+
+//transitions
+@mixin transitions($properties, $duration: $default-transition-time){
+    $value: "";
+    @each $property in $properties {
+        $value: $value + $property + " " + $duration + " ease, ";
+    }
+    transition: unquote($value);
+}
+
+//center
+@mixin center(){
+    display: block;
+    margin: 0 auto;
+}
+
+@mixin alternate($colors) {
+    $len: length($colors);
+    @each $color in $colors {
+      $i: index($colors, $color);
+      &:nth-of-type(#{$len}n + #{$i}) {
+        background-color: $color;
+      }
+    }
+}
+
+@mixin media-breakpoint-up($name){
+    @media screen and (min-width : map-get($breakpoints, $name)) {
+        @content;
+    }
+}
+@mixin media-breakpoint-down($name){
+    @media screen and (max-width : map-get($breakpoints, $name)) {
+        @content;
+    }
+}

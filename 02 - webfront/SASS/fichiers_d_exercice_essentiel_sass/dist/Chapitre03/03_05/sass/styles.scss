@@ -1,0 +1,36 @@
+$body-font: Roboto, Verdana, sans-serif;
+$title-font: "Roboto Slab", "Times New Roman", "Times", serif;
+
+$colors: (
+    "blue": #00368C,
+    "orange": #FF9700,
+    "grey": #989898,
+    "dark": #333333,
+    "light": #F8F9FC,
+    "white": #FFF
+);
+
+$headerHeight : 50px; 
+
+
+/** main styles*/
+body {
+    font-family: $body-font;
+    font: {
+        size: 1rem;
+    }
+    color: map-get($colors, "dark");
+    background-color: map-get($colors, "white");
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: $title-font;
+}
+#mainHeader {
+    height: $headerHeight;
+    background-color: map-get($colors, "blue");
+}
+#mainHeader #logo img {
+    width: auto;
+    height: $headerHeight;
+}
+

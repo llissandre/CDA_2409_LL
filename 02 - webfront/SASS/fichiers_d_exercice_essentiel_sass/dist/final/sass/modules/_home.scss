@@ -1,0 +1,109 @@
+#mainContent.home{
+    #featured {
+        background-image: url('/images/nature.jpg');
+        background-size: cover;
+        background-position: center bottom;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        div{
+            background-color: scale-color(color("orange"), $alpha: -20%);
+            padding: space();
+            h1{
+                color: color("blue");
+                font-size: font-size("xxl");
+            }// end .home #featured div h1
+            h2{
+                color: color("white");
+                @include reset("heading");
+            }// end .home #featured div h2
+            a {
+                @extend .btn;
+                @extend .btn-blue;
+                width: 120px;
+                @include center();
+                margin-top: space(3);
+                color: color("white");
+                text-decoration: none;
+            }// end .home #featured div a
+        } // end .home #featured div
+    }// end .home #featured
+    .homeSection{
+        padding: space();
+        > h1 {
+            @include reset("heading");
+            font-size: font-size("xl");
+            color: color("blue");
+            margin-top: space();
+            margin-bottom: space(1);
+        }//end .homeSection > h1
+        div.articles > article {
+            margin-bottom: space();
+            border: 1px solid color("grey");
+            @include border-radius();
+            img {
+                @include border-radius('top');
+            }
+            .articleContent {
+                padding: space();
+            }
+        }//end .homeSection > artivle
+        a{
+            @extend .btn;
+            @extend .btn-grey;
+            width: 120px;
+            @include center();
+            color: color("white");
+            text-decoration: none;
+        } //end .homeSection a
+    }//end .homeSection
+    #about {
+        background-color: color("light");
+    }
+    /*responsive MD and up*/
+
+    @include media-breakpoint-up("md"){
+        #featured {
+            height: 80vh;
+        }
+        #about {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            img {
+                @include border-radius();
+            }
+            div {
+                padding: space();
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+        .homeSection .articles{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: space();
+        }
+    }
+    /*responsive lg and up*/
+
+    @include media-breakpoint-up("lg"){
+        #about div {
+            padding: space(5);
+        }
+        #featured {
+            position: relative;
+            justify-content: center;
+            div {
+                width: 33%;
+            position: absolute;
+            right: 0;
+            padding: space(5) space();
+        }
+    }
+    .homeSection .articles{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+}

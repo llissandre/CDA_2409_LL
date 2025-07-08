@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="css/styles.css" >
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/menuToggle.js" defer></script>
+<body>
+    <header id="mainHeader">
+        <div id="logo">
+            <img src="images/one2Learn-logo.svg" alt="Logo One2Learn">
+        </div>
+        <nav id="mainNav">
+            <ul class="collapsed">
+                <li><a href="#" class="active">lien1</a></li>
+                <li><a href="#">lien2</a></li>
+                <li><a href="#">lien3</a></li>
+                <li><a href="#">lien4</a></li>
+            </ul>
+        </nav>
+        <div id="userTools">
+            <img src="images/user.jpg" alt="Utilisateur connecté">
+        </div>
+        <div id="menuToggle">
+            <button><img src="images/hamburger.svg" alt="Menu Toggle"></button>
+        </div>
+    </header>
+    <!--End of #mainHeader-->
+    <div id="mainContent" class="home">
+        <section id="featured">
+            <div>
+                <h1>Lorem ipsum dolor sit amet.</h1>
+                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis nihil quae perferendis reprehenderit sed! Voluptate.</h2>
+                <a href="#">En savoir plus</a>
+            </div>
+        </section>
+        <!--end section#featured-->
+        <section class="homeSection" id="about">
+                <img src="images/team.jpg" alt="lorem ipsum" class="left">
+                <div>
+                    <h1>Lorem ipsum dolor sit.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita nesciunt asperiores libero neque error quo quia perspiciatis ducimus quis officiis est consequatur sequi, quae nostrum maxime debitis accusamus odit voluptatum.</p>
+                    <a href="#">En savoir plus</a>
+                </div>
+        </section>
+        <!--end section#aboutUs-->
+        <section class="homeSection" id="blog">
+            <h1>Blog</h1>
+            <div class="articles">
+                <article>
+                    <img src="images/road.jpg" alt="Lorem ipsum">
+                    <div class="articleContent">
+                        <h1>Lorem, ipsum dolor.</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis numquam, nam porro veritatis molestias consectetur.</p>
+                        <a href="#">Lire la suite</a>
+                    </div>
+                </article><!--End first article in #fromTheBlog-->
+                <article>
+                    <img src="images/train.jpg" alt="Lorem ipsum">
+                    <div class="articleContent">
+                        <h1>Lorem, ipsum dolor.</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis numquam, nam porro veritatis molestias consectetur.</p>
+                        <a href="#">Lire la suite</a>
+                    </div>
+                </article><!--End second article in #fromTheBlog-->
+                <article>
+                    <img src="images/lighthouse.jpg" alt="Lorem ipsum">
+                    <div class="articleContent">
+                        <h1>Lorem, ipsum dolor.</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis numquam, nam porro veritatis molestias consectetur.</p>
+                        <a href="#">Lire la suite</a>
+                    </div>
+                </article><!--End third article in #fromTheBlog-->
+                <article>
+                    <img src="images/cityscape.jpg" alt="Lorem ipsum">
+                    <div class="articleContent">
+                        <h1>Lorem, ipsum dolor.</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis numquam, nam porro veritatis molestias consectetur.</p>
+                        <a href="#">Lire la suite</a>
+                    </div>
+                </article><!--End fourth article in #fromTheBlog-->
+            </div><!--End div.articles in #fromTheBlog - acts as grid container-->
+            
+        </section>
+        <!--end section#featured-->
+    </div>
+    <!--End of #mainContent-->
+    <footer id="mainFooter">
+        <div class="row">
+            <address>
+                <span class="text-orange text-md">One2Learn</span><br>
+                Une marque de DBR-Training SRL<br>
+                Adresse<br>
+                Code Postal - Ville <br>
+                Belgique
+            </address>
+            <nav id="footerNav">
+                <ul>
+                    <li><a href="#">lien1</a></li>
+                    <li><a href="#">lien2</a></li>
+                    <li><a href="#">lien3</a></li>
+                    <li><a href="#">lien4</a></li>
+                </ul>
+            </nav>
+        </div><!--End first .row of #mainFooter-->
+        <div class="row" id="copyright">
+            <p>&copy; 2021 - DBR-Training SRL</p>
+        </div><!--End second .row of #mainFooter-->
+    </footer>
+</body>
+</html>

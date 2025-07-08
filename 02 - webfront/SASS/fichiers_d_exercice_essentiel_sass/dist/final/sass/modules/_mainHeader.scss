@@ -1,0 +1,73 @@
+#mainHeader {
+    @include fixed(top);
+    background-color: color("blue");
+    height: $headerHeight;
+    padding: space(2);
+    @include display-grid();
+    grid-template-columns: 150px 1fr 40px 40px;
+    #logo{
+        img{
+            max-height : calc(#{$headerHeight} - #{space(2) * 2});
+        }//end #mainHeader #logo img 
+    }//end #mainHeader #logo 
+    #mainNav{
+        ul{
+            @include reset("list");
+            display: none;
+            position: absolute;
+            top: $headerHeight;
+            left: 0;
+            padding: space(2);
+            background-color: color("blue");
+            width: 100%;
+            li a{
+                @include reset("link");
+                padding: space(2);
+                color: color("white");
+                font-size: font-size('lg');
+                display: block;
+                @include border-radius();
+                @if $enable-transitions {
+                    @include transitions("background-color");
+                }
+                &:hover, &.active{
+                    background-color: lighten(color("blue"), 10);
+                }
+            }//end #mainHeader #mainNav ul li a
+        }//end #mainHeader #mainNav ul
+    }//end #mainHeader #mainNav 
+    #userTools{
+        text-align: right;
+        img{
+            max-height : calc(#{$headerHeight} - #{space(2) * 2});
+            @include border-radius("circle");
+            border: 3px solid color("white");
+        }//end #mainHeader #userTools img 
+    }//end #mainHeader #userTools 
+    #menuToggle{
+        text-align: right;
+        button {
+            @extend .btn;
+            @extend .btn-white;
+        }
+    }//end #mainHeader #menuToggle
+
+    //responsive MD and up
+    @include media-breakpoint-up("md"){
+        grid-template-columns: 150px 1fr 40px;
+        #menuToggle {
+            display: none;
+        }
+        #mainNav{
+            margin-left: auto;
+            ul {
+                display: flex !important;
+                position: static;
+                padding: 0;
+                li a{
+                    font-size: font-size('md');
+                }// end #mainNav ul li a
+            }// end #mainNav ul
+        } 
+    };
+}

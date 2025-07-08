@@ -1,0 +1,28 @@
+#mainHeader {
+    height: $headerHeight;
+    background-color: map-get($colors, "blue");
+    padding: map-get($spaces , 2 );
+    @include fixed(top);
+    @include display-grid();
+    grid-template-columns: 150px 1fr 40px 40px;
+    #logo img {
+        width: auto;
+        height: $headerHeight;
+    }//end #logo img
+    #mainNav ul{
+        display: none;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        li a{
+            padding: map-get($spaces , 2 );
+            color: map-get($colors , "white" );
+            font-size: map-get($font-sizes , "lg" );
+            display: block;
+            text-decoration: none;
+            &:hover, .active {
+                background-color: map-get($colors , "blue" );
+            }//end :hover, .active
+        }//end li a
+    }//end #mainNav ul
+}//end #mainHeader

@@ -1,0 +1,63 @@
+@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap");
+/*! main styles*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, Verdana, sans-serif;
+  font-size: 1rem;
+  color: #333333;
+  background-color: #FFF;
+  padding-top: 50px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Slab", "Times New Roman", "Times", serif;
+}
+
+#mainHeader {
+  height: 50px;
+  background-color: #00368C;
+  padding: 0.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  top: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 150px 1fr 40px 40px;
+      grid-template-columns: 150px 1fr 40px 40px;
+}
+
+#mainHeader #logo img {
+  width: auto;
+  height: 50px;
+}
+
+#mainHeader #mainNav ul {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#mainHeader #mainNav ul li a {
+  padding: 0.5rem;
+  color: #FFF;
+  font-size: 1.3rem;
+  display: block;
+  text-decoration: none;
+}
+
+#mainHeader #mainNav ul li a:hover, #mainHeader #mainNav ul li a .active {
+  background-color: #00368C;
+}
+
+#mainHeader #userTools img {
+  border: solid 3px #FFF;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=styles.css.map */
