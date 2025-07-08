@@ -1,0 +1,19 @@
+{
+    "mssql.shortcuts": {
+        "_comment": "Short cuts must follow the format (ctrl)+(shift)+(alt)+[key]",
+        "event.toggleResultPane": "ctrl+alt+R",
+        "event.focusResultsGrid": "ctrl+alt+G",
+        "event.toggleMessagePane": "ctrl+alt+Y",
+        "event.prevGrid": "ctrl+up",
+        "event.nextGrid": "ctrl+down",
+        "event.copySelection": "ctrl+C",
+        "event.copyWithHeaders": "",
+        "event.copyAllHeaders": "",
+        "event.maximizeGrid": "",
+        "event.selectAll": "ctrl+A",
+        "event.saveAsJSON": "",
+        "event.saveAsCSV": "",
+        "event.saveAsExcel": "",
+        "event.changeColumnWidth": "ctrl+alt+S"
+    }
+}

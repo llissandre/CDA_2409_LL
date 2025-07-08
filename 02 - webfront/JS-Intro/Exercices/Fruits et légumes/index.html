@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index de fruits et légumes</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/index.js" type="module"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div id="image"></div>
+            <nav>
+                <div id="vente">
+                    <ul>
+                        <li><a href="sales.html">ventes</a></li>
+                        <li><a href="newSale.html">nouvelle vente</a></li>
+                    </ul>
+                </div>
+                <div id="légume">
+                    <ul>
+                        <!-- <li>légumes</li> -->
+                        <li><a href="newVegetable.html">nouveau légume</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <h1>Liste des légumes</h1>
+            <div class=" button-container">
+                <button @click="resetSave('collectionVegetables')">Supprimer les données sauvegardées</button>
+                <button @click="downloadJSON('collectionVegetables', this.collectionVegetablesStorage)">Télécharger le
+                    fichier json</button>
+            </div>
+            <div id="legumes">
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th @click="sortTable('Name')">nom<span
+                                    :class="['arrow', sortKey === 'Name' ? (sortIncrease ? 'arrow-down' : 'arrow-up') : '']"
+                                    id="arrow-name"></span></th>
+                            <th @click="sortTable('Variety')">variété<span
+                                    :class="['arrow', sortKey === 'Variety' ? (sortIncrease ? 'arrow-down' : 'arrow-up') : '']"
+                                    id="arrow-variety"></span></th>
+                            <th @click="sortTable('PrimaryColor')">couleur<span
+                                    :class="['arrow', sortKey === 'PrimaryColor' ? (sortIncrease ? 'arrow-down' : 'arrow-up') : '']"
+                                    id="arrow-PrimaryColor"></span></th>
+                            <th @click="sortTable('LifeTime')">durée de conservation<span
+                                    :class="['arrow', sortKey === 'LifeTime' ? (sortIncrease ? 'arrow-down' : 'arrow-up') : '']"
+                                    id="arrow-LifeTime"></span></th>
+                            <th @click="sortTable('Fresh')">frais<span
+                                    :class="['arrow', sortKey === 'Fresh' ? (sortIncrease ? 'arrow-down' : 'arrow-up') : '']"
+                                    id="arrow-Fresh"></span></th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(vegetable, index) in collectionVegetablesStorage" :key="vegetable.Id">
+                            <td>{{vegetable.Name}}</td>
+                            <td>{{vegetable.Variety}}</td>
+                            <td>{{vegetable.PrimaryColor}}</td>
+                            <td>{{vegetable.LifeTime}}</td>
+                            <td>{{setStatusFresh(vegetable.Fresh)}}</td>
+                            <td> <span @click="editVegetable(index)" :class="['pointer']">Editer</span> . <span
+                                    @click="deleteVegetable(index)" :class="['pointer']">Supprimer</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; Coopérative bio - 2025</p>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+}
+
+/* Sélectionne tous les éléments */
+* {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 800px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    color: #abcae0;
+    background-color: #536B78;
+    margin: 20px 0 0 20px;
+}
+
+#filet {
+    border: 1px solid #ACCBE1;
+}
+
+h1 {
+    margin-left: 15px;
+}
+
+ul {
+    /* list-style: none; */
+    color: #ACCBE1;
+    margin-left: 60px;
+    padding: 30px 0;
+    font-weight: 600;
+}
+
+#myTableId {
+    margin: 0 30px 30px 30px;
+    color: #a0bdd2;
+    border-collapse: collapse;
+}
+
+th {
+    border: 1px solid #ACCBE1;
+    background-color: #637081;
+    padding: 5px;
+    text-align: center;
+}
+
+td {
+    border: 1px solid #ACCBE1;
+    background-color: #637081;
+    padding: 5px;
+    text-align: left;
+}
+
+input {
+    border: 1px solid #ACCBE1;
+    color: #ACCBE1;
+    background-color: #637081;
+    padding: 5px;
+    margin-right: 30px;
+}
+
+input.my-input:-internal-autofill-selected {
+    background-color: rgb(255, 255, 255) !important;
+    background-image: none !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+label {
+    margin-right: 15px;
+    font-weight: 500;
+}
+
+input[type=submit] {
+    width: 80px;
+    font-size: 0.78rem;
+    padding: 6.5px;
+}
+
+.delete {
+    text-align: center;
+    font-weight: bold;
+}
+
+.delete:hover {
+    color: #536B78;
+    cursor: pointer;
+}
+
+.checked:before {
+    content: "✔";
+    font-size: 1.1rem;
+    color: #fd4a1d;
+}
+
+form {
+    margin: 20px 0 0px 20px;
+}
+
+#divAddId {
+    margin: 10px 15px 0px 15px;
+    border: 0.5px dashed #ACCBE1;
+    height: 100%;
+}
+
+#divAddId p {
+    margin: 0px 0 20px 20px;
+    font-weight: 700;
+}
+
+#divAddId p:last-child {
+    margin: 20px 0 15px 20px;
+    font-weight: 700;
+}

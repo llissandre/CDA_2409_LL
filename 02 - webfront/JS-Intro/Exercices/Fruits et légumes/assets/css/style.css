@@ -1,0 +1,221 @@
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+
+    --color1: #0d8a5a;
+    --color2: #ffff08;
+    --color3: #2530ff;
+    --color4: #ffffff;
+    --color5: #000000;
+}
+
+/* Sélectionne tous les éléments */
+* {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: inherit;
+
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: SourceSans;
+    src: url(../font/Source_Sans_3/SourceSans3-VariableFont_wght.ttf);
+}
+
+body {
+    font-family: SourceSans;
+    color: var(--color5);
+    background-color: var(--color4);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+header {
+    #image {
+        background-image: url(../img/legumos.jpg);
+        background-size: cover;
+        height: 300px;
+        width: 100%;
+    }
+
+    nav {
+        background-color: var(--color1);
+        height: 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        >div {
+            align-content: center;
+            justify-items: center;
+
+            ul {
+                width: 100%;
+                display: flex;
+                justify-content: space-evenly;
+
+                li,
+                a {
+                    list-style: none;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: var(--color4);
+
+                }
+
+                a:hover {
+                    cursor: pointer;
+                    color: var(--color2);
+                }
+            }
+        }
+    }
+}
+
+main {
+    margin: 20px;
+
+    h1 {
+        font-size: 3vw;
+        font-weight: 700;
+        margin: 20px;
+    }
+
+    .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20px 0;
+        gap: 20px;
+
+        button {
+            padding: 10px 40px;
+            background-color: var(--color1);
+            color: var(--color4);
+            text-transform: uppercase;
+            border: none;
+
+            &:hover {
+                cursor: pointer;
+                color: var(--color2);
+            }
+        }
+    }
+
+    #ventes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+
+        div {
+            width: 300px;
+            text-align: center;
+            text-transform: uppercase;
+            /* font-size: 1.3rem; */
+            background-color: var(--color1);
+            color: var(--color4);
+            padding: 10px 10px 2px 10px;
+
+            h2 {
+                line-height: 1;
+            }
+
+            p {
+                padding: 10px 10px 0px 10px;
+            }
+        }
+    }
+
+    #legumes {
+        width: 100%;
+        justify-items: center;
+
+        .arrow-up::after {
+            content: ' ▲';
+        }
+
+        .arrow-down::after {
+            content: ' ▼';
+        }
+
+        #myTable {
+            font-size: 1.1rem;
+            font-weight: 500;
+
+            th {
+                background-color: var(--color1);
+                color: var(--color2);
+                text-transform: capitalize;
+                padding: 0 30px;
+                cursor: pointer;
+            }
+
+            td {
+                color: var(--color3);
+                text-transform: capitalize;
+                padding: 1px 3px;
+                text-align: left;
+
+                &:nth-child(3),
+                &:nth-child(5) {
+                    text-transform: none;
+                }
+
+                &:last-child {
+                    padding: 0 50px;
+                }
+            }
+        }
+    }
+
+    #newSale,
+    #newVegetable {
+        justify-items: center;
+
+        form {
+            width: 50vw;
+            margin: 30px 0;
+
+            fieldset {
+                padding-left: 20px;
+            }
+
+            div {
+                display: grid;
+                grid-template-columns: 250px 300px;
+                margin: 10px;
+
+                label {
+                    align-content: center;
+                }
+
+                select,
+                input {
+                    background-color: var(--color1);
+                    color: var(--color4);
+                    border-style: none;
+                    border-radius: 5px;
+                    padding: 10px;
+                }
+
+                select,
+                input:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: var(--color1);
+    color: var(--color4);
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}

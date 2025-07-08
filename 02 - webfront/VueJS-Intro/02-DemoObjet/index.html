@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/main.js" type="module"></script>
+    <title>Manipuler un objet</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Profil de </h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Date de naissance</th>
+                    <th>Email</th>
+                    <th>Salaire</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ employee.lastname }}</td>
+                    <td>{{ employee.firstname }}</td>
+                    <td>{{ employee.birthday }}</td>
+                    <td>{{ email }}</td>
+                    <td>{{ employee.salary }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <form>  
+            <fieldset>
+                <legend>Modifier le profil</legend>
+                <div>
+                    <label for="prenom">Prénom:</label>
+                    <input id="prenom" v-model="employee.firstname">
+                </div>
+                <div>
+                    <label for="nom">Nom:</label>
+                    <input id="nom" v-model="employee.lastname">
+                </div>
+                <div>
+                    <label for="ddn">Date de naissance:</label>
+                    <input id="ddn" v-model="employee.birthday">
+                </div>
+                <div>
+                    <label for="salaire">Salaire:</label>
+                    <input id="salaire" type="number" v-model="newSalary">
+                </div>
+                <div>
+                    <button type="button" v-on:click="save">Enregistrer</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

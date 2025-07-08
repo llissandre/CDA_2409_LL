@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intervalles temporels</title>
+    <script src="./assets/js/index.js" async></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Gestion des dates et des intervalles</h1>
+        <form action="" id="formCurrentdate">
+            <div>
+                <label for="currentdate">Date actuelle : </label>
+                <input type="date" name="" id="currentdate" value="">
+                <label for="currenttime">heure actuelle : </label>
+                <input type="time" name="" id="currenttime" value="">
+                <input type="button" id="afficher" value="Afficher la date du jour">
+            </div>
+        </form>
+        <div>
+            <ul id="sentenceCurrentdate"></ul>
+        </div>
+        <hr>
+        <h1>Sélectionner une date et une heure :</h1>
+        <form action="" id="formIntervalledate">
+            <div>
+                <label for="intervalledate">Date : </label>
+                <input type="datetime-local" name="" id="intervalledate">
+                <input type="button" id="calculerIntervalle" value="Calculer l'intervalle">
+            </div>
+        </form>
+        <div>
+            <ul id="sentenceIntervalledate"></ul>
+        </div>
+    </main>
+
+</body>
+
+</html>

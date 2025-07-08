@@ -1,0 +1,80 @@
+[
+    {
+        "id": 1,
+        "name": "100% Bran",
+        "calories": 70,
+        "protein": 4,
+        "sodium": 130,
+        "fiber": 10,
+        "carbo": 5,
+        "sugars": 6,
+        "potass": 280,
+        "vitamins": 25,
+        "rating": "68.40"
+    },
+    {
+        "id": 2,
+        "name": "100% Natural Bran",
+        "calories": 120,
+        "protein": 3,
+        "sodium": 15,
+        "fiber": 2,
+        "carbo": 8,
+        "sugars": 8,
+        "potass": 135,
+        "vitamins": 0,
+        "rating": "33.98"
+    },
+    {
+        "id": 3,
+        "name": "All-Bran",
+        "calories": 70,
+        "protein": 4,
+        "sodium": 260,
+        "fiber": 9,
+        "carbo": 7,
+        "sugars": 5,
+        "potass": 320,
+        "vitamins": 25,
+        "rating": "59.43"
+    },
+    {
+        "id": 4,
+        "name": "All-Bran with Extra Fiber",
+        "calories": 50,
+        "protein": 4,
+        "sodium": 140,
+        "fiber": 14,
+        "carbo": 8,
+        "sugars": 0,
+        "potass": 330,
+        "vitamins": 25,
+        "rating": "93.70"
+    },
+    {
+        "id": 5,
+        "name": "Almond Delight",
+        "calories": 110,
+        "protein": 2,
+        "sodium": 200,
+        "fiber": 1,
+        "carbo": 14,
+        "sugars": 8,
+        "potass": -1,
+        "vitamins": 25,
+        "rating": "34.38"
+    },
+    {
+        "id": 6,
+        "name": "Apple Cinnamon Cheerios",
+        "calories": 110,
+        "protein": 2,
+        "sodium": 180,
+        "fiber": 2,
+        "carbo": 11,
+        "sugars": 10,
+        "potass": 70,
+        "vitamins": 25,
+        "rating": "29.51"
+    }
+]

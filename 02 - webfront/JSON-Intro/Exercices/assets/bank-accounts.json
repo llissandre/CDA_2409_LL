@@ -1,0 +1,44 @@
+[
+    {
+        "Account": "FR76 10001 10001 10000000001 11",
+        "Bank": "Banque Populaire",
+        "City": "Paris",
+        "Owner": "John Doe",
+        "balence": 36813.47
+    },
+    {
+        "Account": "FR76 30003 30001 30000000012 33",
+        "Bank": "Crédit Mutuel",
+        "City": "Paris",
+        "Owner": "Mark Zouk",
+        "balence": 5295.59
+    },
+    {
+        "Account": "FR76 30003 30005 30000000001 13",
+        "Bank": "Crédit Mutuel",
+        "City": "Mulhouse",
+        "Owner": "Joseph Picard",
+        "balence": 1663.14
+    },
+    {
+        "Account": "FR76 30003 30005 30000000002 23",
+        "Bank": "Crédit Mutuel",
+        "City": "Mulhouse",
+        "Owner": "Bruce Milice",
+        "balence": 1559.3
+    },
+    {
+        "Account": "FR76 30003 30005 30000000003 33",
+        "Bank": "Crédit Mutuel",
+        "City": "Mulhouse",
+        "Owner": "Steeve Bobs",
+        "balence": 0.66
+    },
+    {
+        "Account": "FR76 30003 30005 30000000004 43",
+        "Bank": "Crédit Mutuel",
+        "City": "Mulhouse",
+        "Owner": "Bill Bête",
+        "balence": 1500.44
+    }
+]

@@ -1,0 +1,135 @@
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+
+    --color1: #333333;
+    --color2: #016506;
+    --color3: #000000;
+    --color4: #6e7e71;
+    --color5: #e3d8cd;
+    --color6: gold;
+    --font-main: Arial, Helvetica, sans-serif;
+}
+
+/* Sélectionne tous les éléments */
+* {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: inherit;
+
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color5);
+    background-color: var(--color1);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: var(--);
+}
+
+h1 {
+    color: var(--color6);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#app {
+    width: 100%;
+}
+
+.grid {
+    justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    width: 700px;
+    height: 600px;
+    background-color: var(--color2);
+
+
+    div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid var(--color4);
+        border-radius: 50px;
+    }
+}
+
+.token {
+    background-color: transparent;
+    background-color: var(--color3);
+    transition: background-color 0.3s ease;
+}
+
+.winnerToken {
+    box-shadow: 0 0 10px 4px var(--color6);
+    outline: 2px solid var(--color6);
+    transition: all 0.5s;
+    z-index: 2;
+}
+
+.score {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.state {
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
+    margin: 60px 0 50px 20px;
+    padding: 0;
+}
+
+button {
+    margin: 20px 10px 0 0;
+    padding: 8px 16px;
+    background-color: var(--color4);
+    color: var(--color5);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--color6);
+    color: var(--color1);
+}
+
+.button-container {
+    justify-self: center;
+    margin-bottom: 10px;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.preview-red {
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+.preview-yellow {
+    background-color: rgba(255, 255, 0, 0.5);
+}

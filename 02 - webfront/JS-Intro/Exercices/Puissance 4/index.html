@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puissance 4</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/index.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Puissance 4</h1>
+    </header>
+    <main>
+        <div id="app">
+            <div class="score">
+                <p>{{player1.name}} ({{player1.color}} / {{player1.score}})</p>
+                <p>{{player2.name}} ({{player2.color}} / {{player2.score}})</p>
+            </div>
+            <p class="state">{{ manageStateMessage}}</p>
+
+            {{ console.table(matrix) }}
+
+            <div class=" grid">
+                <template v-for="(row, rowIndex) in matrix" :key="rowIndex">
+                    <div v-for="(column, columnIndex) in row" :key="columnIndex">
+                        <div :class="['token', column, getPreviewToken(rowIndex, columnIndex), isWinningToken(rowIndex, columnIndex) ? 'winnerToken' : '']"
+                            @click="play(columnIndex)" @mouseover="hoveredColumn = columnIndex"
+                            @mouseleave="hoveredColumn=null">
+                            <!-- {{ columnIndex + 1 }}, {{ rowIndex +1 }} -->
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <div class="button-container">
+                <button @click="resetGame">Recommencer</button>
+                <button @click="resetScore">Réinitialiser le score</button>
+            </div>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

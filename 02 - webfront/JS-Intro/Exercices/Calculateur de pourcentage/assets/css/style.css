@@ -1,0 +1,87 @@
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+
+    --color1: #95d396;
+    --color2: #d2e005;
+    --color3: #414141;
+    --color4: #fef9f7;
+    --color5: #111111;
+    --color6: #333333;
+    --color7: #6863c7;
+}
+
+/* Sélectionne tous les éléments */
+* {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: inherit;
+
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Couleur de fond de la page */
+    background-color: var(--color5);
+    /* Police d'écriture de la page */
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+        /* Taille de la police d'écriture de la page */
+    font-size: 1rem;
+    /* Couleur du texte de la page */
+    color: var(--color4);
+
+    margin: 5px;
+
+    h1 {
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    h2 {
+        text-transform: capitalize;
+        margin: 5px;
+    }
+
+    .filet {
+        border: 1px solid var(--color1);
+        margin-bottom: 5px;
+
+        p {
+            background-color: var(--color3);
+            color: var(--color1);
+            padding: 5px 0 5px 2px;
+        }
+
+        .inputs {
+            display: grid;
+            grid-template-columns: 80px 20px 150px 100px 150px 150px;
+            margin: 5px;
+            align-items: center;
+            border: 1px solid var(--color4);
+
+            input[type='text'] {
+                background-color: var(--color6);
+                border:none;
+                padding: 5px 2px 5px 5px;
+                font-size: 1.1rem;
+                font-family: 'Courier New', Courier, monospace, sans-serif;
+            }
+            
+            label {
+                color: var(--color7);
+                text-align: right;
+                font-size: 1.3rem;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            span {
+                color: var(--color1);
+                text-align: center;
+                font-size: 0.7rem;
+            }
+        }
+    }
+}

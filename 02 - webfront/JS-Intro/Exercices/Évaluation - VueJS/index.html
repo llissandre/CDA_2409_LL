@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Évaluation en VueJS</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/index.js" type="module"></script>
+</head>
+
+<body>
+    <main>
+        <div id="app">
+            <div id="filet">
+                <h1>Résultat de l'évaluation</h1>
+                <form action="" id="myFormId">
+                    <legend>Ajouter une note</legend>
+                    <div id="inputs">
+                        <div id="labelmyFormDiv">
+                            <label for="lastnameFirstnameInput">Nom Prénom : </label><br>
+                            <label for="gradeInput">Note : </label><br>
+                        </div>
+                        <div id="InputmyFormDiv">
+                            <input type="text" id="lastnameFirstnameInput" name="lastnameFirstname"><br>
+                            <input type="text" id="gradeInput" name="gradeInput" value="0"><br>
+                        </div>
+                    </div>
+                    <button type="submit" id="btnValid" @click.prevent="setNewStudent()">Ajouter</button>
+                    <!-- <input type="submit" id="btnValid" value="Ajouter" @click.prevent="setNewStudent()"> -->
+                </form>
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Note</th>
+                            <th>Obtenu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="eval of getGradesSorted" :key="eval.fullname">
+                            <td>{{getLastname(eval.fullname)}}</td>
+                            <td>{{getFirstname(eval.fullname)}}</td>
+                            <td>{{eval.grade}}</td>
+                            <td>{{getObtenu(eval.grade)}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul id="ulId">
+                    <li>Nombre d'étudiants : {{ getNbEtudiants }}</li>
+                    <li>Moyenne de la classe : {{ getAvgClasse }}</li>
+                    <li>Nombre d'étudiants au-dessus de la moyenne : {{ getNbStOverAvg }}</li>
+                    <li>Nombre d'étudiants au-dessus de la moyenne des notes de la classe: {{ getNbStOverAvgClasse }}
+                    </li>
+                    <li>Note éliminatoire : {{ failingGrade }}</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

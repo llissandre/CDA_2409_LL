@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouvelle vente de fruits et légumes</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/index.js" type="module"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div id="image"></div>
+        </header>
+        <main>
+            <div id="newSale">
+                <form @submit.prevent="newSale">
+                    <fieldset>
+                        <legend>Nouvelle vente</legend>
+                        <div>
+                            <label for="vegetableId">Légume</label>
+                            <select v-model="newSale.VegetableId" required>
+                                <option disabled value="">-- Choisir un légume --</option>
+                                <option v-for="vegetable in collectionVegetablesStorage" :key="vegetable.Id"
+                                    :value="vegetable.Id">
+                                    {{ vegetable.Name }} - {{ vegetable.Variety }}
+                                </option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="saleWeight">Poids</label>
+                            <input type="number" id="saleWeight" v-model="newSale.SaleWeight" required>
+                        </div>
+                        <div>
+                            <label for="date">Date de vente</label>
+                            <input type="date" id="date" v-model="newSale.SaleDate" required>
+                        </div>
+                        <div id="saleActiveDiv">
+                            <label for="saleActive">Est-ce que la vente est active ?</label>
+                            <select v-model="SaleActive" id="saleActive" v-model="newSale.SaleActive" required>
+                                <option :value="1">Oui</option>
+                                <option :value="0">Non</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for=""></label>
+                            <input type="submit" value="Ajouter la vente">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+
+</html>

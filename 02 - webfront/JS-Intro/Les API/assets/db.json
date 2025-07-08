@@ -1,0 +1,61 @@
+{
+  "posts": [
+    {
+      "id": "2c6d",
+      "pseudo": "toto",
+      "age": 25
+    },
+    {
+      "id": "8789",
+      "pseudo": "toto",
+      "age": 25
+    },
+    {
+      "id": "fa91",
+      "pseudo": "toto",
+      "age": 25
+    },
+    {
+      "id": "c692",
+      "pseudo": "toto",
+      "age": 25
+    },
+    {
+      "id": "3bdf",
+      "pseudo": "toto",
+      "age": 25
+    },
+    {
+      "id": "6306",
+      "pseudo": "toto",
+      "age": 25
+    },
+    {
+      "id": "cbd4",
+      "pseudo": "toto",
+      "age": 25
+    },
+    {
+      "id": "8676",
+      "pseudo": "toto",
+      "age": 25
+    },
+    {
+      "id": "2cca",
+      "pseudo": "toto",
+      "age": 25
+    }
+  ],
+  "users": [
+    {
+      "id": "38e9",
+      "pseudo": "toto",
+      "age": 25
+    },
+    {
+      "id": "853a",
+      "pseudo": "toto",
+      "age": 25
+    }
+  ]
+}

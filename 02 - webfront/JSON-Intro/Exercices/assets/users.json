@@ -1,0 +1,37 @@
+[
+    {
+        "identifiantNumerique": 1,
+        "nom": "BRamsey",
+        "patronyme": "Ramsey",
+        "prenom": "Bird ",
+        "dateNaissance": "02/11/2001"
+    },
+    {
+        "identifiantNumerique": 2,
+        "nom": "LBurgess",
+        "patronyme": "Burgess",
+        "prenom": "Lillian",
+        "dateNaissance": "02/11/2002"
+    },
+    {
+        "identifiantNumerique": 3,
+        "nom": "KCole",
+        "patronyme": "Cole",
+        "prenom": "Kristie",
+        "dateNaissance": "02/11/2003"
+    },
+    {
+        "identifiantNumerique": 4,
+        "nom": "LCross",
+        "patronyme": "Cross",
+        "prenom": "Leonor",
+        "dateNaissance": "02/11/2004"
+    },
+    {
+        "identifiantNumerique": 5,
+        "nom": "MMccall",
+        "patronyme": "Mccall",
+        "prenom": "Marsh",
+        "dateNaissance": "02/11/2005"
+    }
+]

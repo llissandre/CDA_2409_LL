@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendrier", "Calendrier\Calendrier.csproj", "{29E3218F-5564-4295-8F6B-16FAA1205D7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendrier.Data", "Calendrier.Data\Calendrier.Data.csproj", "{22913024-B88E-4403-8927-A5313722B6CF}"
+EndProject
+Global
+	GlobalSection(MercurialSourceControlSolutionProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29E3218F-5564-4295-8F6B-16FAA1205D7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29E3218F-5564-4295-8F6B-16FAA1205D7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29E3218F-5564-4295-8F6B-16FAA1205D7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29E3218F-5564-4295-8F6B-16FAA1205D7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22913024-B88E-4403-8927-A5313722B6CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22913024-B88E-4403-8927-A5313722B6CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22913024-B88E-4403-8927-A5313722B6CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22913024-B88E-4403-8927-A5313722B6CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

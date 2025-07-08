@@ -1,0 +1,101 @@
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+    --color1: #30343F;
+    --color2: #FAFAFF;
+    --color3: #E4D9FF;
+    --color4: #374479;
+    --color5: #6E7799;
+    --color6: #C490D1;
+}
+
+/* Sélectionne tous les éléments */
+* {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: inherit;
+
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--color3);
+    background-color: var(--color1);
+}
+
+#filet {
+    border: 1px solid var(--color2);
+    margin: 15px;
+}
+
+#myFormId {
+    border: 1px dashed var(--color2);
+    margin: 15px;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+
+label {
+    display: flex;
+    margin: 5px 0 0 30px;
+}
+
+#InputmyFormDiv>input {
+    display: flex;
+    gap: 30px;
+}
+
+#gradeInput,
+#lastnameFirstnameInput,
+#btnValid {
+    background-color: var(--color4);
+    border: 3px solid var(--color5);
+    color: var(--color3);
+    padding: 5px 10px;
+}
+
+#btnValid {
+    margin: 0 0 5px 40px;
+}
+
+legend {
+    margin: 0 0 30px 30px;
+}
+
+#myTable {
+    background-color: var(--color4);
+    border-collapse: collapse;
+    margin: 40px 20px 30px 15px;
+}
+
+#ulId {
+    margin: 0 0 30px 60px;
+    color: var(--color2);
+    font-weight: 400;
+}
+
+h1 {
+    margin: 10px;
+}
+
+th,
+td {
+    border: 3px solid var(--color5);
+    padding: 5px 10px;
+}
+
+td {
+    padding: 5px 20px 5px 5px;
+}
+
+td:nth-child(3) {
+    text-align: right;
+    padding: 5px;
+}

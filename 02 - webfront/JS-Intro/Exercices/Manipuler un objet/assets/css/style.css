@@ -1,0 +1,92 @@
+/* Sélecteur de la racine du document HTML (élement html) */
+/* html { */
+:root {
+    /* Changement de la méthode de calcul des boîtes */
+    box-sizing: border-box;
+}
+
+/* Sélectionne tous les éléments */
+* {
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 800px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    color: #026502;
+    margin: 20px 0 0 20px;
+}
+
+#filet {
+    border: 1px solid #4c924c;
+}
+
+h1 {
+    margin: 5px 0 0 10px;
+}
+
+#tableau {
+    margin: 40px 0 40px 25px;
+    /* border-collapse: collapse; */
+}
+
+th {
+    background-color: #90ee90;
+    padding: 5px;
+    text-align: center;
+}
+
+td {
+    background-color: #90ee90;
+    padding: 5px;
+    text-align: left;
+}
+
+fieldset{
+    padding: 20px 50px 20px 20px;
+}
+
+#form  {
+    margin: 0 0 60px 25px;
+    color: black;
+    display: grid;
+    grid-gap: 10px;
+    width: 400px; 
+    
+    div{
+        margin: 0 0 20px 0px;
+        color: black;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        width: 400px; 
+
+        input[type="submit"]{
+            width: 50%;
+        }
+    }
+}
+
+legend{
+margin: 0 0 30px 0px;
+}
+
+input {
+    background-color: #90ee90;
+    color: #026502;
+    border: none;
+    padding: 5px 5px 0 5px;
+}
+
+
+label {
+    margin: 0 0 10px 0;
+}
+
+input[type="submit"]{
+  padding: 5px;
+}

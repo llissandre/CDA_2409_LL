@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Céréales</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/index.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="titleHeader">
+                <h1>Cereals</h1>
+            </div>
+            <div id="inputsHeader">
+                <fieldset class="fieldsetSearch">
+                    <legend>Rechercher</legend>
+                    <input type="search" name="searchCereal" id="inputSearchCereal" placeholder="Nom de la céréale">
+                </fieldset>
+                <fieldset class="fieldsetFilters">
+                    <legend>Filtrer</legend>
+                    <fieldset class="ns">
+                        <legend>Nutriscore</legend>
+                        <div id="ns">
+                            <div>
+                                <label for="a">A</label>
+                                <input type="checkbox" name="checkboxesNS" class="checkboxesNS" value="A" id="a">
+                            </div>
+                            <div>
+                                <label for="b">B</label>
+                                <input type="checkbox" name="checkboxesNS" class="checkboxesNS" value="B" id="b">
+                            </div>
+                            <div>
+                                <label for="c">C</label>
+                                <input type="checkbox" name="checkboxesNS" class="checkboxesNS" value="C" id="c">
+                            </div>
+                            <div>
+                                <label for="d">D</label>
+                                <input type="checkbox" name="checkboxesNS" class="checkboxesNS" value="D" id="d">
+                            </div>
+                            <div>
+                                <label for="e">E</label>
+                                <input type="checkbox" name="checkboxesNS" class="checkboxesNS" value="E" id="e">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="category">
+                        <legend>Catégorie</legend>
+                        <div id="category">
+                            <select id="selectCategory">
+                                <option value="all" selected>Tous</option>
+                                <option value="withoutSugar">Sans sucre</option>
+                                <option value="lowSalt">lowSalt</option>
+                                <option value="boost">Boost</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <fieldset class="deleteLS">
+                        <legend>Supprimer le LocalStorage</legend>
+                        <div id="deleteLS">
+                            <label for="deletelocalStorage"></label>
+                            <button name="deletelocalStorage" class="btnDeletelocalStorage">Supprimer</button>
+                        </div>
+                    </fieldset>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th data-sort="id" class="pointer">id<span class="arrow" id="arrow-id"></span></th>
+                    <th data-sort="name" class="pointer">nom<span class="arrow" id="arrow-name"></span></th>
+                    <th data-sort="calories" class="pointer">calories<span class="arrow" id="arrow-calories"></span>
+                    </th>
+                    <th data-sort="protein" class="pointer">protéïnes<span class="arrow" id="arrow-protein"></span></th>
+                    <th data-sort="sodium" class="pointer">sel<span class="arrow" id="arrow-sodium"></span></th>
+                    <th data-sort="fiber" class="pointer">fibres<span class="arrow" id="arrow-fiber"></span></th>
+                    <th data-sort="carbo" class="pointer">glucides<span class="arrow" id="arrow-carbo"></span></th>
+                    <th data-sort="sugars" class="pointer">sucre<span class="arrow" id="arrow-sugars"></span></th>
+                    <th data-sort="potass" class="pointer">potassium<span class="arrow" id="arrow-potass"></span></th>
+                    <th data-sort="vitamins" class="pointer">vitamines<span class="arrow" id="arrow-vitamins"></span>
+                    </th>
+                    <th data-sort="rating" class="pointer">évaluation<span class="arrow" id="arrow-rating"></span></th>
+                    <th>ns</th>
+                    <th>dell</th>
+                </tr>
+            </thead>
+
+        </table>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes postaux</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/index.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <h1>Recherche de Ville</h1>
+        <div id="container">
+            <label for="searchInput">Saisir un code postal : </label>
+            <input type="search" id="searchInput" list="cityList" placeholder="Saisir un code postal">
+            <datalist id="cityList"></datalist>
+            <input type="submit" value="Valider" id="btnValidate"></input>
+            <button onclick="displayCityInfos()">Rechercher</button>
+        </div>
+        <div id="informations"></div>
+    </main>
+</body>
+
+</html>
